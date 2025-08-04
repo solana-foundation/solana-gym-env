@@ -116,6 +116,10 @@ class SurfpoolEnv(gym.Env):
         self._validator_cm = None       # will hold the context-manager
         self._validator_proc = None     # the running subprocess
         self.total_reward = 0           # Track cumulative reward for this episode.Process
+        
+        # Transaction efficiency tracking
+        self.last_tx_instruction_count = 0
+        self.last_tx_reward = 0
 
 
     async def _get_observation(self, last_tx_result=None):
@@ -123,14 +127,30 @@ class SurfpoolEnv(gym.Env):
         # Get unique programs from the instructions seen
         unique_programs = {str(k[0]) for k in self.program_instructions_seen.keys()}
         
+        # Build discovered_instructions_by_program mapping
+        discovered_instructions_by_program = {}
+        for (program_id, instruction_id), _ in self.program_instructions_seen.items():
+            program_id_str = str(program_id)
+            if program_id_str not in discovered_instructions_by_program:
+                discovered_instructions_by_program[program_id_str] = []
+            if instruction_id not in discovered_instructions_by_program[program_id_str]:
+                discovered_instructions_by_program[program_id_str].append(instruction_id)
+        
+        # Sort instruction IDs for each program for consistency
+        for program_id in discovered_instructions_by_program:
+            discovered_instructions_by_program[program_id].sort()
+        
         obs = {
             "sol_balance": 0,
             "agent_pubkey": str(self.agent_keypair.pubkey()),
             "block_height": 0,
             "discovered_programs": len(unique_programs),
             "discovered_program_list": list(unique_programs),  # Unique program IDs
+            "discovered_instructions_by_program": discovered_instructions_by_program,
             "total_reward": self.total_reward,
-            "unique_instructions_found": len(self.program_instructions_seen)
+            "unique_instructions_found": len(self.program_instructions_seen),
+            "last_tx_instruction_count": self.last_tx_instruction_count,
+            "last_tx_reward": self.last_tx_reward
         }
 
         try:
@@ -201,8 +221,13 @@ class SurfpoolEnv(gym.Env):
 
         # Create a new agent for the episode
         self.agent_keypair = Keypair()
-        self.program_instructions_seen = {}
+        # DO NOT reset program_instructions_seen - it should persist across episodes!
+        # self.program_instructions_seen = {}  # <-- This was the bug!
         self.total_reward = 0
+        
+        # Reset transaction tracking
+        self.last_tx_instruction_count = 0
+        self.last_tx_reward = 0
         
         # Fund the agent
         try:
@@ -301,14 +326,21 @@ class SurfpoolEnv(gym.Env):
             return obs, 0, False, False, {"error": str(e)}
 
         self.last_tx_receipt = tx_receipt
-        obs = await self._get_observation(last_tx_result=tx_receipt)
         
         # Extract programs from this transaction for the info dict
         ordered_instructions = self._get_ordered_instructions(result)
         programs_in_tx = list({str(ix['program_id']) for ix in ordered_instructions})
         
+        # Track instruction count for this transaction
+        self.last_tx_instruction_count = len(ordered_instructions)
+        
         reward = self._get_reward(result)
+        self.last_tx_reward = reward
         self.total_reward += reward
+        
+        # Get observation after updating metrics
+        obs = await self._get_observation(last_tx_result=tx_receipt)
+        
         return obs, reward, False, False, { 
             "tx_sig": str(sig.value), 
             "tx_meta": result.value.to_json(),
