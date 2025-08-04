@@ -39,3 +39,6 @@ except FileNotFoundError as e:
     # For now, we'll let it proceed with an empty dict if the file is missing/empty
 except Exception as e:
     logging.error(f"An unexpected error occurred while loading program IDs: {e}")
+
+if __name__ == "__main__":
+    print(KNOWN_PROGRAM_IDS)
