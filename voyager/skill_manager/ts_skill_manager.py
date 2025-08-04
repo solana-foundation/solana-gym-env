@@ -272,7 +272,10 @@ class TypeScriptSkillManager:
             # If runSkill.ts exits with an error, it prints the JSON result to stderr
             try:
                 # The error output might also be a JSON object if the skill itself failed gracefully
-                return json.loads(e.stderr.strip("\n"))
+                if e.stderr:
+                    return json.loads(e.stderr.strip("\n"))
+                if e.stdout:
+                    return {"success": False, "reason": f"Skill runner error: {e.stdout}"}
             except json.JSONDecodeError:
                 # Fallback for unexpected stderr output
                 return {"success": False, "reason": f"Skill runner error: {e.stderr}"}
