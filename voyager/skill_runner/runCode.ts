@@ -72,7 +72,36 @@ async function runSkill(): Promise<void> {
     const timeoutMs = parseInt(timeoutMsStr, 10);
     const code = Buffer.from(encodedCode, 'base64').toString('utf-8');
     const programs = Buffer.from(encodedPrograms, 'base64').toString('utf-8');
+    
+    // Debug logging
+    console.error(`DEBUG: Code length: ${code.length}, first 100 chars: ${code.substring(0, 100).replace(/\n/g, '\\n')}`);
+    console.error(`DEBUG: Programs length: ${programs.length}, first 100 chars: ${programs.substring(0, 100).replace(/\n/g, '\\n')}`);
+    
     const combinedCodePath = path.resolve("code.ts");
+    // Check for duplicate function names
+    const functionNames = new Set<string>();
+    const functionPattern = /async\s+function\s+(\w+)\s*\(/g;
+    
+    // Check in programs
+    let match;
+    while ((match = functionPattern.exec(programs)) !== null) {
+        functionNames.add(match[1]);
+    }
+    
+    // Check in code and detect duplicates
+    functionPattern.lastIndex = 0; // Reset regex
+    while ((match = functionPattern.exec(code)) !== null) {
+        if (functionNames.has(match[1])) {
+            console.log(JSON.stringify({
+                serialized_tx: null,
+                error: `Duplicate function declaration: ${match[1]}. This function already exists in the skill library.`,
+                trace: `Function '${match[1]}' is defined multiple times. Please use a different name or remove the duplicate.`
+            }));
+            process.exit(1);
+        }
+        functionNames.add(match[1]);
+    }
+    
     const combinedCode =
         "import { Connection, PublicKey, Transaction, SystemProgram, LAMPORTS_PER_SOL, Keypair } from '@solana/web3.js';\n" +
         "import * as web3 from '@solana/web3.js';\n" +

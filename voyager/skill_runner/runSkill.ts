@@ -1,6 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import path from 'path';
+import { Transaction } from '@solana/web3.js';
 
 // const execAsync = promisify(exec);
 
@@ -81,14 +82,14 @@ async function runSkill(): Promise<void> {
         }
 
         const serialized_tx: SkillExecutionResult = await Promise.race([
-            skillModule.executeSkill(),
+            skillModule.executeSkill(latestBlockhash),
             new Promise<SkillExecutionResult>((_, reject) =>
                 setTimeout(() => reject(new Error('Skill execution timed out.')), timeoutMs)
             ),
         ]);
 
         console.log(JSON.stringify({
-            serialized_tx
+            serialized_tx,
         }));
     } catch (error) {
         const reason = error instanceof Error ? error.message : 'An unknown error occurred.';
