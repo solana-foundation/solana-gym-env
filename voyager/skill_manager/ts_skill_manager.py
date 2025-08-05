@@ -265,20 +265,29 @@ class TypeScriptSkillManager:
                 check=True,
                 encoding='utf-8'
             )
-            # runSkill.ts now outputs a JSON object with tx_receipt_json_string
+            # runSkill.ts now outputs a JSON object with serialized_tx
             return json.loads(result.stdout.strip("\n"))
         except subprocess.CalledProcessError as e:
-            # pdb.set_trace()
-            # If runSkill.ts exits with an error, it prints the JSON result to stderr
+            # When there's an error, runSkill.ts prints JSON to stdout and error details to stderr
             try:
-                # The error output might also be a JSON object if the skill itself failed gracefully
-                if e.stderr:
-                    return json.loads(e.stderr.strip("\n"))
+                # Try to parse the JSON output from stdout (this has the structured error info)
                 if e.stdout:
-                    return {"success": False, "reason": f"Skill runner error: {e.stdout}"}
+                    error_data = json.loads(e.stdout.strip("\n"))
+                    # Also capture stderr for full error details
+                    if e.stderr:
+                        error_data['stderr'] = e.stderr
+                    return error_data
+                elif e.stderr:
+                    # Fallback if only stderr is available
+                    return {"success": False, "reason": f"Skill runner error", "stderr": e.stderr}
             except json.JSONDecodeError:
-                # Fallback for unexpected stderr output
-                return {"success": False, "reason": f"Skill runner error: {e.stderr}"}
+                # Fallback for unexpected output
+                return {
+                    "success": False, 
+                    "reason": "Skill runner error",
+                    "stdout": e.stdout if e.stdout else "",
+                    "stderr": e.stderr if e.stderr else ""
+                }
         except FileNotFoundError:
             return {"success": False, "reason": "Bun command not found. Make sure Bun is installed and in your PATH."}
 

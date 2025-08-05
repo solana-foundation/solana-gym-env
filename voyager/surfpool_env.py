@@ -147,7 +147,7 @@ class SurfpoolEnv(gym.Env):
             "discovered_programs": len(unique_programs),
             "discovered_program_list": list(unique_programs),  # Unique program IDs
             "discovered_instructions_by_program": discovered_instructions_by_program,
-            "total_reward": self.total_reward,
+            "total_reward": len(self.program_instructions_seen),
             "unique_instructions_found": len(self.program_instructions_seen),
             "last_tx_instruction_count": self.last_tx_instruction_count,
             "last_tx_reward": self.last_tx_reward
@@ -223,7 +223,7 @@ class SurfpoolEnv(gym.Env):
         self.agent_keypair = Keypair()
         # DO NOT reset program_instructions_seen - it should persist across episodes!
         # self.program_instructions_seen = {}  # <-- This was the bug!
-        self.total_reward = 0
+        # self.total_reward = 0
         
         # Reset transaction tracking
         self.last_tx_instruction_count = 0
@@ -334,7 +334,7 @@ class SurfpoolEnv(gym.Env):
         # Track instruction count for this transaction
         self.last_tx_instruction_count = len(ordered_instructions)
         
-        reward = self._get_reward(result)
+        reward = self._calculate_reward(result)
         self.last_tx_reward = reward
         self.total_reward += reward
         
@@ -366,7 +366,7 @@ class SurfpoolEnv(gym.Env):
             )
         return ordered_instructions
     
-    def _get_reward(self, tx_result: GetTransactionResp) -> float:
+    def _calculate_reward(self, tx_result: GetTransactionResp) -> float:
         if tx_result.value.transaction.meta.err:
             return 0
 

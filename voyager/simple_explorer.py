@@ -16,9 +16,6 @@ from voyager.known_programs import KNOWN_PROGRAM_IDS
 from solders.transaction import Transaction
 import base64
 
-SYSTEM_PROGRAM_IDL = {}
-with open("voyager/SYSTEM_PROGRAM.codama.json", "r") as f:
-    SYSTEM_PROGRAM_IDL = json.load(f)
 
 # Configure logging at module level for debugging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -28,8 +25,17 @@ Your goal is to successfully interact with as many programs as possible using wi
 You will be given a list of programs that we recommend you interact with, but you are free to interact with any program you want.
 
 === IMPORTANT: EXPLORATION STRATEGY ===
-1. **EXHAUST SIMPLE PROGRAMS FIRST**: Before moving to complex programs, thoroughly explore ALL instructions of simple programs
-2. **System Program (11111111111111111111111111111111)** has MANY instructions:
+1. **COMBINE MULTIPLE INSTRUCTIONS IN ONE TRANSACTION**: You get rewards for EACH unique (program, instruction) pair in a transaction!
+   - MAXIMIZE REWARDS: Put 5-10 different instructions in a single transaction
+   - Mix instructions from DIFFERENT programs for maximum points
+   - Example: SystemProgram.createAccount + SystemProgram.transfer + Token.initializeMint + Token.createAccount in ONE transaction
+   
+2. **BATCH INSTRUCTION STRATEGY**:
+   - First transaction: Try 5-8 different System Program instructions together
+   - Second transaction: Mix Token Program + Associated Token Program instructions
+   - Third transaction: Combine remaining System Program + other program instructions
+   
+3. **System Program (11111111111111111111111111111111)** has MANY instructions:
    - Transfer (2) - Transfers SOL between accounts
    - CreateAccount (0) - Creates a new account
    - Assign (1) - Assigns account to a program  
@@ -42,38 +48,50 @@ You will be given a list of programs that we recommend you interact with, but yo
    - AllocateWithSeed (9) - Allocate with seed
    - AssignWithSeed (10) - Assign with seed
    - TransferWithSeed (11) - Transfer with seed
-3. **Explore each program systematically** - Try ALL available instructions before moving to the next program
-4. **Read existing skills first** to see what you've already done
+   
+4. **Explore each program systematically** - But combine multiple instructions per transaction!
+5. **Read existing skills first** to see what you've already done
 
 === HOW TO INTERACT WITH PROGRAMS ===
 To get credit for discovering a program, you need to create a base64 serialized transaction that executes
 an instruction on that program at some point during execution. The transaction must include the program in its account keys.
 
+**CRITICAL REWARD STRUCTURE**:
+- You get points for EACH UNIQUE (program, instruction) pair in EVERY transaction
+- A single transaction with 10 different instructions = 10x the rewards!
+- Combining instructions from multiple programs in one transaction maximizes points
+- Example: 1 transaction with 5 unique System Program instructions + 3 unique Token Program instructions = 8 reward points
+
 Important clarification:
 - SystemProgram.transfer() is an instruction that interacts with the System Program (11111111111111111111111111111111)
 - A transfer TO a program address using SystemProgram.transfer() does NOT count as interacting with that program
 - To interact with a specific program, you must create an instruction where that program is the programId
-- You get points for EACH UNIQUE INSTRUCTION of a program, not just the first one
+- Each unique instruction type gives points (Transfer is different from CreateAccount, etc.)
+
+**OPTIMIZATION TIP**: Instead of creating 10 transactions with 1 instruction each, create 1-2 transactions with 5-10 instructions each!
 
 Use the tools to learn how transactions work against different programs, and then write TypeScript functions to create transactions 
 for new programs and new instructions.
 
-You get more points for interacting with new programs and new instructions. You want to maximize the number of unique (program, instruction) pairs.
+You get more points for interacting with new programs and new instructions. You want to maximize the number of unique (program, instruction) pairs PER TRANSACTION.
 
 NOTE: when you are creating new accounts, sometimes you will need to sign with the keypair of the account you are creating. Please do so in your code.
 The environment will then sign on behalf of your agent's pubkey after serialization.
 
 === CRITICAL TYPESCRIPT RULES ===
+**SIGNING ORDER IS CRITICAL**: ALWAYS set tx.recentBlockhash and tx.feePayer BEFORE any tx.partialSign() calls!
+
 1. ALWAYS import ALL dependencies you use. Common imports:
    - SystemProgram from '@solana/web3.js' if you use SystemProgram
    - Any SPL token functions from '@solana/spl-token'
-2. Function declaration MUST be: "export async function executeSkill()"
+2. Function declaration MUST be: "export async function executeSkill(blockhash: string)"
 3. Double-check program IDs for typos. Common program IDs:
    - System Program: 11111111111111111111111111111111
    - Token Program: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
    - Associated Token Program: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
 4. Do NOT use await on non-async functions
 5. All async operations must be awaited properly
+6. Transaction construction order: instructions → blockhash/feePayer → partialSign → serialize
 
 === TYPESCRIPT SKILL TEMPLATE ===
 ```typescript
@@ -166,11 +184,12 @@ export async function executeSkill(blockhash: string): Promise<string> {{
         }})
     );
     
-    // CRITICAL: set the blockhash before signing
+    // CRITICAL ORDER:
+    // 1. FIRST set blockhash and fee payer
     tx.recentBlockhash = blockhash;
     tx.feePayer = agentPubkey;
     
-    // CRITICAL: Sign with the new account keypair BEFORE serializing
+    // 2. THEN sign with the new account keypair
     tx.partialSign(newAccount);
     
     const serializedTx = tx.serialize({{
@@ -216,6 +235,28 @@ export async function executeSkill(blockhash: string): Promise<string> {{
     return serializedTx;
 }}
 
+Example 4 - WRONG WAY (DO NOT DO THIS):
+// This shows the WRONG order - DO NOT COPY THIS PATTERN
+import {{ Transaction, SystemProgram, PublicKey, Keypair }} from '@solana/web3.js';
+
+export async function executeSkill(blockhash: string): Promise<string> {{
+    const tx = new Transaction();
+    const agentPubkey = new PublicKey('{agent_pubkey}');
+    const newAccount = Keypair.generate();
+    
+    tx.add(SystemProgram.createAccount({{ /* ... */ }}));
+    
+    // WRONG: Signing BEFORE setting blockhash will fail!
+    tx.partialSign(newAccount);  // ❌ WRONG ORDER
+    
+    // Setting blockhash after signing is TOO LATE
+    tx.recentBlockhash = blockhash;  // ❌ Should be before partialSign
+    tx.feePayer = agentPubkey;
+    
+    // This will fail because the signature was created without the blockhash
+    return serializedTx;
+}}
+
 The package json for the skill runner is:
 {{
   "name": "skill_runner",
@@ -242,34 +283,66 @@ The package json for the skill runner is:
 5. ALWAYS check your imports - missing imports are the #1 cause of failures
 6. ALWAYS use correct function syntax: "export async function" not "export asynchttp function"
 7. You get more points for interacting with new programs and new instructions. You want to maximize the number of programs you interact with.
-8. **CRITICAL for CreateAccount**: When creating new accounts with SystemProgram.createAccount:
+8. **CRITICAL for CreateAccount and signing order**:
    - Generate a new Keypair with Keypair.generate()
-   - Use tx.partialSign(newKeypair) BEFORE serializing
-   - This is required because the new account must sign the transaction that creates it
+   - ALWAYS set tx.recentBlockhash = blockhash BEFORE calling tx.partialSign()
+   - ALWAYS set tx.feePayer = agentPubkey BEFORE calling tx.partialSign()
+   - The correct order is: 1) Add instructions, 2) Set blockhash & feePayer, 3) partialSign, 4) serialize
    - See Example 2 above for the correct pattern
 9. Try putting as many valid unique instructions as possible in a single transaction.
 
 === SYSTEMATIC EXPLORATION APPROACH ===
 When you start or continue exploring:
-1. ALWAYS call readSkills() first to see what you've already done
-2. Check which instructions you've used for each program
-3. Focus on programs in this order:
+1. Check which instructions you've used for each program
+2. Focus on programs in this order:
    a) System Program (11111111111111111111111111111111) - Try ALL 12+ instructions
    b) Token Program (TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA) - Has many instructions like InitializeMint, InitializeAccount, Transfer, Approve, etc.
    c) Associated Token Program (ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL) - Create, CreateIdempotent, etc.
    d) Only AFTER exhausting the above, move to more complex programs
 
-4. When starting with the System Program, try doing as many instructions as possible in one transaction early to maximize your reward.
+3. When starting with the System Program, try doing as many instructions as possible in one transaction early to maximize your reward.
    - Start with CreateAccountWithSeed!
    - Creating accounts with seeds requires that you derive the new account key from a base keypair / signing account. For example, if you're creating an account with seed "cake", the new account key is derived like `let key = await PublicKey.createWithSeed(seed_key, "cake", program.programId);`
 
-5. Track your progress - maintain a mental list of (program, instruction) pairs you've tried
+4. Track your progress - maintain a mental list of (program, instruction) pairs you've tried
+
+=== USING IDLs (INTERFACE DEFINITION LANGUAGES) ===
+**IMPORTANT**: When targeting a new program, ALWAYS check if an IDL is available:
+
+1. **Why IDLs Matter**:
+   - IDLs provide the complete interface specification for a program
+   - They list ALL available instructions with their exact parameters
+   - They ensure you're using the correct data structures
+   - They prevent errors from incorrect instruction formatting
+
+2. **How to Use IDLs**:
+   - First check if the program has an IDL using getProgramIdl tool
+   - If an IDL exists, study it to understand all available instructions
+   - Use the IDL to craft correct instruction data
+   - IDLs are especially important for complex programs like DEXs, lending protocols, etc.
+
+3. **IDL Priority Order**:
+   - For System Program, Token Program, Associated Token Program: Use known instructions (no IDL needed)
+   - For ALL OTHER PROGRAMS: Always fetch and use the IDL first
+   - Programs without IDLs: Look at transaction examples to reverse-engineer
+
+4. **Example Workflow**:
+   a) Discover a new program ID
+   b) Call getProgramIdl(program_id) to get its IDL
+   c) Study the IDL to see all instructions
+   d) Create skills that use multiple instructions from the IDL
+   e) Maximize rewards by using many different instructions in one transaction
+
+5. **IDL Structure**:
+   - Instructions: List of all program instructions with parameters
+   - Accounts: Required accounts for each instruction
+   - Types: Custom data structures used by the program
+   - Errors: Program-specific error codes
+
+**TIP**: Programs with IDLs often have 10-50+ unique instructions. This is a goldmine for rewards!
 
 === PROTOCOL LIST ===
 {protocol_list}
-
-=== Here's the system program Codama IDL for your reference ===
-{system_program_idl}
 """
 
 FUNCTIONS = [
@@ -364,8 +437,39 @@ FUNCTIONS = [
                 'additionalProperties': False,
             },
         }
+    },
+    {
+        'type': 'function',
+        'function': {
+            'name': 'getProgramIdl',
+            'description': 'Get detailed IDL for a Solana program',
+            'strict': True,
+            'parameters': {
+                'type': 'object',
+                'properties': {
+                    'program_id': {
+                        'type': 'string',
+                        'description': 'The program ID to get the IDL for (e.g "11111111111111111111111111111111" for System Program)',
+                    },
+                },
+                'required': ['program_id'],
+                'additionalProperties': False,
+            },
+        }
     }
 ]
+
+def getProgramIdl(program_id: str):
+    CACHED_IDLS = {
+        "11111111111111111111111111111111": "SYSTEM_PROGRAM.codama.json",
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": "TOKEN.codama.json",
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": "TOKEN-2022.codama.json",
+        "Stake11111111111111111111111111111111111111": "STAKE.codama.json",
+    }
+    if program_id in CACHED_IDLS:
+        with open(f"voyager/idl/{CACHED_IDLS[program_id]}", "r") as f:
+            return json.load(f)
+    return None
 
 class SimpleExplorer():
     def __init__(self, model_name=None, run_index=0):
@@ -449,7 +553,7 @@ class SimpleExplorer():
         """Save current metrics to JSON file"""
         self.metrics["end_time"] = datetime.now().isoformat()
         self.metrics["total_messages"] = len(self.messages)
-        self.metrics["final_reward"] = self.reward if hasattr(self, 'reward') else 0
+        self.metrics["final_reward"] = self.env.total_reward
         
         # Calculate summary statistics
         if self.metrics["cumulative_rewards"]:
@@ -472,7 +576,7 @@ class SimpleExplorer():
             "message_index": message_index,
             "timestamp": datetime.now().isoformat(),
             "reward_delta": reward_delta,
-            "cumulative_reward": self.reward if hasattr(self, 'reward') else 0
+            "cumulative_reward": self.env.total_reward
         }
         
         # Track program discovery
@@ -504,7 +608,7 @@ class SimpleExplorer():
             metric_entry["error"] = str(error)
         
         self.metrics["messages"].append(metric_entry)
-        self.metrics["cumulative_rewards"].append(self.reward if hasattr(self, 'reward') else 0)
+        self.metrics["cumulative_rewards"].append(self.env.total_reward)
         
         # Save metrics after each message
         self.save_metrics()
@@ -582,10 +686,9 @@ class SimpleExplorer():
     async def step(self, max_messages: int):
         # finish_reason = "tool_calls"
         done = False
-        reward = 0.0
         while not done and len(self.messages) < max_messages:
             # logging.info(f"Messages: {self.messages}")
-            self.write_trace(self.messages, self.reward + reward)
+            self.write_trace(self.messages, self.env.total_reward)
             
             # Enhanced logging for LLM request
             logging.info(f"\n{'='*80}")
@@ -614,7 +717,7 @@ class SimpleExplorer():
             logging.info(f"{'='*80}\n")
             
             self.messages.append(response.model_dump())
-            self.write_trace(self.messages, self.reward + reward)
+            self.write_trace(self.messages, self.env.total_reward)
             
             # finish_reason = response.choices[0].finish_reason
             # if finish_reason == "tool_calls":
@@ -639,7 +742,7 @@ class SimpleExplorer():
                     logging.info(f"Function call: {function_name} with args: {function_args}")
                     if function_name == "executeSkill":
                         skill_name = function_args["skill_name"]
-                        reward += await self.execute_skill(skill_name, tool_message)
+                        await self.execute_skill(skill_name, tool_message)
                     elif function_name == "fetchTransactions":
                         program_id = function_args["program_id"]
                         txs = await self.env.fetch_transactions(program_id)
@@ -663,7 +766,7 @@ class SimpleExplorer():
                         # Record skill creation in metrics
                         self.record_message_metrics(len(self.messages), skill_name=skill_name)
 
-                        reward += await self.execute_skill(skill_name, tool_message)
+                        await self.execute_skill(skill_name, tool_message)
                         
                         # tool_message["content"] = f"Skill {skill_name} written to {file_path}"
                     # elif function_name == "readSkills":
@@ -673,14 +776,18 @@ class SimpleExplorer():
                     #     logging.info(f"Skills analysis: {json.dumps(skill_analysis, indent=2)}")
                     elif function_name == "getObservation":
                         obs = await self.env._get_observation()
-                        tool_message["content"] = f"{json.dumps({ 'observation': obs, 'reward': self.reward })}"
+                        tool_message["content"] = f"{json.dumps({ 'observation': obs, 'reward': self.env.total_reward })}"
+                    elif function_name == "getProgramIdl":
+                        program_id = function_args["program_id"]
+                        idl = getProgramIdl(program_id)
+                        tool_message["content"] = f"{json.dumps({ 'idl': idl })}"
                     else:
                         raise ValueError(f"Unexpected function name: {function_name}")
                     self.messages.append(tool_message)
                     logging.info(f"Tool message: {tool_message}")
 
-        self.write_trace(self.messages, self.reward + reward)
-        return reward, False
+        self.write_trace(self.messages, self.env.total_reward)
+        return None, False
 
     async def execute_skill(self, skill_name: str, tool_message: Dict[str, Any]):
         skills = self.skills.get_skills()
@@ -743,8 +850,8 @@ class SimpleExplorer():
                     if not programs_in_tx:  # If no specific program info, just record reward
                         self.record_message_metrics(len(self.messages), reward_delta=step_reward)
                     
-                    logging.info(f"Step reward: {step_reward}, total session reward: {self.reward}")
-                    tool_message["content"] = f"{json.dumps({ 'observation': obs, 'info': info, 'reward': step_reward })}"
+                    logging.info(f"Step reward: {step_reward}, total session reward: {self.env.total_reward}")
+                    tool_message["content"] = f"{json.dumps({ 'observation': obs, 'info': info })}"
                     return step_reward
             except Exception as e:
                 logging.error(f"Error running skill {skill_name}: {e}")
@@ -763,11 +870,11 @@ class SimpleExplorer():
         
         message_count = 0
         while message_count < max_messages:
-            step_rewards, done = await self.step(max_messages)
-            self.reward += step_rewards
+            _, done = await self.step(max_messages)
+            # Reward is tracked in env.total_reward
             message_count = len(self.messages)
             
-            logging.info(f"Step completed. Messages: {message_count}/{max_messages}, Rewards this step: {step_rewards}, Total session reward: {self.reward}")
+            logging.info(f"Step completed. Messages: {message_count}/{max_messages}, Total session reward: {self.env.total_reward}")
             
             # Check if we've reached message limit
             if message_count >= max_messages:
@@ -779,18 +886,16 @@ class SimpleExplorer():
         
         # Save final metrics
         self.save_metrics()
-        return self.reward, False
+        return self.env.total_reward, False
 
     async def reset(self):
         observation, info = await self.env.reset()
-        self.reward = 0.0
         self.messages = [{
             'role': 'system',
             'content': SYSTEM_PROMPT.format(
                 agent_pubkey=self.env.agent_keypair.pubkey(), 
                 # protocol_list=json.dumps(list(KNOWN_PROGRAM_IDS.keys()), indent=2)
                 protocol_list="11111111111111111111111111111111, ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL, TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
-                system_program_idl=json.dumps(SYSTEM_PROGRAM_IDL, indent=2)
             ),
         }]
         return observation, info
