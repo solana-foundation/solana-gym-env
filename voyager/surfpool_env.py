@@ -286,6 +286,47 @@ class SurfpoolEnv(gym.Env):
             events.extend(obs)
             return events, 0, False, False, error_info
 
+    async def code_loop_step(self, code: str, programs: list[str], skill_manager: TypeScriptSkillManager):
+        """
+        Workaround to make it easy to call step()
+        """
+        result = skill_manager.evaluate_code_loop(
+            code,
+            str(self.agent_keypair.pubkey()),
+            blockhash
+        )
+        events = []
+        if result.get('success', False) and result.get('serialized_tx'):
+            # Deserialize the transaction
+            tx_bytes = base64.b64decode(result['serialized_tx'])
+            tx = self._partial_sign_transaction(tx_bytes, [self.agent_keypair])
+            
+            obs, reward, terminated, truncated, info = await self.step(tx)
+            events.append(("info", info))
+            # obs is already in the format [["observe", obs_dict]], so we need to extend, not append
+            events.extend(obs)
+            return events, reward, terminated, truncated, info
+        else:
+            # Pass error information through
+            error_info = {
+                "error": result.get("reason", "Unknown error"),
+                "trace": result.get("trace", ""),
+                "stdout": result.get("stdout", ""),
+                "stderr": result.get("stderr", "")
+            }
+            
+            # Get observation with error details
+            obs = await self._get_observation()
+            # Add error details to the observation
+            if obs and len(obs) > 0 and len(obs[0]) > 1:
+                obs[0][1]["error"] = error_info["error"]
+                obs[0][1]["error_trace"] = error_info["trace"]
+            
+            events.append(("error", error_info))
+            events.extend(obs)
+            return events, 0, False, False, error_info
+
+
     async def step(self, tx):
         """
         Executes a pre-signed transaction on the Solana network.
@@ -374,7 +415,13 @@ class SurfpoolEnv(gym.Env):
 
         reward = 0
         for ix in ordered_instructions:
-            key = (ix['program_id'], ix['data'][0])
+            # Check if instruction data is not empty before accessing index 0
+            if len(ix['data']) > 0:
+                discriminator = ix['data'][0]
+            else:
+                discriminator = 0  # Default discriminator for empty data
+            
+            key = (ix['program_id'], discriminator)
             if key not in self.program_instructions_seen:
                 reward += 1
                 self.program_instructions_seen[key] = True

@@ -12,12 +12,14 @@ from agents.critic import CriticAgent
 import voyager.utils as U
 from skill_manager.ts_skill_manager import TypeScriptSkillManager
 from voyager.surfpool_env import SurfpoolEnv
+from voyager.utils.progress_tracker import ProgressTracker
 
 load_dotenv()
 
-# DEFAULT_MODEL_NAME = "x-ai/grok-3-mini"
+DEFAULT_MODEL_NAME = "x-ai/grok-3-mini"
 # DEFAULT_MODEL_NAME = "gpt-4o-mini"
-DEFAULT_MODEL_NAME = "gpt-4-0613"
+# DEFAULT_MODEL_NAME = "gpt-4-0613"
+# DEFAULT_MODEL_NAME = "claude-3-5-sonnet-20240620"
 
 class VoyagerClone:
     def __init__(
@@ -83,6 +85,7 @@ class VoyagerClone:
             resume=True if resume or skill_library_dir else False,
         )
         self.recorder = U.EventRecorder(ckpt_dir=ckpt_dir, resume=resume)
+        self.progress_tracker = ProgressTracker(ckpt_dir=ckpt_dir, resume=resume)
         self.resume = resume
 
         # init variables for ollout
@@ -99,7 +102,8 @@ class VoyagerClone:
         self.context = context
         if reset_env:
             await self.env.reset()
-        events = await self.env._get_observation()
+        obs = await self.env._get_observation()
+        events = [("observe", obs)]
         skills = self.skill_manager.retrieve_skills(query=self.context)
         logging.info(
             f"\033[33mRender Action Agent system message with {len(skills)} skills\033[0m"
@@ -117,30 +121,60 @@ class VoyagerClone:
         return self.messages
 
     async def step(self):
-        # pdb.set_trace()
         if self.action_agent_rollout_num_iter < 0:
             raise ValueError("Agent must be reset before stepping")
         ai_message = self.action_agent.llm.invoke(self.messages)
         logging.info(f"\033[34m****Action Agent ai message****\n{ai_message.content}\033[0m")
+        
+        # Track action agent message
+        self.progress_tracker.record_agent_message(
+            "action_agent", 
+            "response", 
+            ai_message.content,
+            self.task
+        )
+        
         self.conversations.append(
             (self.messages[0].content, self.messages[1].content, ai_message.content)
         )
         parsed_result = self.action_agent.process_ai_message(message=ai_message)
         success = False
+        reward = 0
+        critique = ""
+        error_msg = None
+        
         if isinstance(parsed_result, dict):
             code = parsed_result["program_code"] + '\n' + parsed_result["exec_code"]
-            events = await self.env.step2(
+            events, reward, terminated, truncated, info = await self.env.step2(
                 code,
                 programs=self.skill_manager.programs,
                 skill_manager=self.skill_manager,
             )
             self.recorder.record(events, self.task)
+            
+            # Get observation for tracking
+            obs_event = next((e for e in reversed(events) if e[0] == "observe"), None)
+            current_obs = obs_event[1] if obs_event else {}
+            
+            # Check for errors in info
+            if "error" in info:
+                error_msg = info["error"]
+            
             success, critique = self.critic_agent.check_task_success(
                 events=events,
                 task=self.task,
                 context=self.context,
                 max_retries=5,
             )
+            
+            # Track critic agent message
+            self.progress_tracker.record_agent_message(
+                "critic_agent",
+                "critique",
+                critique,
+                self.task
+            )
+            
             new_skills = self.skill_manager.retrieve_skills(
                 query=self.context
                 + "\n\n"
@@ -159,8 +193,11 @@ class VoyagerClone:
         else:
             assert isinstance(parsed_result, str)
             self.recorder.record([], self.task)
-            # record [] events and task
+            critique = f"Failed to parse code: {parsed_result}"
             logging.info(f"\033[34m{parsed_result} Trying again!\033[0m")
+            # Update last_events even on parsing failures to maintain observation state
+            self.last_events = [("observe", parsed_result)]
+            
         assert len(self.messages) == 2
         self.action_agent_rollout_num_iter += 1
         done = (
@@ -182,9 +219,10 @@ class VoyagerClone:
             logging.info(
                 f"\033[32m****Action Agent human message****\n{self.messages[-1].content}\033[0m"
             )
-        return self.messages, 0, done, info
+        return self.messages, reward, done, info
 
     async def rollout(self, *, task, context, reset_env=True):
+        # pdb.set_trace()
         await self.reset(task=task, context=context, reset_env=reset_env)
         while True:
             messages, reward, done, info = await self.step()
@@ -203,65 +241,98 @@ class VoyagerClone:
                 events=self.last_events,
                 max_retries=5
             )
+            
+            # Track curriculum agent decision
+            self.progress_tracker.record_agent_message(
+                "curriculum_agent",
+                "proposed_task",
+                f"Task: {task}\nContext: {context}",
+                task
+            )
+            
             logging.info(
                 f"\033[35mStarting task {task} for at most {self.action_agent_task_max_retries} times\033[0m"
             )
-            try: 
-                messages, reward, done, info = await self.rollout(
-                    task=task,
-                    context=context,
-                    reset_env=reset_env
-                )
-            except Exception as e:
-                # pdb.set_trace()
-                # time.sleep(3)
-                info = {
-                    "task": task,
-                    "success": False
-                }
-                self.last_events, _ = await self.env.reset()
-                logging.info("Your last round rollout terminated due to an error:")
-                logging.info(
-                    f"\033[41m{e}\033[0m"
-                )
+            # try: 
+            messages, reward, done, info = await self.rollout(
+                task=task,
+                context=context,
+                reset_env=reset_env
+            )
+            # except Exception as e:
+            #     # pdb.set_trace()
+            #     # time.sleep(3)
+            #     info = {
+            #         "task": task,
+            #         "success": False
+            #     }
+            #     self.last_events, _ = await self.env.reset()
+            #     logging.info("Your last round rollout terminated due to an error:")
+            #     logging.info(
+            #         f"\033[41m{e}\033[0m"
+            #     )
 
             if info['success']:
                 self.skill_manager.add_new_skill(info)
             
             self.curriculum_agent.update_exploration_progress(info)
+            
+            # Get current observation for tracking from the most recent events
+            # This contains the updated discovered_programs count after the transaction
+            obs_event = next((e for e in reversed(self.last_events) if e[0] == "observe"), None)
+            current_obs = obs_event[1] if obs_event else {}
+            
+            # Handle double-wrapped observation
+            if isinstance(current_obs, list) and len(current_obs) > 0 and current_obs[0][0] == "observe":
+                current_obs = current_obs[0][1]
+            
+            # Track iteration progress
+            self.progress_tracker.record_iteration(
+                task=task,
+                success=info['success'],
+                reward=reward,
+                observation=current_obs,
+                error=info.get('error'),
+                critique=info.get('critique'),
+                completed_tasks=self.curriculum_agent.completed_tasks
+            )
+            
             logging.info(
                 f"\033[35mCompleted tasks: {', '.join(self.curriculum_agent.completed_tasks)}\033[0m"
             )
             logging.info(
                 f"\033[35mFailed tasks: {', '.join(self.curriculum_agent.failed_tasks)}\033[0m"
             )
- 
+        
+        # Export summary report at the end
+        self.progress_tracker.export_summary_report()
+        
         return {
             "completed_tasks": self.curriculum_agent.completed_tasks,
             "failed_tasks": self.curriculum_agent.failed_tasks,
             "skills": self.skill_manager.skills,
         }
 
-    def decompose_task(self, task: str):
+    async def decompose_task(self, task: str):
         if not self.last_events:
-            self.last_events, _ = self.env.reset()
+            self.last_events, _ = await self.env.reset()
         return self.curriculum_agent.decompose_task(task, self.last_events)
 
-    def inference(self, task=None, sub_goals=[], reset_env=True):
+    async def inference(self, task=None, sub_goals=[], reset_env=True):
         if not task and not sub_goals:
             raise ValueError("Either task or sub_goals must be provided")
         if not sub_goals:
-            sub_goals = self.decompose_task(task)
+            sub_goals = await self.decompose_task(task)
         self.curriculum_agent.completed_tasks = []
         self.curriculum_agent.failed_tasks = []
-        self.last_events, _ = self.env.reset()
+        self.last_events, _ = await self.env.reset()
         while self.curriculum_agent.progress < len(sub_goals):
             next_task = sub_goals[self.curriculum_agent.progress]
             context = self.curriculum_agent.get_task_context(next_task)
             logging.info(
                 f"\033[35mStarting task {next_task} for at most {self.action_agent_task_max_retries} times\033[0m"
             )
-            messags, reward, done, info = self.rollout(
+            messags, reward, done, info = await self.rollout(
                 task=next_task,
                 context=context,
                 reset_env=reset_env,

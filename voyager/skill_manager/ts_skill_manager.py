@@ -65,6 +65,50 @@ class TypeScriptSkillManager:
         #     os.makedirs(self.skills_dir)
         # self._load_existing_skills()  # This sets skills to strings instead of dicts
 
+    # ================================
+    # Code Loop
+
+    def run_code_loop_code(self, code: str, agent_pubkey: str, latest_blockhash: str):
+        with open("code_loop_code.ts", "w") as f:
+            f.write(code)
+        command = ["bun", "voyager/skill_runner/runSkill.ts", "code_loop_code.ts", "4000", agent_pubkey, latest_blockhash]
+        try:
+            result = subprocess.run(
+                command,
+                capture_output=True,
+                text=True,
+                check=True,
+                encoding='utf-8'
+            )
+            # runSkill.ts now outputs a JSON object with serialized_tx
+            return json.loads(result.stdout.strip("\n"))
+        except subprocess.CalledProcessError as e:
+            # When there's an error, runSkill.ts prints JSON to stdout and error details to stderr
+            try:
+                # Try to parse the JSON output from stdout (this has the structured error info)
+                if e.stdout:
+                    error_data = json.loads(e.stdout.strip("\n"))
+                    # Also capture stderr for full error details
+                    if e.stderr:
+                        error_data['stderr'] = e.stderr
+                    return error_data
+                elif e.stderr:
+                    # Fallback if only stderr is available
+                    return {"success": False, "reason": f"Skill runner error", "stderr": e.stderr}
+            except json.JSONDecodeError:
+                # Fallback for unexpected output
+                return {
+                    "success": False, 
+                    "reason": "Skill runner error",
+                    "stdout": e.stdout if e.stdout else "",
+                    "stderr": e.stderr if e.stderr else ""
+                }
+        except FileNotFoundError:
+            return {"success": False, "reason": "Bun command not found. Make sure Bun is installed and in your PATH."}
+
+
+    # ================================
+
     @property
     def programs(self):
         programs = []
