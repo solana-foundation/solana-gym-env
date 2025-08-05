@@ -36,18 +36,19 @@ You will be given a list of programs that we recommend you interact with, but yo
    - Third transaction: Combine remaining System Program + other program instructions
    
 3. **System Program (11111111111111111111111111111111)** has MANY instructions:
-   - Transfer (2) - Transfers SOL between accounts
-   - CreateAccount (0) - Creates a new account
-   - Assign (1) - Assigns account to a program  
-   - CreateAccountWithSeed (3) - Creates derived account
-   - AdvanceNonceAccount (4) - Nonce operations
-   - WithdrawNonceAccount (5) - Withdraw from nonce
-   - InitializeNonceAccount (6) - Initialize nonce
-   - AuthorizeNonceAccount (7) - Authorize nonce
-   - Allocate (8) - Allocate space
-   - AllocateWithSeed (9) - Allocate with seed
-   - AssignWithSeed (10) - Assign with seed
-   - TransferWithSeed (11) - Transfer with seed
+   - Transfer (2) - SystemProgram.transfer() 
+   - CreateAccount (0) - SystemProgram.createAccount()
+   - Assign (1) - SystemProgram.assign()
+   - CreateAccountWithSeed (3) - SystemProgram.createAccountWithSeed()
+   - AdvanceNonceAccount (4) - SystemProgram.advanceNonceAccount()
+   - WithdrawNonceAccount (5) - SystemProgram.withdrawNonceAccount()
+   - InitializeNonceAccount (6) - SystemProgram.initializeNonceAccount()
+   - AuthorizeNonceAccount (7) - SystemProgram.authorizeNonceAccount()
+   - Allocate (8) - SystemProgram.allocate()
+   - AllocateWithSeed (9) - Use allocate() with seed params
+   - AssignWithSeed (10) - Use assign() with seed params
+   - TransferWithSeed (11) - Use transfer() with seed params
+   - UpgradeNonceAccount (12) - For nonce account upgrades
    
 4. **Explore each program systematically** - But combine multiple instructions per transaction!
 5. **Read existing skills first** to see what you've already done
@@ -456,7 +457,51 @@ FUNCTIONS = [
                 'additionalProperties': False,
             },
         }
-    }
+    },
+    # {
+    #     'type': 'function',
+    #     'function': {
+    #         'name': 'delegateToCodeAgent',
+    #         'description': 'Delegate TypeScript code generation to a specialized coding agent that focuses on writing error-free Solana transaction code',
+    #         'strict': True,
+    #         'parameters': {
+    #             'type': 'object',
+    #             'properties': {
+    #                 'skill_name': {
+    #                     'type': 'string',
+    #                     'description': 'Name of the skill to generate',
+    #                 },
+    #                 'instructions': {
+    #                     'type': 'string',
+    #                     'description': 'Detailed instructions for what the code should do, including specific programs and instructions to use',
+    #                 },
+    #                 'context': {
+    #                     'type': 'object',
+    #                     'description': 'Additional context like agent pubkey, program IDs, IDL information, etc.',
+    #                     'properties': {
+    #                         'programs': {
+    #                             'type': 'array',
+    #                             'items': {
+    #                                 'type': 'object',
+    #                                 'properties': {
+    #                                     'program_id': {'type': 'string'},
+    #                                     'program_name': {'type': 'string'},
+    #                                     'idl_snippet': {'type': 'string'}
+    #                                 }
+    #                             }
+    #                         },
+    #                         'examples': {
+    #                             'type': 'array',
+    #                             'items': {'type': 'string'}
+    #                         }
+    #                     }
+    #                 }
+    #             },
+    #             'required': ['skill_name', 'instructions', 'context'],
+    #             'additionalProperties': False,
+    #         },
+    #     }
+    # }
 ]
 
 def getProgramIdl(program_id: str):
@@ -548,6 +593,414 @@ class SimpleExplorer():
             json.dump(messages, f, indent=2)
         with open(f"traces/{self.run_id}_reward.csv", "a") as f:
             f.write(f"{len(self.messages)},{reward}\n")
+    
+    async def delegate_to_code_agent(self, skill_name: str, instructions: str, context: dict) -> str:
+        """
+        Delegate code generation to a specialized coding agent that focuses on writing
+        error-free TypeScript code for Solana transactions. Gives the agent 3 tries to fix errors.
+        """
+        from langchain.schema import SystemMessage, HumanMessage
+        
+        # Create system message for the coding agent
+        system_message = SystemMessage(content="""You are an expert TypeScript developer specializing in Solana blockchain development.
+Your ONLY job is to write error-free TypeScript code that creates Solana transactions.
+
+CRITICAL RULES:
+1. Return ONLY the TypeScript code, no explanations or comments
+2. The function MUST be: export async function executeSkill(blockhash: string): Promise<string>
+3. Import ALL dependencies you use at the top of the file
+4. Return a base64 encoded serialized transaction
+5. Handle all errors gracefully
+6. Follow the exact pattern shown in examples
+7. If you receive error feedback, carefully read it and fix ALL issues
+
+=== TYPESCRIPT RULES ===
+**SIGNING ORDER IS CRITICAL**: ALWAYS set tx.recentBlockhash and tx.feePayer BEFORE any tx.partialSign() calls!
+
+1. ALWAYS import ALL dependencies you use. Common imports:
+   - SystemProgram from '@solana/web3.js' if you use SystemProgram
+   - Any SPL token functions from '@solana/spl-token'
+2. Function declaration MUST be: export async function executeSkill(blockhash: string): Promise<string>
+3. Double-check program IDs for typos. Common program IDs:
+   - System Program: 11111111111111111111111111111111
+   - Token Program: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
+   - Associated Token Program: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
+4. Do NOT use await on non-async functions
+5. All async operations must be awaited properly
+6. Transaction construction order: instructions → blockhash/feePayer → partialSign → serialize
+
+=== IMPORTANT NOTES ===
+1. Each skill must create exactly ONE unsigned transaction
+2. The transaction will be signed and sent by the environment
+3. Return the base64 encoded serialized transaction
+4. ALWAYS check your imports - missing imports are the #1 cause of failures
+5. ALWAYS use correct function syntax: "export async function" not "export asynchttp function"
+6. **CRITICAL for CreateAccount and signing order**:
+   - Generate a new Keypair with Keypair.generate()
+   - ALWAYS set tx.recentBlockhash = blockhash BEFORE calling tx.partialSign()
+   - ALWAYS set tx.feePayer = agentPubkey BEFORE calling tx.partialSign()
+   - The correct order is: 1) Add instructions, 2) Set blockhash & feePayer, 3) partialSign, 4) serialize
+7. Try putting as many valid unique instructions as possible in a single transaction
+
+=== SYSTEM PROGRAM INSTRUCTIONS (CORRECT USAGE) ===
+The web3.js library doesn't have direct methods for all System Program instructions. Here's how to use them:
+
+Available as direct methods:
+- SystemProgram.transfer() - Transfer SOL
+- SystemProgram.createAccount() - Create new account
+- SystemProgram.assign() - Assign account to program
+- SystemProgram.createAccountWithSeed() - Create account with seed
+
+For instructions like allocateWithSeed, assignWithSeed, transferWithSeed that don't have direct methods,
+you need to create the instruction manually. Here's an example for allocate:
+
+```typescript
+// For allocate instruction (works for both regular and with seed)
+const allocateParams = {
+  accountPubkey: accountToAllocate,
+  space: 200,
+};
+tx.add(SystemProgram.allocate(allocateParams));
+```
+
+Note: Some older documentation might show methods that don't exist. Always check what's actually available in the SystemProgram object.
+
+AVAILABLE DEPENDENCIES (from package.json):
+- @solana/web3.js (^1.98.2) - Transaction, SystemProgram, PublicKey, Keypair, etc.
+- @solana/spl-token (^0.3.8) - All token functions
+- @coral-xyz/anchor (^0.30.1) - If needed for Anchor programs""")
+
+        # Initial human prompt
+        base_human_prompt = f"""CONTEXT:
+- Agent Public Key: {str(self.env.agent_keypair.pubkey())}
+- Skill Name: {skill_name}
+
+INSTRUCTIONS:
+{instructions}
+
+{self._format_context_for_code_agent(context)}
+
+=== WORKING EXAMPLES FOR REFERENCE ===
+
+Example 1 - System Program Transfer:
+```typescript
+import {{ Transaction, SystemProgram, PublicKey }} from '@solana/web3.js';
+
+export async function executeSkill(blockhash: string): Promise<string> {{
+    const tx = new Transaction();
+    const agentPubkey = new PublicKey('{str(self.env.agent_keypair.pubkey())}');
+
+    tx.add(
+        SystemProgram.transfer({{
+            fromPubkey: agentPubkey,
+            toPubkey: agentPubkey,  // Self-transfer for safety
+            lamports: 100000,
+        }})
+    );
+
+    tx.recentBlockhash = blockhash;
+    tx.feePayer = agentPubkey;
+
+    const serializedTx = tx.serialize({{
+        requireAllSignatures: false,
+        verifySignatures: false
+    }}).toString('base64');
+
+    return serializedTx;
+}}
+```
+
+Example 2 - System Program CreateAccount (IMPORTANT PATTERN):
+```typescript
+import {{ Transaction, SystemProgram, PublicKey, Keypair }} from '@solana/web3.js';
+
+export async function executeSkill(blockhash: string): Promise<string> {{
+    const tx = new Transaction();
+    const agentPubkey = new PublicKey('{str(self.env.agent_keypair.pubkey())}');
+    
+    // Generate a new keypair for the account we're creating
+    const newAccount = Keypair.generate();
+    
+    // Add CreateAccount instruction
+    tx.add(
+        SystemProgram.createAccount({{
+            fromPubkey: agentPubkey,           // Who pays
+            newAccountPubkey: newAccount.publicKey,  // The new account
+            lamports: 1000000,                 // Rent-exempt amount (~0.001 SOL)
+            space: 0,                          // No data needed
+            programId: SystemProgram.programId // Owner will be System Program
+        }})
+    );
+    
+    // CRITICAL ORDER:
+    // 1. FIRST set blockhash and fee payer
+    tx.recentBlockhash = blockhash;
+    tx.feePayer = agentPubkey;
+    
+    // 2. THEN sign with the new account keypair
+    tx.partialSign(newAccount);
+    
+    const serializedTx = tx.serialize({{
+        requireAllSignatures: false,  // Agent will sign later
+        verifySignatures: false
+    }}).toString('base64');
+    
+    return serializedTx;
+}}
+```
+
+Write the TypeScript code now:"""
+
+        # Try up to 3 times
+        for attempt in range(3):
+            try:
+                logging.info(f"\n{'='*80}")
+                logging.info(f"🤖 DELEGATE TO CODE AGENT - Attempt {attempt + 1}/3")
+                logging.info(f"Skill Name: {skill_name}")
+                logging.info(f"Model: {self.model}")
+                logging.info(f"{'='*80}")
+                
+                # Prepare the human message
+                if attempt == 0:
+                    human_message = HumanMessage(content=base_human_prompt)
+                    logging.info("First attempt - no error feedback")
+                else:
+                    # Add error feedback for retry attempts
+                    logging.info(f"Retry attempt {attempt + 1} - Adding error feedback:")
+                    logging.info(f"Previous error: {error_info['error']}")
+                    if error_info.get('details'):
+                        logging.info(f"Error details: {error_info['details'][:500]}...")  # First 500 chars
+                    
+                    error_feedback = f"""{base_human_prompt}
+
+=== PREVIOUS ATTEMPT {attempt} FAILED ===
+Error: {error_info['error']}
+Details: {error_info.get('details', 'No details available')}
+
+Please fix these errors and generate the corrected code:"""
+                    human_message = HumanMessage(content=error_feedback)
+                
+                # Determine the best model for coding
+                coding_model = self.model
+                logging.info(f"Using model: {coding_model}")
+                
+                # Create a separate LLM instance for coding with lower temperature
+                coding_llm = ChatOpenAI(
+                    base_url="https://openrouter.ai/api/v1",
+                    model=coding_model,
+                    api_key=os.getenv("OPENROUTER_API_KEY"),
+                    temperature=0.1 if attempt == 0 else 0.2,  # Slightly higher temp on retries
+                    max_tokens=2000,
+                )
+                
+                # Log the instructions being sent
+                logging.info(f"Instructions summary: {instructions[:200]}...")
+                
+                # Invoke the LLM using LangChain
+                logging.info("Invoking LLM for code generation...")
+                response = await coding_llm.ainvoke([system_message, human_message])
+                
+                generated_code = response.content.strip()
+                logging.info(f"Generated code length: {len(generated_code)} characters")
+                
+                # Clean up the code if it has markdown code blocks
+                if generated_code.startswith("```"):
+                    lines = generated_code.split("\n")
+                    # Remove first and last lines if they're code block markers
+                    if lines[0].startswith("```"):
+                        lines = lines[1:]
+                    if lines[-1] == "```":
+                        lines = lines[:-1]
+                    generated_code = "\n".join(lines)
+                    logging.info("Cleaned markdown code blocks")
+                
+                # Log first few lines of generated code
+                code_preview = generated_code.split('\n')[:10]
+                logging.info("Generated code preview:")
+                for line in code_preview:
+                    logging.info(f"  {line}")
+                
+                # Test the generated code
+                logging.info(f"Testing generated code (attempt {attempt + 1}/3)...")
+                test_result = await self._test_generated_code(skill_name, generated_code)
+                
+                if test_result['success']:
+                    logging.info(f"✅ Code generation successful on attempt {attempt + 1}")
+                    return generated_code
+                else:
+                    error_info = {
+                        'error': test_result.get('reason', 'Unknown error'),
+                        'details': test_result.get('stderr', test_result.get('details', ''))
+                    }
+                    logging.warning(f"❌ Code generation attempt {attempt + 1} failed")
+                    logging.warning(f"Error: {error_info['error']}")
+                    if error_info.get('details'):
+                        logging.warning(f"Full error details:\n{error_info['details']}")
+                    
+                    # Also log the stdout if available
+                    if test_result.get('stdout'):
+                        logging.warning(f"Stdout:\n{test_result['stdout']}")
+                    
+                    if attempt == 2:  # Last attempt
+                        logging.error(f"❌ All 3 attempts failed for skill {skill_name}")
+                        logging.error("Final generated code that failed:")
+                        logging.error(generated_code)
+                        return None
+                        
+            except Exception as e:
+                logging.error(f"❌ Exception in delegate_to_code_agent attempt {attempt + 1}: {e}")
+                logging.error(f"Exception type: {type(e).__name__}")
+                import traceback
+                logging.error(f"Traceback:\n{traceback.format_exc()}")
+                
+                if attempt == 2:  # Last attempt
+                    logging.error(f"All attempts failed due to exceptions")
+                    return None
+                    
+                # Set error_info for next iteration
+                error_info = {
+                    'error': f"Exception: {type(e).__name__}: {str(e)}",
+                    'details': traceback.format_exc()
+                }
+                    
+        return None
+    
+    async def _test_generated_code(self, skill_name: str, code: str) -> dict:
+        """Test the generated code to see if it compiles and runs"""
+        logging.info(f"Testing code for skill: {skill_name}")
+        try:
+            # We need to temporarily save the code to test it properly
+            # This mimics what execute_skill does
+            temp_file_path = os.path.join(self.skills.ckpt_dir, "skill", "code", f"_temp_test_{skill_name}.ts")
+            
+            # Write the code to a temporary file
+            with open(temp_file_path, "w") as f:
+                f.write(code)
+            logging.info(f"Wrote temporary test file: {temp_file_path}")
+            
+            try:
+                # Get the latest blockhash for testing
+                blockhash_resp = await self.env.client.get_latest_blockhash()
+                latest_blockhash_str = str(blockhash_resp.value.blockhash)
+                logging.info(f"Got blockhash for testing: {latest_blockhash_str[:8]}...")
+                
+                # Use execute_skill with positional arguments (matching the method signature)
+                logging.info("Executing skill for testing...")
+                result = self.skills.execute_skill(
+                    temp_file_path,  # file_path
+                    10000,  # timeout_ms
+                    str(self.env.agent_keypair.pubkey()),  # agent_pubkey
+                    latest_blockhash_str  # latest_blockhash
+                )
+                
+                logging.info(f"Execution result keys: {list(result.keys())}")
+                
+                # The result should have a structure like:
+                # {"serialized_tx": "..."} for success
+                # {"success": False, "reason": "...", "stderr": "..."} for failure
+                
+                # Check if we got a serialized transaction (success case)
+                if "serialized_tx" in result and result["serialized_tx"]:
+                    # Try to decode it to ensure it's valid
+                    try:
+                        tx_bytes = base64.b64decode(result["serialized_tx"])
+                        logging.info(f"✅ Successfully generated transaction ({len(tx_bytes)} bytes)")
+                        # If we can decode it, the code works
+                        return {
+                            "success": True,
+                            "serialized_tx": result["serialized_tx"]
+                        }
+                    except Exception as e:
+                        logging.error(f"Failed to decode transaction: {e}")
+                        return {
+                            "success": False,
+                            "reason": f"Invalid transaction format: {str(e)}",
+                            "stderr": str(e)
+                        }
+                else:
+                    # This is an error case
+                    logging.warning("No serialized_tx in result - execution failed")
+                    
+                    # Log all available error information
+                    if "error" in result:
+                        logging.warning(f"Error field: {result['error']}")
+                    if "reason" in result:
+                        logging.warning(f"Reason field: {result['reason']}")
+                    if "stderr" in result:
+                        logging.warning(f"Stderr:\n{result['stderr']}")
+                    if "stdout" in result:
+                        logging.warning(f"Stdout:\n{result['stdout']}")
+                    if "details" in result:
+                        logging.warning(f"Details:\n{result['details']}")
+                    
+                    # make sure we have the right structure
+                    if "success" in result and not result["success"]:
+                        return result  # Already has the right format
+                    else:
+                        # Convert to error format if needed
+                        return {
+                            "success": False,
+                            "reason": result.get("error", result.get("reason", "Unknown error")),
+                            "stderr": result.get("stderr", str(result)),
+                            "details": result.get("details", "")
+                        }
+                    
+            finally:
+                # Clean up the temporary file
+                if os.path.exists(temp_file_path):
+                    os.remove(temp_file_path)
+                    logging.info("Cleaned up temporary test file")
+                    
+        except Exception as e:
+            logging.error(f"Exception in _test_generated_code: {e}")
+            import traceback
+            logging.error(f"Traceback:\n{traceback.format_exc()}")
+            return {
+                "success": False,
+                "reason": f"Test execution error: {str(e)}",
+                "stderr": str(e)
+            }
+    
+    def _format_context_for_code_agent(self, context: dict) -> str:
+        """Format the context information for the coding agent."""
+        formatted = []
+        
+        if "programs" in context:
+            formatted.append("\nPROGRAM INFORMATION:")
+            for prog in context["programs"]:
+                formatted.append(f"\nProgram: {prog.get('program_name', 'Unknown')}")
+                formatted.append(f"ID: {prog.get('program_id', 'Unknown')}")
+                if "idl_snippet" in prog:
+                    formatted.append(f"IDL Info:\n{prog['idl_snippet']}")
+        
+        if "examples" in context:
+            formatted.append("\nEXAMPLE CODE PATTERNS:")
+            for i, example in enumerate(context["examples"], 1):
+                formatted.append(f"\nExample {i}:")
+                formatted.append(example)
+        
+        return "\n".join(formatted)
+    
+    async def save_and_execute_skill(self, skill_name: str, skill_code: str, tool_message: Dict[str, Any]):
+        """Common method to save a skill and execute it. Used by both writeSkillAndExecute and delegateToCodeAgent."""
+        # Save skill file directly
+        skill_dir = f"{self.skills.ckpt_dir}/skill/code"
+        file_path = os.path.join(skill_dir, f"{skill_name}.ts")
+        with open(file_path, "w") as f:
+            f.write(skill_code)
+        
+        # Use the add_new_skill method to register it properly
+        skill_info = {
+            'program_name': skill_name,
+            'program_code': skill_code
+        }
+        self.skills.add_new_skill(skill_info)
+        
+        # Record skill creation in metrics
+        self.record_message_metrics(len(self.messages), skill_name=skill_name)
+        
+        # Execute the skill
+        await self.execute_skill(skill_name, tool_message)
     
     def save_metrics(self):
         """Save current metrics to JSON file"""
@@ -748,25 +1201,9 @@ class SimpleExplorer():
                         txs = await self.env.fetch_transactions(program_id)
                         tool_message["content"] = json.dumps(txs)
                     elif function_name == "writeSkillAndExecute":
-                        skill_name = function_args["skill_name"]
+                        skill_name = function_args["skill_name"] if 'skill_name' in function_args else str(uuid.uuid4())
                         skill_code = function_args["skill_code"]
-                        # Save skill file directly
-                        skill_dir = f"{self.skills.ckpt_dir}/skill/code"
-                        file_path = os.path.join(skill_dir, f"{skill_name}.ts")
-                        with open(file_path, "w") as f:
-                            f.write(skill_code)
-                        
-                        # Use the add_new_skill method to register it properly
-                        skill_info = {
-                            'program_name': skill_name,
-                            'program_code': skill_code
-                        }
-                        self.skills.add_new_skill(skill_info)
-                        
-                        # Record skill creation in metrics
-                        self.record_message_metrics(len(self.messages), skill_name=skill_name)
-
-                        await self.execute_skill(skill_name, tool_message)
+                        await self.save_and_execute_skill(skill_name, skill_code, tool_message)
                         
                         # tool_message["content"] = f"Skill {skill_name} written to {file_path}"
                     # elif function_name == "readSkills":
@@ -781,6 +1218,21 @@ class SimpleExplorer():
                         program_id = function_args["program_id"]
                         idl = getProgramIdl(program_id)
                         tool_message["content"] = f"{json.dumps({ 'idl': idl })}"
+                    # elif function_name == "delegateToCodeAgent":
+                    #     skill_name = function_args["skill_name"] if 'skill_name' in function_args else str(uuid.uuid4())
+                    #     instructions = function_args["instructions"]
+                    #     context = function_args["context"]
+                        
+                    #     # Generate code using a specialized coding agent
+                    #     generated_code = await self.delegate_to_code_agent(skill_name, instructions, context)
+                        
+                    #     if generated_code:
+                    #         await self.save_and_execute_skill(skill_name, generated_code, tool_message)
+                    #     else:
+                    #         tool_message["content"] = json.dumps({
+                    #             "success": False,
+                    #             "error": "Failed to generate code"
+                    #         })
                     else:
                         raise ValueError(f"Unexpected function name: {function_name}")
                     self.messages.append(tool_message)
