@@ -10,6 +10,6 @@ export async function main() {
         toPubkey: kp.publicKey,
         lamports: 100000,
     }));
-    tx.feePayer = kp.publicKey; tx.sign(kp);
-    return tx.serialize().toString('base64');
+    tx.feePayer = kp.publicKey; tx.partialSign(kp);
+    return tx.serialize({ requireAllSignatures: false }).toString('base64');
 }

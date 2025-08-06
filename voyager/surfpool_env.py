@@ -422,7 +422,7 @@ class SurfpoolEnv(gym.Env):
                 discriminator = 0  # Default discriminator for empty data
             
             key = (ix['program_id'], discriminator)
-            if key not in self.program_instructions_seen:
+            if key not in self.program_instructions_seen and key[0] == "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD":
                 reward += 1
                 self.program_instructions_seen[key] = True
                 logging.info(f"Discovered new program instruction ({str(key[0])}, {str(key[1])})")

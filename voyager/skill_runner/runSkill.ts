@@ -2,6 +2,7 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 import path from 'path';
 import { Transaction } from '@solana/web3.js';
+import { KaminoMarket } from '@kamino-finance/klend-sdk';
 
 // const execAsync = promisify(exec);
 
@@ -94,11 +95,11 @@ async function runSkill(): Promise<void> {
     } catch (error: any) {
         // First, let Bun print the actual error with its formatting to stderr
         console.error(error);
-        
+
         // Extract error message - handle both regular errors and Bun's syntax errors
         let errorMessage = 'An unknown error occurred.';
         let errorDetails: string[] = [];
-        
+
         // Check if this is an AggregateError (Bun's compilation errors)
         if (error?.name === 'AggregateError' && Array.isArray(error.errors)) {
             errorMessage = error.message || 'Multiple errors occurred';
@@ -125,7 +126,7 @@ async function runSkill(): Promise<void> {
             // Try to get string representation
             errorDetails.push(String(error));
         }
-        
+
         // Return a JSON response for the Python side to parse
         console.log(JSON.stringify({
             serialized_tx: null,

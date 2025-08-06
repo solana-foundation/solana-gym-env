@@ -69,9 +69,11 @@ class TypeScriptSkillManager:
     # Code Loop
 
     def run_code_loop_code(self, code: str, agent_pubkey: str, latest_blockhash: str):
-        with open("code_loop_code.ts", "w") as f:
+        # Write the skill file to the skill_runner directory where node_modules are available
+        skill_file_path = "voyager/skill_runner/code_loop_code.ts"
+        with open(skill_file_path, "w") as f:
             f.write(code)
-        command = ["bun", "voyager/skill_runner/runSkill.ts", "code_loop_code.ts", "4000", agent_pubkey, latest_blockhash]
+        command = ["bun", "voyager/skill_runner/runSkill.ts", skill_file_path, "4000", agent_pubkey, latest_blockhash]
         try:
             result = subprocess.run(
                 command,

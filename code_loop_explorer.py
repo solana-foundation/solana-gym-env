@@ -8,6 +8,7 @@ import uuid
 import pdb
 from datetime import datetime
 from typing import Dict, Any, List, Optional
+from voyager.prompts import load_prompt
 
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, AIMessage
@@ -146,19 +147,11 @@ class CodeLoopExplorer:
         obs_dict = observation[0][1] if observation else {}
         agent_pubkey = str(env.agent_keypair.pubkey())
         
-        # Custom system prompt emphasizing TypeScript code blocks with correct function signature
-        system_prompt = f"""You are an expert Solana blockchain developer. Your ONLY way to interact with the blockchain is by writing TypeScript code.
-
-🚨 CRITICAL REQUIREMENTS 🚨
-1. You MUST respond with TypeScript code in ```typescript blocks
-2. The function signature MUST be: export async function executeSkill(blockhash: string): Promise<string>
-3. You MUST return a base64 encoded serialized transaction
-4. Each response SHOULD contain at least one ```typescript code block
-5. If you don't include code, nothing will happen!
-
-⏰ TIME LIMIT: You have ONLY {self.max_messages} messages total to maximize rewards!
-BE EFFICIENT: Pack many instructions per transaction to get maximum rewards!
-URGENCY: Every message counts - make each transaction count with as many instructions as you can!
+        # Load system prompt from file
+        base_prompt = load_prompt("simple_explorer_system")
+        
+        # Build full prompt with current state
+        system_prompt = f"""{base_prompt}
 
 === CURRENT STATE ===
 SOL Balance: {obs_dict.get('sol_balance', 0):.4f} SOL
@@ -166,80 +159,7 @@ Agent Pubkey: {agent_pubkey}
 Block Height: {obs_dict.get('block_height', 0)}
 Programs Discovered: {obs_dict.get('discovered_programs', 0)}
 Total Reward: {env.total_reward}
-
-=== CONNECTION INFO ===
-You are connected to Solana mainnet through Surfpool - a safe sandbox proxy.
-Surfpool allows you to interact with real mainnet data in a sandboxed environment.
-RPC Endpoint: http://localhost:8899 or http://127.0.0.1:8899
-⚠️ IMPORTANT: If you need to create a Connection object, ONLY use localhost:8899
-Example: const connection = new Connection('http://localhost:8899');
-✅ The environment is pre-configured - focus on building transactions!
-
-=== AVAILABLE DEPENDENCIES ===
-You can import from these packages:
-- @solana/web3.js (v1.98.2) - Core Solana SDK
-- @solana/spl-token (v0.4.13) - SPL Token operations
-- @coral-xyz/anchor (v0.30.1) - Anchor framework
-- @coral-xyz/borsh (v0.31.1) - Borsh serialization
-- @solana/kit (v2.3.0) - Solana development kit
-- @codama/nodes-from-anchor (v1.2.3) - Codama IDL support
-- buffer - Node.js Buffer for binary data
-
-=== EXACT CODE PATTERN (MUST FOLLOW) ===
-```typescript
-import {{ Transaction, SystemProgram, PublicKey }} from '@solana/web3.js';
-
-export async function executeSkill(blockhash: string): Promise<string> {{
-    const tx = new Transaction();
-    const agentPubkey = new PublicKey('{agent_pubkey}');
-    
-    // Add your instructions here
-    tx.add(
-        SystemProgram.transfer({{
-            fromPubkey: agentPubkey,
-            toPubkey: new PublicKey("11111111111111111111111111111111"),
-            lamports: 100000
-        }})
-    );
-    
-    // Set transaction properties
-    tx.recentBlockhash = blockhash;
-    tx.feePayer = agentPubkey;
-    
-    // Return base64 encoded transaction
-    return tx.serialize({{
-        requireAllSignatures: false,
-        verifySignatures: false
-    }}).toString('base64');
-}}
-```
-
-=== 🎯 MAXIMIZE REWARDS: START SIMPLE, THEN SCALE UP! 🎯 ===
-- You earn +1 reward for EACH unique (program_id, instruction_discriminator) pair
-
-📈 WINNING STRATEGY:
-1. START SIMPLE: Begin with 2-3 instructions you KNOW work (e.g., self-transfers, memos)
-2. BUILD CONFIDENCE: Once those work, gradually add more instructions
-3. SCALE UP: After success, pack 10-20+ instructions per transaction
-4. MIX PROGRAMS: Combine System, Memo, Compute Budget, Token, Token-2022 programs
-5. USE TOKEN-2022: Token-2022 (TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb) has many extensions!
-   - Each extension instruction = unique reward!
-   - Try: transfer fees, interest bearing, confidential transfers, metadata, etc.
-
-Why this works:
-- ✅ Early success builds momentum
-- ✅ You learn what works in this environment
-- ✅ Failed transactions = 0 rewards, so start safe!
-- ✅ Once confident, go aggressive with 15+ instructions
-
-TARGET PROGRESSION:
-- Message 1-3: 2-5 safe instructions (test the waters)
-- Message 4-10: 5-10 instructions (gaining confidence)  
-- Message 11+: 10-20+ instructions (maximize rewards!)
-
-Remember: 1 transaction with 20 instructions > 20 transactions with 1 instruction!
-
-=== MULTI-INSTRUCTION EXAMPLE (MORE REWARDS!) ===
+Message {len(self.messages) + 1}/{self.max_messages}
 ```typescript
 import {{ Transaction, SystemProgram, PublicKey, Keypair }} from '@solana/web3.js';
 
