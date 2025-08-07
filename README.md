@@ -2,6 +2,31 @@
 
 > **An implementation of the NVIDIA Voyager paper adapted for Solana blockchain exploration, where AI agents learn to autonomously discover and interact with DeFi protocols through self-generated TypeScript skills.**
 
+## 🚀 Latest: Code Loop Explorer (Best Performance)
+
+The **Code Loop Explorer** is our newest and highest-performing experiment. It uses a streamlined architecture where the LLM directly generates TypeScript code blocks in response, eliminating complex parsing and achieving superior results.
+
+### Quick Start - Code Loop Explorer
+
+```bash
+# Run a single exploration session
+export MODEL_NAME="google/gemini-2.5-flash"  # or "openai/gpt-4o-mini", "openai/gpt-oss-120b", etc.
+export MAX_MESSAGES=50
+uv run python code_loop_explorer.py
+
+# Run model comparison batch (recommended)
+uv run python run_model_comparison_batch.py
+
+# Analyze results with advanced visualizations
+uv run python analyze_code_loop_performance.py
+```
+
+### Key Achievements
+- **34 unique instruction rewards** in a single run (Gemini 2.5 Flash)
+- **60% success rate** for transaction execution (best run)
+- **Simplified architecture**: Direct code generation without complex parsing
+- **Statistical analysis**: Error bars, violin plots, and trajectory visualizations
+
 ## Overview
 
 This project adapts the groundbreaking [Voyager paper](https://voyager.minedojo.org/) from Minecraft to the Solana blockchain. Instead of exploring a 3D world, our agents explore the DeFi ecosystem, discovering new protocols and building a library of reusable skills.
@@ -12,18 +37,20 @@ This project adapts the groundbreaking [Voyager paper](https://voyager.minedojo.
 - **Skill Library**: Accumulated knowledge persists across episodes
 - **Protocol Discovery**: Rewards for finding new program instructions
 - **Safe Environment**: Runs against local Solana test validator (surfpool)
-- **Progress Tracking**: Comprehensive CSV logging and agent message tracking
+- **Model Comparison**: Built-in tools for comparing different LLMs
+- **Advanced Analytics**: Comprehensive visualization with error bands and distributions
 
-## Architecture
+## Architecture Evolution
 
+### Current Best: Code Loop Explorer
 ```
 ┌─────────────────────────────────────────┐
-│         Voyager Agent System            │
+│         Code Loop Explorer              │
 ├─────────────────────────────────────────┤
-│  • Curriculum Agent: Proposes tasks     │
-│  • Action Agent: Generates TypeScript   │
-│  • Critic Agent: Evaluates success      │
-│  • Skill Manager: Stores & retrieves    │
+│  • Direct TypeScript code extraction    │
+│  • No complex parsing or AST analysis   │
+│  • Immediate execution feedback         │
+│  • Streamlined message flow             │
 └────────────────┬───────────────────────┘
                  │
                  ▼
@@ -32,20 +59,20 @@ This project adapts the groundbreaking [Voyager paper](https://voyager.minedojo.
 ├─────────────────────────────────────────┤
 │  • Executes generated TypeScript code   │
 │  • Returns serialized transactions      │
-│  • Enforces single transaction limit    │
+│  • Single transaction per skill         │
 └────────────────┬───────────────────────┘
                  │
                  ▼
 ┌─────────────────────────────────────────┐
 │    Surfpool (Local Solana Validator)    │
 ├─────────────────────────────────────────┤
-│  • Pre-funded test accounts             │
 │  • Mainnet fork with real programs      │
-│  • Safe sandbox for experimentation     │
+│  • Safe sandbox environment             │
+│  • Instant transaction feedback         │
 └─────────────────────────────────────────┘
 ```
 
-## Quick Start
+## Installation
 
 ### Prerequisites
 
@@ -54,7 +81,7 @@ This project adapts the groundbreaking [Voyager paper](https://voyager.minedojo.
 - [Surfpool](https://github.com/novy4/surfpool) (Solana test environment)
 - OpenRouter API key for LLM access
 
-### Installation
+### Setup
 
 ```bash
 # Clone the repository
@@ -70,152 +97,204 @@ cd ../..
 
 # Set up environment variables
 cp .env.example .env
-# Edit .env and add your OPENROUTER_API_KEY & OPENAI_API_KEY
+# Edit .env and add your OPENROUTER_API_KEY
 ```
 
-### Running the Voyager
+## Running Experiments
+
+### 1. Code Loop Explorer (Recommended)
+
+The Code Loop Explorer is the latest and most effective approach:
 
 ```bash
-# Run the main Voyager learning loop
-uv run python voyager/voyager_clone.py
+# Single run with specific model
+export MODEL_NAME="google/gemini-2.5-flash"
+export MAX_MESSAGES=50
+uv run python code_loop_explorer.py
 
-# View progress (in another terminal)
+# Batch comparison of multiple models
+uv run python run_model_comparison_batch.py
+```
+
+### 2. Simple Explorer
+
+A simplified version using OpenAI function calling:
+
+```bash
+uv run python simple_explorer.py
+```
+
+### 3. Original Voyager (Legacy)
+
+The full multi-agent system from the original paper:
+
+```bash
+uv run python voyager/voyager_clone.py
+```
+
+## Model Comparison & Analysis
+
+### Running Comparisons
+
+```bash
+# Run batch comparison (4 models, 3 runs each, 50 messages)
+uv run python run_model_comparison_batch.py
+
+# Analyze results with comprehensive visualizations
+uv run python analyze_code_loop_performance.py
+```
+
+### Analysis Features
+
+The analysis script generates:
+- **Reward progression with error bands**: Shows mean performance with confidence intervals
+- **Individual trajectory plots**: Visualizes each run's path
+- **Bar charts with error bars**: Statistical comparison across models
+- **Violin plots**: Full distribution of performance metrics
+- **Correlation heatmaps**: Relationships between different metrics
+
+### Top Performing Models (Based on Testing)
+
+1. **Google Gemini 2.5 Flash**: Highest peak performance (34 rewards)
+2. **Qwen3 Coder**: Most consistent performance
+3. **OpenAI GPT-4o-mini**: Good balance of speed and performance
+4. **GPT-OSS-120b**: Reliable but slower
+
+## Key Improvements in Code Loop Explorer
+
+1. **Direct Code Extraction**: Uses regex to extract TypeScript blocks directly from LLM responses
+2. **No AST Parsing**: Eliminates complex Babel parsing that was causing errors
+3. **Immediate Feedback**: Each code execution gets instant reward feedback
+4. **Better Prompting**: Clear examples and error prevention guidelines
+5. **Statistical Analysis**: Built-in tools for comparing model performance
+
+## Project Structure
+
+```
+voyager/
+├── code_loop_explorer.py      # Latest and best performing experiment
+├── simple_explorer.py          # OpenAI function calling version
+├── voyager_env.py             # Gymnasium environment wrapper
+├── surfpool_env.py            # Low-level Solana interaction
+├── voyager/
+│   ├── agents/                # Multi-agent components
+│   ├── skill_manager/         # TypeScript skill management
+│   ├── skill_runner/          # Bun execution environment
+│   └── prompts/               # System prompts for agents
+├── analyze_code_loop_performance.py  # Advanced visualization
+├── run_model_comparison_batch.py     # Batch testing script
+└── metrics/                   # Performance data and results
+```
+
+## Reward System
+
+Agents earn rewards by discovering unique (program_id, instruction_discriminator) pairs:
+
+- **+1 reward** per unique instruction discovered
+- **0 reward** for failed transactions
+- **0 reward** for duplicate discoveries
+
+Common discoveries include:
+- System Program: Transfer, CreateAccount, Allocate
+- Token Programs: InitializeMint, Transfer, MintTo
+- DeFi Protocols: Swap, AddLiquidity, Stake
+
+## Metrics & Monitoring
+
+### Real-time Progress
+```bash
+# View live progress during exploration
 python view_progress.py
 ```
 
-## How It Works
+### Post-run Analysis
+```bash
+# Generate comprehensive performance reports
+uv run python analyze_code_loop_performance.py
+```
 
-### 1. **Task Generation**
+### Metrics Tracked
+- Total rewards earned
+- Success rate per model
+- Programs discovered
+- Error frequency
+- Reward efficiency (reward per message)
 
-The Curriculum Agent observes the current state and proposes tasks that will discover new program instructions:
+## Tips for Best Results
 
-- Starts with simple SOL transfers
-- Progresses to token operations
-- Explores DeFi protocols systematically
+1. **Start Simple**: Begin with 10-20 messages to test setup
+2. **Model Selection**: Gemini 2.5 Flash shows best peak performance
+3. **Batch Size**: 3-5 runs per model for statistical significance
+4. **Message Count**: 50 messages provides good exploration depth
+5. **Analysis**: Always run analysis script after experiments
 
-### 2. **Code Generation**
+## Environment Variables
 
-The Action Agent uses an LLM to generate TypeScript code that:
+```bash
+# Required
+OPENROUTER_API_KEY=your_key_here
 
-- Builds Solana transactions
-- Returns base64-encoded serialized transactions
-- Handles only ONE transaction per skill (enforced)
+# Optional (for specific models)
+OPENAI_API_KEY=your_key_here        # For GPT-4o-mini
+ANTHROPIC_API_KEY=your_key_here     # For Claude models
 
-### 3. **Skill Execution**
+# Experiment Configuration
+MODEL_NAME=google/gemini-2.5-flash  # Model to use
+MAX_MESSAGES=50                      # Messages per run
+```
 
-Generated code runs in an isolated Bun environment:
+## Troubleshooting
 
-```typescript
-// Example generated skill
-async function buildTransaction() {
-  const connection = new web3.Connection("http://127.0.0.1:8899");
-  const wallet = new web3.PublicKey(AGENT_WALLET_ADDRESS);
+### Surfpool Issues
+```bash
+# Check if surfpool is installed
+which surfpool
 
-  // Generate a random recipient
-  const recipient = web3.Keypair.generate().publicKey;
+# Test surfpool with custom port
+surfpool start -u https://api.mainnet-beta.solana.com -p 8901 --no-tui
+```
 
-  // Build transfer instruction
-  const transaction = new web3.Transaction();
-  transaction.add(
-    web3.SystemProgram.transfer({
-      fromPubkey: wallet,
-      toPubkey: recipient,
-      lamports: 0.1 * web3.LAMPORTS_PER_SOL,
-    })
-  );
+### Bun/TypeScript Issues
+```bash
+# Ensure you're in the skill_runner directory
+cd voyager/skill_runner
+bun install
+bun test
+```
 
-  // Set blockhash and serialize
-  const { blockhash } = await connection.getLatestBlockhash();
-  transaction.recentBlockhash = blockhash;
-  transaction.feePayer = wallet;
+### Model API Issues
+- Verify API keys are set correctly
+- Check rate limits for your model
+- Consider using free tier models for testing
 
-  return Buffer.from(
-    transaction.serialize({
-      requireAllSignatures: false,
-    })
-  ).toString("base64");
+## Contributing
+
+Contributions are welcome! Areas of interest:
+- New exploration strategies
+- Additional model integrations
+- Enhanced reward mechanisms
+- Protocol-specific exploration
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@article{voyager2023,
+  title={Voyager: An Open-Ended Embodied Agent with Large Language Models},
+  author={Wang, Guanzhi and Xie, Yuqi and Jiang, Yunfan and others},
+  journal={arXiv preprint arXiv:2305.16291},
+  year={2023}
 }
 ```
 
-### 4. **Evaluation & Learning**
+## License
 
-- Critic Agent evaluates task success
-- Successful skills are added to the library
-- Rewards given for discovering new (program_id, instruction) pairs
+MIT License - See LICENSE file for details
 
-## Progress Tracking
+## Acknowledgments
 
-The system tracks comprehensive metrics in CSV format:
-
-```bash
-# View latest run progress
-python view_progress.py
-
-# Output includes:
-# - Success rate per task
-# - Total rewards earned
-# - Unique instructions discovered
-# - Programs explored
-# - Agent conversation logs
-```
-
-### Tracked Metrics
-
-- `iteration`: Sequential task number
-- `task`: Task description
-- `task_success`: Boolean success indicator
-- `reward`: Points for new instruction discovery
-- `discovered_programs`: Unique program count
-- `unique_instructions`: Total instruction types found
-- `sol_balance`: Current wallet balance
-- `error`: Error messages if failed
-- `critique`: Feedback from critic agent
-
-## 🎮 Key Differences from Original Voyager
-
-| Aspect      | Minecraft Voyager          | Solana Voyager                |
-| ----------- | -------------------------- | ----------------------------- |
-| Environment | 3D voxel world             | Blockchain programs           |
-| Actions     | Movement, crafting, combat | Transaction building          |
-| Skills      | JavaScript game commands   | TypeScript web3.js code       |
-| Rewards     | Items, achievements        | Program instruction discovery |
-| Safety      | Game sandbox               | Local test validator          |
-
-## Development
-
-### Key Components
-
-- `voyager_clone.py`: Main agent orchestration
-- `surfpool_env.py`: Low-level Solana environment
-- `agents/`: Curriculum, Action, and Critic agents
-- `skill_manager/`: TypeScript skill storage and retrieval
-- `skill_runner/`: Bun runtime for executing skills
-- `prompts/`: LLM prompt templates
-- `progress_tracker.py`: CSV logging system
-
-### Important Constraints
-
-1. **Single Transaction Per Skill**: Each skill can only execute ONE transaction
-2. **No Airdrops**: Environment uses pre-funded accounts on local validator
-3. **Serialized Output**: Skills must return base64-encoded transactions
-4. **No CLI Access**: All operations must use web3.js programmatically
-
-## 🤝 Contributing
-
-1. **Improve Prompts**: Help curriculum agent suggest better tasks
-2. **Add Program Mappings**: Update `data/program_ids.csv`
-3. **Enhance Rewards**: Design rewards for specific DeFi operations
-4. **Fix Bugs**: Check issues and submit PRs
-
-## 📚 References
-
-- [Voyager: An Open-Ended Embodied Agent](https://voyager.minedojo.org/)
-- [Surfpool](https://surfpool.run)
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-**Ready to watch AI explore Solana?** Run the voyager agent and observe as it discovers how to use Solana!
+- NVIDIA MineDojo team for the original Voyager paper
+- Solana Foundation for blockchain infrastructure
+- OpenRouter for unified LLM access
+- The Surfpool team for the testing environment

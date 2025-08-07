@@ -91,3 +91,7 @@ trajectory_data.json
 
 # Demo output directories
 demo_trajectory_skills/
+
+# Generated TypeScript files that change during runs
+voyager/skill_runner/code_loop_code.ts
+voyager/skill_runner/code.ts
