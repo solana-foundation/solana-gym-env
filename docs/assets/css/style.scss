@@ -1,0 +1,68 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Center the main content and make it wider
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  width: 700px;
+  float: none;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+header {
+  width: 180px;
+  float: left;
+  position: fixed;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+@media print, screen and (max-width: 960px) {
+  .wrapper {
+    width: auto;
+    margin: 0;
+  }
+  
+  header, section, footer {
+    float: none;
+    position: static;
+    width: auto;
+  }
+  
+  section {
+    border: 1px solid #e5e5e5;
+    border-width: 1px 0;
+    padding: 20px 0;
+    margin: 0 0 20px;
+  }
+  
+  header {
+    padding-right: 320px;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  body {
+    word-wrap: break-word;
+  }
+  
+  header {
+    padding: 0;
+  }
+  
+  section {
+    padding: 20px;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+}
