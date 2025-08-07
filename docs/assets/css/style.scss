@@ -73,3 +73,18 @@ header {
     padding: 15px;
   }
 }
+
+// Hide the GitHub Pages footer
+footer {
+  display: none;
+}
+
+// Hide the "maintained by" text in header
+header p.view {
+  display: none;
+}
+
+// Also hide any small text that says "maintained by"
+header small {
+  display: none;
+}
