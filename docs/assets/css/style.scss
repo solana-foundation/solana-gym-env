@@ -7,6 +7,8 @@
 .wrapper {
   width: 900px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -14,12 +16,17 @@ section {
   float: none;
   margin: 0 auto;
   padding-bottom: 50px;
+  order: 1;  // Show first
 }
 
 header {
-  width: 180px;
-  float: left;
-  position: fixed;
+  width: 700px;
+  float: none;
+  margin: 0 auto;
+  position: relative;
+  order: 2;  // Show after content
+  padding-top: 30px;
+  border-top: 1px solid #e5e5e5;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
