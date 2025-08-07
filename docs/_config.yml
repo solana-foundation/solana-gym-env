@@ -1,0 +1,5 @@
+theme: jekyll-theme-minimal
+title: Solana Gym
+description: Teaching AI to Navigate DeFi Through Reinforcement Learning
+show_downloads: true
+google_analytics:
