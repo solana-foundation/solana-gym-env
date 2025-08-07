@@ -11,5 +11,6 @@ dependencies = [
     "langchain-anthropic>=0.3.17",
     "langchain-openai>=0.3.28",
     "openai>=1.93.0",
+    "seaborn>=0.13.2",
     "setuptools>=80.9.0",
 ]

@@ -515,23 +515,26 @@ async def main():
     # Configuration
     model_name = os.getenv("MODEL_NAME", "openrouter/horizon-beta")
     max_messages = int(os.getenv("MAX_MESSAGES", "50"))
+    run_index = int(os.getenv("RUN_INDEX", "0"))  # Get run index from environment
+    use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
     
     logging.info(f"Starting Code Loop Explorer with model: {model_name}")
     logging.info(f"Max messages: {max_messages}")
+    logging.info(f"Run index: {run_index}")
+    logging.info(f"Use external surfpool: {use_external_surfpool}")
     
     # Initialize explorer
     logging.info("Initializing explorer...")
     explorer = CodeLoopExplorer(
         model_name=model_name,
+        run_index=run_index,
         max_messages=max_messages,
         verbose=True
     )
     
-    # Run with surfpool
-    logging.info("Starting surfpool validator...")
-    
-    async with _surfpool_validator("https://api.mainnet-beta.solana.com") as proc:
-        logging.info("Surfpool validator started, initializing environment...")
+    # Choose whether to start surfpool or connect to existing instance
+    if use_external_surfpool:
+        logging.info("Connecting to existing surfpool on localhost:8899...")
         
         env = SurfpoolEnv()
         logging.info("Resetting environment...")
@@ -553,6 +556,33 @@ async def main():
             logging.info(f"Total errors: {len(explorer.metrics['errors'])}")
         finally:
             await env.close()
+    else:
+        # Original behavior - start surfpool
+        logging.info("Starting surfpool validator...")
+        
+        async with _surfpool_validator("https://api.mainnet-beta.solana.com") as proc:
+            logging.info("Surfpool validator started, initializing environment...")
+            
+            env = SurfpoolEnv()
+            logging.info("Resetting environment...")
+            
+            await env.reset()
+            logging.info("Environment ready!")
+
+            try:
+                await explorer.run_exploration_loop(env)
+
+                # Save final checkpoint
+                explorer.save_checkpoint()
+                
+                # Log summary
+                logging.info("\n=== Exploration Summary ===")
+                logging.info(f"Total messages: {explorer.message_count}")
+                logging.info(f"Total reward: {env.total_reward}")
+                logging.info(f"Programs discovered: {len(explorer.metrics['programs_discovered'])}")
+                logging.info(f"Total errors: {len(explorer.metrics['errors'])}")
+            finally:
+                await env.close()
 
 if __name__ == "__main__":
     asyncio.run(main())
