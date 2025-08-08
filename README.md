@@ -1,6 +1,6 @@
-# Voyager: Autonomous Solana Exploration
+# Solana Bench
 
-> **An implementation of the NVIDIA Voyager paper adapted for Solana blockchain exploration, where AI agents learn to autonomously discover and interact with DeFi protocols through self-generated TypeScript skills.**
+> **Benchmarking AI's Understanding of Blockchain - An evaluation framework that measures how well AI models understand and interact with the Solana blockchain through direct code generation and protocol discovery.**
 
 ## 🚀 Latest: Code Loop Explorer (Best Performance)
 
