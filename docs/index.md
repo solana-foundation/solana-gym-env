@@ -1,3 +1,5 @@
+{% include toc.html %}
+
 # Solana Gym: Teaching AI to Navigate DeFi Through Reinforcement Learning
 
 ## Why We Built This
@@ -15,16 +17,197 @@ After months of experimentation, we found that the simplest approach worked best
 - Direct TypeScript code generation without complex parsing
 - Immediate reward feedback driving learning
 
-The magic? We let models write TypeScript code directly in response blocks, execute it against a sandboxed Solana validator (Surfpool), and provide immediate feedback. No complex multi-agent systems, no abstract skill libraries - just code, execution, and rewards.
+### How Code Loop Explorer Works
 
+The Code Loop Explorer (`code_loop_explorer.py`) is elegantly simple, operating in a tight feedback loop that mirrors how developers actually write code:
+
+#### 1. **Initialization Phase**
+
+The explorer starts by:
+
+- Creating a fresh agent wallet with 10 SOL
+- Connecting to Surfpool (sandboxed Solana validator) on localhost:8899
+- Setting up LangChain with OpenRouter for LLM access
+- Initializing metrics tracking for rewards and discoveries
+
+```python
+explorer = CodeLoopExplorer(
+    model_name="google/gemini-2.5-flash",
+    max_messages=50,  # Total iterations allowed
+    verbose=True
+)
+```
+
+#### 2. **The Core Loop**
+
+For up to 50 messages (configurable), the explorer follows this pattern:
+
+**Step A: System Prompt with Current State**
+
+The model receives a detailed system prompt (319 lines!) that includes:
+
+- Current SOL balance and block height
+- Total rewards earned so far
+- Available TypeScript dependencies (@solana/web3.js, @solana/spl-token, etc.)
+- The EXACT function signature required: `export async function executeSkill(blockhash: string): Promise<string>`
+- Examples of working code patterns
+- Common pitfalls to avoid
+- Strategy guidance: "Start with 2-3 safe instructions, then scale to 20+"
+
+**Step B: Model Generates TypeScript Code**
+
+The model responds with TypeScript in markdown blocks:
+
+````markdown
 ```typescript
-// Models learn to pack multiple instructions for maximum rewards
+import {
+  Transaction,
+  SystemProgram,
+  PublicKey,
+  ComputeBudgetProgram,
+} from "@solana/web3.js";
+
 export async function executeSkill(blockhash: string): Promise<string> {
   const tx = new Transaction();
-  // ... 20+ instructions packed into one transaction
-  return tx.serialize().toString("base64");
+  const agentPubkey = new PublicKey(
+    "EU2FLmBHBoSGLUidDeTo1RsfEy8G4fzPLMHVEzJNsTX9"
+  );
+
+  // Add compute budget for efficiency
+  tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 200000 }));
+
+  // Add multiple diverse instructions for rewards
+  for (let i = 0; i < 5; i++) {
+    tx.add(
+      SystemProgram.transfer({
+        fromPubkey: agentPubkey,
+        toPubkey: agentPubkey,
+        lamports: 1000 + i,
+      })
+    );
+  }
+
+  // Add memo program interactions
+  tx.add({
+    keys: [],
+    programId: new PublicKey("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"),
+    data: Buffer.from("Exploring Solana", "utf-8"),
+  });
+
+  tx.recentBlockhash = blockhash;
+  tx.feePayer = agentPubkey;
+
+  return tx
+    .serialize({
+      requireAllSignatures: false,
+      verifySignatures: false,
+    })
+    .toString("base64");
 }
 ```
+````
+
+**Step C: Code Extraction (No Complex Parsing!)**
+
+````python
+# Simple regex - that's it!
+code_pattern = re.compile(r"```(?:javascript|js|typescript|ts)(.*?)```", re.DOTALL)
+code_blocks = code_pattern.findall(response.content)
+````
+
+**Step D: Execution via TypeScript Runtime**
+
+The code is written to a temporary file and executed using Bun:
+
+```python
+# Write to file (unique per parallel run)
+with open(self.code_file, "w") as f:
+    f.write(skill_code)
+
+# Execute via TypeScriptSkillManager
+result = self.skill_manager.run_code_loop_code(
+    skill_code,
+    agent_pubkey,
+    latest_blockhash,
+    self.code_file  # Allows parallel execution
+)
+```
+
+The Bun runtime (`runSkill.ts`) loads and executes the code:
+
+```typescript
+// Dynamically import and execute the skill
+const { executeSkill } = await import(skillPath);
+const serializedTx = await executeSkill(blockhash);
+```
+
+**Step E: Transaction Submission & Reward Calculation**
+
+```python
+# Decode the base64 transaction
+tx_bytes = base64.b64decode(result['serialized_tx'])
+tx = Transaction.from_bytes(tx_bytes)
+
+# Sign with agent keypair
+signed_tx = env._partial_sign_transaction(bytes(tx), [env.agent_keypair])
+
+# Submit to Surfpool
+obs, reward, _, _, info = await env.step(signed_tx)
+
+# Reward = number of unique (program_id, instruction_discriminator) pairs
+# Each new discovery = +1 point
+```
+
+**Step F: Feedback to Model**
+
+The model receives immediate feedback:
+
+```python
+if reward > 0:
+    feedback = f"""✅ Transaction executed successfully!
+    Earned {reward} reward points.
+    Total rewards: {env.total_reward}
+    [Message {count}/{max}] - {remaining} messages remaining
+    Info: {info}"""
+else:
+    feedback = f"""❌ Transaction failed: {info.get('error')}
+    [Message {count}/{max}] - {remaining} messages remaining"""
+
+# Add feedback to conversation
+messages.append(HumanMessage(content=feedback))
+```
+
+#### 3. **Metrics & Tracking**
+
+Every run generates detailed metrics in JSON:
+
+```json
+{
+  "model": "google/gemini-2.5-flash",
+  "messages": [...],
+  "cumulative_rewards": [0, 2, 2, 5, 8, 11, 14, 19, ...],
+  "programs_discovered": {
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 15,
+    "11111111111111111111111111111111": 8,
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 12,
+    "ComputeBudget111111111111111111111111111111": 5
+  },
+  "code_blocks_extracted": [...],
+  "errors": [...]
+}
+```
+
+### The Key Innovation: Simplicity
+
+What makes Code Loop Explorer special is what it DOESN'T have:
+
+- **No tool calling interface** - Models write code naturally in markdown
+- **No skill library** - Each iteration starts fresh (no retrieval confusion)
+- **No multi-agent coordination** - Single loop, single focus
+- **No AST parsing** - Simple regex extraction that never fails
+- **No predetermined tasks** - Pure exploration driven by curiosity
+
+The entire core loop is just 150 lines of Python. The magic is in letting models write code exactly as they were trained to - in markdown code blocks with immediate execution feedback.
 
 ## The Journey: Why Traditional Evals Failed Us
 
@@ -35,16 +218,18 @@ Before Solana Gym, we tried everything to evaluate LLMs on blockchain knowledge.
 We started by building unit tests for SendAI (solana-agent-kit) tool usage with GPT-4o-mini as the judge. The idea was simple: test if models could correctly use tools like `transfer_sol`, `swap_tokens`, `stake_sol`.
 
 **Why It Failed Spectacularly**:
+
 - **Hypersensitivity to Implementation**: Change a parameter name from `amount` to `lamports`? Every eval breaks.
 - **No Ground Truth**: Tools like `jupiter_swap` build entire transactions internally. They only work on mainnet. How do you know if the swap would succeed without spending real money?
 - **SDK Lock-in**: We were testing knowledge of ONE SDK's abstraction layer, not Solana itself
 - **The Mainnet Problem**: Without Surfpool (which didn't exist yet), we were SOL - Shit Out of Luck
 
 **Real Example**:
+
 ```python
 # This "passes" the eval but would fail on chain:
 model_calls_tool("jupiter_swap", {
-    "from_token": "SOL",  
+    "from_token": "SOL",
     "to_token": "USDC",
     "amount": 1.5,  # Is this SOL or lamports? Who knows!
     "slippage": 100  # Is this basis points or percent? SDK-dependent!
@@ -56,11 +241,13 @@ model_calls_tool("jupiter_swap", {
 Next, we looked at Q&A datasets (shoutout Lumo Labs for their dataset). Test models on questions generated from ground-truth documentation.
 
 **Why It Also Failed**:
+
 - **Subjective Scoring**: Is "A PDA is a program-derived address" better or worse than "PDAs let programs own accounts"? Both are correct!
 - **Hallucination vs Creativity**: Models would give technically correct but overly creative answers
 - **No Practical Signal**: A model could ace every question but fail to write a single working transaction
 
 **Example Frustration**:
+
 ```
 Q: "How do you create a token account?"
 Model A: "Use createAssociatedTokenAccountInstruction"  ✓
@@ -76,6 +263,7 @@ When Surfpool launched (Q2 2024), everything changed. Finally, a sandboxed Solan
 Then we found Voyager. The paper's key insight: **reward curiosity itself**. Don't test specific knowledge - test the ability to explore and discover.
 
 **The Eureka Moment**:
+
 - Every unique (program_id, instruction_discriminator) = 1 point
 - No predetermined "correct" answers
 - Models that understand Solana deeply will naturally discover more
@@ -86,6 +274,7 @@ Then we found Voyager. The paper's key insight: **reward curiosity itself**. Don
 ### 1. **Action Over Analysis**
 
 Instead of asking "Can you explain DeFi?", we ask "Can you interact with DeFi protocols?" The difference is profound. Models must understand:
+
 - Transaction composition and signing
 - Account relationships and PDAs
 - Instruction data encoding
@@ -108,14 +297,16 @@ Every transaction either succeeds or fails. Every new instruction discovered add
 Every major protocol should have its own evaluation environment. Why? Because knowing how to transfer SOL is vastly different from understanding Kamino's lending markets or Drift's perpetuals.
 
 **What Protocols Should Submit**:
+
 1. **Custom System Prompts** with your protocol's concepts
-2. **SDK Integration Examples** showing real usage patterns  
+2. **SDK Integration Examples** showing real usage patterns
 3. **Reward Functions** that measure protocol mastery
 4. **Success Criteria** specific to your protocol
 
 ### 🏗️ Protocol Environments We Need
 
 **DeFi Protocols** (each needs its own environment!):
+
 - **Kamino**: Test obligation management, multi-asset lending, leverage loops
 - **Drift**: Evaluate perpetuals trading, DLOB understanding, liquidations
 - **Phoenix**: Assess limit order placement, market making strategies
@@ -123,6 +314,7 @@ Every major protocol should have its own evaluation environment. Why? Because kn
 - **Jupiter**: Test aggregation logic, route optimization
 
 **Infrastructure Protocols**:
+
 - **Metaplex**: NFT minting, metadata, collections
 - **Squads**: Multisig creation and management
 - **Pyth**: Oracle price feed integration
@@ -132,11 +324,13 @@ Every major protocol should have its own evaluation environment. Why? Because kn
 Different SDKs have different abstractions. We need environments for each:
 
 **TypeScript/JavaScript**:
+
 - **@solana/kit**: Modern, composable Solana development
 - **@coral-xyz/anchor**: IDL-based program interactions
 - **@metaplex-foundation/js**: NFT-specific operations
 
 **Other Languages** (yes, we need these too!):
+
 - **Rust**: Native Solana program interactions
 - **Python**: solana-py, anchorpy ecosystems
 - **Go**: gagliardetto/solana-go patterns
@@ -150,31 +344,31 @@ class KaminoLendingExplorer(CodeLoopExplorer):
     def get_system_prompt(self):
         return f"""
         You are exploring Kamino Lending Protocol.
-        
+
         Core Concepts:
         - Obligations: User's borrow/lend positions
         - Reserves: Lending pools for different assets
         - kTokens: Receipt tokens for deposits
-        
+
         Available SDK: @kamino-finance/klend-sdk
-        
+
         Examples:
         {self.load_kamino_examples()}
         """
-    
+
     def calculate_reward(self, tx_info):
         base_reward = super().calculate_reward(tx_info)
-        
+
         # Kamino-specific bonus rewards
         if self.completed_deposit_borrow_repay_cycle():
             base_reward += 10  # Full lending cycle bonus
-        
+
         if self.used_leverage_properly():
             base_reward += 5   # Advanced feature bonus
-            
+
         if self.interacted_with_new_reserve():
             base_reward += 3   # Exploration bonus
-            
+
         return base_reward
 ```
 
@@ -183,16 +377,19 @@ class KaminoLendingExplorer(CodeLoopExplorer):
 Generic instruction discovery only tells part of the story. Protocol-specific rewards measure if models actually understand your protocol:
 
 **Kamino Rewards**:
+
 - Deposit → Borrow → Repay cycle = **Understanding lending**
 - Leverage loops = **Understanding capital efficiency**
 - Liquidation execution = **Understanding risk**
 
 **Drift Rewards**:
+
 - Open → Modify → Close position = **Understanding perps**
 - Place limit orders on DLOB = **Understanding orderbook**
 - Execute JIT liquidity = **Understanding MEV**
 
 **Phoenix Rewards**:
+
 - Place bid/ask spreads = **Understanding market making**
 - Cancel and replace orders = **Understanding order management**
 - Consume liquidity efficiently = **Understanding execution**
@@ -200,16 +397,19 @@ Generic instruction discovery only tells part of the story. Protocol-specific re
 ### 🚀 The Multiplication Problem (Help Needed!)
 
 If we need:
+
 - **10 protocols** × **3 SDKs** × **3 languages** = **90 unique environments**
 
 ...we're probably doing something wrong. This is a HUGE unsolved challenge that someone from the community could tackle.
 
 **What We've Tried**:
+
 - **program_ids.csv**: We tagged 100+ programs in `data/program_ids.csv` - but models struggle to use this effectively
 - **fetchTransactions**: Added to `simple_explorer.py` so models could learn from existing transactions - but it's fragile
 - **Generic exploration**: Works for System/Token programs, fails for complex protocols
 
 **What Might Work Better**:
+
 - **"Raw" Environments**: Force models to build everything from scratch with ONLY @solana/web3.js
 - **Auto-discovery from IDLs**: Automatically generate rewards from program IDLs
 - **Transaction Mining**: Learn protocol patterns from historical transactions
@@ -220,25 +420,30 @@ This is an open research problem. If you solve this, you've cracked protocol-agn
 ### 🔧 How to Build Your Protocol Environment
 
 1. **Fork our template**:
+
 ```bash
 cp code_loop_explorer.py protocols/your_protocol_explorer.py
 ```
 
 2. **Add your protocol's concepts**:
+
 - System prompts with your terminology
 - SDK examples from your docs
 - Common patterns and gotchas
 
 3. **Design reward functions**:
+
 - What indicates basic understanding?
 - What shows advanced mastery?
 - What would impress your protocol team?
 
 4. **Test with multiple models**:
+
 - Ensure it's not too easy or too hard
 - Verify rewards align with actual understanding
 
 5. **Submit your PR**:
+
 - Include sample runs
 - Document what your rewards measure
 - Explain why these metrics matter
@@ -248,6 +453,7 @@ cp code_loop_explorer.py protocols/your_protocol_explorer.py
 The holy grail would be an environment where models can discover and interact with ANY protocol without protocol-specific prompts. Here's what makes this hard:
 
 **The Discovery Problem**:
+
 ```python
 # We have this in data/program_ids.csv:
 "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4", "Jupiter v6"
@@ -260,11 +466,13 @@ The holy grail would be an environment where models can discover and interact wi
 ```
 
 **Why fetchTransactions() Isn't Enough**:
+
 - Transactions show WHAT happened, not WHY
 - Account relationships are opaque without context
 - Instruction data is just bytes without an IDL
 
 **Dream Contribution**: A system that can:
+
 1. Take any program ID
 2. Fetch its IDL (if available) or reverse-engineer from transactions
 3. Generate exploration strategies
@@ -531,6 +739,7 @@ Integrating with Anthropic's MCP to provide:
 LangGraph Studio is invaluable for debugging your agent's behavior. It shows you the complete input/output for every LLM call, making it easy to spot where things go wrong.
 
 **Setup**:
+
 ```bash
 # Add to your .env file
 LANGGRAPH_API_KEY=your_api_key_here
@@ -539,6 +748,7 @@ LANGGRAPH_API_KEY=your_api_key_here
 ```
 
 **What You'll See**:
+
 - Full message history with token counts
 - Exact tool calls and responses
 - Model reasoning in real-time
@@ -549,6 +759,7 @@ This visibility was crucial for discovering that models were making variable nam
 ### 📊 Metrics and Traces
 
 Every run generates detailed traces in `metrics/` and `traces/`:
+
 - Transaction success/failure patterns
 - Reward progression over time
 - Which programs and instructions were discovered
