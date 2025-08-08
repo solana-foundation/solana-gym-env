@@ -95,3 +95,4 @@ demo_trajectory_skills/
 # Generated TypeScript files that change during runs
 voyager/skill_runner/code_loop_code.ts
 voyager/skill_runner/code.ts
+voyager/skill_runner/batch_*.ts
