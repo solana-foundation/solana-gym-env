@@ -21,23 +21,23 @@ After months of experimentation, we found that the simplest approach worked best
 
 ### Reward Progression Over Time
 
-![Reward Progression](../analysis_results/reward_progression.png)
+![Reward Progression](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/reward_progression.png)
 
-The reward progression graph reveals how different models learn to navigate Solana over 50 messages. Notice the characteristic S-curve: slow initial exploration, rapid discovery phase, then plateau as easy rewards are exhausted. Gemini 2.5 Flash consistently outperforms, reaching 30+ cumulative rewards, while models like Qwen3 Coder plateau early at ~10 rewards.
+The reward progression graph reveals how different models learn to navigate Solana over 50 messages. Notice Claude Sonnet 4's dominance - the red line soars to 60+ rewards with massive variance (the pink shaded area). This high variance is actually good - it shows the model is capable of breakthrough performances.
 
-The shaded regions show standard deviation across runs - tighter bands indicate more consistent performance. This matters because reliability is crucial for production use cases.
+Gemini 2.5 Flash (blue) shows steady, consistent progress to ~27 rewards. OpenAI's GPT-OSS-120B and Qwen3 Coder plateau around 20 and 16 rewards respectively. The tight error bands for lower-performing models suggest they're consistently stuck, not occasionally breaking through.
 
 ### Individual Learning Trajectories
 
-![Individual Trajectories](../analysis_results/individual_trajectories.png)
+![Individual Trajectories](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/individual_trajectories.png)
 
-Each line represents a single run's journey. The divergence points are fascinating - they show where models either breakthrough to discover new program interactions or get stuck in local optima. 
+Each line represents a single run's journey. The divergence points are fascinating - they show where models either breakthrough to discover new program interactions or get stuck in local optima.
 
 Notice how successful runs share a pattern: gradual exploration for the first 10 messages, then explosive growth. Failed runs flatline early, suggesting the model couldn't recover from initial errors. The red dashed line (mean) shows the average path, but individual variance tells the real story.
 
 ### Program Discovery Patterns
 
-![Program Discovery](../analysis_results/program_discovery.png)
+![Program Discovery](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/program_discovery.png)
 
 This visualization breaks down WHICH programs models discover and HOW they interact with them:
 
@@ -48,6 +48,36 @@ This visualization breaks down WHICH programs models discover and HOW they inter
 **Diversity Chart (bottom-left)**: Unique programs discovered. More isn't always better - Qwen discovered only 3 programs but achieved decent rewards by deeply exploring each one.
 
 **Distribution Pie (bottom-right)**: Overall program interaction distribution across all models. The "long tail" of rarely-discovered programs represents untapped reward potential.
+
+### The Memo Problem: When Easy Rewards Mislead
+
+Our analysis reveals a critical issue: the Memo program is inflating scores and masking true performance differences.
+
+**Key Findings from Memo Impact Analysis:**
+
+- **Qwen3 Coder**: 63.3% of interactions are with Memo program - heavily gaming the system
+- **Claude Sonnet 4**: 24.1% Memo dependency, but achieves 62.4 average reward WITHOUT Memo (best overall)
+- **Gemini 2.5 Flash**: 18.7% Memo usage, real performance of ~25 rewards
+- **GPT-OSS-120B**: Only 9.6% Memo usage - most "honest" explorer
+
+**Why This Matters:**
+
+The Memo program is trivial - it just stores arbitrary text on-chain. Any model can spam Memo instructions for easy points. But real Solana understanding means:
+
+- Discovering Token-2022 extensions (transfer fees, interest bearing, metadata)
+- Finding specialized programs like Stake, Compute Budget, Associated Token Account
+- Understanding program relationships and composability
+
+**Claude Sonnet 4's Interesting Pattern:**
+
+Despite being discontinued, Claude Sonnet 4 achieved the highest rewards (64.4 average) through smart exploration:
+
+- Discovered Token-2022 early and exploited its many instruction types
+- Found Associated Token Account program (ATokenGP...)
+- Minimal reliance on Memo spam
+- Most consistent performance across runs
+
+This suggests Claude models have strong blockchain understanding "out of the box" - worth testing newer Claude versions.
 
 ### How Code Loop Explorer Works
 
@@ -746,7 +776,6 @@ Integrating with Anthropic's MCP to provide:
 - Direct transaction submission tools
 - Protocol documentation access
 
-
 ## Debugging Your Experiments
 
 ### 🔍 LangGraph Studio - See Everything
@@ -802,7 +831,6 @@ Every run generates detailed traces in `metrics/` and `traces/`:
 
 ✅ **Evaluation Metrics**: Show how different models perform
 
-
 ## The Bigger Picture: Solving AI Usage of Solana
 
 The current state of AI-Solana integration is fragmented and brittle. The ecosystem of MCP (Model Context Protocol) servers and SDK wrappers is growing rapidly but lacks cohesion:
@@ -810,6 +838,7 @@ The current state of AI-Solana integration is fragmented and brittle. The ecosys
 ### The MCP Fragmentation Problem
 
 **What's Happening Now**:
+
 - Every protocol creates their own MCP server with custom tools
 - Each SDK has different abstractions and naming conventions
 - Models trained on one tool fail when using another
@@ -831,17 +860,20 @@ This is why Code Loop Explorer matters. It's not just an eval - it's a training 
 What we're building isn't protocol-specific or SDK-specific. It's a framework that:
 
 **Measures Core Competencies**:
+
 - Can the model construct valid transactions?
 - Does it understand account relationships?
 - Can it discover new programs through exploration?
 - Does it learn from transaction errors?
 
 **Adapts to Any Environment**:
+
 - Works with raw @solana/web3.js or any SDK
 - Evaluates both tool usage AND direct code generation
 - Rewards understanding, not memorization
 
 **Scales with Model Capabilities**:
+
 - Today: Models write TypeScript using web3.js
 - Tomorrow: Models generate Rust programs
 - Future: Models design their own protocols
