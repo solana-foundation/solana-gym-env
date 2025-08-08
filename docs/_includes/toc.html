@@ -2,19 +2,254 @@
   <h3>Solana Bench</h3>
   <ul>
     <li class="toc-h2"><a href="#why-we-built-this">Why We Built This</a></li>
-    <li class="toc-h2"><a href="#our-best-discovery-the-code-loop-explorer">Code Loop Explorer</a></li>
-    <li class="toc-h3"><a href="#how-code-loop-explorer-works">How It Works</a></li>
-    <li class="toc-h3"><a href="#model-evolution-during-exploration">Model Evolution</a></li>
-    <li class="toc-h2"><a href="#the-journey-why-traditional-evals-failed-us">Why Traditional Evals Failed</a></li>
-    <li class="toc-h2"><a href="#why-this-matters-for-blockchain-evaluation">Why This Matters</a></li>
-    <li class="toc-h2"><a href="#what-we-need-from-the-community">Community Contributions</a></li>
-    <li class="toc-h3"><a href="#protocol-specific-mini-environments">Protocol Environments</a></li>
-    <li class="toc-h3"><a href="#sdk-environments-we-need">SDK Environments</a></li>
-    <li class="toc-h2"><a href="#what-didnt-work-and-why-thats-important">What Didn't Work</a></li>
-    <li class="toc-h2"><a href="#surprising-discoveries">Surprising Discoveries</a></li>
-    <li class="toc-h2"><a href="#future-directions">Future Directions</a></li>
-    <li class="toc-h2"><a href="#debugging-your-experiments">Debugging</a></li>
-    <li class="toc-h2"><a href="#how-to-contribute">How to Contribute</a></li>
-    <li class="toc-h2"><a href="#call-to-action">Call to Action</a></li>
+
+    <li class="toc-h2">
+      <a href="#our-best-discovery-the-code-loop-explorer"
+        >Our Best Discovery: The Code Loop Explorer</a
+      >
+    </li>
+
+    <li class="toc-h2">
+      <a href="#performance-analysis-how-models-learn-to-explore"
+        >Performance Analysis: How Models Learn to Explore</a
+      >
+      <ul>
+        <li class="toc-h3">
+          <a href="#reward-progression-over-time"
+            >Reward Progression Over Time</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#individual-learning-trajectories"
+            >Individual Learning Trajectories</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#program-discovery-patterns">Program Discovery Patterns</a>
+        </li>
+        <li class="toc-h3">
+          <a href="#the-memo-problem-when-easy-rewards-mislead"
+            >The Memo Problem: When Easy Rewards Mislead</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#how-code-loop-explorer-works">How Code Loop Explorer Works</a>
+      <ul>
+        <li class="toc-h3">
+          <a href="#1-initialization-phase">1. Initialization Phase</a>
+        </li>
+        <li class="toc-h3"><a href="#2-the-core-loop">2. The Core Loop</a></li>
+        <li class="toc-h3">
+          <a href="#3-metrics--tracking">3. Metrics &amp; Tracking</a>
+        </li>
+        <li class="toc-h3">
+          <a href="#the-key-innovation-simplicity"
+            >The Key Innovation: Simplicity</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#the-journey-why-traditional-evals-failed-us"
+        >The Journey: Why Traditional Evals Failed Us</a
+      >
+      <ul>
+        <li class="toc-h3">
+          <a href="#attempt-1-tool-call-evaluations"
+            >Attempt 1: Tool Call Evaluations</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#attempt-2-qa-knowledge-evals"
+            >Attempt 2: Q&amp;A Knowledge Evals</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#the-breakthrough-surfpool--voyager"
+            >The Breakthrough: Surfpool + Voyager</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#why-this-matters-for-blockchain-evaluation"
+        >Why This Matters for Blockchain Evaluation</a
+      >
+      <ul>
+        <li class="toc-h3">
+          <a href="#1-action-over-analysis">1. Action Over Analysis</a>
+        </li>
+        <li class="toc-h3">
+          <a href="#2-universal-not-sdk-specific"
+            >2. Universal, Not SDK-Specific</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#3-immediate-objective-feedback"
+            >3. Immediate, Objective Feedback</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#what-didnt-work-and-why-thats-important"
+        >What Didn't Work (And Why That's Important)</a
+      >
+      <ul>
+        <li class="toc-h3">
+          <a href="#tool-calling-in-simple-explorer"
+            >Tool Calling in Simple Explorer</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#voyager-style-skill-library-and-code-reuse"
+            >Voyager-Style Skill Library and Code Reuse</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#multi-agent-architecture-complexity"
+            >Multi-Agent Architecture Complexity</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#complex-ast-parsing-with-babel"
+            >Complex AST Parsing with Babel</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#the-ultimate-lesson-get-out-of-the-way"
+            >The Ultimate Lesson: Get Out of the Way</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#surprising-discoveries">Surprising Discoveries</a>
+      <ul>
+        <li class="toc-h3">
+          <a href="#model-performance-varies-wildly"
+            >Model Performance Varies Wildly</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#starting-simple-beats-starting-complex"
+            >Starting Simple Beats Starting Complex</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#error-messages-are-teaching-moments"
+            >Error Messages Are Teaching Moments</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#future-directions">Future Directions</a>
+      <ul>
+        <li class="toc-h3">
+          <a href="#fine-tuning-on-successful-trajectories"
+            >Fine-Tuning on Successful Trajectories</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#mcp-model-context-protocol-integration"
+            >MCP (Model Context Protocol) Integration</a
+          >
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2">
+      <a href="#the-bigger-picture-solving-ai-usage-of-solana"
+        >The Bigger Picture: Solving AI Usage of Solana</a
+      >
+      <ul>
+        <li class="toc-h3">
+          <a href="#the-mcp-fragmentation-problem"
+            >The MCP Fragmentation Problem</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#our-thesis-models-will-build-their-own-tools"
+            >Our Thesis: Models Will Build Their Own Tools</a
+          >
+        </li>
+        <li class="toc-h3">
+          <a href="#the-generalizable-evaluation-framework"
+            >The Generalizable Evaluation Framework</a
+          >
+          <ul>
+            <li class="toc-h4">
+              <a href="#measures-core-competencies"
+                >Measures Core Competencies</a
+              >
+            </li>
+            <li class="toc-h4">
+              <a href="#adapts-to-any-environment">Adapts to Any Environment</a>
+            </li>
+            <li class="toc-h4">
+              <a href="#scales-with-model-capabilities"
+                >Scales with Model Capabilities</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="toc-h3">
+          <a href="#why-this-approach-will-win">Why This Approach Will Win</a>
+          <ul>
+            <li class="toc-h4">
+              <a href="#1-antifragility">1. Antifragility</a>
+            </li>
+            <li class="toc-h4">
+              <a href="#2-generalization">2. Generalization</a>
+            </li>
+            <li class="toc-h4"><a href="#3-innovation">3. Innovation</a></li>
+            <li class="toc-h4">
+              <a href="#4-verification">4. Verification</a>
+            </li>
+          </ul>
+        </li>
+        <li class="toc-h3">
+          <a href="#the-path-forward">The Path Forward</a>
+          <ul>
+            <li class="toc-h4">
+              <a
+                href="#identify-which-models-truly-understand-blockchain-mechanics"
+                >Identify which models truly understand blockchain mechanics</a
+              >
+            </li>
+            <li class="toc-h4">
+              <a
+                href="#generate-training-data-for-next-generation-blockchain-native-models"
+                >Generate training data for next-generation blockchain-native
+                models</a
+              >
+            </li>
+            <li class="toc-h4">
+              <a href="#create-benchmarks-that-matter-for-real-world-usage"
+                >Create benchmarks that matter for real-world usage</a
+              >
+            </li>
+            <li class="toc-h4">
+              <a
+                href="#enable-protocol-teams-to-evaluate-ai-readiness-for-their-systems"
+                >Enable protocol teams to evaluate AI readiness for their
+                systems</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="toc-h2"><a href="#acknowledgments">Acknowledgments</a></li>
   </ul>
 </div>
