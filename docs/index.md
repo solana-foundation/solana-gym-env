@@ -21,7 +21,7 @@ After months of experimentation, we found that the simplest approach worked best
 
 ### Reward Progression Over Time
 
-![Reward Progression](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/reward_progression.png)
+![Reward Progression](/assets/reward_progression.png)
 
 The reward progression graph reveals how different models learn to navigate Solana over 50 messages. Notice Claude Sonnet 4's dominance - the red line soars to 60+ rewards with massive variance (the pink shaded area). This high variance is actually good - it shows the model is capable of breakthrough performances.
 
@@ -29,7 +29,7 @@ Gemini 2.5 Flash (blue) shows steady, consistent progress to ~27 rewards. OpenAI
 
 ### Individual Learning Trajectories
 
-![Individual Trajectories](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/individual_trajectories.png)
+![Individual Trajectories](/assets/individual_trajectories.png)
 
 Each line represents a single run's journey. The divergence points are fascinating - they show where models either breakthrough to discover new program interactions or get stuck in local optima.
 
@@ -37,7 +37,7 @@ Notice how successful runs share a pattern: gradual exploration for the first 10
 
 ### Program Discovery Patterns
 
-![Program Discovery](https://raw.githubusercontent.com/ngundotra/solana-gym-env/f1681285fee83d7cdec72d881e723ce844c03225/program_discovery.png)
+![Program Discovery](/assets/program_discovery.png)
 
 This visualization breaks down WHICH programs models discover and HOW they interact with them:
 
