@@ -17,6 +17,38 @@ After months of experimentation, we found that the simplest approach worked best
 - Direct TypeScript code generation without complex parsing
 - Immediate reward feedback driving learning
 
+## Performance Analysis: How Models Learn to Explore
+
+### Reward Progression Over Time
+
+![Reward Progression](../analysis_results/reward_progression.png)
+
+The reward progression graph reveals how different models learn to navigate Solana over 50 messages. Notice the characteristic S-curve: slow initial exploration, rapid discovery phase, then plateau as easy rewards are exhausted. Gemini 2.5 Flash consistently outperforms, reaching 30+ cumulative rewards, while models like Qwen3 Coder plateau early at ~10 rewards.
+
+The shaded regions show standard deviation across runs - tighter bands indicate more consistent performance. This matters because reliability is crucial for production use cases.
+
+### Individual Learning Trajectories
+
+![Individual Trajectories](../analysis_results/individual_trajectories.png)
+
+Each line represents a single run's journey. The divergence points are fascinating - they show where models either breakthrough to discover new program interactions or get stuck in local optima. 
+
+Notice how successful runs share a pattern: gradual exploration for the first 10 messages, then explosive growth. Failed runs flatline early, suggesting the model couldn't recover from initial errors. The red dashed line (mean) shows the average path, but individual variance tells the real story.
+
+### Program Discovery Patterns
+
+![Program Discovery](../analysis_results/program_discovery.png)
+
+This visualization breaks down WHICH programs models discover and HOW they interact with them:
+
+**Stacked Bar Chart (top-left)**: Shows total interactions per program. Token and Token-2022 programs dominate because they offer the most instruction variety. Models that discover Token-2022 extensions score significantly higher.
+
+**Heatmap (top-right)**: Darker cells indicate more interactions. GPT-OSS-120B shows interesting behavior - it discovered the Stake program (which others missed) but failed to explore Token-2022 deeply.
+
+**Diversity Chart (bottom-left)**: Unique programs discovered. More isn't always better - Qwen discovered only 3 programs but achieved decent rewards by deeply exploring each one.
+
+**Distribution Pie (bottom-right)**: Overall program interaction distribution across all models. The "long tail" of rarely-discovered programs represents untapped reward potential.
+
 ### How Code Loop Explorer Works
 
 The Code Loop Explorer (`code_loop_explorer.py`) is elegantly simple, operating in a tight feedback loop that mirrors how developers actually write code:
@@ -714,23 +746,6 @@ Integrating with Anthropic's MCP to provide:
 - Direct transaction submission tools
 - Protocol documentation access
 
-### 🚀 Multi-Chain Expansion
-
-- **EVM Chains**: Ethereum, Arbitrum, Base
-- **Move Chains**: Aptos, Sui
-- **Cosmos**: Osmosis, Injective
-
-### 🚀 Adversarial Environments
-
-- MEV extraction challenges
-- Liquidation bot competitions
-- Arbitrage discovery tasks
-
-### 🚀 Human-in-the-Loop Exploration
-
-- Collaborative exploration where humans guide AI
-- Teaching models through demonstration
-- Reward shaping through human feedback
 
 ## Debugging Your Experiments
 
@@ -787,39 +802,70 @@ Every run generates detailed traces in `metrics/` and `traces/`:
 
 ✅ **Evaluation Metrics**: Show how different models perform
 
-### Join the Community
 
-- **Discord**: [discord.gg/solana-gym](https://discord.gg/solana-gym)
-- **Twitter**: [@solana_gym](https://twitter.com/solana_gym)
-- **Weekly Calls**: Thursdays 3pm UTC
+## The Bigger Picture: Solving AI Usage of Solana
 
-## The Bigger Picture
+The current state of AI-Solana integration is fragmented and brittle. The ecosystem of MCP (Model Context Protocol) servers and SDK wrappers is growing rapidly but lacks cohesion:
 
-We're not just building another benchmark. We're creating a framework for understanding how AI agents can autonomously navigate complex, adversarial environments. Blockchains are the perfect testbed because:
+### The MCP Fragmentation Problem
 
-1. **Objective Truth**: Transactions either succeed or fail
-2. **Compositional Complexity**: Infinite ways to combine instructions
-3. **Real Stakes**: These models will eventually manage real assets
-4. **Rapid Innovation**: New protocols launch daily
+**What's Happening Now**:
+- Every protocol creates their own MCP server with custom tools
+- Each SDK has different abstractions and naming conventions
+- Models trained on one tool fail when using another
+- Breaking changes in any layer cascade through the entire stack
 
-The models that excel in Solana Gym today will be the foundation for autonomous agents that can:
+### Our Thesis: Models Will Build Their Own Tools
 
-- Manage DeFi portfolios
-- Execute complex trading strategies
-- Audit smart contracts through interaction
-- Discover protocol vulnerabilities
-- Optimize gas and compute usage
+We believe the long-term solution isn't better MCP servers - it's teaching models to:
 
-## Call to Action
+1. **Write their own transaction builders** from first principles
+2. **Discover SDK patterns** through exploration and documentation
+3. **Adapt to new protocols** without explicit tool definitions
+4. **Self-correct** when APIs change or tools break
 
-The best evaluation framework for blockchain AI won't come from a single team - it needs the collective expertise of the entire ecosystem. Whether you're a:
+This is why Code Loop Explorer matters. It's not just an eval - it's a training ground for models to learn the fundamental skill of blockchain interaction.
 
-- **Protocol Developer**: Help us understand your protocol's nuances
-- **DeFi Researcher**: Design reward functions that capture real value
-- **AI Engineer**: Optimize the exploration algorithms
-- **Blockchain Educator**: Create prompts that teach effectively
+### The Generalizable Evaluation Framework
 
-There's a place for you in Solana Gym.
+What we're building isn't protocol-specific or SDK-specific. It's a framework that:
+
+**Measures Core Competencies**:
+- Can the model construct valid transactions?
+- Does it understand account relationships?
+- Can it discover new programs through exploration?
+- Does it learn from transaction errors?
+
+**Adapts to Any Environment**:
+- Works with raw @solana/web3.js or any SDK
+- Evaluates both tool usage AND direct code generation
+- Rewards understanding, not memorization
+
+**Scales with Model Capabilities**:
+- Today: Models write TypeScript using web3.js
+- Tomorrow: Models generate Rust programs
+- Future: Models design their own protocols
+
+### Why This Approach Will Win
+
+**1. Antifragility**: When MCP servers break or SDKs change, models that can write code adapt immediately.
+
+**2. Generalization**: A model that understands Solana at the transaction level can use ANY SDK or tool.
+
+**3. Innovation**: Models aren't limited by predefined tools - they can discover novel interaction patterns.
+
+**4. Verification**: Code generation is auditable. You can see exactly what the model is doing.
+
+### The Path Forward
+
+We're not trying to replace MCP servers or SDKs. We're building the evaluation framework that will:
+
+1. **Identify which models truly understand blockchain mechanics**
+2. **Generate training data for next-generation blockchain-native models**
+3. **Create benchmarks that matter for real-world usage**
+4. **Enable protocol teams to evaluate AI readiness for their systems**
+
+The future isn't models calling `swap_tokens()`. It's models that understand what a swap IS and can implement it from scratch when needed.
 
 ## Acknowledgments
 
@@ -839,4 +885,4 @@ _Solana Gym is open source and MIT licensed. We believe the future of blockchain
 
 ---
 
-_Join us in building the definitive framework for evaluating AI's understanding of blockchains. Because the best way to test if a model understands DeFi is to let it play in the sandbox._
+_The best way to test if a model truly understands blockchain isn't through tool calling - it's whether they can build the tools themselves._
