@@ -107,9 +107,6 @@ class SurfpoolEnv(gym.Env):
         self.test_validator_process = None
         self.agent_keypair = Keypair()
 
-        self.tx_fetch_rpc_url = os.getenv("SOLANA_TX_FETCH_RPC_URL", "https://api.mainnet-beta.solana.com")
-        self.tx_fetch_client = AsyncClient(self.tx_fetch_rpc_url)
-
         self.program_instructions_seen = {}
         self.last_observation = None
         self.last_tx_receipt = None
@@ -245,88 +242,6 @@ class SurfpoolEnv(gym.Env):
         return observation, info
 
 
-    async def step2(self, code: str, programs: list[str], skill_manager: TypeScriptSkillManager):
-        """
-        Workaround to make it easy to call step()
-        """
-        result = skill_manager.evaluate_code(
-            code,
-            programs,
-            str(self.agent_keypair.pubkey()),
-            60000  # Increased to 60 seconds for slow connections
-        )
-        events = []
-        if result.get('success', False) and result.get('serialized_tx'):
-            # Deserialize the transaction
-            tx_bytes = base64.b64decode(result['serialized_tx'])
-            tx = self._partial_sign_transaction(tx_bytes, [self.agent_keypair])
-            
-            obs, reward, terminated, truncated, info = await self.step(tx)
-            events.append(("info", info))
-            # obs is already in the format [["observe", obs_dict]], so we need to extend, not append
-            events.extend(obs)
-            return events, reward, terminated, truncated, info
-        else:
-            # Pass error information through
-            error_info = {
-                "error": result.get("reason", "Unknown error"),
-                "trace": result.get("trace", ""),
-                "stdout": result.get("stdout", ""),
-                "stderr": result.get("stderr", "")
-            }
-            
-            # Get observation with error details
-            obs = await self._get_observation()
-            # Add error details to the observation
-            if obs and len(obs) > 0 and len(obs[0]) > 1:
-                obs[0][1]["error"] = error_info["error"]
-                obs[0][1]["error_trace"] = error_info["trace"]
-            
-            events.append(("error", error_info))
-            events.extend(obs)
-            return events, 0, False, False, error_info
-
-    async def code_loop_step(self, code: str, programs: list[str], skill_manager: TypeScriptSkillManager):
-        """
-        Workaround to make it easy to call step()
-        """
-        result = skill_manager.evaluate_code_loop(
-            code,
-            str(self.agent_keypair.pubkey()),
-            blockhash
-        )
-        events = []
-        if result.get('success', False) and result.get('serialized_tx'):
-            # Deserialize the transaction
-            tx_bytes = base64.b64decode(result['serialized_tx'])
-            tx = self._partial_sign_transaction(tx_bytes, [self.agent_keypair])
-            
-            obs, reward, terminated, truncated, info = await self.step(tx)
-            events.append(("info", info))
-            # obs is already in the format [["observe", obs_dict]], so we need to extend, not append
-            events.extend(obs)
-            return events, reward, terminated, truncated, info
-        else:
-            # Pass error information through
-            error_info = {
-                "error": result.get("reason", "Unknown error"),
-                "trace": result.get("trace", ""),
-                "stdout": result.get("stdout", ""),
-                "stderr": result.get("stderr", "")
-            }
-            
-            # Get observation with error details
-            obs = await self._get_observation()
-            # Add error details to the observation
-            if obs and len(obs) > 0 and len(obs[0]) > 1:
-                obs[0][1]["error"] = error_info["error"]
-                obs[0][1]["error_trace"] = error_info["trace"]
-            
-            events.append(("error", error_info))
-            events.extend(obs)
-            return events, 0, False, False, error_info
-
-
     async def step(self, tx):
         """
         Executes a pre-signed transaction on the Solana network.
@@ -455,101 +370,6 @@ class SurfpoolEnv(gym.Env):
                 await self.client.close()
             logging.info("SurfpoolEnv closed.")
         logging.info("SurfpoolEnv closed.")
-
-    async def fetch_transactions(self, program_id: str = None):
-        """Fetches example transactions for a specific program."""
-        logging.info(f"=== FETCH_TX_EXAMPLES called for program: {program_id} ===")
-        
-        try:
-            # Fetch recent transactions from the tx fetch RPC (e.g., mainnet)
-            # This allows us to get real transaction examples even in local surfpool
-            logging.info(f"Fetching signatures from: {self.tx_fetch_rpc_url}")
-            signatures = await self.tx_fetch_client.get_signatures_for_address(
-                Pubkey.from_string(program_id),
-                limit=10  # Limit to avoid too many requests
-            )
-            
-            logging.info(f"Found {len(signatures.value)} signatures")
-            
-            examples = []
-            # Only process first 3 transactions to avoid timeouts
-            for i, sig_info in enumerate(signatures.value[:3]):
-                try:
-                    logging.info(f"Fetching transaction {i+1}/3: {sig_info.signature}")
-                    tx = await self.tx_fetch_client.get_transaction(
-                        sig_info.signature,
-                        encoding="json",
-                        max_supported_transaction_version=0
-                    )
-                    
-                    if tx and tx.value:
-                        logging.info(f"Successfully fetched transaction {i+1}")
-                        # Extract ALL logs - no truncation
-                        logs = tx.value.transaction.meta.log_messages or []
-                        
-                        # Parse ALL instructions (outer + inner) with proper indexing
-                        instructions = []
-                        
-                        # Parse outer instructions
-                        outer_ixs = tx.value.transaction.transaction.message.instructions or []
-                        for outer_idx, ix in enumerate(outer_ixs):
-                            instructions.append({
-                                "id": str(outer_idx),
-                                "program_id_index": ix.program_id_index,
-                                "accounts": [str(a) for a in ix.accounts],
-                                "data": ix.data,
-                                "depth": 0
-                            })
-                    
-                        # Parse inner instructions
-                        inner_ixs = tx.value.transaction.meta.inner_instructions or []
-                        for outer_idx, inner_group in enumerate(inner_ixs):
-                            if inner_group and inner_group.instructions:
-                                for inner_idx, inner_ix in enumerate(inner_group.instructions):
-                                    instructions.append({
-                                        "id": f"{outer_idx}.{inner_idx}",
-                                        "program_id_index": inner_ix.program_id_index,
-                                        "accounts": [str(a) for a in inner_ix.accounts],
-                                        "data": inner_ix.data,
-                                        "depth": 1
-                                    })
-                    
-                        # Sort instructions by execution order
-                        # This ensures "0", "0.0", "0.1", "1", "1.0", "2" ordering
-                        instructions.sort(key=lambda x: [int(part) for part in x["id"].split(".")])
-                        
-                        examples.append({
-                            "signature": str(sig_info.signature),
-                            "success": tx.value.transaction.meta.err is None,
-                            "error": str(tx.value.transaction.meta.err),
-                            "logs": logs,  # ALL logs, no limit
-                            "instructions": instructions,  # Sorted by execution order
-                            "accounts": [str(a) for a in tx.value.transaction.transaction.message.account_keys],
-                            "slot": tx.value.slot,
-                        })
-                except Exception as e:
-                    logging.warning(f"Failed to fetch transaction {i+1}: {e}")
-                    # Continue with next transaction
-                    continue
-            
-            info = {
-                "program_id": program_id,
-                "program_name": KNOWN_PROGRAM_IDS.get(program_id, "Unknown"),
-                "examples": examples,
-                "count": len(examples),
-                "status": "success"
-            }
-            
-            return info  # No reward for fetching
-            
-        except Exception as e:
-            logging.error(f"Error fetching transactions: {e}")
-            logging.error(f"Exception type: {type(e)}")
-            logging.error(f"Exception details: {repr(e)}")
-            import traceback
-            logging.error(f"Traceback: {traceback.format_exc()}")
-            return {"error": f"Failed to fetch transactions: {str(e)}"}
-
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
