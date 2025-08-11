@@ -382,10 +382,24 @@ class SurfpoolEnv(gym.Env):
         # Get observation after updating metrics
         obs = await self._get_observation(last_tx_result=tx_receipt)
         
+        # Build unique instructions per program for this transaction
+        unique_instructions_this_tx = {}
+        for ix in ordered_instructions:
+            prog_id = str(ix['program_id'])
+            if len(ix['data']) > 0:
+                discriminator = ix['data'][0]
+            else:
+                discriminator = 0
+            
+            if prog_id not in unique_instructions_this_tx:
+                unique_instructions_this_tx[prog_id] = []
+            unique_instructions_this_tx[prog_id].append(discriminator)
+        
         return obs, reward, False, False, { 
             "tx_sig": str(sig.value), 
             "tx_meta": result.value.to_json(),
             "programs_interacted": programs_in_tx,
+            "unique_instructions": unique_instructions_this_tx,
             "reward": reward
         }
 

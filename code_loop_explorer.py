@@ -33,7 +33,8 @@ class CodeLoopExplorer:
         max_messages: int = 200,
         checkpoint_dir: str = "ckpt/code_loop",
         resume: bool = False,
-        verbose: bool = True
+        verbose: bool = True,
+        code_file: str = None
     ):
         self.model_name = model_name
         self.run_index = run_index
@@ -41,6 +42,7 @@ class CodeLoopExplorer:
         self.checkpoint_dir = checkpoint_dir
         self.resume = resume
         self.verbose = verbose
+        self.code_file = code_file or "voyager/skill_runner/code_loop_code.ts"
         
         # Generate unique run ID
         self.run_id = f"code_loop_{datetime.now().strftime('%y-%m-%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
@@ -76,6 +78,7 @@ class CodeLoopExplorer:
             "cumulative_rewards": [],
             "programs_discovered": {},
             "instructions_discovered": {},
+            "instructions_by_program": {},  # New: Track unique instructions per program
             "code_blocks_extracted": [],
             "errors": [],
         }
@@ -379,7 +382,8 @@ Remember to use ```typescript code blocks for your transaction code.
                     result = self.skill_manager.run_code_loop_code(
                         skill_code,
                         str(env.agent_keypair.pubkey()),
-                        blockhash
+                        blockhash,
+                        self.code_file
                     )
                     logging.info(f"📦 Execution result: success={result.get('success', False)}, has_tx={bool(result.get('serialized_tx'))}")
 
@@ -416,15 +420,29 @@ Remember to use ```typescript code blocks for your transaction code.
                                 execution_feedback = f"✅ Transaction executed successfully! Earned {step_reward} reward points.\nTotal rewards: {env.total_reward}\n[Message {self.message_count}/{self.max_messages}] - {self.max_messages - self.message_count} messages remaining\nInfo: {info}\n\nObs: {obs}"
                             else:
                                 logging.info(f"❌ Transaction failed. Info: {info}")
-                                execution_feedback = f"❌ Transaction failed: {info.get('error', 'Unknown error')}\n[Message {self.message_count}/{self.max_messages}] - {self.max_messages - self.message_count} messages remaining"
+                                execution_feedback = f"❌ Transaction failed: {info}\n[Message {self.message_count}/{self.max_messages}] - {self.max_messages - self.message_count} messages remaining"
                             
                             reward = step_reward
                             
                             # Track new discoveries if reward > 0
-                            if reward > 0 and 'programs_interacted' in info:
-                                for prog in info['programs_interacted']:
-                                    if prog not in self.metrics['programs_discovered']:
-                                        self.metrics['programs_discovered'][prog] = self.message_count
+                            if reward > 0:
+                                # Track programs discovered
+                                if 'programs_interacted' in info:
+                                    for prog in info['programs_interacted']:
+                                        if prog not in self.metrics['programs_discovered']:
+                                            self.metrics['programs_discovered'][prog] = self.message_count
+                                
+                                # Track unique instructions per program
+                                if 'unique_instructions' in info:
+                                    # info['unique_instructions'] should be a dict of program_id -> set of instruction discriminators
+                                    for prog_id, instructions in info['unique_instructions'].items():
+                                        if prog_id not in self.metrics['instructions_by_program']:
+                                            self.metrics['instructions_by_program'][prog_id] = set()
+                                        # Add new instructions to the set
+                                        if isinstance(instructions, (list, set)):
+                                            self.metrics['instructions_by_program'][prog_id].update(instructions)
+                                        else:
+                                            self.metrics['instructions_by_program'][prog_id].add(instructions)
                                         
                         except Exception as tx_error:
                             logging.error(f"Transaction execution error: {tx_error}")
@@ -479,10 +497,18 @@ Remember to use ```typescript code blocks for your transaction code.
         """Save current metrics and conversation history."""
         os.makedirs(f"metrics", exist_ok=True)
         
+        # Convert sets to lists for JSON serialization
+        metrics_copy = self.metrics.copy()
+        if 'instructions_by_program' in metrics_copy:
+            metrics_copy['instructions_by_program'] = {
+                prog: list(instructions) if isinstance(instructions, set) else instructions
+                for prog, instructions in metrics_copy['instructions_by_program'].items()
+            }
+        
         # Save metrics
         metrics_path = f"metrics/{self.run_id}_metrics.json"
         with open(metrics_path, 'w') as f:
-            json.dump(self.metrics, f, indent=2)
+            json.dump(metrics_copy, f, indent=2)
         
         # Convert LangChain messages to dict format for saving
         conversation_dict = []
@@ -516,11 +542,13 @@ async def main():
     model_name = os.getenv("MODEL_NAME", "openrouter/horizon-beta")
     max_messages = int(os.getenv("MAX_MESSAGES", "50"))
     run_index = int(os.getenv("RUN_INDEX", "0"))  # Get run index from environment
+    code_file = os.getenv("CODE_FILE", None)  # Get code file from environment
     use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
     
     logging.info(f"Starting Code Loop Explorer with model: {model_name}")
     logging.info(f"Max messages: {max_messages}")
     logging.info(f"Run index: {run_index}")
+    logging.info(f"Code file: {code_file or 'voyager/skill_runner/code_loop_code.ts (default)'}")
     logging.info(f"Use external surfpool: {use_external_surfpool}")
     
     # Initialize explorer
@@ -529,7 +557,8 @@ async def main():
         model_name=model_name,
         run_index=run_index,
         max_messages=max_messages,
-        verbose=True
+        verbose=True,
+        code_file=code_file
     )
     
     # Choose whether to start surfpool or connect to existing instance

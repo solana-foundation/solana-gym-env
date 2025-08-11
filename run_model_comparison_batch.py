@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Run batch model comparison for code_loop_explorer.
-Tests multiple models with specified runs and messages.
+Run batch model comparison for code_loop_explorer with parallel execution support.
+Tests multiple models with specified runs and messages in parallel batches.
 """
 
 import asyncio
@@ -9,30 +9,125 @@ import os
 import sys
 import time
 from datetime import datetime
+from pathlib import Path
 
 # Add to path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-from code_loop_explorer import main as run_code_loop
+
+
+async def run_single_experiment(model: str, run_idx: int, max_messages: int, cleanup_files: bool = False):
+    """Run a single code_loop_explorer experiment"""
+    
+    # Create unique code file name
+    model_safe = model.replace("/", "_").replace("-", "_").replace(".", "_")
+    timestamp = datetime.now().strftime('%H%M%S')
+    code_file = f"voyager/skill_runner/batch_{model_safe}_{run_idx}_{timestamp}.ts"
+    
+    # Set up environment for this run
+    env = os.environ.copy()
+    env['MODEL_NAME'] = model
+    env['RUN_INDEX'] = str(run_idx)
+    env['CODE_FILE'] = code_file
+    env['MAX_MESSAGES'] = str(max_messages)
+    env['USE_EXTERNAL_SURFPOOL'] = 'true'  # Always use external for parallel
+    
+    print(f"  🚀 Starting {model} run {run_idx} (file: {Path(code_file).name})")
+    
+    # Run as subprocess to avoid conflicts
+    process = await asyncio.create_subprocess_exec(
+        'uv', 'run', 'python', 'code_loop_explorer.py',
+        env=env,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE
+    )
+    
+    stdout, stderr = await process.communicate()
+    
+    # Optionally clean up temp file
+    if cleanup_files:
+        try:
+            os.remove(code_file)
+        except:
+            pass
+    
+    if process.returncode == 0:
+        print(f"  ✅ {model} run {run_idx} completed (file: {Path(code_file).name})")
+        return True
+    else:
+        print(f"  ❌ {model} run {run_idx} failed")
+        if stderr:
+            error_msg = stderr.decode()[:200]
+            print(f"     Error: {error_msg}")
+        return False
+
+
+async def run_parallel_batch(experiments, batch_size, max_messages, cleanup_files=False):
+    """Run a batch of experiments in parallel"""
+    
+    results = []
+    total = len(experiments)
+    
+    for i in range(0, total, batch_size):
+        batch = experiments[i:i+batch_size]
+        batch_num = i // batch_size + 1
+        total_batches = (total + batch_size - 1) // batch_size
+        
+        print(f"\n📦 Batch {batch_num}/{total_batches} ({len(batch)} experiments)")
+        print("─" * 50)
+        
+        batch_start = time.time()
+        
+        # Run batch in parallel
+        tasks = [
+            run_single_experiment(model, run_idx, max_messages, cleanup_files)
+            for model, run_idx in batch
+        ]
+        
+        batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+        
+        # Process results
+        for (model, run_idx), result in zip(batch, batch_results):
+            if isinstance(result, Exception):
+                print(f"  ⚠️  {model} run {run_idx}: Exception - {result}")
+                results.append(False)
+            else:
+                results.append(result)
+        
+        batch_duration = time.time() - batch_start
+        print(f"  ⏱️  Batch completed in {batch_duration:.1f} seconds")
+        
+        # Small delay between batches to avoid overwhelming the system
+        if i + batch_size < total:
+            print("  💤 Pausing 5 seconds before next batch...")
+            await asyncio.sleep(5)
+    
+    return results
 
 
 async def run_comparison():
-    """Run model comparison for specified models."""
+    """Run model comparison with parallel execution"""
     
     # Configuration
     models = [
-        # "google/gemini-2.5-flash",  # Already has 10 runs
-        # "openai/gpt-4o-mini",       # Already has 9 runs
-        # "openai/gpt-oss-120b",      # Already has 4 runs
-        "qwen/qwen3-coder"            # Missing ALL runs
+        # "google/gemini-2.5-flash",  # Will create files like: batch_google_gemini_2_5_flash_*
+        # "openai/gpt-oss-120b",       # Will create files like: batch_openai_gpt_oss_120b_*
+        "anthropic/claude-sonnet-4",  # Will create files like: batch_anthropic_claude_3_5_sonnet_*
+        "qwen/qwen3-coder"  # Will create files like: batch_qwen_qwen_2_5_coder_32b_instruct_*
     ]
+    
+    # Uncomment to test specific models only:
+    # models = ["qwen/qwen3-coder"]  # Just qwen for now
+    
     runs_per_model = 5
     max_messages = 50
+    parallel_batch_size = len(models) * runs_per_model  # Run ALL experiments at once!
+    cleanup_files = False  # Keep the generated code files for inspection
     
-    # Check if surfpool is already running
+    # Check surfpool
     use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
     
     print("="*60)
-    print("CODE LOOP MODEL COMPARISON BATCH")
+    print("CODE LOOP MODEL COMPARISON BATCH (PARALLEL)")
     print("="*60)
     print(f"Models to test: {len(models)}")
     for m in models:
@@ -40,68 +135,104 @@ async def run_comparison():
     print(f"Runs per model: {runs_per_model}")
     print(f"Messages per run: {max_messages}")
     print(f"Total experiments: {len(models) * runs_per_model}")
-    print(f"Estimated time: {len(models) * runs_per_model * 5} minutes")
-    if use_external_surfpool:
-        print("\n⚠️  Using EXTERNAL surfpool instance on localhost:8899")
-        print("   Make sure surfpool is already running!")
-    else:
-        print("\n   Will start/stop surfpool for each run")
+    print(f"Parallel batch size: {parallel_batch_size}")
+    print(f"Keep code files: {not cleanup_files}")
+    
+    # Time estimates
+    sequential_time = len(models) * runs_per_model * 12  # ~12 min per 50-message run
+    parallel_time = ((len(models) * runs_per_model + parallel_batch_size - 1) // parallel_batch_size) * 12
+    
+    print(f"\n⏱️  Time Estimates:")
+    print(f"  Sequential: ~{sequential_time} minutes")
+    print(f"  Parallel: ~{parallel_time} minutes")
+    print(f"  Speedup: ~{sequential_time/parallel_time:.1f}x")
+    
+    if not use_external_surfpool:
+        print("\n⚠️  WARNING: Parallel execution requires external surfpool!")
+        print("   Please run in another terminal:")
+        print("   surfpool start -u https://api.mainnet-beta.solana.com --no-tui")
+        print("\n   Then set: export USE_EXTERNAL_SURFPOOL=true")
+        return
+    
+    print("\n✅ Using EXTERNAL surfpool instance on localhost:8899")
     print("="*60)
     
     # Confirm
-    response = input("\nProceed? (y/n): ")
+    response = input("\nProceed with parallel execution? (y/n): ")
     if response.lower() != 'y':
         print("Cancelled")
         return
     
-    start_time = time.time()
-    experiment_num = 0
-    total_experiments = len(models) * runs_per_model
-    
+    # Prepare all experiments
+    experiments = []
     for model in models:
-        print(f"\n{'='*50}")
-        print(f"Testing: {model}")
-        print(f"{'='*50}")
-        
         for run_idx in range(runs_per_model):
-            experiment_num += 1
-            run_start = time.time()
-            
-            print(f"\n[{experiment_num}/{total_experiments}] {model} - Run {run_idx + 1}/{runs_per_model}")
-            print(f"Time: {datetime.now().strftime('%H:%M:%S')}")
-            
-            # Set environment variables
-            os.environ['MODEL_NAME'] = model
-            os.environ['MAX_MESSAGES'] = str(max_messages)
-            os.environ['RUN_INDEX'] = str(run_idx)  # Pass the run index!
-            # USE_EXTERNAL_SURFPOOL is already set in environment if needed
-            
-            try:
-                # Run the code_loop_explorer
-                await run_code_loop()
-                
-                run_duration = time.time() - run_start
-                print(f"✓ Run completed in {run_duration:.1f} seconds")
-                
-            except Exception as e:
-                print(f"✗ Error in run: {e}")
-            
-            # Small delay between runs
-            if experiment_num < total_experiments:
-                print("Waiting 5 seconds before next run...")
-                await asyncio.sleep(5)
+            experiments.append((model, run_idx))
+    
+    print(f"\n🚀 Starting {len(experiments)} experiments in batches of {parallel_batch_size}")
+    start_time = time.time()
+    
+    # Run all experiments in parallel batches
+    results = await run_parallel_batch(experiments, parallel_batch_size, max_messages, cleanup_files)
     
     # Summary
     total_duration = time.time() - start_time
+    success_count = sum(1 for r in results if r)
+    
     print(f"\n{'='*60}")
-    print("COMPARISON COMPLETE!")
+    print("PARALLEL BATCH COMPLETE!")
     print(f"{'='*60}")
-    print(f"Total time: {total_duration:.1f} seconds ({total_duration/60:.1f} minutes)")
-    print(f"Average per run: {total_duration/total_experiments:.1f} seconds")
-    print(f"\nTo analyze results, run:")
+    print(f"Total experiments: {len(experiments)}")
+    print(f"Successful: {success_count}/{len(experiments)}")
+    print(f"Failed: {len(experiments) - success_count}")
+    print(f"\n⏱️  Performance:")
+    print(f"  Total time: {total_duration:.1f} seconds ({total_duration/60:.1f} minutes)")
+    print(f"  Average per experiment: {total_duration/len(experiments):.1f} seconds")
+    print(f"  Effective speedup: ~{(len(experiments) * 12 * 60) / total_duration:.1f}x")
+    
+    # Report by model
+    print(f"\n📊 Results by Model:")
+    for model in models:
+        model_results = []
+        for i, (m, _) in enumerate(experiments):
+            if m == model:
+                model_results.append(results[i])
+        success = sum(1 for r in model_results if r)
+        print(f"  {model}: {success}/{len(model_results)} successful")
+    
+    print(f"\n📈 To analyze results, run:")
     print("  uv run python analyze_code_loop_performance.py")
     print(f"{'='*60}")
 
 
+async def run_sequential_comparison():
+    """Original sequential version for comparison"""
+    
+    # This is the old sequential code - kept for reference
+    # You can call this instead of run_comparison() to use sequential mode
+    
+    from code_loop_explorer import main as run_code_loop
+    
+    models = ["qwen/qwen3-coder"]
+    runs_per_model = 5
+    max_messages = 50
+    
+    print("Running in SEQUENTIAL mode (slow)...")
+    
+    for model in models:
+        for run_idx in range(runs_per_model):
+            os.environ['MODEL_NAME'] = model
+            os.environ['MAX_MESSAGES'] = str(max_messages)
+            os.environ['RUN_INDEX'] = str(run_idx)
+            
+            print(f"Running {model} run {run_idx}...")
+            await run_code_loop()
+            print(f"Completed {model} run {run_idx}")
+
+
 if __name__ == "__main__":
+    # Default to parallel mode
     asyncio.run(run_comparison())
+    
+    # To use sequential mode:
+    # asyncio.run(run_sequential_comparison())

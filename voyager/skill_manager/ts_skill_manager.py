@@ -68,10 +68,10 @@ class TypeScriptSkillManager:
     # ================================
     # Code Loop
 
-    def run_code_loop_code(self, code: str, agent_pubkey: str, latest_blockhash: str):
-        with open("code_loop_code.ts", "w") as f:
+    def run_code_loop_code(self, code: str, agent_pubkey: str, latest_blockhash: str, code_file: str = "code_loop_code.ts"):
+        with open(code_file, "w") as f:
             f.write(code)
-        command = ["bun", "voyager/skill_runner/runSkill.ts", "code_loop_code.ts", "4000", agent_pubkey, latest_blockhash]
+        command = ["bun", "voyager/skill_runner/runSkill.ts", code_file, "4000", agent_pubkey, latest_blockhash]
         try:
             result = subprocess.run(
                 command,
