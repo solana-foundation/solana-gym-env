@@ -1,38 +1,77 @@
 {% include nav-header.html %}
 
-# Solana Bench: One Shotting Complex Transactions
+# Solana Composability Benchmark: Can LLMs Build Complex Transactions?
 
-Why can't you ask LLMs to oneshot crypto trading bots?
-Why can't LLMs write full fledged trading bots that listen to token prices
-and attempt to make money by exploiting the price differences between dexes. That would be amazing.
-We're not there yet, but we explore how well LLMs string together different Solana programs in
-a novel experiment.
+Why can’t we simply ask an LLM to write a crypto trading bot—one that listens to token prices, spots price differences between DEXes, and makes money by exploiting them? That would be amazing. The bot could monitor the chain, buy low on one platform, sell high on another, and do it all in seconds. We’re not quite there yet—but this experiment explores how close we can get today by measuring how well LLMs can string together diverse Solana programs in a single transaction.
 
-Building superintelligent blockchain agents responsive to market changes remains a central challenge
-for the crypto community. Most current blockchain agents use RAG-augmented LLMs conneced to fixed tool sets - sometimes via MCP servers - to run predefined trading actions. They work for simple tasks, but they can't adapt when prices shift in more complex ways. On blockchains, the same token can be priced differently across decentralized echanges, lending markets, and other onchain programs. In theory, an agent could buy low on one platform and sell high on another--but in practice, that often requires chaining together multiple programs in the right order within a single transaction or across several transactions. Today's LLM-powered agents can't reliably build and execute those complex, multistep plans, so they miss most of the real opportunities.
+## The Problem with Today's Blockchain Agents
 
-Solana's unique architecture makes this problem even more interesting. Unlike EVM environments
-that only allow one contract to be invoked per transaction, Solana transactions allow many different protocols to be invoked, which demands richer reasoning and composability. A truly capable Solana agent
-should be able to (1) compose complex transactions spanning multiple programs, (2) debug malformed
-transactions using onchain metadata, and (3) chain multiple transactions into coherent long-term strategies. These are exactly the kinds of skills needed to exploit cross-program price differences at scale.
+Building superintelligent blockchain agents that respond to market changes is still one of the biggest challenges in the crypto community. Most current blockchain agents use RAG-augmented LLMs connected to fixed toolsets—sometimes via MCP servers—to execute predefined actions. They handle simple tasks fine, but break down when the environment changes in subtle ways.
 
-In an ideal world, we could run a perfect financial test: a sandboxed replica of mainnet where an LLM could detect arbitrage opportunities and execute real transactions in response. This would be the holy grail of LLM blockchain agents; a proving ground for for the next generation of AI agent engineering. Thanks to [Surfpool](https://surfpool.run), we can already spin up sandboxed versions of mainnet and let agents submit transactions safely. What we can't yet do is track an agent's entire portfolio in that sandbox with the same accuracy and completeness as Jupiter Portfolio. Building that kind of indexing system for local test validator is beyond the scope of this project.
+On blockchains, the same token can be priced differently across decentralized exchanges, lending protocols, and other on-chain programs. In theory, a bot could exploit those differences. In practice, doing so often requires chaining multiple programs together in the correct order—sometimes within a single transaction—before the opportunity disappears. Most current LLM agents can’t plan and execute these complex, multi-step interactions reliably, so they miss out.
 
-Since we're not there yet, we start simpler: measure an LLM's ability to chain together as many unique Solana program instructions as possible in successful transactoins. This serves as a proxy for deep Solana fluency. We're testing whether the model can compose, sequence, and execute complex multi-program interactions even without the profit motive in play.
+## Why Solana Makes This Harder And More Interesting
 
-Introducing the Solana Composability Benchmark. We compared several LLMs ability to execute as many unique instructions in 50 messages as they could. In each message, they can write typescript code that produces
-a single transaction. If this transaction is successful, then each unique instruction counts towards that LLMs total reward.
+Solana’s architecture is uniquely suited for complex transactions. Unlike many EVM-based chains, where one transaction typically calls one contract, Solana allows a single transaction to invoke many different programs. This makes it possible to compose highly efficient multi-protocol operations—but it also demands more reasoning and composability from the agent.
 
-We found that Anthropic's Claude Sonnet 4 stood head and shoulders above the other models in discovering new programs, exploiting reward environment, and composing complex Solana transactions. However, at such a high price point, it is nearly cost-prohibitive to use at scale. Comparatively, Google's Gemini 2.5 Flash model is the best model at the lower price range, and is nearly as competent as it's Pro model.
+A truly capable Solana agent should be able to:
 
-Looking to the future, we would like to see further work in developing benchmarks for LLM composition between Solana protocols. We think that the Surfpool environment we open sourced with this project,
-in addition to the typescript code-action loop, lower the barrier for further experimentation. An environment can be thought of as a 3-tuple: `<(system prompt, package.json, reward filter)>`. For example, a DeFi focused environment could have a system prompt modified to encourage exploring specific DeFi programs, along with corresponding DeFi SDKs installed, and a corresponding reward filter to only reward unique instructions executed against specific programs.
+1. **Compose** complex transactions spanning multiple programs.
+2. **Debug** malformed transactions using onchain metadata.
+3. **Chain** multiple transactions into coherent long-term strategies.
+
+These capabilities are exactly what's needed to profit from cross-program price differences at scale. They're the missing piece in today's LLM agents.
+
+## The Holy Grail: A True Financial Sandbox
+
+In an ideal world, we could run a perfect financial test: a sandboxed replica of mainnet where an LLM could detect arbitrage opportunities and execute real transactions in response. This would be the holy grail of LLM blockchain agents; a proving ground for the next generation of AI agent engineering.
+
+Thanks to [Surfpool](https://surfpool.run), we can already spin up sandboxed versions of mainnet and let agents submit transactions safely. What we can't yet do is track an agent's entire portfolio in that sandbox with the same accuracy and completeness as Jupiter Portfolio. Running a local test validator with full portfolio tracking is beyond the scope of this project.
+
+## Our Simplified Approach
+
+Since we can’t yet run the perfect arbitrage simulation, we went simpler: measure an LLM’s ability to chain together as many unique Solana program instructions as possible in successful transactions. On Solana, instructions are the atomic building blocks of program interaction, and successfully chaining diverse instructions together signals a deeper understanding of Solana protocols.
+
+This acts as a proxy for deep Solana fluency—testing whether a model can compose, sequence, and execute complex multi-program interactions, even without a direct profit motive. If a model can’t build diverse and valid transactions in a controlled setting, it’s unlikely to succeed in the chaotic world of on-chain arbitrage.
+
+`<image: transaction trace showing composition>`
+
+## Introducing the Solana Composability Benchmark
+
+In this benchmark, each model had 50 messages to work with. In each message, the model could write TypeScript code to generate exactly one transaction. If the transaction succeeded, each unique instruction within it counted toward the model’s total score. The goal: maximize the diversity of instructions within the message limit.
+
+`<image: leaderboard of model performance>`
+
+## Results
+
+The results were clear: Anthropic’s Claude Sonnet 4 outperformed all other models in discovering new programs, exploiting the reward environment, and composing complex Solana transactions. However, its high cost makes it impractical for large-scale deployment.
+
+For a more budget-friendly option, Google’s Gemini 2.5 Flash proved the best at the lower price tier—coming close to its Pro sibling in raw capability while being significantly cheaper.
+
+## The Path Forward
+
+We see this as just the start. The `Surfpool` environment we open-sourced for this project, combined with the Typescript code-action loop, lowers the barrier for creating new benchmarks. An `environment` can be defined as three things
+
+1. **System prompt** encouraging exploration with well-formed examples.
+2. **Pre-installed dependencies** listed in `package.json`.
+3. **Reward filter** that rewards transactions based on interacting with specific programs
+
+For example, a DeFi-focused environment could modify the system prompt to push the model toward specific DeFi programs, pre-install relevant SDKs, and adjust the reward filter to count only instructions that hit those targets.
+
+## Call to Action
+
+If you're building in this space, help us make more complex DeFi benchmarks. The more realistic the environment, the closer we get to the holy grail of on-chain AI agents. Let’s move beyond toy benchmarks and start building the testbeds that will power the next generation of autonomous blockchain systems.
+
+## Appendix
 
 For in-depth exploration of the code generated by the different LLMs, check out this interactive guide.
 `<interactive links to metric traces>`
 
 To cite this blog post please use:
-`<generate citation reference here>`
+
+```
+Gundotra, N. (2025). Solana Bench: One-Shotting Complex Transactions. Retrieved from https://ngundotra.github.io/solana-gym-env
+```
 
 ====
 
