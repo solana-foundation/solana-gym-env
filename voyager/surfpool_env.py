@@ -97,13 +97,18 @@ class SurfpoolEnv(gym.Env):
     """
     metadata = {"render_modes": ["human"], "render_fps": 30}
 
-    def __init__(self, rpc_url: str = "https://api.mainnet-beta.solana.com", ws_url: str = "ws://localhost:8900"):
+    def __init__(self, rpc_url: str = "https://api.mainnet-beta.solana.com", ws_url: str = "ws://localhost:8900", 
+                 allowed_programs: list = None, use_external_surfpool: bool = False):
         super().__init__()
 
         self.rpc_url = rpc_url
         self.ws_url = ws_url
+        self.use_external_surfpool = use_external_surfpool
         # The client for the Voyager environment will connect to the surfpool instance
         self.client = AsyncClient("http://127.0.0.1:8899", "confirmed")
+        
+        # Program filter for specialized environments (e.g., swap-only)
+        self.allowed_programs = allowed_programs or []
         self.test_validator_process = None
         self.agent_keypair = Keypair()
 
@@ -206,21 +211,22 @@ class SurfpoolEnv(gym.Env):
     async def reset(self, seed=None, options=None):
         super().reset(seed=seed)
         
-        try:
-            if self._validator_cm:
-                await self._validator_cm.__aexit__(None, None, None)
-        except Exception as e:
-            logging.error(f"Error closing validator: {e}", exc_info=True)
+        # Only manage validator lifecycle if not using external surfpool
+        if not self.use_external_surfpool:
+            try:
+                if self._validator_cm:
+                    await self._validator_cm.__aexit__(None, None, None)
+            except Exception as e:
+                logging.error(f"Error closing validator: {e}", exc_info=True)
 
-        # 2. Launch a fresh validator and wait until it’s live
-        self._validator_cm = _surfpool_validator(self.rpc_url)
-        self._validator_proc = await self._validator_cm.__aenter__()
+            # 2. Launch a fresh validator and wait until it's live
+            self._validator_cm = _surfpool_validator(self.rpc_url)
+            self._validator_proc = await self._validator_cm.__aenter__()
 
         # Create a new agent for the episode
         self.agent_keypair = Keypair()
         # DO NOT reset program_instructions_seen - it should persist across episodes!
         # self.program_instructions_seen = {}  # <-- This was the bug!
-        # self.total_reward = 0
         
         # Reset transaction tracking
         self.last_tx_instruction_count = 0
@@ -344,6 +350,12 @@ class SurfpoolEnv(gym.Env):
 
         reward = 0
         for ix in ordered_instructions:
+            # If we have an allowed programs filter, check if this program is allowed
+            if self.allowed_programs:
+                prog_id_str = str(ix['program_id'])
+                if prog_id_str not in self.allowed_programs:
+                    continue  # Skip instructions from non-allowed programs
+            
             # Check if instruction data is not empty before accessing index 0
             if len(ix['data']) > 0:
                 discriminator = ix['data'][0]
@@ -354,7 +366,10 @@ class SurfpoolEnv(gym.Env):
             if key not in self.program_instructions_seen:
                 reward += 1
                 self.program_instructions_seen[key] = True
-                logging.info(f"Discovered new program instruction ({str(key[0])}, {str(key[1])})")
+                if self.allowed_programs:
+                    logging.info(f"🔄 Discovered new swap instruction ({str(key[0])[:8]}..., disc:{str(key[1])})")
+                else:
+                    logging.info(f"Discovered new program instruction ({str(key[0])}, {str(key[1])})")
         return reward
     
     def render(self, mode="human"):

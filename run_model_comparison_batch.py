@@ -5,7 +5,10 @@ Tests multiple models with specified runs and messages in parallel batches.
 """
 
 import asyncio
+import json
 import os
+import shutil
+import subprocess
 import sys
 import time
 from datetime import datetime
@@ -15,20 +18,22 @@ from pathlib import Path
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 
-async def run_single_experiment(model: str, run_idx: int, max_messages: int, cleanup_files: bool = False):
+async def run_single_experiment(model: str, run_idx: int, max_messages: int, env_name: str, cleanup_files: bool = False):
     """Run a single code_loop_explorer experiment"""
     
     # Create unique code file name
     model_safe = model.replace("/", "_").replace("-", "_").replace(".", "_")
     timestamp = datetime.now().strftime('%H%M%S')
     code_file = f"voyager/skill_runner/batch_{model_safe}_{run_idx}_{timestamp}.ts"
-    
+    env_config = f'voyager/environments/{env_name}_env.json'
+
     # Set up environment for this run
     env = os.environ.copy()
     env['MODEL_NAME'] = model
     env['RUN_INDEX'] = str(run_idx)
     env['CODE_FILE'] = code_file
     env['MAX_MESSAGES'] = str(max_messages)
+    env['ENVIRONMENT_CONFIG'] = env_config 
     env['USE_EXTERNAL_SURFPOOL'] = 'true'  # Always use external for parallel
     
     print(f"  🚀 Starting {model} run {run_idx} (file: {Path(code_file).name})")
@@ -61,7 +66,7 @@ async def run_single_experiment(model: str, run_idx: int, max_messages: int, cle
         return False
 
 
-async def run_parallel_batch(experiments, batch_size, max_messages, cleanup_files=False):
+async def run_parallel_batch(experiments, batch_size, max_messages, env_name, cleanup_files=False):
     """Run a batch of experiments in parallel"""
     
     results = []
@@ -79,7 +84,7 @@ async def run_parallel_batch(experiments, batch_size, max_messages, cleanup_file
         
         # Run batch in parallel
         tasks = [
-            run_single_experiment(model, run_idx, max_messages, cleanup_files)
+            run_single_experiment(model, run_idx, max_messages, env_name, cleanup_files)
             for model, run_idx in batch
         ]
         
@@ -104,24 +109,39 @@ async def run_parallel_batch(experiments, batch_size, max_messages, cleanup_file
     return results
 
 
+def load_environment(env_name: str):
+    def load_environment_config(env_name: str):
+        with open(f"voyager/environments/{env_name}_env.json", "r") as f:
+            return json.load(f)
+    env_file = load_environment_config(env_name)
+    package_json = env_file.get("package_json", None)
+    if not package_json:
+        raise ValueError(f"Package JSON not found for environment {env_name}")
+
+    # cp this to voyager/skill_runner/package.json
+    shutil.copy(package_json, "voyager/skill_runner/package.json")
+    # then do bun install in the skill_runner directory
+    subprocess.run(["bun", "install"], cwd="voyager/skill_runner")
+
+    return env_file, package_json
+
 async def run_comparison():
     """Run model comparison with parallel execution"""
     
     # Configuration
     models = [
-        # "google/gemini-2.5-flash",  # Will create files like: batch_google_gemini_2_5_flash_*
-        # "openai/gpt-oss-120b",       # Will create files like: batch_openai_gpt_oss_120b_*
-        "anthropic/claude-sonnet-4",  # Will create files like: batch_anthropic_claude_3_5_sonnet_*
-        "qwen/qwen3-coder"  # Will create files like: batch_qwen_qwen_2_5_coder_32b_instruct_*
+        "openai/gpt-oss-120b",
+        "google/gemini-2.5-flash",
+        "anthropic/claude-sonnet-4",
+        "openai/gpt-5"
     ]
-    
-    # Uncomment to test specific models only:
-    # models = ["qwen/qwen3-coder"]  # Just qwen for now
     
     runs_per_model = 5
     max_messages = 50
     parallel_batch_size = len(models) * runs_per_model  # Run ALL experiments at once!
     cleanup_files = False  # Keep the generated code files for inspection
+    env_name = "basic"
+    load_environment(env_name)
     
     # Check surfpool
     use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
@@ -137,16 +157,9 @@ async def run_comparison():
     print(f"Total experiments: {len(models) * runs_per_model}")
     print(f"Parallel batch size: {parallel_batch_size}")
     print(f"Keep code files: {not cleanup_files}")
+    print(f"Environment: {env_name}")
     
     # Time estimates
-    sequential_time = len(models) * runs_per_model * 12  # ~12 min per 50-message run
-    parallel_time = ((len(models) * runs_per_model + parallel_batch_size - 1) // parallel_batch_size) * 12
-    
-    print(f"\n⏱️  Time Estimates:")
-    print(f"  Sequential: ~{sequential_time} minutes")
-    print(f"  Parallel: ~{parallel_time} minutes")
-    print(f"  Speedup: ~{sequential_time/parallel_time:.1f}x")
-    
     if not use_external_surfpool:
         print("\n⚠️  WARNING: Parallel execution requires external surfpool!")
         print("   Please run in another terminal:")
@@ -173,7 +186,7 @@ async def run_comparison():
     start_time = time.time()
     
     # Run all experiments in parallel batches
-    results = await run_parallel_batch(experiments, parallel_batch_size, max_messages, cleanup_files)
+    results = await run_parallel_batch(experiments, parallel_batch_size, max_messages, env_name, cleanup_files)
     
     # Summary
     total_duration = time.time() - start_time

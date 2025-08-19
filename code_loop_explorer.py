@@ -5,9 +5,8 @@ import os
 import re
 import json
 import uuid
-import pdb
 from datetime import datetime
-from typing import Dict, Any, List, Optional
+from typing import List
 
 from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, AIMessage
@@ -16,7 +15,6 @@ from dotenv import load_dotenv
 
 from voyager.skill_manager.ts_skill_manager import TypeScriptSkillManager
 from voyager.surfpool_env import SurfpoolEnv, _surfpool_validator
-from voyager.prompts import load_prompt
 
 load_dotenv()
 
@@ -34,7 +32,8 @@ class CodeLoopExplorer:
         checkpoint_dir: str = "ckpt/code_loop",
         resume: bool = False,
         verbose: bool = True,
-        code_file: str = None
+        code_file: str = None,
+        environment_config: str = None
     ):
         self.model_name = model_name
         self.run_index = run_index
@@ -43,6 +42,12 @@ class CodeLoopExplorer:
         self.resume = resume
         self.verbose = verbose
         self.code_file = code_file or "voyager/skill_runner/code_loop_code.ts"
+        self.environment_config_path = environment_config
+        
+        # Load environment configuration if provided
+        self.env_config = None
+        if environment_config:
+            self.load_environment_config(environment_config)
         
         # Generate unique run ID
         self.run_id = f"code_loop_{datetime.now().strftime('%y-%m-%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
@@ -74,17 +79,27 @@ class CodeLoopExplorer:
             "run_index": run_index,
             "run_id": self.run_id,
             "start_time": datetime.now().isoformat(),
+            "environment_config": environment_config,
             "messages": [],
             "cumulative_rewards": [],
             "programs_discovered": {},
-            "instructions_discovered": {},
-            "instructions_by_program": {},  # New: Track unique instructions per program
+            "instructions_by_program": {},  # Track unique instructions per program
             "code_blocks_extracted": [],
             "errors": [],
         }
         
         self.message_count = 0
         self.messages = []  # List of LangChain message objects
+        
+    def load_environment_config(self, config_path: str):
+        """Load environment configuration from JSON file."""
+        try:
+            with open(config_path, 'r') as f:
+                self.env_config = json.load(f)
+                logging.info(f"Loaded environment config: {self.env_config['name']}")
+        except Exception as e:
+            logging.error(f"Failed to load environment config: {e}")
+            self.env_config = None
         
     def extract_code_blocks(self, message_content: str) -> List[str]:
         """
@@ -149,176 +164,18 @@ class CodeLoopExplorer:
         obs_dict = observation[0][1] if observation else {}
         agent_pubkey = str(env.agent_keypair.pubkey())
         
-        # Custom system prompt emphasizing TypeScript code blocks with correct function signature
-        system_prompt = f"""You are an expert Solana blockchain developer. Your ONLY way to interact with the blockchain is by writing TypeScript code.
-
-🚨 CRITICAL REQUIREMENTS 🚨
-1. You MUST respond with TypeScript code in ```typescript blocks
-2. The function signature MUST be: export async function executeSkill(blockhash: string): Promise<string>
-3. You MUST return a base64 encoded serialized transaction
-4. Each response SHOULD contain at least one ```typescript code block
-5. If you don't include code, nothing will happen!
-
-⏰ TIME LIMIT: You have ONLY {self.max_messages} messages total to maximize rewards!
-BE EFFICIENT: Pack many instructions per transaction to get maximum rewards!
-URGENCY: Every message counts - make each transaction count with as many instructions as you can!
-
-=== CURRENT STATE ===
-SOL Balance: {obs_dict.get('sol_balance', 0):.4f} SOL
-Agent Pubkey: {agent_pubkey}
-Block Height: {obs_dict.get('block_height', 0)}
-Programs Discovered: {obs_dict.get('discovered_programs', 0)}
-Total Reward: {env.total_reward}
-
-=== CONNECTION INFO ===
-You are connected to Solana mainnet through Surfpool - a safe sandbox proxy.
-Surfpool allows you to interact with real mainnet data in a sandboxed environment.
-RPC Endpoint: http://localhost:8899 or http://127.0.0.1:8899
-⚠️ IMPORTANT: If you need to create a Connection object, ONLY use localhost:8899
-Example: const connection = new Connection('http://localhost:8899');
-✅ The environment is pre-configured - focus on building transactions!
-
-=== AVAILABLE DEPENDENCIES ===
-You can import from these packages:
-- @solana/web3.js (v1.98.2) - Core Solana SDK
-- @solana/spl-token (v0.4.13) - SPL Token operations
-- @coral-xyz/anchor (v0.30.1) - Anchor framework
-- @coral-xyz/borsh (v0.31.1) - Borsh serialization
-- @solana/kit (v2.3.0) - Solana development kit
-- @codama/nodes-from-anchor (v1.2.3) - Codama IDL support
-- buffer - Node.js Buffer for binary data
-
-=== EXACT CODE PATTERN (MUST FOLLOW) ===
-```typescript
-import {{ Transaction, SystemProgram, PublicKey }} from '@solana/web3.js';
-
-export async function executeSkill(blockhash: string): Promise<string> {{
-    const tx = new Transaction();
-    const agentPubkey = new PublicKey('{agent_pubkey}');
+        # Use custom prompt if environment config is loaded
+        if self.env_config and 'system_prompt_template' in self.env_config:
+            with open(self.env_config['system_prompt_template'], 'r') as f:
+                system_prompt = f.read().format(
+                    agent_pubkey=agent_pubkey,
+                    sol_balance=obs_dict.get('sol_balance', 0),
+                    block_height=obs_dict.get('block_height', 0),
+                    total_reward=env.total_reward,
+                    max_messages=self.max_messages
+                )
+                return system_prompt
     
-    // Add your instructions here
-    tx.add(
-        SystemProgram.transfer({{
-            fromPubkey: agentPubkey,
-            toPubkey: new PublicKey("11111111111111111111111111111111"),
-            lamports: 100000
-        }})
-    );
-    
-    // Set transaction properties
-    tx.recentBlockhash = blockhash;
-    tx.feePayer = agentPubkey;
-    
-    // Return base64 encoded transaction
-    return tx.serialize({{
-        requireAllSignatures: false,
-        verifySignatures: false
-    }}).toString('base64');
-}}
-```
-
-=== 🎯 MAXIMIZE REWARDS: START SIMPLE, THEN SCALE UP! 🎯 ===
-- You earn +1 reward for EACH unique (program_id, instruction_discriminator) pair
-
-📈 WINNING STRATEGY:
-1. START SIMPLE: Begin with 2-3 instructions you KNOW work (e.g., self-transfers, memos)
-2. BUILD CONFIDENCE: Once those work, gradually add more instructions
-3. SCALE UP: After success, pack 10-20+ instructions per transaction
-4. MIX PROGRAMS: Combine System, Memo, Compute Budget, Token, Token-2022 programs
-5. USE TOKEN-2022: Token-2022 (TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb) has many extensions!
-   - Each extension instruction = unique reward!
-   - Try: transfer fees, interest bearing, confidential transfers, metadata, etc.
-
-Why this works:
-- ✅ Early success builds momentum
-- ✅ You learn what works in this environment
-- ✅ Failed transactions = 0 rewards, so start safe!
-- ✅ Once confident, go aggressive with 15+ instructions
-
-TARGET PROGRESSION:
-- Message 1-3: 2-5 safe instructions (test the waters)
-- Message 4-10: 5-10 instructions (gaining confidence)  
-- Message 11+: 10-20+ instructions (maximize rewards!)
-
-Remember: 1 transaction with 20 instructions > 20 transactions with 1 instruction!
-
-=== MULTI-INSTRUCTION EXAMPLE (MORE REWARDS!) ===
-```typescript
-import {{ Transaction, SystemProgram, PublicKey, Keypair }} from '@solana/web3.js';
-
-export async function executeSkill(blockhash: string): Promise<string> {{
-    const tx = new Transaction();
-    const agentPubkey = new PublicKey('{agent_pubkey}');
-    const newAccount = Keypair.generate();
-    
-    // Add multiple instructions for more rewards!
-    tx.add(
-        SystemProgram.createAccount({{
-            fromPubkey: agentPubkey,
-            newAccountPubkey: newAccount.publicKey,
-            lamports: 1000000,
-            space: 0,
-            programId: SystemProgram.programId
-        }}),
-        SystemProgram.transfer({{
-            fromPubkey: agentPubkey,
-            toPubkey: newAccount.publicKey,
-            lamports: 50000
-        }}),
-        SystemProgram.assign({{
-            accountPubkey: newAccount.publicKey,
-            programId: SystemProgram.programId
-        }})
-    );
-    
-    tx.recentBlockhash = blockhash;
-    tx.feePayer = agentPubkey;
-    tx.partialSign(newAccount);
-    
-    return tx.serialize({{
-        requireAllSignatures: false,
-        verifySignatures: false
-    }}).toString('base64');
-}}
-```
-
-=== IMPORTANT RULES & COMMON PITFALLS ===
-1. Function MUST be: export async function executeSkill(blockhash: string): Promise<string>
-2. Import ALL dependencies at the top
-3. Return base64 encoded serialized transaction
-4. Use the provided blockhash parameter
-5. Set tx.feePayer = agentPubkey
-6. For new accounts, use partialSign(newAccount)
-
-❌ AVOID THESE COMMON ERRORS:
-- DON'T add duplicate ComputeBudgetProgram instructions (only ONE setComputeUnitLimit and ONE setComputeUnitPrice per tx)
-- DON'T transfer to program IDs - only transfer to regular accounts
-- DON'T use undefined variables - declare ALL variables before use
-- DON'T create accounts without signing with them (use partialSign)
-
-✅ WHAT WORKS RELIABLY:
-- SystemProgram.transfer to your own address (self-transfer)
-- ONE ComputeBudgetProgram.setComputeUnitLimit per transaction
-- ONE ComputeBudgetProgram.setComputeUnitPrice per transaction
-- Creating new Keypairs and accounts (but remember to partialSign)
-- Token-2022 instructions (huge potential for unique rewards!):
-  * InitializeMint2 with extensions
-  * InitializeAccount3 
-  * Transfer with fee
-  * Metadata instructions
-  * Each extension type = new unique instructions!
-
-=== COMMON PROGRAM IDS ===
-- System Program: 11111111111111111111111111111111
-- Token Program: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
-- Token-2022 Program: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb (MORE REWARDS!)
-- Associated Token Program: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
-- Memo Program: MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr
-- Compute Budget: ComputeBudget111111111111111111111111111111
-
-REMEMBER: No ```typescript blocks = No blockchain interaction = No rewards!
-ALWAYS use: export async function executeSkill(blockhash: string): Promise<string>"""
-        
         return system_prompt
     
     async def run_exploration_loop(self, env: SurfpoolEnv):
@@ -383,15 +240,16 @@ Remember to use ```typescript code blocks for your transaction code.
                         skill_code,
                         str(env.agent_keypair.pubkey()),
                         blockhash,
-                        self.code_file
+                        self.code_file,
+                        self.env_config.get("timeout", 30000)
                     )
                     logging.info(f"📦 Execution result: success={result.get('success', False)}, has_tx={bool(result.get('serialized_tx'))}")
 
                     execution_feedback = ""
                     reward = 0
+                    instructions_discovered = {}
 
                     tx_data = result.get("serialized_tx")
-                    # pdb.set_trace()
                     if not tx_data:
                         execution_feedback = json.dumps({
                             "error": "Skill execution failed",
@@ -416,6 +274,19 @@ Remember to use ```typescript code blocks for your transaction code.
                             # Log success
                             if step_reward > 0:
                                 logging.info(f"✅ Transaction successful! Reward: {step_reward} | Total: {env.total_reward}")
+                                
+                                # Log instructions discovered this step
+                                if 'unique_instructions' in info:
+                                    instructions_this_step = {}
+                                    for program_id, discriminators in info['unique_instructions'].items():
+                                        instructions_this_step[program_id] = list(set(discriminators))
+                                    
+                                    if instructions_this_step:
+                                        logging.info(f"📊 Instructions in this transaction:")
+                                        for prog, count in instructions_this_step.items():
+                                            logging.info(f"   • {prog}: {count} instructions")
+                                    instructions_discovered = instructions_this_step
+                                
                                 logging.info(f"✅ Obs: {obs}\n\nInfo: {info}")
                                 execution_feedback = f"✅ Transaction executed successfully! Earned {step_reward} reward points.\nTotal rewards: {env.total_reward}\n[Message {self.message_count}/{self.max_messages}] - {self.max_messages - self.message_count} messages remaining\nInfo: {info}\n\nObs: {obs}"
                             else:
@@ -469,17 +340,21 @@ Remember to use ```typescript code blocks for your transaction code.
                 
                 # Update cumulative metrics
                 self.metrics['cumulative_rewards'].append(env.total_reward)
-                self.metrics['messages'].append({
+                
+                # Build message metrics
+                message_metrics = {
                     'index': self.message_count,
                     'timestamp': message_start_time.isoformat(),
                     'duration': (datetime.now() - message_start_time).total_seconds(),
                     'reward': reward if 'reward' in locals() else 0,
-                    'total_reward': env.total_reward
-                })
+                    'total_reward': env.total_reward,
+                    'instructions_discovered': instructions_discovered
+                }
                 
-                # Save checkpoint periodically
-                if self.message_count % 10 == 0:
-                    self.save_checkpoint()
+                self.metrics['messages'].append(message_metrics)
+                
+                # Save checkpoint after every message (force metrics flush)
+                self.save_checkpoint()
                     
             except Exception as e:
                 logging.error(f"Error in message {self.message_count}: {e}")
@@ -492,6 +367,9 @@ Remember to use ```typescript code blocks for your transaction code.
                 self.messages.append(
                     HumanMessage(content=f"An error occurred: {str(e)}. Please try a different approach.")
                 )
+                
+                # Save checkpoint after error as well (force metrics flush)
+                self.save_checkpoint()
     
     def save_checkpoint(self):
         """Save current metrics and conversation history."""
@@ -509,6 +387,8 @@ Remember to use ```typescript code blocks for your transaction code.
         metrics_path = f"metrics/{self.run_id}_metrics.json"
         with open(metrics_path, 'w') as f:
             json.dump(metrics_copy, f, indent=2)
+            f.flush()  # Force flush to disk
+            os.fsync(f.fileno())  # Ensure it's written to disk
         
         # Convert LangChain messages to dict format for saving
         conversation_dict = []
@@ -539,16 +419,18 @@ async def main():
     )
     
     # Configuration
-    model_name = os.getenv("MODEL_NAME", "openrouter/horizon-beta")
+    model_name = os.getenv("MODEL_NAME", "google/gemini-2.5-flash")
     max_messages = int(os.getenv("MAX_MESSAGES", "50"))
     run_index = int(os.getenv("RUN_INDEX", "0"))  # Get run index from environment
     code_file = os.getenv("CODE_FILE", None)  # Get code file from environment
+    environment_config = os.getenv("ENVIRONMENT_CONFIG", None)  # Get environment config
     use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
     
     logging.info(f"Starting Code Loop Explorer with model: {model_name}")
     logging.info(f"Max messages: {max_messages}")
     logging.info(f"Run index: {run_index}")
     logging.info(f"Code file: {code_file or 'voyager/skill_runner/code_loop_code.ts (default)'}")
+    logging.info(f"Environment config: {environment_config or 'None (using default)'}")
     logging.info(f"Use external surfpool: {use_external_surfpool}")
     
     # Initialize explorer
@@ -558,14 +440,22 @@ async def main():
         run_index=run_index,
         max_messages=max_messages,
         verbose=True,
-        code_file=code_file
+        code_file=code_file,
+        environment_config=environment_config
     )
+    
+    # Get allowed programs from environment config if available
+    allowed_programs = []
+    if explorer.env_config and 'reward_config' in explorer.env_config:
+        allowed_programs = explorer.env_config['reward_config'].get('allowed_programs', [])
     
     # Choose whether to start surfpool or connect to existing instance
     if use_external_surfpool:
         logging.info("Connecting to existing surfpool on localhost:8899...")
+        if allowed_programs:
+            logging.info(f"Program filter enabled: {len(allowed_programs)} programs allowed")
         
-        env = SurfpoolEnv()
+        env = SurfpoolEnv(allowed_programs=allowed_programs, use_external_surfpool=True)
         logging.info("Resetting environment...")
         
         await env.reset()
@@ -591,8 +481,10 @@ async def main():
         
         async with _surfpool_validator("https://api.mainnet-beta.solana.com") as proc:
             logging.info("Surfpool validator started, initializing environment...")
+            if allowed_programs:
+                logging.info(f"Program filter enabled: {len(allowed_programs)} programs allowed")
             
-            env = SurfpoolEnv()
+            env = SurfpoolEnv(allowed_programs=allowed_programs, use_external_surfpool=True)
             logging.info("Resetting environment...")
             
             await env.reset()
