@@ -47,7 +47,7 @@ const App: React.FC = () => {
 
       for (const benchmark of benchmarks) {
         try {
-          const response = await fetch(`/data/${benchmark}/manifest.json`);
+          const response = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmark}/manifest.json`);
           const manifest = await response.json();
           // Add benchmark field to each run
           const runsWithBenchmark = manifest.runs.map((run: RunMetrics) => ({

@@ -39,12 +39,12 @@ const TrajectoryDetail: React.FC = () => {
   const loadRunData = async (id: string, benchmarkName: string) => {
     try {
       // Load metrics
-      const metricsResponse = await fetch(`/data/${benchmarkName}/runs/${id}_metrics.json`);
+      const metricsResponse = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmarkName}/runs/${id}_metrics.json`);
       const metricsData = await metricsResponse.json();
       setMetrics(metricsData);
 
       // Load conversation
-      const convResponse = await fetch(`/data/${benchmarkName}/runs/${id}_conversation.json`);
+      const convResponse = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmarkName}/runs/${id}_conversation.json`);
       const convData = await convResponse.json();
       setConversation(convData);
     } catch (error) {
