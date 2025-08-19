@@ -22,9 +22,9 @@ def create_output_dir():
     print(f"\n📁 Created output directory: {output_dir}")
     return output_dir
 
-def load_code_loop_metrics():
-    """Load all code_loop metrics from the metrics directory"""
-    metrics_files = glob.glob("metrics/code_loop_*.json")
+def load_code_loop_metrics(metrics_path="metrics"):
+    """Load all code_loop metrics from the specified directory"""
+    metrics_files = glob.glob(f"{metrics_path}/code_loop_*.json")
     all_metrics = []
     
     for file in metrics_files:
@@ -460,11 +460,11 @@ def plot_code_loop_performance(df, output_dir):
     
     plt.show()
 
-def analyze_reward_progression(output_dir):
+def analyze_reward_progression(output_dir, metrics_path="metrics"):
     """Analyze how rewards progress over messages with error bands"""
     
     # Load metrics with full message history
-    metrics_files = glob.glob("metrics/code_loop_*_metrics.json")
+    metrics_files = glob.glob(f"{metrics_path}/code_loop_*_metrics.json")
     model_progressions = {}
     
     for file in metrics_files:
@@ -486,10 +486,30 @@ def analyze_reward_progression(output_dir):
         print("No reward progression data found")
         return
     
+    # Define model ordering (same as individual trajectories)
+    model_order = [
+        'anthropic/claude-sonnet-4',
+        'openai/gpt-5',
+        'google/gemini-2.5-flash',
+        'openai/gpt-oss-120b',
+    ]
+    
+    # Order models according to preference, with any remaining models at the end
+    ordered_models = []
+    for model in model_order:
+        if model in model_progressions:
+            ordered_models.append(model)
+    
+    # Add any models not in the predefined order
+    for model in sorted(model_progressions.keys()):
+        if model not in ordered_models:
+            ordered_models.append(model)
+    
     # Create plot
     plt.figure(figsize=(14, 8))
     
-    for model, progressions in model_progressions.items():
+    for model in ordered_models:
+        progressions = model_progressions[model]
         # Pad progressions to same length
         max_len = max(len(p) for p in progressions)
         padded = []
@@ -522,11 +542,11 @@ def analyze_reward_progression(output_dir):
     print(f"📊 Reward progression plot saved to: {filename}")
     plt.show()
 
-def analyze_reward_progression_individual(output_dir):
+def analyze_reward_progression_individual(output_dir, metrics_path="metrics"):
     """Show individual trajectories for each model"""
     
     # Load metrics with full message history
-    metrics_files = glob.glob("metrics/code_loop_*_metrics.json")
+    metrics_files = glob.glob(f"{metrics_path}/code_loop_*_metrics.json")
     model_progressions = {}
     
     for file in metrics_files:
@@ -548,14 +568,34 @@ def analyze_reward_progression_individual(output_dir):
         print("No reward progression data found")
         return
     
+    # Define model ordering
+    model_order = [
+        'anthropic/claude-sonnet-4',
+        'openai/gpt-5',
+        'google/gemini-2.5-flash',
+        'openai/gpt-oss-120b',
+    ]
+    
+    # Order models according to preference, with any remaining models at the end
+    ordered_models = []
+    for model in model_order:
+        if model in model_progressions:
+            ordered_models.append(model)
+    
+    # Add any models not in the predefined order
+    for model in sorted(model_progressions.keys()):
+        if model not in ordered_models:
+            ordered_models.append(model)
+    
     # Create subplots for each model
-    n_models = len(model_progressions)
+    n_models = len(ordered_models)
     fig, axes = plt.subplots(1, n_models, figsize=(5*n_models, 6), sharey=True)
     
     if n_models == 1:
         axes = [axes]
     
-    for idx, (model, progressions) in enumerate(model_progressions.items()):
+    for idx, model in enumerate(ordered_models):
+        progressions = model_progressions[model]
         ax = axes[idx]
         
         # Plot each individual trajectory
@@ -590,6 +630,14 @@ def analyze_reward_progression_individual(output_dir):
     plt.show()
 
 def main():
+    import argparse
+    
+    # Parse arguments
+    parser = argparse.ArgumentParser(description='Analyze code_loop_explorer performance metrics')
+    parser.add_argument('--metrics-path', default='metrics', 
+                       help='Path to metrics directory (default: metrics)')
+    args = parser.parse_args()
+    
     print("="*60)
     print("CODE LOOP EXPLORER ANALYSIS")
     print("="*60)
@@ -597,11 +645,11 @@ def main():
     # Create output directory
     output_dir = create_output_dir()
     
-    print("\n📂 Loading code_loop metrics...")
-    metrics = load_code_loop_metrics()
+    print(f"\n📂 Loading code_loop metrics from: {args.metrics_path}")
+    metrics = load_code_loop_metrics(args.metrics_path)
     
     if not metrics:
-        print("❌ No code_loop metrics found in metrics/ directory!")
+        print(f"❌ No code_loop metrics found in {args.metrics_path}/ directory!")
         return
     
     print(f"✅ Found {len(metrics)} code_loop runs to analyze")
@@ -624,10 +672,10 @@ def main():
             plot_model_error_bars(df, output_dir)
         
         # Reward progression with error bands
-        analyze_reward_progression(output_dir)
+        analyze_reward_progression(output_dir, args.metrics_path)
         
         # Individual trajectories
-        analyze_reward_progression_individual(output_dir)
+        analyze_reward_progression_individual(output_dir, args.metrics_path)
         
         print(f"\n✅ Analysis complete! All results saved to: {output_dir}")
         print(f"📁 {output_dir}/")
