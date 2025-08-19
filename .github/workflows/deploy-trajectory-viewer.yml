@@ -18,18 +18,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: 18
+          bun-version: latest
           
       - name: Install dependencies
         working-directory: ./docs/trajectory-viewer
-        run: npm ci
+        run: bun install
         
       - name: Build
         working-directory: ./docs/trajectory-viewer
-        run: npm run build
+        run: bun run build
         
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
