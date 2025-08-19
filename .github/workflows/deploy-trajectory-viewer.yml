@@ -1,0 +1,39 @@
+name: Deploy Trajectory Viewer
+
+on:
+  push:
+    branches: [ master, main ]
+    paths:
+      - 'docs/trajectory-viewer/**'
+      - '.github/workflows/deploy-trajectory-viewer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          
+      - name: Install dependencies
+        working-directory: ./docs/trajectory-viewer
+        run: npm ci
+        
+      - name: Build
+        working-directory: ./docs/trajectory-viewer
+        run: npm run build
+        
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/trajectory-viewer/dist
+          destination_dir: trajectory-viewer
