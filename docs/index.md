@@ -73,6 +73,65 @@ To cite this blog post please use:
 Gundotra, N. (2025). Solana Composability Benchmark: How Well Can LLMs Build Complex Transactions? Retrieved from https://ngundotra.github.io/solana-gym-env
 ```
 
+## Complete Benchmark Results: Top Trajectories
+
+Below are the top 5 runs for each model from our `basic` benchmark, sorted by total reward. The sparklines show how each run progressed over the 50 message limit.
+
+| Model            | Model Rank | Run ID   | Total Reward | Programs |
+| ---------------- | ---------- | -------- | ------------ | -------- |
+| claude-sonnet-4  | 1          | b617e7c9 | 181          | 5        |
+| claude-sonnet-4  | 2          | 2d29757c | 152          | 3        |
+| claude-sonnet-4  | 3          | fd778b2b | 115          | 5        |
+| gpt-5            | 1          | 726ed2b0 | 66           | 8        |
+| gpt-5            | 2          | 782d457a | 62           | 8        |
+| gpt-5            | 3          | 58e032e0 | 60           | 8        |
+| gpt-5            | 4          | 4582e291 | 58           | 8        |
+| gpt-5            | 5          | 76a4aefc | 57           | 9        |
+| gemini-2.5-flash | 1          | be22b153 | 44           | 6        |
+| gemini-2.5-flash | 2          | 20de4b87 | 43           | 5        |
+| gemini-2.5-flash | 3          | 1e439a24 | 40           | 6        |
+| gemini-2.5-flash | 4          | 1a94792f | 40           | 6        |
+| claude-sonnet-4  | 4          | 4048294e | 37           | 6        |
+| claude-sonnet-4  | 5          | 1ee0b97d | 30           | 5        |
+| gpt-oss-120b     | 1          | 08ed041e | 25           | 6        |
+| gpt-oss-120b     | 2          | badf6979 | 23           | 6        |
+| gpt-oss-120b     | 3          | 86529dae | 23           | 6        |
+| gemini-2.5-flash | 5          | 0155ef6b | 23           | 5        |
+| gpt-oss-120b     | 4          | 9e9c28fb | 22           | 6        |
+| gpt-oss-120b     | 5          | d55dfcfc | 16           | 5        |
+
+Defi benchmark
+
+| Model            | Model Rank | Run ID   | Total Reward | Programs |
+| ---------------- | ---------- | -------- | ------------ | -------- |
+| claude-sonnet-4  | 1          | af0ca062 | 102          | 17       |
+| gpt-5            | 1          | 554b09b3 | 34           | 17       |
+| claude-sonnet-4  | 2          | 39e1e9ba | 34           | 6        |
+| gpt-5            | 2          | 326454b3 | 33           | 18       |
+| claude-sonnet-4  | 3          | 1ae19f9a | 33           | 13       |
+| claude-sonnet-4  | 4          | c3d7f65d | 31           | 5        |
+| gpt-5            | 3          | 7852b1a5 | 30           | 16       |
+| gpt-5            | 4          | c1b6e31e | 29           | 14       |
+| gpt-5            | 5          | e4655fc5 | 27           | 13       |
+| gemini-2.5-flash | 1          | e31e18f6 | 25           | 3        |
+| gpt-oss-120b     | 1          | d245d131 | 22           | 7        |
+| claude-sonnet-4  | 5          | 92eb80c5 | 19           | 5        |
+| gemini-2.5-flash | 2          | 88da4e59 | 19           | 3        |
+| gpt-oss-120b     | 2          | 737ebeff | 17           | 4        |
+| gpt-oss-120b     | 3          | f17db8ca | 10           | 4        |
+| gpt-oss-120b     | 4          | 53e1275c | 9            | 4        |
+| gpt-oss-120b     | 5          | eafda598 | 8            | 4        |
+| gemini-2.5-flash | 3          | 0b61a27a | 7            | 3        |
+| gemini-2.5-flash | 4          | fdb0864d | 0            | 0        |
+| gemini-2.5-flash | 5          | acde932c | 0            | 0        |
+
+**Key Observations:**
+
+- Claude Sonnet 4's top run achieved 181 rewards, nearly 3x the best GPT-5 run
+- The sparklines reveal distinct learning patterns: explosive growth (Claude) vs steady progress (GPT-5)
+- Most models discover 5-8 unique programs, suggesting room for improvement in exploration diversity
+- GPT-5 shows remarkable consistency with all runs between 57-66 rewards
+
 ====
 
 # Ignore Below
