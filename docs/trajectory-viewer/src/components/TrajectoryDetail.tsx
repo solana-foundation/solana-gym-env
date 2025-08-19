@@ -39,12 +39,12 @@ const TrajectoryDetail: React.FC = () => {
   const loadRunData = async (id: string, benchmarkName: string) => {
     try {
       // Load metrics
-      const metricsResponse = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmarkName}/runs/${id}_metrics.json`);
+      const metricsResponse = await fetch(`/solana-gym-env/data/${benchmarkName}/runs/${id}_metrics.json`);
       const metricsData = await metricsResponse.json();
       setMetrics(metricsData);
 
       // Load conversation
-      const convResponse = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmarkName}/runs/${id}_conversation.json`);
+      const convResponse = await fetch(`/solana-gym-env/data/${benchmarkName}/runs/${id}_conversation.json`);
       const convData = await convResponse.json();
       setConversation(convData);
     } catch (error) {
@@ -107,8 +107,8 @@ const TrajectoryDetail: React.FC = () => {
   return (
     <div className="trajectory-detail">
       <div className="detail-header">
-        <Link to="/" className="back-link">
-          ← Back to list
+        <Link to="/trajectories" className="back-link">
+          ← Back to trajectories
         </Link>
         <h1>Run {runId}</h1>
         <div className="header-stats">

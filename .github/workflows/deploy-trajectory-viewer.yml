@@ -33,9 +33,13 @@ jobs:
         working-directory: ./docs/trajectory-viewer
         run: bun run build
         
+      - name: Copy public assets to dist
+        run: |
+          cp -r ./docs/trajectory-viewer/public/data ./docs/trajectory-viewer/dist/ || true
+          cp -r ./docs/trajectory-viewer/public/assets ./docs/trajectory-viewer/dist/ || true
+        
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/trajectory-viewer/dist
-          destination_dir: trajectory-viewer

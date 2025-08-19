@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
 import TrajectoryList from "./components/TrajectoryList";
 import TrajectoryDetail from "./components/TrajectoryDetail";
 import "./App.css";
@@ -47,7 +48,7 @@ const App: React.FC = () => {
 
       for (const benchmark of benchmarks) {
         try {
-          const response = await fetch(`/solana-gym-env/trajectory-viewer/data/${benchmark}/manifest.json`);
+          const response = await fetch(`/solana-gym-env/data/${benchmark}/manifest.json`);
           const manifest = await response.json();
           // Add benchmark field to each run
           const runsWithBenchmark = manifest.runs.map((run: RunMetrics) => ({
@@ -75,7 +76,7 @@ const App: React.FC = () => {
     : allRuns.filter(run => run.benchmark === currentBenchmark);
 
   return (
-    <Router basename="/solana-gym-env/trajectory-viewer">
+    <Router basename="/solana-gym-env">
       <div className="app">
         <header className="app-header">
           <Link to="/" className="logo">
@@ -93,17 +94,19 @@ const App: React.FC = () => {
                 <option value="defi">DeFi Benchmark</option>
               </select>
             </div>
-            <Link to="/">All Runs</Link>
-            <a href="/docs" target="_blank">
-              Documentation
+            <Link to="/">Home</Link>
+            <Link to="/trajectories">Trajectories</Link>
+            <a href="https://github.com/ngundotra/solana-gym-env" target="_blank" rel="noopener noreferrer">
+              GitHub
             </a>
           </nav>
         </header>
 
         <main className="app-main">
           <Routes>
+            <Route path="/" element={<LandingPage />} />
             <Route
-              path="/"
+              path="/trajectories"
               element={<TrajectoryList runs={filteredRuns} loading={loading} benchmark={currentBenchmark} />}
             />
             <Route path="/run/:runId" element={<TrajectoryDetail />} />
