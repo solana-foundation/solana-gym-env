@@ -75,7 +75,7 @@ const App: React.FC = () => {
     : allRuns.filter(run => run.benchmark === currentBenchmark);
 
   return (
-    <Router>
+    <Router basename="/solana-gym-env/trajectory-viewer">
       <div className="app">
         <header className="app-header">
           <Link to="/" className="logo">
