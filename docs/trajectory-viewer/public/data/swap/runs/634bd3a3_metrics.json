@@ -1,0 +1,970 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "run_index": 2,
+  "run_id": "code_loop_25-08-20_132702_634bd3a3",
+  "start_time": "2025-08-20T13:27:02.220434",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-20T13:27:02.249391",
+      "duration": 33.241874,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-20T13:27:35.492834",
+      "duration": 34.66243,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-20T13:28:10.157155",
+      "duration": 6.124844,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-20T13:28:16.283231",
+      "duration": 34.629365,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-20T13:28:50.915089",
+      "duration": 36.334233,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-20T13:29:27.250293",
+      "duration": 16.063277,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-20T13:29:43.314541",
+      "duration": 9.437194,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-20T13:29:52.752570",
+      "duration": 11.541082,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-20T13:30:04.294528",
+      "duration": 11.307577,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-20T13:30:15.603141",
+      "duration": 39.289344,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-20T13:30:54.894896",
+      "duration": 38.620085,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-20T13:31:33.518069",
+      "duration": 39.78828,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-20T13:32:13.309552",
+      "duration": 39.53511,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-20T13:32:52.848086",
+      "duration": 9.37589,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-20T13:33:02.227001",
+      "duration": 7.79462,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-20T13:33:10.023834",
+      "duration": 7.380153,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-20T13:33:17.405124",
+      "duration": 6.25072,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-20T13:33:23.657065",
+      "duration": 8.03194,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-20T13:33:31.690992",
+      "duration": 7.005953,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-20T13:33:38.700101",
+      "duration": 8.077748,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-20T13:33:46.779394",
+      "duration": 15.18866,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-20T13:34:01.969667",
+      "duration": 8.803602,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-20T13:34:10.774960",
+      "duration": 38.151897,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-20T13:34:48.930858",
+      "duration": 20.595148,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-20T13:35:09.527784",
+      "duration": 10.191863,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-20T13:35:19.721306",
+      "duration": 10.073715,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-20T13:35:29.796507",
+      "duration": 11.845574,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-20T13:35:41.643630",
+      "duration": 39.380294,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-20T13:36:21.026290",
+      "duration": 7.244761,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-20T13:36:28.272732",
+      "duration": 38.178,
+      "reward": 5,
+      "total_reward": 5,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-20T13:37:06.454796",
+      "duration": 12.447253,
+      "reward": 0,
+      "total_reward": 5,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-20T13:37:18.903771",
+      "duration": 39.924415,
+      "reward": 3,
+      "total_reward": 8,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-20T13:37:58.832691",
+      "duration": 43.929696,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-20T13:38:42.767004",
+      "duration": 39.174874,
+      "reward": 2,
+      "total_reward": 10,
+      "instructions_discovered": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-20T13:39:21.946846",
+      "duration": 39.175477,
+      "reward": 1,
+      "total_reward": 11,
+      "instructions_discovered": {
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          6
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-20T13:40:01.124411",
+      "duration": 10.926887,
+      "reward": 0,
+      "total_reward": 11,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-20T13:40:12.053385",
+      "duration": 6.139167,
+      "reward": 0,
+      "total_reward": 11,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-20T13:40:18.194630",
+      "duration": 40.728773,
+      "reward": 0,
+      "total_reward": 11,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-20T13:40:58.929019",
+      "duration": 41.506312,
+      "reward": 1,
+      "total_reward": 12,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-20T13:41:40.440466",
+      "duration": 6.844051,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-20T13:41:47.286725",
+      "duration": 6.140764,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-20T13:41:53.429968",
+      "duration": 37.421763,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-20T13:42:30.858356",
+      "duration": 11.881791,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-20T13:42:42.742522",
+      "duration": 7.794774,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-20T13:42:50.539962",
+      "duration": 38.168776,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-20T13:43:28.715370",
+      "duration": 13.903243,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-20T13:43:42.620938",
+      "duration": 44.531217,
+      "reward": 2,
+      "total_reward": 14,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          12,
+          13,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-20T13:44:27.157429",
+      "duration": 37.164245,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-20T13:45:04.328495",
+      "duration": 38.386727,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-20T13:45:42.721491",
+      "duration": 14.624322,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    5,
+    5,
+    8,
+    8,
+    10,
+    11,
+    11,
+    11,
+    11,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    12,
+    14,
+    14,
+    14,
+    14
+  ],
+  "programs_discovered": {
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 30,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 30,
+    "11111111111111111111111111111111": 30
+  },
+  "instructions_by_program": {
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      0
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      3,
+      4,
+      5,
+      6,
+      9,
+      12,
+      13,
+      17,
+      18,
+      21,
+      22
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      2
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 5
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 3,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter swap error: {\\\"swapTransaction\\\":\\\"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAHDa/D9Gxmb4WsyLRq12aNndqIqPbrJ+QRoRWjQvCvHgjCFve2NG9kckqQMFO66xhTnBLdBRU51JQ20LV0CdMkxdo+GnrBvTCPIuC+jh65cUTKJOQhomEoTqy3k4FSH9on9VZ3NFh19IgWu+pj5UeQzMrHbNYffxTTr/qv3cxI4kqkZn/LU4VSNrEZJg9hJjEvfwMjmNLCvJDpEyG0zH7Y1yRxM32R3yvnX/HBzojB9fApPOfuRWL27j4EX6B/qtMR3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwZGb+UhFzL/7K26csOb57yM5bvF9xJrLEObOkAAAAAEedVb8jHAbu50xW7OaBUH/bGy3qP0jlECsc2iVrwTjwbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpjJclj04kifG7PRApFI4NgwtaE5na/xCEBI572Nvp+FmagAv/TIc2iJbCD8FAc+vxy1qjdf6B/k29yCuk37deeLQ/+if11/ZKdMCbHylYed5LCas238ndUUsyGqezjOXoGN+MJ3P8BfWxi8Wdt2cNxk1l8vibOYrcXjt57LHzmwwIBwAFAsBcFQAHAAkDBBcBAAAAAAAKBgABABUGCQEBBgIAAQwCAAAAQEIPAAAAAAAJAQEBEQoGAAIAGAYJAQEIJAkLAAEFBAIVGAgIDAgZHBQLBQMSEBMRCRsbGhYLDg8NAwQJFynBIJszQdacgQICAAAAGWQAAT0AZAECQEIPAAAAAABjzgIAAAAAAGQAAAkDAQAAAQkCPUrJGvVWANpU229x+AWvux5V8OzBgZH5RdP2AZy9NO0DzMvIBAPJx79PXk1gm2Q7LIJY0v0b7rLUp1+OVam0af2WZ9ykEx2htAU8PTY+OQQ6ODs/\\\",\\\"lastValidBlockHeight\\\":339543698,\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":null,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":null,\\\"addressesByLookupTableAddress\\\":null}\", \"details\": \"Error: Jupiter swap error: {\\\"swapTransaction\\\":\\\"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAHDa/D9Gxmb4WsyLRq12aNndqIqPbrJ+QRoRWjQvCvHgjCFve2NG9kckqQMFO66xhTnBLdBRU51JQ20LV0CdMkxdo+GnrBvTCPIuC+jh65cUTKJOQhomEoTqy3k4FSH9on9VZ3NFh19IgWu+pj5UeQzMrHbNYffxTTr/qv3cxI4kqkZn/LU4VSNrEZJg9hJjEvfwMjmNLCvJDpEyG0zH7Y1yRxM32R3yvnX/HBzojB9fApPOfuRWL27j4EX6B/qtMR3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwZGb+UhFzL/7K26csOb57yM5bvF9xJrLEObOkAAAAAEedVb8jHAbu50xW7OaBUH/bGy3qP0jlECsc2iVrwTjwbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpjJclj04kifG7PRApFI4NgwtaE5na/xCEBI572Nvp+FmagAv/TIc2iJbCD8FAc+vxy1qjdf6B/k29yCuk37deeLQ/+if11/ZKdMCbHylYed5LCas238ndUUsyGqezjOXoGN+MJ3P8BfWxi8Wdt2cNxk1l8vibOYrcXjt57LHzmwwIBwAFAsBcFQAHAAkDBBcBAAAAAAAKBgABABUGCQEBBgIAAQwCAAAAQEIPAAAAAAAJAQEBEQoGAAIAGAYJAQEIJAkLAAEFBAIVGAgIDAgZHBQLBQMSEBMRCRsbGhYLDg8NAwQJFynBIJszQdacgQICAAAAGWQAAT0AZAECQEIPAAAAAABjzgIAAAAAAGQAAAkDAQAAAQkCPUrJGvVWANpU229x+AWvux5V8OzBgZH5RdP2AZy9NO0DzMvIBAPJx79PXk1gm2Q7LIJY0v0b7rLUp1+OVam0af2WZ9ykEx2htAU8PTY+OQQ6ODs/\\\",\\\"lastValidBlockHeight\\\":339543698,\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":null,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":null,\\\"addressesByLookupTableAddress\\\":null}\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:46:19)\", \"type\": \"Error\", \"stderr\": \"41 | \\n42 |     const swapData = await swapResponse.json();\\n43 | \\n44 |     // Check if swapData contains instructions, not just a serialized transaction\\n45 |     if (!swapData.swapRequest) {\\n46 |         throw new Error(`Jupiter swap error: ${JSON.stringify(swapData)}`);\\n                   ^\\nerror: Jupiter swap error: {\\\"swapTransaction\\\":\\\"AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAHDa/D9Gxmb4WsyLRq12aNndqIqPbrJ+QRoRWjQvCvHgjCFve2NG9kckqQMFO66xhTnBLdBRU51JQ20LV0CdMkxdo+GnrBvTCPIuC+jh65cUTKJOQhomEoTqy3k4FSH9on9VZ3NFh19IgWu+pj5UeQzMrHbNYffxTTr/qv3cxI4kqkZn/LU4VSNrEZJg9hJjEvfwMjmNLCvJDpEyG0zH7Y1yRxM32R3yvnX/HBzojB9fApPOfuRWL27j4EX6B/qtMR3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwZGb+UhFzL/7K26csOb57yM5bvF9xJrLEObOkAAAAAEedVb8jHAbu50xW7OaBUH/bGy3qP0jlECsc2iVrwTjwbd9uHXZaGT2cvhRs7reawctIXtX1s3kTqM9YV+/wCpjJclj04kifG7PRApFI4NgwtaE5na/xCEBI572Nvp+FmagAv/TIc2iJbCD8FAc+vxy1qjdf6B/k29yCuk37deeLQ/+if11/ZKdMCbHylYed5LCas238ndUUsyGqezjOXoGN+MJ3P8BfWxi8Wdt2cNxk1l8vibOYrcXjt57LHzmwwIBwAFAsBcFQAHAAkDBBcBAAAAAAAKBgABABUGCQEBBgIAAQwCAAAAQEIPAAAAAAAJAQEBEQoGAAIAGAYJAQEIJAkLAAEFBAIVGAgIDAgZHBQLBQMSEBMRCRsbGhYLDg8NAwQJFynBIJszQdacgQICAAAAGWQAAT0AZAECQEIPAAAAAABjzgIAAAAAAGQAAAkDAQAAAQkCPUrJGvVWANpU229x+AWvux5V8OzBgZH5RdP2AZy9NO0DzMvIBAPJx79PXk1gm2Q7LIJY0v0b7rLUp1+OVam0af2WZ9ykEx2htAU8PTY+OQQ6ODs/\\\",\\\"lastValidBlockHeight\\\":339543698,\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":null,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":null,\\\"addressesByLookupTableAddress\\\":null}\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:46:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 6,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Payer not set. Call setPayer() first.\", \"details\": \"Error: Payer not set. Call setPayer() first.\\n    at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:15)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:105:54)\", \"type\": \"Error\", \"stderr\": \"79 |   _payer = signer;\\n80 |   return signer;\\n81 | }\\n82 | function getPayer() {\\n83 |   if (!_payer) {\\n84 |     throw new Error(\\\"Payer not set. Call setPayer() first.\\\");\\n               ^\\nerror: Payer not set. Call setPayer() first.\\n      at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:105:54\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 7,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Payer not set. Call setPayer() first.\", \"details\": \"Error: Payer not set. Call setPayer() first.\\n    at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:15)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:105:54)\", \"type\": \"Error\", \"stderr\": \"79 |   _payer = signer;\\n80 |   return signer;\\n81 | }\\n82 | function getPayer() {\\n83 |   if (!_payer) {\\n84 |     throw new Error(\\\"Payer not set. Call setPayer() first.\\\");\\n               ^\\nerror: Payer not set. Call setPayer() first.\\n      at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:105:54\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Payer not set. Call setPayer() first.\", \"details\": \"Error: Payer not set. Call setPayer() first.\\n    at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:15)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:97:54)\", \"type\": \"Error\", \"stderr\": \"79 |   _payer = signer;\\n80 |   return signer;\\n81 | }\\n82 | function getPayer() {\\n83 |   if (!_payer) {\\n84 |     throw new Error(\\\"Payer not set. Call setPayer() first.\\\");\\n               ^\\nerror: Payer not set. Call setPayer() first.\\n      at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:97:54\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 9,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Payer not set. Call setPayer() first.\", \"details\": \"Error: Payer not set. Call setPayer() first.\\n    at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:15)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:101:54)\", \"type\": \"Error\", \"stderr\": \"79 |   _payer = signer;\\n80 |   return signer;\\n81 | }\\n82 | function getPayer() {\\n83 |   if (!_payer) {\\n84 |     throw new Error(\\\"Payer not set. Call setPayer() first.\\\");\\n               ^\\nerror: Payer not set. Call setPayer() first.\\n      at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:101:54\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 14,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\", \"details\": \"TypeError: transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:60:54)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:58:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:56:78)\", \"type\": \"TypeError\", \"stderr\": \"55 |     // Extract instructions and address lookup table accounts\\n56 |     const instructions = transactionFromJupiter.message.compiledInstructions.map(compiledIx => {\\n57 |         const programId = transactionFromJupiter.message.staticAccountKeys[compiledIx.programIdIndex];\\n58 |         const keys = compiledIx.accountKeyIndexes.map(idx => ({\\n59 |             pubkey: transactionFromJupiter.message.staticAccountKeys[idx],\\n60 |             isSigner: transactionFromJupiter.message.isSigner(idx), // Determine isSigner from bitmask\\n                                                          ^\\nTypeError: transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:60:54\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:58:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:56:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 15,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Failed to get account keys because address table lookups were not resolved\", \"details\": \"Error: Failed to get account keys because address table lookups were not resolved\\n    at getAccountKeys (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:951:17)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:53:56)\", \"type\": \"Error\", \"stderr\": \"946 |       }\\n947 |       accountKeysFromLookups = args.accountKeysFromLookups;\\n948 |     } else if (args && 'addressLookupTableAccounts' in args && args.addressLookupTableAccounts) {\\n949 |       accountKeysFromLookups = this.resolveAddressTableLookups(args.addressLookupTableAccounts);\\n950 |     } else if (this.addressTableLookups.length > 0) {\\n951 |       throw new Error('Failed to get account keys because address table lookups were not resolved');\\n                  ^\\nerror: Failed to get account keys because address table lookups were not resolved\\n      at getAccountKeys (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:951:13)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:53:56\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 16,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"accountKeys.getAccountMeta is not a function. (In 'accountKeys.getAccountMeta(idx)', 'accountKeys.getAccountMeta' is undefined)\", \"details\": \"TypeError: accountKeys.getAccountMeta is not a function. (In 'accountKeys.getAccountMeta(idx)', 'accountKeys.getAccountMeta' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:89:45)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:84:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:78:78)\", \"type\": \"TypeError\", \"stderr\": \"84 |         const keys = compiledIx.accountKeyIndexes.map(idx => {\\n85 |             const pubkey = accountKeys.get(idx);\\n86 |             if (!pubkey) {\\n87 |                 throw new Error(`Account key not found for index ${idx}`);\\n88 |             }\\n89 |             const accountMeta = accountKeys.getAccountMeta(idx);\\n                                                 ^\\nTypeError: accountKeys.getAccountMeta is not a function. (In 'accountKeys.getAccountMeta(idx)', 'accountKeys.getAccountMeta' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:89:45\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:84:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:78:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 17,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"accountKeys.isSigner is not a function. (In 'accountKeys.isSigner(idx)', 'accountKeys.isSigner' is undefined)\", \"details\": \"TypeError: accountKeys.isSigner is not a function. (In 'accountKeys.isSigner(idx)', 'accountKeys.isSigner' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:88:39)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78)\", \"type\": \"TypeError\", \"stderr\": \"83 |                 throw new Error(`Account key not found for index ${idx}`);\\n84 |             }\\n85 |             // Corrected: Use isSigner(idx) and isWritable(idx) directly from accountKeys\\n86 |             return {\\n87 |                 pubkey: pubkey,\\n88 |                 isSigner: accountKeys.isSigner(idx),\\n                                           ^\\nTypeError: accountKeys.isSigner is not a function. (In 'accountKeys.isSigner(idx)', 'accountKeys.isSigner' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:88:39\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 18,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: ctrl61\", \"details\": \"ReferenceError: Can't find variable: ctrl61\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:73:64)\", \"type\": \"ReferenceError\", \"stderr\": \"68 |     }\\n69 | \\n70 |     // Extract instructions for rebuilding\\n71 |     // We need to pass the fetched ALTs to the message to correctly resolve all account keys\\n72 |     // for `getAccountKeys()`, `isSigner()`, `isWritable()`.\\n73 |     const resolvedMessage = transactionFromJupiter.message.get<ctrl61>AccountKeys({ addressLookupTableAccounts });\\n                                                                    ^\\nReferenceError: Can't find variable: ctrl61\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:73:64\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 19,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"resolvedAccountKeys.isSigner is not a function. (In 'resolvedAccountKeys.isSigner(idx)', 'resolvedAccountKeys.isSigner' is undefined)\", \"details\": \"TypeError: resolvedAccountKeys.isSigner is not a function. (In 'resolvedAccountKeys.isSigner(idx)', 'resolvedAccountKeys.isSigner' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:90:47)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:82:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:76:78)\", \"type\": \"TypeError\", \"stderr\": \"85 |                 throw new Error(`Account key not found for index ${idx}`);\\n86 |             }\\n87 |             // Use isSigner(idx) and isWritable(idx) directly from the resolvedAccountKeys\\n88 |             return {\\n89 |                 pubkey: pubkey,\\n90 |                 isSigner: resolvedAccountKeys.isSigner(idx),\\n                                                   ^\\nTypeError: resolvedAccountKeys.isSigner is not a function. (In 'resolvedAccountKeys.isSigner(idx)', 'resolvedAccountKeys.isSigner' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:90:47\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:82:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:76:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 20,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\", \"details\": \"TypeError: transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:88:58)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78)\", \"type\": \"TypeError\", \"stderr\": \"83 |                 throw new Error(`Account key not found for index ${idx}`);\\n84 |             }\\n85 |             // Corrected: Use isSigner(idx) and isWritable(idx) directly from the transactionFromJupiter.message\\n86 |             return {\\n87 |                 pubkey: pubkey,\\n88 |                 isSigner: transactionFromJupiter.message.isSigner(idx), // Use message object\\n                                                              ^\\nTypeError: transactionFromJupiter.message.isSigner is not a function. (In 'transactionFromJupiter.message.isSigner(idx)', 'transactionFromJupiter.message.isSigner' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:88:58\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 21,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Cannot reliably extract isSigner/isWritable from deserialized VersionedTransaction in this environment. Pivoting to another DEX.\", \"details\": \"Error: Cannot reliably extract isSigner/isWritable from deserialized VersionedTransaction in this environment. Pivoting to another DEX.\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:189:23)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51)\\n    at map (native:1:11)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78)\", \"type\": \"Error\", \"stderr\": \"184 |             // I will pass an empty array, hoping the SDK includes them if they are truly optional or\\n185 |             // are derived from other accounts. This is a desperate attempt to make Meteora work,\\n186 |             // given that it's the only one that reached a program error related to *its* logic,\\n187 |             // not `web3.js` deserialization.\\n188 | \\n189 |             throw new Error(\\\"Cannot reliably extract isSigner/isWritable from deserialized VersionedTransaction in this environment. Pivoting to another DEX.\\\");\\n                        ^\\nerror: Cannot reliably extract isSigner/isWritable from deserialized VersionedTransaction in this environment. Pivoting to another DEX.\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:189:19\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:80:51\\n      at map (1:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:74:78\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 22,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Insufficient liquidity in binArrays for swapQuote\", \"details\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity in binArrays for swapQuote\\n    at new DlmmSdkError (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n    at swapQuote (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17277:21)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:91:38)\", \"type\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY\", \"stderr\": \"9257 | };\\n9258 | var DlmmSdkError = class extends Error {\\n9259 | \\n9260 | \\n9261 |   constructor(name, message) {\\n9262 |     super();\\n           ^\\nSWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity in binArrays for swapQuote\\n      at new DlmmSdkError (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n      at swapQuote (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17277:17)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:91:38\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 24,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Unterminated string literal\", \"type\": \"BuildMessage\", \"stderr\": \"113 |                 { pubkey: userSolAta, mint: NATIVE_MINT, is\\\">isAssociated: true },\\n                                                                 ^\\nerror: Unterminated string literal\\n    at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:113:60\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 25,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\", \"details\": \"SyntaxError: Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 26,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"ResolveMessage: Cannot find module '@raydium-io/raydium-sdk-v2/lib/liquidity' from '/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts'\", \"type\": \"ResolveMessage\", \"stderr\": \"error: Cannot find module '@raydium-io/raydium-sdk-v2/lib/liquidity' from '/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts'\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 27,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"ResolveMessage: Cannot find module '@raydium-io/raydium-sdk-v2/dist/cjs/liquidity' from '/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts'\", \"type\": \"ResolveMessage\", \"stderr\": \"error: Cannot find module '@raydium-io/raydium-sdk-v2/dist/cjs/liquidity' from '/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts'\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 29,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Signature verification failed.\\nMissing signature for public key [`Cq7ejJxG4LZJvkLih2ajGbnpnK2knN1Gv55XhsiS9n3B`].\", \"details\": \"Error: Signature verification failed.\\nMissing signature for public key [`Cq7ejJxG4LZJvkLih2ajGbnpnK2knN1Gv55XhsiS9n3B`].\\n    at serialize (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1854:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:40:15)\", \"type\": \"Error\", \"stderr\": \"1849 |           errorMessage += `\\\\nInvalid signature for public key${sigErrors.invalid.length === 1 ? '' : '(s)'} [\\\\`${sigErrors.invalid.map(p => p.toBase58()).join('`, `')}\\\\`].`;\\n1850 |         }\\n1851 |         if (sigErrors.missing) {\\n1852 |           errorMessage += `\\\\nMissing signature for public key${sigErrors.missing.length === 1 ? '' : '(s)'} [\\\\`${sigErrors.missing.map(p => p.toBase58()).join('`, `')}\\\\`].`;\\n1853 |         }\\n1854 |         throw new Error(errorMessage);\\n                     ^\\nerror: Signature verification failed.\\nMissing signature for public key [`Cq7ejJxG4LZJvkLih2ajGbnpnK2knN1Gv55XhsiS9n3B`].\\n      at serialize (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1854:15)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:40:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 31,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\", \"details\": \"SyntaxError: Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'Liquidity' not found in module '/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 36,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: BN\", \"details\": \"ReferenceError: Can't find variable: BN\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:67:31)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"ReferenceError\", \"stderr\": \"62 |     console.log(\\\"Phoenix market state loaded.\\\");\\n63 | \\n64 |     // Attempt to cancel a dummy order.\\n65 |     // We need a clientOrderId. This can be any u64 number.\\n66 |     // The order might not exist, but the instruction attempt should still be processed.\\n67 |     const clientOrderId = new BN(12345); // Dummy client order ID\\n                                   ^\\nReferenceError: Can't find variable: BN\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:67:31\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 37,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"marketState.createCancelOrderInstruction is not a function. (In 'marketState.createCancelOrderInstruction(user, clientOrderId)', 'marketState.createCancelOrderInstruction' is undefined)\", \"details\": \"TypeError: marketState.createCancelOrderInstruction is not a function. (In 'marketState.createCancelOrderInstruction(user, clientOrderId)', 'marketState.createCancelOrderInstruction' is undefined)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:70:48)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"TypeError\", \"stderr\": \"65 |     // Attempt to cancel a dummy order.\\n66 |     // We need a clientOrderId. This can be any u64 number.\\n67 |     // The order might not exist, but the instruction attempt should still be processed.\\n68 |     const clientOrderId = new BN(12345); // Dummy client order ID\\n69 | \\n70 |     const cancelOrderInstruction = marketState.createCancelOrderInstruction(\\n                                                    ^\\nTypeError: marketState.createCancelOrderInstruction is not a function. (In 'marketState.createCancelOrderInstruction(user, clientOrderId)', 'marketState.createCancelOrderInstruction' is undefined)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:70:48\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 40,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:10:40)\\n    at executeSkill (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:4:36)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:10:36\\n      at executeSkill (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:4:36)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 41,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:11:40)\\n    at executeSkill (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:4:36)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:11:36\\n      at executeSkill (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:4:36)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 43,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: BN\", \"details\": \"ReferenceError: Can't find variable: BN\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:89:31)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"ReferenceError\", \"stderr\": \"84 |     console.log(\\\"Phoenix market state loaded.\\\");\\n85 | \\n86 |     // Place a very small limit order\\n87 |     const price = 100000000; // An arbitrary price for 1 SOL = 100 USDC (large number to ensure it doesn't fill)\\n88 |     const size = 0.0001; // 0.0001 SOL\\n89 |     const clientOrderId = new BN(Math.floor(Math.random() * 1_000_000)); // Random client order ID\\n                                   ^\\nReferenceError: Can't find variable: BN\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:89:31\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 44,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"e.toBuffer is not a function. (In 'e.toBuffer()', 'e.toBuffer' is undefined)\", \"details\": \"TypeError: e.toBuffer is not a function. (In 'e.toBuffer()', 'e.toBuffer' is undefined)\\n    at ie (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@ellipsis-labs/phoenix-sdk/dist/index.js:1:27256)\\n    at createPlaceLimitOrderInstruction (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@ellipsis-labs/phoenix-sdk/dist/index.js:1:57541)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:93:47)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"TypeError\", \"stderr\": \"1 | \\\"use strict\\\";Object.defineProperty(exports, \\\"__esModule\\\", {value: true}); function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { newObj[key] = obj[key]; } } } newObj.default = obj; return newObj; } } function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }var wn=Object.defineProperty;var Hr=Object.getOwnPropertySymbols;var Sn=Object.prototype.hasOwnProperty,xn=Object.prototype.propertyIsEnumerable;var T=Math.pow,Jr=(r,e,t)=>e in r?wn(r,e,{enumerable:!0,configurable:!0,writable:!0,value:t}):r[e]=t,k=(r,e)=>{for(var t in e||(e={}))Sn.call(e,t)&&Jr(r,t,e[t]);if(Hr)for(var t of Hr(e))xn.call(e,t)&&Jr(r,t,e[t]);return r};var f=(r,e,t)=>new Promise((i,n)=>{var s=u=>{try{a(t.next(u))}catch(c){n(c)}},o=u=>{try{a(t.throw(u))}catch(c){n(c)}},a=u=>u.done?i(u.value):Promise.resolve(u.value).then(s,o);a((t=t.apply(r,e)).next())});var _web\\n\\nTypeError: e.toBuffer is not a function. (In 'e.toBuffer()', 'e.toBuffer' is undefined)\\n      at ie (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@ellipsis-labs/phoenix-sdk/dist/index.js:1:27256)\\n      at createPlaceLimitOrderInstruction (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@ellipsis-labs/phoenix-sdk/dist/index.js:1:57541)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:93:47\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 46,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Payer not set. Call setPayer() first.\", \"details\": \"Error: Payer not set. Call setPayer() first.\\n    at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:15)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:50:54)\", \"type\": \"Error\", \"stderr\": \"79 |   _payer = signer;\\n80 |   return signer;\\n81 | }\\n82 | function getPayer() {\\n83 |   if (!_payer) {\\n84 |     throw new Error(\\\"Payer not set. Call setPayer() first.\\\");\\n               ^\\nerror: Payer not set. Call setPayer() first.\\n      at getPayer (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:84:11)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:393:19\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools/dist/index.js:390:10\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:50:54\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 50,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Insufficient liquidity in binArrays for swapQuote\", \"details\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity in binArrays for swapQuote\\n    at new DlmmSdkError (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n    at swapQuote (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17277:21)\\n    at <anonymous> (/Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:70:38)\", \"type\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY\", \"stderr\": \"9257 | };\\n9258 | var DlmmSdkError = class extends Error {\\n9259 | \\n9260 | \\n9261 |   constructor(name, message) {\\n9262 |     super();\\n           ^\\nSWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity in binArrays for swapQuote\\n      at new DlmmSdkError (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n      at swapQuote (/Users/home/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17277:17)\\n      at /Users/home/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_2_132701.ts:70:38\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}

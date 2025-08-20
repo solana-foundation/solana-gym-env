@@ -1,0 +1,998 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "run_index": 1,
+  "run_id": "code_loop_25-08-20_132702_c2783360",
+  "start_time": "2025-08-20T13:27:02.221052",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-20T13:27:02.249525",
+      "duration": 34.574751,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-20T13:27:36.825442",
+      "duration": 33.339868,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-20T13:28:10.166234",
+      "duration": 6.044266,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-20T13:28:16.213076",
+      "duration": 8.804227,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-20T13:28:25.018298",
+      "duration": 7.487726,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-20T13:28:32.509004",
+      "duration": 35.349691,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-20T13:29:07.859651",
+      "duration": 36.565103,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-20T13:29:44.427845",
+      "duration": 10.697935,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-20T13:29:55.127044",
+      "duration": 6.83973,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-20T13:30:01.967802",
+      "duration": 4.020202,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-20T13:30:05.989289",
+      "duration": 6.227682,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-20T13:30:12.218888",
+      "duration": 5.723246,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-20T13:30:17.943788",
+      "duration": 8.577249,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-20T13:30:26.522305",
+      "duration": 38.757958,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-20T13:31:05.283052",
+      "duration": 38.61746,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-20T13:31:43.904754",
+      "duration": 40.324667,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-20T13:32:24.233633",
+      "duration": 35.381074,
+      "reward": 1,
+      "total_reward": 1,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          2
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-20T13:32:59.618213",
+      "duration": 36.117502,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-20T13:33:35.742014",
+      "duration": 36.830453,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-20T13:34:12.577337",
+      "duration": 40.780625,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-20T13:34:53.362475",
+      "duration": 39.9792,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-20T13:35:33.345868",
+      "duration": 38.191481,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-20T13:36:11.539011",
+      "duration": 11.612068,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-20T13:36:23.152595",
+      "duration": 10.235961,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-20T13:36:33.390145",
+      "duration": 9.695063,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-20T13:36:43.086805",
+      "duration": 11.530233,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-20T13:36:54.619530",
+      "duration": 9.142566,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-20T13:37:03.764326",
+      "duration": 39.444764,
+      "reward": 0,
+      "total_reward": 1,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-20T13:37:43.211484",
+      "duration": 40.104092,
+      "reward": 6,
+      "total_reward": 7,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-20T13:38:23.319919",
+      "duration": 9.332825,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-20T13:38:32.654541",
+      "duration": 6.076474,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-20T13:38:38.732955",
+      "duration": 36.360262,
+      "reward": 1,
+      "total_reward": 8,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          17,
+          18,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-20T13:39:15.097718",
+      "duration": 40.60701,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-20T13:39:55.710777",
+      "duration": 39.151804,
+      "reward": 7,
+      "total_reward": 15,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+          248,
+          228
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-20T13:40:34.864670",
+      "duration": 40.2607,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-20T13:41:15.128968",
+      "duration": 39.447008,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-20T13:41:54.582424",
+      "duration": 42.72367,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-20T13:42:37.311773",
+      "duration": 13.779272,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-20T13:42:51.093434",
+      "duration": 42.788816,
+      "reward": 1,
+      "total_reward": 16,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0,
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          248
+        ]
+      }
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-20T13:43:33.887404",
+      "duration": 9.51785,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-20T13:43:43.407592",
+      "duration": 43.738102,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-20T13:44:27.153952",
+      "duration": 12.728574,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-20T13:44:39.885013",
+      "duration": 13.570851,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-20T13:44:53.458363",
+      "duration": 12.581873,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-20T13:45:06.042995",
+      "duration": 10.882603,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-20T13:45:16.928063",
+      "duration": 37.83894,
+      "reward": 2,
+      "total_reward": 18,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-20T13:45:54.773111",
+      "duration": 44.050749,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-20T13:46:38.830667",
+      "duration": 12.697152,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-20T13:46:51.530520",
+      "duration": 8.544573,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-20T13:47:00.077851",
+      "duration": 39.85814,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    7,
+    7,
+    7,
+    8,
+    8,
+    15,
+    15,
+    15,
+    15,
+    15,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    18,
+    18,
+    18,
+    18,
+    18
+  ],
+  "programs_discovered": {
+    "11111111111111111111111111111111": 17,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 29,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 29,
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": 34,
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": 34,
+    "ComputeBudget111111111111111111111111111111": 34,
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": 39
+  },
+  "instructions_by_program": {
+    "11111111111111111111111111111111": [
+      0,
+      2
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      0,
+      1
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      3,
+      4,
+      5,
+      12,
+      17,
+      18,
+      21,
+      22
+    ],
+    "ComputeBudget111111111111111111111111111111": [
+      2
+    ],
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+      228,
+      229
+    ],
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+      248,
+      228
+    ],
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+      248
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 7
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 3,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"},{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AwQXAQAAAAAA\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CMfBovCEj8zQgZDSc8iQYYP9r8JMFsnTKED1W55d9ghy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HyGVf4UhoQ4ux9ueZgTCf6aJwCcvWqeWf258ZtbeRteV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DHHd8MrNU6YBrfJw47dyzNuuWkr4YkWrjkt5MWVUZvUN\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"4BoHhThRWuokMQz5kER3SJoEGKPHkS68dCsGgJdfYJJo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"FYidwukt6P8dmwKUbxNUihDbLhBmvenGeDkV8s1yxKq9\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"7VRs5J28yYXTjjq8NSKbXoamcbe5qHGVMGbEyLQMLB31\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"3ZDBff7jeQaksmGvmkRix36rU159EBDjYiPThvV8QVZM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"95QUtvDkuoDZrNJiuh9MdahkpRNtSVhZRe83oepd8AM7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AioJRQXvcDLRhHMd6DAkTbbMpgVx63qSGQYmRBS2vHYA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"ArLSJrSstZ3kjeZDyMAgjfjad1qdRZHHYaCQTQeAcTpa\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3YnYpQMUnUFxd9D1GSx6k1sNM9XcYLy2T68ymuu1WutH\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"8BSWYgAczR36C7ukr32v7uTepoRhYJYxAVnpBtYniZTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"stab1io8dHvK26KoHmTwwHyYmHRbUWbyEJx6CdrGabC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"7imnGYfCovXjMWKdbQvETFVMe72MQDX4S5zW4GFxMJME\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"wSCbM0HWnIEHAgAAABlkAAFPZAECQEIPAAAAAABjzgIAAAAAAGQAAA==\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"5VB2riWiuz9TSxYYrVxtDiy1Wb4upEfEFHtuZ4yRr3mC\\\",\\\"6LpcMQrSj6hJc176rU1sdHdAzja4a9xaDgjRuGxfP3oH\\\"],\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":361362990,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[79,9,205,50,239,164,89,171,22,224,72,70,13,187,239,185,87,40,75,218,160,227,31,156,118,156,155,16,225,142,4,51],\\\"lastValidBlockHeight\\\":339543702,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710895,\\\"nanos_since_epoch\\\":840010065}}}\", \"details\": \"Error: Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"},{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AwQXAQAAAAAA\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CMfBovCEj8zQgZDSc8iQYYP9r8JMFsnTKED1W55d9ghy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HyGVf4UhoQ4ux9ueZgTCf6aJwCcvWqeWf258ZtbeRteV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DHHd8MrNU6YBrfJw47dyzNuuWkr4YkWrjkt5MWVUZvUN\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"4BoHhThRWuokMQz5kER3SJoEGKPHkS68dCsGgJdfYJJo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"FYidwukt6P8dmwKUbxNUihDbLhBmvenGeDkV8s1yxKq9\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"7VRs5J28yYXTjjq8NSKbXoamcbe5qHGVMGbEyLQMLB31\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"3ZDBff7jeQaksmGvmkRix36rU159EBDjYiPThvV8QVZM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"95QUtvDkuoDZrNJiuh9MdahkpRNtSVhZRe83oepd8AM7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AioJRQXvcDLRhHMd6DAkTbbMpgVx63qSGQYmRBS2vHYA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"ArLSJrSstZ3kjeZDyMAgjfjad1qdRZHHYaCQTQeAcTpa\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3YnYpQMUnUFxd9D1GSx6k1sNM9XcYLy2T68ymuu1WutH\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"8BSWYgAczR36C7ukr32v7uTepoRhYJYxAVnpBtYniZTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"stab1io8dHvK26KoHmTwwHyYmHRbUWbyEJx6CdrGabC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"7imnGYfCovXjMWKdbQvETFVMe72MQDX4S5zW4GFxMJME\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"wSCbM0HWnIEHAgAAABlkAAFPZAECQEIPAAAAAABjzgIAAAAAAGQAAA==\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"5VB2riWiuz9TSxYYrVxtDiy1Wb4upEfEFHtuZ4yRr3mC\\\",\\\"6LpcMQrSj6hJc176rU1sdHdAzja4a9xaDgjRuGxfP3oH\\\"],\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":361362990,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[79,9,205,50,239,164,89,171,22,224,72,70,13,187,239,185,87,40,75,218,160,227,31,156,118,156,155,16,225,142,4,51],\\\"lastValidBlockHeight\\\":339543702,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710895,\\\"nanos_since_epoch\\\":840010065}}}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:44:19)\", \"type\": \"Error\", \"stderr\": \"39 |     });\\n40 | \\n41 |     const swapInstructionsData = await swapInstructionsResponse.json();\\n42 | \\n43 |     if (!swapInstructionsData.computeUnitPriceMicroLamports || !swapInstructionsData.setupInstructions || !swapInstructionsData.swapInstructions || !swapInstructionsData.cleanupInstructions) {\\n44 |         throw new Error(`Jupiter swap-instructions error: ${JSON.stringify(swapInstructionsData)}`);\\n                   ^\\nerror: Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"},{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AwQXAQAAAAAA\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"2wT8Yq49kHgDzXuPxZSaeLaH1qbmGXtEyPy64bL7aD3c\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CMfBovCEj8zQgZDSc8iQYYP9r8JMFsnTKED1W55d9ghy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HyGVf4UhoQ4ux9ueZgTCf6aJwCcvWqeWf258ZtbeRteV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"BuqEDKUwyAotZuK37V4JYEykZVKY8qo1zKbpfU9gkJMo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DHHd8MrNU6YBrfJw47dyzNuuWkr4YkWrjkt5MWVUZvUN\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"4BoHhThRWuokMQz5kER3SJoEGKPHkS68dCsGgJdfYJJo\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"FYidwukt6P8dmwKUbxNUihDbLhBmvenGeDkV8s1yxKq9\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"7VRs5J28yYXTjjq8NSKbXoamcbe5qHGVMGbEyLQMLB31\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8RVPH46opPd3qLy1n1djntzGMZxnqEzbYs9uoeixdnwk\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"3ZDBff7jeQaksmGvmkRix36rU159EBDjYiPThvV8QVZM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"6LXutJvKUw8Q5ue2gCgKHQdAN4suWW8awzFVC6XCguFx\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"52ASTPfF9PZ8sH4Vqd7k5Vug88RLByLnKEjWo5Xgtc5D\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"G4CD7aqqZZ6QKCNHrc1MPdS9Aw8BWmQ5ZkDd54W6mAEG\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"95QUtvDkuoDZrNJiuh9MdahkpRNtSVhZRe83oepd8AM7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AioJRQXvcDLRhHMd6DAkTbbMpgVx63qSGQYmRBS2vHYA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"ArLSJrSstZ3kjeZDyMAgjfjad1qdRZHHYaCQTQeAcTpa\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3YnYpQMUnUFxd9D1GSx6k1sNM9XcYLy2T68ymuu1WutH\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"8BSWYgAczR36C7ukr32v7uTepoRhYJYxAVnpBtYniZTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"stab1io8dHvK26KoHmTwwHyYmHRbUWbyEJx6CdrGabC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"7imnGYfCovXjMWKdbQvETFVMe72MQDX4S5zW4GFxMJME\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"wSCbM0HWnIEHAgAAABlkAAFPZAECQEIPAAAAAABjzgIAAAAAAGQAAA==\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"5VB2riWiuz9TSxYYrVxtDiy1Wb4upEfEFHtuZ4yRr3mC\\\",\\\"6LpcMQrSj6hJc176rU1sdHdAzja4a9xaDgjRuGxfP3oH\\\"],\\\"prioritizationFeeLamports\\\":99999,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":71428,\\\"estimatedMicroLamports\\\":621120}},\\\"simulationSlot\\\":361362990,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[79,9,205,50,239,164,89,171,22,224,72,70,13,187,239,185,87,40,75,218,160,227,31,156,118,156,155,16,225,142,4,51],\\\"lastValidBlockHeight\\\":339543702,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710895,\\\"nanos_since_epoch\\\":840010065}}}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:44:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 4,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"failed to get token account balance: Account 57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz not found\", \"details\": \"SolanaJSONRPCError: failed to get token account balance: Account 57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz not found\\n    at new SolanaJSONRPCError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:2246:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:6246:17)\", \"type\": \"SolanaJSONRPCError\", \"stderr\": \"2241 |   constructor({\\n2242 |     code,\\n2243 |     message,\\n2244 |     data\\n2245 |   }, customMessage) {\\n2246 |     super(customMessage != null ? `${customMessage}: ${message}` : message);\\n           ^\\nSolanaJSONRPCError: failed to get token account balance: Account 57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz not found\\n code: \\\"-32602\\\"\\n\\n      at new SolanaJSONRPCError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:2246:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:6246:13\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 5,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"5nmAbnjJfW1skrPvYjLTBNdhoKzJfznnbvDcM8G2U7Ki\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DbuvwPuLvH8uy2B1sKuu18aCd2QpCvfZdfDtdRZztBd2\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"Enc6rB84ZwGxZU8aqAF41dRJxg3yesiJgD7uJFVhMraM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HZ5JFB1ZoZs6NQLr7bb4MMEXDgty4Vs1ZghoyX35mNnV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AHFAv95Z67xnPYuHTf5a9uMEHdXFvbQvwc4EazY3tpt7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"GswwnegnBMWEuEsptDCBDmRB9YtG5zjetTSw7RunUQMY\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DuFXxPxAyJhHj4gMpE8As1Ta4nSSVXv8xfEDRrWQmJ9G\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAMGQAAYCWmAAAAAAAdhQcAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":null,\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"23iTfgGpQMxmeDhF4BcjW6D33UYG4Up25ttdc27vDD42\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363032,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[69,139,243,27,97,50,159,175,108,231,161,46,213,71,179,199,8,90,99,119,188,193,39,28,224,1,26,47,71,39,31,158],\\\"lastValidBlockHeight\\\":339543742,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710911,\\\"nanos_since_epoch\\\":171813295}}}\", \"details\": \"Error: Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"5nmAbnjJfW1skrPvYjLTBNdhoKzJfznnbvDcM8G2U7Ki\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DbuvwPuLvH8uy2B1sKuu18aCd2QpCvfZdfDtdRZztBd2\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"Enc6rB84ZwGxZU8aqAF41dRJxg3yesiJgD7uJFVhMraM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HZ5JFB1ZoZs6NQLr7bb4MMEXDgty4Vs1ZghoyX35mNnV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AHFAv95Z67xnPYuHTf5a9uMEHdXFvbQvwc4EazY3tpt7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"GswwnegnBMWEuEsptDCBDmRB9YtG5zjetTSw7RunUQMY\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DuFXxPxAyJhHj4gMpE8As1Ta4nSSVXv8xfEDRrWQmJ9G\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAMGQAAYCWmAAAAAAAdhQcAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":null,\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"23iTfgGpQMxmeDhF4BcjW6D33UYG4Up25ttdc27vDD42\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363032,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[69,139,243,27,97,50,159,175,108,231,161,46,213,71,179,199,8,90,99,119,188,193,39,28,224,1,26,47,71,39,31,158],\\\"lastValidBlockHeight\\\":339543742,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710911,\\\"nanos_since_epoch\\\":171813295}}}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:105:19)\", \"type\": \"Error\", \"stderr\": \"100 |     });\\n101 | \\n102 |     const swapInstructionsData = await swapInstructionsResponse.json();\\n103 | \\n104 |     if (swapInstructionsData.error || !Array.isArray(swapInstructionsData.swapInstructions)) {\\n105 |         throw new Error(`Jupiter swap-instructions error: ${JSON.stringify(swapInstructionsData)}`);\\n                    ^\\nerror: Jupiter swap-instructions error: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"5nmAbnjJfW1skrPvYjLTBNdhoKzJfznnbvDcM8G2U7Ki\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"DbuvwPuLvH8uy2B1sKuu18aCd2QpCvfZdfDtdRZztBd2\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"Enc6rB84ZwGxZU8aqAF41dRJxg3yesiJgD7uJFVhMraM\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HZ5JFB1ZoZs6NQLr7bb4MMEXDgty4Vs1ZghoyX35mNnV\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"AHFAv95Z67xnPYuHTf5a9uMEHdXFvbQvwc4EazY3tpt7\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"GswwnegnBMWEuEsptDCBDmRB9YtG5zjetTSw7RunUQMY\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DuFXxPxAyJhHj4gMpE8As1Ta4nSSVXv8xfEDRrWQmJ9G\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAMGQAAYCWmAAAAAAAdhQcAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":null,\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"23iTfgGpQMxmeDhF4BcjW6D33UYG4Up25ttdc27vDD42\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363032,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[69,139,243,27,97,50,159,175,108,231,161,46,213,71,179,199,8,90,99,119,188,193,39,28,224,1,26,47,71,39,31,158],\\\"lastValidBlockHeight\\\":339543742,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755710911,\\\"nanos_since_epoch\\\":171813295}}}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:105:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"This transaction includes an address (`undefined`) which is both invoked and set as the fee payer. Program addresses may not pay fees\", \"details\": \"SolanaError: This transaction includes an address (`undefined`) which is both invoked and set as the fee payer. Program addresses may not pay fees\\n    at new SolanaError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/errors/dist/index.node.mjs:603:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:344:25)\\n    at upsert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:329:25)\\n    at getAddressMapFromInstructions (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:338:5)\\n    at compileTransactionMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:589:22)\\n    at compileTransaction (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transactions/dist/index.node.mjs:84:27)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:284:23)\\n    at signModifyingAndPartialTransactionSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:283:58)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:222:16)\\n    at partiallySignTransactionMessageWithSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:217:59)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:230:35)\\n    at signTransactionMessageWithSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:229:50)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:86:22)\", \"type\": \"SolanaError\", \"stderr\": \"598 |       if (Object.keys(contextRest).length > 0) {\\n599 |         context = contextRest;\\n600 |       }\\n601 |     }\\n602 |     const message = getErrorMessage(code, context);\\n603 |     super(message, errorOptions);\\n          ^\\nSolanaError: This transaction includes an address (`undefined`) which is both invoked and set as the fee payer. Program addresses may not pay fees\\n      at new SolanaError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/errors/dist/index.node.mjs:603:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:344:21\\n      at upsert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:329:25)\\n      at getAddressMapFromInstructions (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:338:5)\\n      at compileTransactionMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transaction-messages/dist/index.node.mjs:589:22)\\n      at compileTransaction (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/transactions/dist/index.node.mjs:84:27)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:284:23\\n      at signModifyingAndPartialTransactionSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:283:58)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:222:16\\n      at partiallySignTransactionMessageWithSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:217:59)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:230:35\\n      at signTransactionMessageWithSigners (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/signers/dist/index.node.mjs:229:50)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:86:22\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 9,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Expected \\\"from\\\" but found \\\"=>\\\"\", \"type\": \"BuildMessage\", \"stderr\": \"3 | import { Connection, PublicKey } => '@solana/web3.js';\\n                                     ^\\nerror: Expected \\\"from\\\" but found \\\"=>\\\"\\n    at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:3:34\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 10,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Meteora swap quote returned invalid amounts. Check pool liquidity or input amount.\", \"details\": \"Error: Meteora swap quote returned invalid amounts. Check pool liquidity or input amount.\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:43:19)\", \"type\": \"Error\", \"stderr\": \"38 |         binArrays\\n39 |     );\\n40 | \\n41 |     // Check if swapQuote is valid before proceeding\\n42 |     if (!swapQuote || swapQuote.outAmount.eqn(0) || swapQuote.minOutAmount.eqn(0)) {\\n43 |         throw new Error(\\\"Meteora swap quote returned invalid amounts. Check pool liquidity or input amount.\\\");\\n                   ^\\nerror: Meteora swap quote returned invalid amounts. Check pool liquidity or input amount.\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:43:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 11,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter swap-instructions data missing or malformed: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"9iFER3bpjf1PTTCQCfTRu17EJgvsxo9pVyA9QWwEuX4x\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8sLbNZoA1cfnvMJLPfp98ZLAnFSYCFApfJKMbiXNLwxj\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6P4tvbzRY6Bh3MiWDHuLqyHywovsRwRpfskPvyeSoHsz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6mK4Pxs6GhwnessH7CvPivqDYauiHZmAdbEFDpXFk9zt\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3MsJXVvievxAbsMsaT6TS4i6oMitD9jazucuq3X234tC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CVNCp1mpYMG6ZGoWDzbQ84BXjPzVnBMZa7yKnReurzXu\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DoPuiZfJu7sypqwR4eiU7C5TMcmmiFoU4HaF5SoD8mRy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"H4rtSgcAwYhLUQsFSLmbRHgQU9sQaEoXfHcdvjNcNLFg\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6QfMNTHzw2vxkwNQxqRTLL3ZViXuBFDMvczxF5gF1oVU\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAGmQAAUBCDwAAAAAAdc4CAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"D6XNrxMsDoABJVVY5YyHxJuAB6WGzYCXpZeKyNtqu2v4\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363280,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[88,178,94,32,52,193,74,162,79,179,178,75,209,31,50,149,225,159,151,22,9,240,147,82,195,74,218,174,35,179,153,199],\\\"lastValidBlockHeight\\\":339543988,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755711010,\\\"nanos_since_epoch\\\":154133999}}}\", \"details\": \"Error: Jupiter swap-instructions data missing or malformed: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"9iFER3bpjf1PTTCQCfTRu17EJgvsxo9pVyA9QWwEuX4x\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8sLbNZoA1cfnvMJLPfp98ZLAnFSYCFApfJKMbiXNLwxj\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6P4tvbzRY6Bh3MiWDHuLqyHywovsRwRpfskPvyeSoHsz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6mK4Pxs6GhwnessH7CvPivqDYauiHZmAdbEFDpXFk9zt\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3MsJXVvievxAbsMsaT6TS4i6oMitD9jazucuq3X234tC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CVNCp1mpYMG6ZGoWDzbQ84BXjPzVnBMZa7yKnReurzXu\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DoPuiZfJu7sypqwR4eiU7C5TMcmmiFoU4HaF5SoD8mRy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"H4rtSgcAwYhLUQsFSLmbRHgQU9sQaEoXfHcdvjNcNLFg\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6QfMNTHzw2vxkwNQxqRTLL3ZViXuBFDMvczxF5gF1oVU\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAGmQAAUBCDwAAAAAAdc4CAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"D6XNrxMsDoABJVVY5YyHxJuAB6WGzYCXpZeKyNtqu2v4\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363280,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[88,178,94,32,52,193,74,162,79,179,178,75,209,31,50,149,225,159,151,22,9,240,147,82,195,74,218,174,35,179,153,199],\\\"lastValidBlockHeight\\\":339543988,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755711010,\\\"nanos_since_epoch\\\":154133999}}}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:44:19)\", \"type\": \"Error\", \"stderr\": \"39 | \\n40 |     const swapInstructionsData = await swapInstructionsResponse.json();\\n41 | \\n42 |     // Check for expected structure\\n43 |     if (!swapInstructionsData || !Array.isArray(swapInstructionsData.swapInstructions)) {\\n44 |         throw new Error(`Jupiter swap-instructions data missing or malformed: ${JSON.stringify(swapInstructionsData)}`);\\n                   ^\\nerror: Jupiter swap-instructions data missing or malformed: {\\\"tokenLedgerInstruction\\\":null,\\\"computeBudgetInstructions\\\":[{\\\"programId\\\":\\\"ComputeBudget111111111111111111111111111111\\\",\\\"accounts\\\":[],\\\"data\\\":\\\"AsBcFQA=\\\"}],\\\"setupInstructions\\\":[{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"},{\\\"programId\\\":\\\"11111111111111111111111111111111\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"AgAAAEBCDwAAAAAA\\\"},{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true}],\\\"data\\\":\\\"EQ==\\\"},{\\\"programId\\\":\\\"ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"11111111111111111111111111111111\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"AQ==\\\"}],\\\"swapInstruction\\\":{\\\"programId\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"D8cy77BBepLMngZx6ZukaTff5hCt1HrWyKk3Hnd9oitf\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"9iFER3bpjf1PTTCQCfTRu17EJgvsxo9pVyA9QWwEuX4x\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"8sLbNZoA1cfnvMJLPfp98ZLAnFSYCFApfJKMbiXNLwxj\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"EJodMpCEQaBu9GjRFFCnWmV2NxAS8GpSeeJ9H1vmmT3n\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6P4tvbzRY6Bh3MiWDHuLqyHywovsRwRpfskPvyeSoHsz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6mK4Pxs6GhwnessH7CvPivqDYauiHZmAdbEFDpXFk9zt\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"3MsJXVvievxAbsMsaT6TS4i6oMitD9jazucuq3X234tC\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false},{\\\"pubkey\\\":\\\"CVNCp1mpYMG6ZGoWDzbQ84BXjPzVnBMZa7yKnReurzXu\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"DoPuiZfJu7sypqwR4eiU7C5TMcmmiFoU4HaF5SoD8mRy\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"H4rtSgcAwYhLUQsFSLmbRHgQU9sQaEoXfHcdvjNcNLFg\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"6QfMNTHzw2vxkwNQxqRTLL3ZViXuBFDMvczxF5gF1oVU\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":false}],\\\"data\\\":\\\"5RfLl3rjrSoBAAAAGmQAAUBCDwAAAAAAdc4CAAAAAABkAAA=\\\"},\\\"cleanupInstruction\\\":{\\\"programId\\\":\\\"TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA\\\",\\\"accounts\\\":[{\\\"pubkey\\\":\\\"57hXX5qfxP6F7T2MjjkUo44Rbbe5MC2STrZuagLsrTgz\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":false,\\\"isWritable\\\":true},{\\\"pubkey\\\":\\\"HQ9QPViYD5GAJiu98PppR2CjR3HYrSzfDHscN5w8YFX4\\\",\\\"isSigner\\\":true,\\\"isWritable\\\":false}],\\\"data\\\":\\\"CQ==\\\"},\\\"otherInstructions\\\":[],\\\"addressLookupTableAddresses\\\":[\\\"D6XNrxMsDoABJVVY5YyHxJuAB6WGzYCXpZeKyNtqu2v4\\\"],\\\"prioritizationFeeLamports\\\":0,\\\"computeUnitLimit\\\":1400000,\\\"prioritizationType\\\":{\\\"computeBudget\\\":{\\\"microLamports\\\":0,\\\"estimatedMicroLamports\\\":0}},\\\"simulationSlot\\\":361363280,\\\"dynamicSlippageReport\\\":null,\\\"simulationError\\\":{\\\"errorCode\\\":\\\"TRANSACTION_ERROR\\\",\\\"error\\\":\\\"Attempt to debit an account but found no record of a prior credit.\\\"},\\\"addressesByLookupTableAddress\\\":null,\\\"blockhashWithMetadata\\\":{\\\"blockhash\\\":[88,178,94,32,52,193,74,162,79,179,178,75,209,31,50,149,225,159,151,22,9,240,147,82,195,74,218,174,35,179,153,199],\\\"lastValidBlockHeight\\\":339543988,\\\"fetchedAt\\\":{\\\"secs_since_epoch\\\":1755711010,\\\"nanos_since_epoch\\\":154133999}}}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:44:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 12,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"encoding overruns Uint8Array\", \"details\": \"RangeError: encoding overruns Uint8Array\\n    at encode (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:2098:23)\\n    at encode (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:1092:36)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1045:51)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:2084:44)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:83:36)\", \"type\": \"RangeError\", \"stderr\": \"2093 |         if (!(src instanceof Uint8Array && span === src.length)) {\\n2094 |             throw new TypeError(nameWithProperty('Blob.encode', this)\\n2095 |                 + ' requires (length ' + span + ') Uint8Array as src');\\n2096 |         }\\n2097 |         if ((offset + span) > b.length) {\\n2098 |             throw new RangeError('encoding overruns Uint8Array');\\n                         ^\\nRangeError: encoding overruns Uint8Array\\n      at encode (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:2098:19)\\n      at encode (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:1092:36)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1045:51)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:2084:44)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:83:36\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 13,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"undefined is not a function (near '...lookupTable of lookupTableAccounts...')\", \"details\": \"TypeError: undefined is not a function (near '...lookupTable of lookupTableAccounts...')\\n    at compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1010:16)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:92:8)\", \"type\": \"TypeError\", \"stderr\": \"1005 |     const accountKeysFromLookups = {\\n1006 |       writable: new Array(),\\n1007 |       readonly: new Array()\\n1008 |     };\\n1009 |     const lookupTableAccounts = args.addressLookupTableAccounts || [];\\n1010 |     for (const lookupTable of lookupTableAccounts) {\\n                      ^\\nTypeError: undefined is not a function (near '...lookupTable of lookupTableAccounts...')\\n      at compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1010:16)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:92:8\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 23,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: \\\"swapQuote\\\" has already been declared\", \"type\": \"BuildMessage\", \"stderr\": \"118 |     const swapQuote = await pool.getQuote({\\n                ^\\nerror: \\\"swapQuote\\\" has already been declared\\n    at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:118:11\\n\\n117 |     const swapQuote = await pool.get = await pool.get\\n                ^\\nnote: \\\"swapQuote\\\" was originally declared here\\n   at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:117:11\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 24,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Expected \\\";\\\" but found \\\")\\\"\", \"type\": \"BuildMessage\", \"stderr\": \"123 |     const amountInLamports = DecimalUtil.to ); // Convert SOL amount to token's smallest unit\\n                                                  ^\\nerror: Expected \\\";\\\" but found \\\")\\\"\\n    at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:123:45\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 25,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Account not found: AdaptiveFeeTier\", \"details\": \"Error: Account not found: AdaptiveFeeTier\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@coral-xyz/anchor/dist/cjs/coder/borsh/accounts.js:28:27)\\n    at map (native:1:11)\\n    at new BorshAccountsCoder (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@coral-xyz/anchor/dist/cjs/coder/borsh/accounts.js:25:38)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/types/public/anchor-types.js:27:40)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/types/public/index.js:17:1)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/parsing.js:46:7)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/fetcher/fetcher-impl.js:7:7)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/fetcher/index.js:17:1)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/index.js:17:1)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/context.js:9:7)\\n    at anonymous (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/index.js:21:1)\\n    at <anonymous> (native:11:43)\", \"type\": \"Error\", \"stderr\": \"23 |             throw new Error(\\\"Accounts require `idl.types`\\\");\\n24 |         }\\n25 |         const layouts = idl.accounts.map((acc) => {\\n26 |             const typeDef = types.find((ty) => ty.name === acc.name);\\n27 |             if (!typeDef) {\\n28 |                 throw new Error(`Account not found: ${acc.name}`);\\n                           ^\\nerror: Account not found: AdaptiveFeeTier\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@coral-xyz/anchor/dist/cjs/coder/borsh/accounts.js:28:23\\n      at map (1:11)\\n      at new BorshAccountsCoder (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@coral-xyz/anchor/dist/cjs/coder/borsh/accounts.js:25:38)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/types/public/anchor-types.js:27:27\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/types/public/index.js:17:1\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/parsing.js:46:7\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/fetcher/fetcher-impl.js:7:7\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/fetcher/index.js:17:1\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/network/public/index.js:17:1\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/context.js:9:7\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@orca-so/whirlpools-sdk/dist/index.js:21:1\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 26,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"\", \"details\": \"TokenAccountNotFoundError\\n    at new TokenError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:4:9)\\n    at new TokenAccountNotFoundError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:10:9)\\n    at unpackAccount (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/state/account.js:91:15)\", \"type\": \"TokenAccountNotFoundError\", \"stderr\": \"1 | /** Base class for errors */\\n2 | export class TokenError extends Error {\\n3 |     constructor(message) {\\n4 |         super(message);\\n            ^\\nerror: TokenAccountNotFoundError\\n      at new TokenError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:4:9)\\n      at new TokenAccountNotFoundError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:10:9)\\n      at unpackAccount (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/state/account.js:91:15)\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 27,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Insufficient liquidity\", \"details\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity\\n    at new DlmmSdkError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n    at swapQuote (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17322:17)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:106:38)\", \"type\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY\", \"stderr\": \"9257 | };\\n9258 | var DlmmSdkError = class extends Error {\\n9259 | \\n9260 | \\n9261 |   constructor(name, message) {\\n9262 |     super();\\n           ^\\nSWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity\\n      at new DlmmSdkError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n      at swapQuote (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17322:13)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:106:38\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 30,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction instruction index 3 has undefined program id\", \"details\": \"Error: Transaction instruction index 3 has undefined program id\\n    at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:19)\\n    at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:87:15)\", \"type\": \"Error\", \"stderr\": \"1469 |     } else {\\n1470 |       throw new Error('Transaction fee payer required');\\n1471 |     }\\n1472 |     for (let i = 0; i < instructions.length; i++) {\\n1473 |       if (instructions[i].programId === undefined) {\\n1474 |         throw new Error(`Transaction instruction index ${i} has undefined program id`);\\n                     ^\\nerror: Transaction instruction index 3 has undefined program id\\n      at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:15)\\n      at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:87:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 31,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction instruction index 3 has undefined program id\", \"details\": \"Error: Transaction instruction index 3 has undefined program id\\n    at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:19)\\n    at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:87:15)\", \"type\": \"Error\", \"stderr\": \"1469 |     } else {\\n1470 |       throw new Error('Transaction fee payer required');\\n1471 |     }\\n1472 |     for (let i = 0; i < instructions.length; i++) {\\n1473 |       if (instructions[i].programId === undefined) {\\n1474 |         throw new Error(`Transaction instruction index ${i} has undefined program id`);\\n                     ^\\nerror: Transaction instruction index 3 has undefined program id\\n      at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:15)\\n      at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:87:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 38,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'buildTransaction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\", \"details\": \"SyntaxError: Export named 'buildTransaction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'buildTransaction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@raydium-io/raydium-sdk-v2/lib/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 40,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1610 > 1232\", \"details\": \"Error: Transaction too large: 1610 > 1232\\n    at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:103:15)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1610 > 1232\\n      at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:103:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 42,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1286 > 1232\", \"details\": \"Error: Transaction too large: 1286 > 1232\\n    at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:101:15)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1286 > 1232\\n      at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:101:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 43,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Insufficient liquidity\", \"details\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity\\n    at new DlmmSdkError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n    at swapQuote (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17322:17)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:82:38)\", \"type\": \"SWAP_QUOTE_INSUFFICIENT_LIQUIDITY\", \"stderr\": \"9257 | };\\n9258 | var DlmmSdkError = class extends Error {\\n9259 | \\n9260 | \\n9261 |   constructor(name, message) {\\n9262 |     super();\\n           ^\\nSWAP_QUOTE_INSUFFICIENT_LIQUIDITY: Insufficient liquidity\\n      at new DlmmSdkError (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:9262:5)\\n      at swapQuote (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@meteora-ag/dlmm/dist/index.js:17322:13)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:82:38\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 44,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1569 > 1232\", \"details\": \"Error: Transaction too large: 1569 > 1232\\n    at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:132:15)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1569 > 1232\\n      at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:132:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 45,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction instruction index 2 has undefined program id\", \"details\": \"Error: Transaction instruction index 2 has undefined program id\\n    at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:19)\\n    at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:82:15)\", \"type\": \"Error\", \"stderr\": \"1469 |     } else {\\n1470 |       throw new Error('Transaction fee payer required');\\n1471 |     }\\n1472 |     for (let i = 0; i < instructions.length; i++) {\\n1473 |       if (instructions[i].programId === undefined) {\\n1474 |         throw new Error(`Transaction instruction index ${i} has undefined program id`);\\n                     ^\\nerror: Transaction instruction index 2 has undefined program id\\n      at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:15)\\n      at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:82:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 48,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1560 > 1232\", \"details\": \"Error: Transaction too large: 1560 > 1232\\n    at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:101:15)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1560 > 1232\\n      at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:101:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 49,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction instruction index 0 has undefined program id\", \"details\": \"Error: Transaction instruction index 0 has undefined program id\\n    at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:19)\\n    at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n    at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:70:15)\", \"type\": \"Error\", \"stderr\": \"1469 |     } else {\\n1470 |       throw new Error('Transaction fee payer required');\\n1471 |     }\\n1472 |     for (let i = 0; i < instructions.length; i++) {\\n1473 |       if (instructions[i].programId === undefined) {\\n1474 |         throw new Error(`Transaction instruction index ${i} has undefined program id`);\\n                     ^\\nerror: Transaction instruction index 0 has undefined program id\\n      at compileMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1474:15)\\n      at _compile (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at serializeMessage (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1644:17)\\n      at serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1843:27)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_132701.ts:70:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}

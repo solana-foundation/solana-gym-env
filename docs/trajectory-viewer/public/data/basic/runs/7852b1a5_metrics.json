@@ -1,0 +1,962 @@
+{
+  "model": "openai/gpt-5",
+  "run_index": 1,
+  "run_id": "code_loop_25-08-15_151257_7852b1a5",
+  "start_time": "2025-08-15T15:12:58.060145",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-15T15:12:58.086551",
+      "duration": 144.374626,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-15T15:15:22.461912",
+      "duration": 118.767795,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-15T15:17:21.230702",
+      "duration": 135.753537,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-15T15:19:36.984870",
+      "duration": 126.31487,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-15T15:21:43.302333",
+      "duration": 119.011443,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-15T15:23:42.316308",
+      "duration": 98.780415,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-15T15:25:21.097842",
+      "duration": 106.85735,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-15T15:27:07.956372",
+      "duration": 65.218831,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-15T15:28:13.179092",
+      "duration": 111.152378,
+      "reward": 14,
+      "total_reward": 14,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm": [
+          8
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-15T15:30:04.334440",
+      "duration": 98.56096,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-15T15:31:42.897851",
+      "duration": 129.864181,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-15T15:33:52.765549",
+      "duration": 141.924874,
+      "reward": 3,
+      "total_reward": 17,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          18,
+          21,
+          22
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-15T15:36:14.693150",
+      "duration": 123.683562,
+      "reward": 0,
+      "total_reward": 17,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-15T15:38:18.379814",
+      "duration": 103.225544,
+      "reward": 1,
+      "total_reward": 18,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": [
+          248
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          3
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-15T15:40:01.608527",
+      "duration": 114.277127,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-15T15:41:55.888529",
+      "duration": 63.623757,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-15T15:42:59.517379",
+      "duration": 117.269305,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-15T15:44:56.791608",
+      "duration": 103.298286,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-15T15:46:40.094083",
+      "duration": 121.978842,
+      "reward": 1,
+      "total_reward": 19,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe": [
+          7
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-15T15:48:42.076477",
+      "duration": 101.345444,
+      "reward": 3,
+      "total_reward": 22,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+          248,
+          228
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-15T15:50:23.425739",
+      "duration": 103.509711,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-15T15:52:06.940297",
+      "duration": 95.812594,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-15T15:53:42.756355",
+      "duration": 116.814956,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-15T15:55:39.575630",
+      "duration": 98.093713,
+      "reward": 3,
+      "total_reward": 25,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": [
+          9
+        ],
+        "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": [
+          143
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-15T15:57:17.673323",
+      "duration": 112.424582,
+      "reward": 0,
+      "total_reward": 25,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-15T15:59:10.101784",
+      "duration": 97.755017,
+      "reward": 0,
+      "total_reward": 25,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-15T16:00:47.861952",
+      "duration": 113.06871,
+      "reward": 2,
+      "total_reward": 27,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          18,
+          12,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ": [
+          43
+        ],
+        "vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV": [
+          242
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-15T16:02:40.933022",
+      "duration": 105.008272,
+      "reward": 1,
+      "total_reward": 28,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          248
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          3
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-15T16:04:25.944285",
+      "duration": 105.078563,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-15T16:06:11.027706",
+      "duration": 99.133181,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-15T16:07:50.167123",
+      "duration": 60.64107,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-15T16:08:50.816262",
+      "duration": 94.839294,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-15T16:10:25.657955",
+      "duration": 74.412178,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-15T16:11:40.077211",
+      "duration": 90.060406,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-15T16:13:10.143970",
+      "duration": 72.71455,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-15T16:14:22.865816",
+      "duration": 79.906772,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-15T16:15:42.777027",
+      "duration": 87.616519,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-15T16:17:10.400987",
+      "duration": 78.822964,
+      "reward": 2,
+      "total_reward": 30,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          18,
+          12,
+          21,
+          22
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          43
+        ]
+      }
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-15T16:18:29.230632",
+      "duration": 87.042487,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-15T16:19:56.280154",
+      "duration": 75.255035,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-15T16:21:11.541633",
+      "duration": 77.006312,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-15T16:22:28.554945",
+      "duration": 72.902953,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    14,
+    14,
+    14,
+    17,
+    17,
+    18,
+    18,
+    18,
+    18,
+    18,
+    19,
+    22,
+    22,
+    22,
+    22,
+    25,
+    25,
+    25,
+    27,
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    28,
+    30,
+    30,
+    30,
+    30,
+    30
+  ],
+  "programs_discovered": {
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": 9,
+    "ComputeBudget111111111111111111111111111111": 9,
+    "DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm": 9,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 9,
+    "11111111111111111111111111111111": 9,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 9,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 12,
+    "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": 14,
+    "SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe": 19,
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": 20,
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": 24,
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": 24,
+    "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": 24,
+    "vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV": 27,
+    "swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ": 27,
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": 28
+  },
+  "instructions_by_program": {
+    "ComputeBudget111111111111111111111111111111": [
+      2,
+      3
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      1
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      3,
+      9,
+      12,
+      17,
+      18,
+      21,
+      22
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      2
+    ],
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+      228,
+      229
+    ],
+    "DEXYosS6oEGvk8uCDayvwEZz4qEyDJRf9nFgYCaqPMTm": [
+      8
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      18,
+      12,
+      21,
+      22
+    ],
+    "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": [
+      248
+    ],
+    "SoLFiHG9TfgtdUXUjWAxi3LtvYuFyDLVhBWxdMZxyCe": [
+      7
+    ],
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+      248,
+      228
+    ],
+    "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+      8
+    ],
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": [
+      9
+    ],
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": [
+      143
+    ],
+    "swapNyd8XiQwJ6ianp9snpu4brUqFxadzvHebnAXjJZ": [
+      43
+    ],
+    "vo1tWgqZMjG61Z2T9qUaMYKqZ75CYzMuaZ2LZP1n7HV": [
+      242
+    ],
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+      248,
+      43
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 14
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 1,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter quote error: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"otherAmountThreshold\\\":\\\"1838744\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"Fn68NZzCCgZKtYmnAYbkL6w5NNx3TgjW91dGkLA3hsDK\\\",\\\"label\\\":\\\"Obric V2\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"feeAmount\\\":\\\"100\\\",\\\"feeMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360280243,\\\"timeTaken\\\":0.001394053,\\\"swapUsdValue\\\":\\\"1.8564805046805122363878904376\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"1847698\\\",\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"1856022\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\", \"details\": \"Error: Jupiter quote error: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"otherAmountThreshold\\\":\\\"1838744\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"Fn68NZzCCgZKtYmnAYbkL6w5NNx3TgjW91dGkLA3hsDK\\\",\\\"label\\\":\\\"Obric V2\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"feeAmount\\\":\\\"100\\\",\\\"feeMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360280243,\\\"timeTaken\\\":0.001394053,\\\"swapUsdValue\\\":\\\"1.8564805046805122363878904376\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"1847698\\\",\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"1856022\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_1_151256.ts:27:15)\", \"type\": \"Error\", \"stderr\": \"22 |     throw new Error(`Jupiter quote HTTP error: ${quoteRes.status} ${quoteRes.statusText}`);\\n23 |   }\\n24 |   const quoteJson = await quoteRes.json();\\n25 | \\n26 |   if (!quoteJson || quoteJson.error || !quoteJson.routes || quoteJson.routes.length === 0) {\\n27 |     throw new Error(`Jupiter quote error: ${JSON.stringify(quoteJson)}`);\\n               ^\\nerror: Jupiter quote error: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"otherAmountThreshold\\\":\\\"1838744\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"Fn68NZzCCgZKtYmnAYbkL6w5NNx3TgjW91dGkLA3hsDK\\\",\\\"label\\\":\\\"Obric V2\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"10000000\\\",\\\"outAmount\\\":\\\"1857317\\\",\\\"feeAmount\\\":\\\"100\\\",\\\"feeMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360280243,\\\"timeTaken\\\":0.001394053,\\\"swapUsdValue\\\":\\\"1.8564805046805122363878904376\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"1847698\\\",\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"1856022\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_1_151256.ts:27:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 7,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'deserializeInstruction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@jup-ag/api/dist/index.js'.\", \"details\": \"SyntaxError: Export named 'deserializeInstruction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@jup-ag/api/dist/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'deserializeInstruction' not found in module '/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@jup-ag/api/dist/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}
