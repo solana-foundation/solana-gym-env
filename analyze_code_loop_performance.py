@@ -22,8 +22,13 @@ def create_output_dir():
     print(f"\n📁 Created output directory: {output_dir}")
     return output_dir
 
-def load_code_loop_metrics(metrics_path="metrics"):
-    """Load all code_loop metrics from the specified directory"""
+def load_code_loop_metrics(metrics_path="metrics", exclude_programs=None):
+    """Load all code_loop metrics from the specified directory
+    
+    Args:
+        metrics_path: Path to metrics directory
+        exclude_programs: List of program IDs to exclude from scoring
+    """
     metrics_files = glob.glob(f"{metrics_path}/code_loop_*.json")
     all_metrics = []
     
@@ -37,12 +42,63 @@ def load_code_loop_metrics(metrics_path="metrics"):
                 data = json.load(f)
                 # Only include if it has the expected structure
                 if 'model' in data and 'messages' in data:
+                    # Recalculate scores if programs are excluded
+                    if exclude_programs:
+                        data = recalculate_scores_without_programs(data, exclude_programs)
                     all_metrics.append(data)
         except Exception as e:
             print(f"Error loading {file}: {e}")
             continue
     
     return all_metrics
+
+def recalculate_scores_without_programs(metrics_data, exclude_programs):
+    """Recalculate scores excluding certain programs"""
+    # Create a copy to avoid modifying original
+    data = json.loads(json.dumps(metrics_data))
+    
+    # Recalculate programs_discovered
+    filtered_programs = {}
+    for prog_id, msg_idx in data.get('programs_discovered', {}).items():
+        if prog_id not in exclude_programs:
+            filtered_programs[prog_id] = msg_idx
+    data['programs_discovered'] = filtered_programs
+    
+    # Recalculate instructions_by_program
+    filtered_instructions = {}
+    total_unique_instructions = 0
+    for prog_id, instructions in data.get('instructions_by_program', {}).items():
+        if prog_id not in exclude_programs:
+            filtered_instructions[prog_id] = instructions
+            total_unique_instructions += len(instructions)
+    data['instructions_by_program'] = filtered_instructions
+    
+    # Recalculate cumulative rewards and message rewards
+    new_cumulative_rewards = []
+    cumulative = 0
+    
+    seen = {}
+    for i, msg in enumerate(data.get('messages', [])):
+        msg_reward = 0
+        if 'instructions_discovered' in msg:
+            for prog_id, instructions in msg['instructions_discovered'].items():
+                if prog_id not in seen:
+                    seen[prog_id] = set()
+                if prog_id not in exclude_programs:
+                    for ix in instructions:
+                        if ix not in seen[prog_id]:
+                            seen[prog_id].add(ix)
+                            msg_reward += 1
+        
+        # Update message reward
+        msg['reward'] = msg_reward
+        cumulative += msg_reward
+        msg['total_reward'] = cumulative
+        new_cumulative_rewards.append(cumulative)
+    
+    data['cumulative_rewards'] = new_cumulative_rewards
+    
+    return data
 
 def print_programs_by_model(metrics_list, output_dir):
     """Print which programs each model discovered and create visualizations"""
@@ -256,7 +312,8 @@ def analyze_metrics(metrics_list, output_dir):
         
         # Count unique programs and instructions from top-level fields
         programs = len(m.get('programs_discovered', {}))
-        instructions = len(m.get('instructions_discovered', {}))
+        # Calculate total unique instructions from instructions_by_program
+        instructions = sum(len(instr_list) for instr_list in m.get('instructions_by_program', {}).values())
         
         summary_data.append({
             'model': m['model'],
@@ -460,7 +517,7 @@ def plot_code_loop_performance(df, output_dir):
     
     plt.show()
 
-def analyze_reward_progression(output_dir, metrics_path="metrics"):
+def analyze_reward_progression(output_dir, metrics_path="metrics", exclude_programs=None):
     """Analyze how rewards progress over messages with error bands"""
     
     # Load metrics with full message history
@@ -475,6 +532,9 @@ def analyze_reward_progression(output_dir, metrics_path="metrics"):
             with open(file, 'r') as f:
                 data = json.load(f)
                 if 'model' in data and 'cumulative_rewards' in data:
+                    # Recalculate if programs are excluded
+                    if exclude_programs:
+                        data = recalculate_scores_without_programs(data, exclude_programs)
                     model = data['model']
                     if model not in model_progressions:
                         model_progressions[model] = []
@@ -542,7 +602,7 @@ def analyze_reward_progression(output_dir, metrics_path="metrics"):
     print(f"📊 Reward progression plot saved to: {filename}")
     plt.show()
 
-def analyze_reward_progression_individual(output_dir, metrics_path="metrics"):
+def analyze_reward_progression_individual(output_dir, metrics_path="metrics", exclude_programs=None):
     """Show individual trajectories for each model"""
     
     # Load metrics with full message history
@@ -557,6 +617,9 @@ def analyze_reward_progression_individual(output_dir, metrics_path="metrics"):
             with open(file, 'r') as f:
                 data = json.load(f)
                 if 'model' in data and 'cumulative_rewards' in data:
+                    # Recalculate if programs are excluded
+                    if exclude_programs:
+                        data = recalculate_scores_without_programs(data, exclude_programs)
                     model = data['model']
                     if model not in model_progressions:
                         model_progressions[model] = []
@@ -636,6 +699,8 @@ def main():
     parser = argparse.ArgumentParser(description='Analyze code_loop_explorer performance metrics')
     parser.add_argument('--metrics-path', default='metrics', 
                        help='Path to metrics directory (default: metrics)')
+    parser.add_argument('--exclude-programs', nargs='+', default=None,
+                       help='Program IDs to exclude from scoring (e.g., MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr)')
     args = parser.parse_args()
     
     print("="*60)
@@ -646,7 +711,11 @@ def main():
     output_dir = create_output_dir()
     
     print(f"\n📂 Loading code_loop metrics from: {args.metrics_path}")
-    metrics = load_code_loop_metrics(args.metrics_path)
+    
+    if args.exclude_programs:
+        print(f"⚠️  Excluding programs from scoring: {args.exclude_programs}")
+    
+    metrics = load_code_loop_metrics(args.metrics_path, exclude_programs=args.exclude_programs)
     
     if not metrics:
         print(f"❌ No code_loop metrics found in {args.metrics_path}/ directory!")
@@ -672,10 +741,10 @@ def main():
             plot_model_error_bars(df, output_dir)
         
         # Reward progression with error bands
-        analyze_reward_progression(output_dir, args.metrics_path)
+        analyze_reward_progression(output_dir, args.metrics_path, exclude_programs=args.exclude_programs)
         
         # Individual trajectories
-        analyze_reward_progression_individual(output_dir, args.metrics_path)
+        analyze_reward_progression_individual(output_dir, args.metrics_path, exclude_programs=args.exclude_programs)
         
         print(f"\n✅ Analysis complete! All results saved to: {output_dir}")
         print(f"📁 {output_dir}/")
