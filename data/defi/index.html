@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solana Trajectory Data</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 { color: #2d3748; }
+        .info {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Solana Trajectory Data</h1>
+    <div class="info">
+        <p>This directory contains trajectory data from the Solana Gym benchmark.</p>
+        <p>Total runs: <strong>20</strong></p>
+        <p>To use this data in the React viewer, copy this entire directory to 
+           <code>trajectory-viewer/public/data/</code></p>
+    </div>
+    
+    <h2>Available Runs</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Run ID</th>
+                <th>Model</th>
+                <th>Total Reward</th>
+                <th>Files</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>af0ca062</td>
+                <td>claude-sonnet-4</td>
+                <td>102</td>
+                <td>
+                    <a href="runs/af0ca062_metrics.json">metrics</a> |
+                    <a href="runs/af0ca062_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>554b09b3</td>
+                <td>gpt-5</td>
+                <td>34</td>
+                <td>
+                    <a href="runs/554b09b3_metrics.json">metrics</a> |
+                    <a href="runs/554b09b3_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>39e1e9ba</td>
+                <td>claude-sonnet-4</td>
+                <td>34</td>
+                <td>
+                    <a href="runs/39e1e9ba_metrics.json">metrics</a> |
+                    <a href="runs/39e1e9ba_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>326454b3</td>
+                <td>gpt-5</td>
+                <td>33</td>
+                <td>
+                    <a href="runs/326454b3_metrics.json">metrics</a> |
+                    <a href="runs/326454b3_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1ae19f9a</td>
+                <td>claude-sonnet-4</td>
+                <td>33</td>
+                <td>
+                    <a href="runs/1ae19f9a_metrics.json">metrics</a> |
+                    <a href="runs/1ae19f9a_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>c3d7f65d</td>
+                <td>claude-sonnet-4</td>
+                <td>31</td>
+                <td>
+                    <a href="runs/c3d7f65d_metrics.json">metrics</a> |
+                    <a href="runs/c3d7f65d_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>7852b1a5</td>
+                <td>gpt-5</td>
+                <td>30</td>
+                <td>
+                    <a href="runs/7852b1a5_metrics.json">metrics</a> |
+                    <a href="runs/7852b1a5_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>c1b6e31e</td>
+                <td>gpt-5</td>
+                <td>29</td>
+                <td>
+                    <a href="runs/c1b6e31e_metrics.json">metrics</a> |
+                    <a href="runs/c1b6e31e_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>e4655fc5</td>
+                <td>gpt-5</td>
+                <td>27</td>
+                <td>
+                    <a href="runs/e4655fc5_metrics.json">metrics</a> |
+                    <a href="runs/e4655fc5_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>e31e18f6</td>
+                <td>gemini-2.5-flash</td>
+                <td>25</td>
+                <td>
+                    <a href="runs/e31e18f6_metrics.json">metrics</a> |
+                    <a href="runs/e31e18f6_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>d245d131</td>
+                <td>gpt-oss-120b</td>
+                <td>22</td>
+                <td>
+                    <a href="runs/d245d131_metrics.json">metrics</a> |
+                    <a href="runs/d245d131_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>88da4e59</td>
+                <td>gemini-2.5-flash</td>
+                <td>19</td>
+                <td>
+                    <a href="runs/88da4e59_metrics.json">metrics</a> |
+                    <a href="runs/88da4e59_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>92eb80c5</td>
+                <td>claude-sonnet-4</td>
+                <td>19</td>
+                <td>
+                    <a href="runs/92eb80c5_metrics.json">metrics</a> |
+                    <a href="runs/92eb80c5_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>737ebeff</td>
+                <td>gpt-oss-120b</td>
+                <td>17</td>
+                <td>
+                    <a href="runs/737ebeff_metrics.json">metrics</a> |
+                    <a href="runs/737ebeff_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>f17db8ca</td>
+                <td>gpt-oss-120b</td>
+                <td>10</td>
+                <td>
+                    <a href="runs/f17db8ca_metrics.json">metrics</a> |
+                    <a href="runs/f17db8ca_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>53e1275c</td>
+                <td>gpt-oss-120b</td>
+                <td>9</td>
+                <td>
+                    <a href="runs/53e1275c_metrics.json">metrics</a> |
+                    <a href="runs/53e1275c_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>eafda598</td>
+                <td>gpt-oss-120b</td>
+                <td>8</td>
+                <td>
+                    <a href="runs/eafda598_metrics.json">metrics</a> |
+                    <a href="runs/eafda598_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>0b61a27a</td>
+                <td>gemini-2.5-flash</td>
+                <td>7</td>
+                <td>
+                    <a href="runs/0b61a27a_metrics.json">metrics</a> |
+                    <a href="runs/0b61a27a_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>fdb0864d</td>
+                <td>gemini-2.5-flash</td>
+                <td>0</td>
+                <td>
+                    <a href="runs/fdb0864d_metrics.json">metrics</a> |
+                    <a href="runs/fdb0864d_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>acde932c</td>
+                <td>gemini-2.5-flash</td>
+                <td>0</td>
+                <td>
+                    <a href="runs/acde932c_metrics.json">metrics</a> |
+                    <a href="runs/acde932c_conversation.json">conversation</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

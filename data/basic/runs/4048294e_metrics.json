@@ -1,0 +1,1134 @@
+{
+  "model": "anthropic/claude-sonnet-4",
+  "run_index": 3,
+  "run_id": "code_loop_25-08-18_143959_4048294e",
+  "start_time": "2025-08-18T14:40:00.229512",
+  "environment_config": "voyager/environments/basic_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-18T14:40:00.267666",
+      "duration": 18.341779,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-18T14:40:18.610172",
+      "duration": 23.455817,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-18T14:40:42.067014",
+      "duration": 24.602158,
+      "reward": 4,
+      "total_reward": 4,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-18T14:41:06.670181",
+      "duration": 32.224821,
+      "reward": 0,
+      "total_reward": 4,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-18T14:41:38.895794",
+      "duration": 27.472087,
+      "reward": 0,
+      "total_reward": 4,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-18T14:42:06.370094",
+      "duration": 32.639991,
+      "reward": 0,
+      "total_reward": 4,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-18T14:42:39.012446",
+      "duration": 32.356578,
+      "reward": 1,
+      "total_reward": 5,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-18T14:43:11.370777",
+      "duration": 29.739282,
+      "reward": 0,
+      "total_reward": 5,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-18T14:43:41.111018",
+      "duration": 40.781765,
+      "reward": 1,
+      "total_reward": 6,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-18T14:44:21.895593",
+      "duration": 31.861622,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-18T14:44:53.758672",
+      "duration": 29.491605,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-18T14:45:23.253228",
+      "duration": 29.330182,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-18T14:45:52.585364",
+      "duration": 25.753601,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-18T14:46:18.340106",
+      "duration": 30.826296,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-18T14:46:49.168874",
+      "duration": 31.936456,
+      "reward": 2,
+      "total_reward": 8,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-18T14:47:21.107613",
+      "duration": 40.831065,
+      "reward": 2,
+      "total_reward": 10,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          3,
+          7
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-18T14:48:01.941536",
+      "duration": 38.95259,
+      "reward": 2,
+      "total_reward": 12,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          72
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-18T14:48:40.895319",
+      "duration": 41.095748,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-18T14:49:21.994560",
+      "duration": 40.182664,
+      "reward": 2,
+      "total_reward": 14,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          4
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          0
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          68
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-18T14:50:02.180266",
+      "duration": 46.698319,
+      "reward": 0,
+      "total_reward": 14,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-18T14:50:48.884077",
+      "duration": 44.228373,
+      "reward": 4,
+      "total_reward": 18,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          5,
+          6
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          0,
+          1
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          77
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-18T14:51:33.116175",
+      "duration": 54.779946,
+      "reward": 6,
+      "total_reward": 24,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          7,
+          8,
+          9,
+          18,
+          21,
+          22
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          0
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-18T14:52:27.901377",
+      "duration": 46.558437,
+      "reward": 0,
+      "total_reward": 24,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-18T14:53:48.329975",
+      "duration": 39.164171,
+      "reward": 0,
+      "total_reward": 24,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-18T14:54:27.499107",
+      "duration": 45.892254,
+      "reward": 0,
+      "total_reward": 24,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-18T14:55:13.396614",
+      "duration": 47.278656,
+      "reward": 3,
+      "total_reward": 27,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          10,
+          11
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          0
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          70
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-18T14:56:00.680405",
+      "duration": 41.120782,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-18T14:56:41.803010",
+      "duration": 35.239417,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-18T14:57:17.044951",
+      "duration": 31.383215,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-18T14:57:48.433296",
+      "duration": 48.248058,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-18T14:58:36.689490",
+      "duration": 43.028881,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-18T14:59:19.720737",
+      "duration": 37.823985,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-18T14:59:57.550039",
+      "duration": 39.725081,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-18T15:00:37.280698",
+      "duration": 50.65041,
+      "reward": 1,
+      "total_reward": 28,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          3,
+          4,
+          7
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          82
+        ]
+      }
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-18T15:01:27.937667",
+      "duration": 40.041785,
+      "reward": 0,
+      "total_reward": 28,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-18T15:02:07.986588",
+      "duration": 39.731707,
+      "reward": 2,
+      "total_reward": 30,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          66,
+          84,
+          77
+        ]
+      }
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-18T15:02:47.723689",
+      "duration": 37.712522,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-18T15:03:25.442103",
+      "duration": 31.347935,
+      "reward": 0,
+      "total_reward": 30,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-18T15:03:56.792562",
+      "duration": 29.651768,
+      "reward": 3,
+      "total_reward": 33,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          67,
+          78,
+          87
+        ]
+      }
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-18T15:04:26.450369",
+      "duration": 38.389458,
+      "reward": 1,
+      "total_reward": 34,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2,
+          1
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          65,
+          77,
+          78
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-18T15:05:04.844936",
+      "duration": 22.953225,
+      "reward": 0,
+      "total_reward": 34,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-18T15:05:27.800406",
+      "duration": 21.291205,
+      "reward": 0,
+      "total_reward": 34,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-18T15:05:49.093929",
+      "duration": 34.615748,
+      "reward": 0,
+      "total_reward": 34,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-18T15:06:23.716483",
+      "duration": 34.452659,
+      "reward": 0,
+      "total_reward": 34,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-18T15:06:58.176518",
+      "duration": 30.891362,
+      "reward": 1,
+      "total_reward": 35,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          77
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-18T15:07:29.074135",
+      "duration": 37.830262,
+      "reward": 0,
+      "total_reward": 35,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-18T15:08:06.911957",
+      "duration": 35.95933,
+      "reward": 0,
+      "total_reward": 35,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-18T15:08:42.879749",
+      "duration": 34.432721,
+      "reward": 2,
+      "total_reward": 37,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          8,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          16
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          73
+        ]
+      }
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-18T15:09:17.318191",
+      "duration": 37.541873,
+      "reward": 0,
+      "total_reward": 37,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    4,
+    4,
+    4,
+    4,
+    5,
+    5,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    8,
+    10,
+    12,
+    12,
+    14,
+    14,
+    18,
+    24,
+    24,
+    24,
+    24,
+    27,
+    27,
+    27,
+    27,
+    27,
+    27,
+    27,
+    27,
+    28,
+    28,
+    30,
+    30,
+    30,
+    33,
+    34,
+    34,
+    34,
+    34,
+    34,
+    35,
+    35,
+    35,
+    37,
+    37
+  ],
+  "programs_discovered": {
+    "ComputeBudget111111111111111111111111111111": 3,
+    "11111111111111111111111111111111": 3,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 15,
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 17,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 17,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 22
+  },
+  "instructions_by_program": {
+    "ComputeBudget111111111111111111111111111111": [
+      2,
+      3
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      1,
+      2,
+      8
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      16,
+      18,
+      21,
+      22
+    ],
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+      65,
+      66,
+      67,
+      68,
+      70,
+      72,
+      73,
+      77,
+      78,
+      82,
+      84,
+      87
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      0,
+      1
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      0
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 4
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 4
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 1,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"ResolveMessage: Cannot find module '@solana/spl-memo' from '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts'\", \"type\": \"ResolveMessage\", \"stderr\": \"error: Cannot find module '@solana/spl-memo' from '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts'\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 4,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1426 > 1232\", \"details\": \"Error: Transaction too large: 1426 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:195:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:4:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1426 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:195:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:4:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:60)\\n    at map (native:1:11)\\n    at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n    at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:16)\\n    at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:154:8)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:56\\n      at map (1:11)\\n      at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n      at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:12)\\n      at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:154:8\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 10,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1333 > 1232\", \"details\": \"Error: Transaction too large: 1333 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:174:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1333 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:174:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 12,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"unknown signer: 49mCvcJzbf4ysGg4mkby8zK1QVsovRJ4sJ9tVh7oER34\", \"details\": \"Error: unknown signer: 49mCvcJzbf4ysGg4mkby8zK1QVsovRJ4sJ9tVh7oER34\\n    at _addSignature (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1789:17)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1765:12)\\n    at forEach (native:1:11)\\n    at _partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1763:13)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1755:10)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:147:8)\", \"type\": \"Error\", \"stderr\": \"1784 |    */\\n1785 |   _addSignature(pubkey, signature) {\\n1786 |     assert(signature.length === 64);\\n1787 |     const index = this.signatures.findIndex(sigpair => pubkey.equals(sigpair.publicKey));\\n1788 |     if (index < 0) {\\n1789 |       throw new Error(`unknown signer: ${pubkey.toString()}`);\\n                   ^\\nerror: unknown signer: 49mCvcJzbf4ysGg4mkby8zK1QVsovRJ4sJ9tVh7oER34\\n      at _addSignature (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1789:13)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1765:12\\n      at forEach (1:11)\\n      at _partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1763:13)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1755:10)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:147:8\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 13,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid seeds, address must fall off the curve\", \"details\": \"Error: Invalid seeds, address must fall off the curve\\n    at createProgramAddressSync (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:273:17)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:28:37)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"268 |       buffer$1 = buffer.Buffer.concat([buffer$1, toBuffer(seed)]);\\n269 |     });\\n270 |     buffer$1 = buffer.Buffer.concat([buffer$1, programId.toBuffer(), buffer.Buffer.from('ProgramDerivedAddress')]);\\n271 |     const publicKeyBytes = sha256.sha256(buffer$1);\\n272 |     if (isOnCurve(publicKeyBytes)) {\\n273 |       throw new Error(`Invalid seeds, address must fall off the curve`);\\n                  ^\\nerror: Invalid seeds, address must fall off the curve\\n      at createProgramAddressSync (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:273:13)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:28:37\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 23,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1524 > 1232\", \"details\": \"Error: Transaction too large: 1524 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:205:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1524 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:205:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 24,
+      "error": "Expecting value: line 159 column 1 (char 869)"
+    },
+    {
+      "message_index": 28,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:8:34)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:8:30\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 29,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1363 > 1232\", \"details\": \"Error: Transaction too large: 1363 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:180:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1363 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:180:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 32,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1376 > 1232\", \"details\": \"Error: Transaction too large: 1376 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:194:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1376 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:194:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 39,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1241 > 1232\", \"details\": \"Error: Transaction too large: 1241 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:174:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1241 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:174:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 42,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: derivedPubkey,\\n    basePubkey: agentPubkey,\\n    toPubkey: agentPubkey,\\n    lamports: 1e4,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.transferWithSeed' is undefined)\", \"details\": \"TypeError: SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: derivedPubkey,\\n    basePubkey: agentPubkey,\\n    toPubkey: agentPubkey,\\n    lamports: 1e4,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.transferWithSeed' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:51:23)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"46 |         })\\n47 |     );\\n48 | \\n49 |     // Try transferWithSeed (might be System instruction 11)\\n50 |     tx.add(\\n51 |         SystemProgram.transferWithSeed({\\n                           ^\\nTypeError: SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: derivedPubkey,\\n    basePubkey: agentPubkey,\\n    toPubkey: agentPubkey,\\n    lamports: 1e4,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.transferWithSeed' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:51:23\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 43,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:60)\\n    at map (native:1:11)\\n    at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n    at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:16)\\n    at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:120:8)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:56\\n      at map (1:11)\\n      at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n      at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:12)\\n      at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:120:8\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_3_143958.ts:3:36)\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}

@@ -1,0 +1,900 @@
+{
+  "model": "anthropic/claude-sonnet-4",
+  "run_index": 1,
+  "run_id": "code_loop_25-08-15_151257_92eb80c5",
+  "start_time": "2025-08-15T15:12:58.034412",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-15T15:12:58.071792",
+      "duration": 41.578776,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-15T15:13:39.651947",
+      "duration": 42.252362,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-15T15:14:21.906017",
+      "duration": 22.298668,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-15T15:14:44.206274",
+      "duration": 44.348019,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-15T15:15:28.556235",
+      "duration": 43.076238,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-15T15:16:11.635199",
+      "duration": 44.562817,
+      "reward": 7,
+      "total_reward": 7,
+      "instructions_discovered": {
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-15T15:16:56.199558",
+      "duration": 46.444838,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-15T15:17:42.647099",
+      "duration": 48.693069,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-15T15:18:31.341925",
+      "duration": 53.235349,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-15T15:19:24.579229",
+      "duration": 50.793711,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-15T15:20:15.375729",
+      "duration": 50.559664,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-15T15:21:05.938796",
+      "duration": 50.721597,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-15T15:21:56.663297",
+      "duration": 16.372734,
+      "reward": 0,
+      "total_reward": 7,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-15T15:22:13.036962",
+      "duration": 47.488332,
+      "reward": 5,
+      "total_reward": 12,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          83,
+          84,
+          70
+        ],
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-15T15:23:00.528138",
+      "duration": 57.536225,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-15T15:23:58.066492",
+      "duration": 50.719961,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-15T15:24:48.789281",
+      "duration": 51.066866,
+      "reward": 0,
+      "total_reward": 12,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-15T15:25:39.859739",
+      "duration": 46.69512,
+      "reward": 3,
+      "total_reward": 15,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          84,
+          77,
+          78
+        ],
+        "11111111111111111111111111111111": [
+          1,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-15T15:26:26.557799",
+      "duration": 50.817056,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-15T15:27:17.378282",
+      "duration": 58.738744,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-15T15:28:16.119722",
+      "duration": 55.260573,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-15T15:29:11.385351",
+      "duration": 49.847957,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-15T15:30:01.238088",
+      "duration": 49.041375,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-15T15:30:50.283762",
+      "duration": 46.266744,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-15T15:31:36.553541",
+      "duration": 48.196621,
+      "reward": 1,
+      "total_reward": 16,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          70,
+          78,
+          87
+        ],
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-15T15:32:24.754677",
+      "duration": 57.923958,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-15T15:33:22.681743",
+      "duration": 55.349425,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-15T15:34:18.035452",
+      "duration": 49.639728,
+      "reward": 2,
+      "total_reward": 18,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          66,
+          68,
+          77
+        ],
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-15T15:35:07.679075",
+      "duration": 62.717649,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-15T15:36:10.401688",
+      "duration": 56.079088,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-15T15:37:06.485775",
+      "duration": 53.861625,
+      "reward": 0,
+      "total_reward": 18,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-15T15:38:00.349330",
+      "duration": 50.621311,
+      "reward": 1,
+      "total_reward": 19,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          66,
+          68,
+          78,
+          84
+        ],
+        "11111111111111111111111111111111": [
+          8,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-15T15:38:50.974838",
+      "duration": 63.722947,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-15T15:39:54.704208",
+      "duration": 56.053914,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-15T15:40:50.763149",
+      "duration": 45.506492,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-15T15:41:36.274875",
+      "duration": 42.053239,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-15T15:42:18.333865",
+      "duration": 43.249811,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-15T15:43:01.588948",
+      "duration": 43.012071,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-15T15:43:44.605985",
+      "duration": 17.488022,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-15T15:44:02.099959",
+      "duration": 52.153415,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-15T15:44:54.259334",
+      "duration": 42.447834,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-15T15:45:36.712373",
+      "duration": 41.613677,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-15T15:46:18.332219",
+      "duration": 43.245532,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-15T15:47:01.583843",
+      "duration": 42.56024,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-15T15:47:44.149083",
+      "duration": 40.651767,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-15T15:48:24.805904",
+      "duration": 43.781974,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-15T15:49:08.592741",
+      "duration": 40.443519,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-15T15:49:49.041132",
+      "duration": 39.068804,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-15T15:50:28.115781",
+      "duration": 39.143933,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-15T15:51:07.264742",
+      "duration": 39.353864,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    12,
+    12,
+    12,
+    12,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    16,
+    16,
+    16,
+    18,
+    18,
+    18,
+    18,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19
+  ],
+  "programs_discovered": {
+    "11111111111111111111111111111111": 6,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 6,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 6,
+    "ComputeBudget111111111111111111111111111111": 14,
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 14
+  },
+  "instructions_by_program": {
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      0
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      17,
+      18,
+      21,
+      22
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      1,
+      2,
+      8
+    ],
+    "ComputeBudget111111111111111111111111111111": [
+      2,
+      3
+    ],
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+      66,
+      68,
+      70,
+      77,
+      78,
+      83,
+      84,
+      87
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 7
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 5
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 3,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium swap failed: this.message.serialize is not a function. (In 'this.message.serialize()', 'this.message.serialize' is undefined)\", \"details\": \"Error: Raydium swap failed: this.message.serialize is not a function. (In 'this.message.serialize()', 'this.message.serialize' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:72:19)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"67 |         const newTransaction = new VersionedTransaction(newMessage, transaction.signatures);\\n68 | \\n69 |         return Buffer.from(newTransaction.serialize()).toString('base64');\\n70 | \\n71 |     } catch (error) {\\n72 |         throw new Error(`Raydium swap failed: ${error.message}`);\\n                   ^\\nerror: Raydium swap failed: this.message.serialize is not a function. (In 'this.message.serialize()', 'this.message.serialize' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:72:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 13,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:10:29)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:8:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:10:25\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_151256.ts:8:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}

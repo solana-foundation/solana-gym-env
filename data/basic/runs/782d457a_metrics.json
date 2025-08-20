@@ -1,0 +1,1130 @@
+{
+  "model": "openai/gpt-5",
+  "run_index": 2,
+  "run_id": "code_loop_25-08-18_144000_782d457a",
+  "start_time": "2025-08-18T14:40:00.281755",
+  "environment_config": "voyager/environments/basic_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-18T14:40:00.303490",
+      "duration": 90.324524,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-18T14:41:30.629584",
+      "duration": 42.400903,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-18T14:42:13.032737",
+      "duration": 72.921434,
+      "reward": 6,
+      "total_reward": 6,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          115
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-18T14:43:25.955700",
+      "duration": 94.9353,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-18T14:45:00.891621",
+      "duration": 84.211381,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-18T14:46:25.104136",
+      "duration": 96.904253,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-18T14:48:02.009380",
+      "duration": 72.485588,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-18T14:49:14.495734",
+      "duration": 55.779611,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-18T14:50:10.276519",
+      "duration": 38.605782,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-18T14:50:48.885350",
+      "duration": 73.561271,
+      "reward": 2,
+      "total_reward": 8,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          1,
+          2,
+          3,
+          8
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          115
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-18T14:52:02.448834",
+      "duration": 108.360958,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-18T14:53:50.814195",
+      "duration": 78.416117,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-18T14:55:09.232689",
+      "duration": 59.87029,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-18T14:56:09.107750",
+      "duration": 61.845612,
+      "reward": 0,
+      "total_reward": 8,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-18T14:57:10.956675",
+      "duration": 65.448688,
+      "reward": 4,
+      "total_reward": 12,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          1,
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          115
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-18T14:58:16.407924",
+      "duration": 84.323739,
+      "reward": 6,
+      "total_reward": 18,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          6,
+          7,
+          8,
+          9,
+          18,
+          20
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-18T14:59:40.734641",
+      "duration": 91.136208,
+      "reward": 5,
+      "total_reward": 23,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          10,
+          11,
+          12,
+          14,
+          15,
+          18,
+          20
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-18T15:01:11.874500",
+      "duration": 156.597553,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-18T15:03:48.475944",
+      "duration": 103.334,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-18T15:05:31.814019",
+      "duration": 68.441973,
+      "reward": 6,
+      "total_reward": 29,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          1,
+          2,
+          16,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-18T15:06:40.258754",
+      "duration": 72.76784,
+      "reward": 0,
+      "total_reward": 29,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-18T15:07:53.028521",
+      "duration": 71.558692,
+      "reward": 0,
+      "total_reward": 29,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-18T15:09:04.590772",
+      "duration": 84.769733,
+      "reward": 0,
+      "total_reward": 29,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-18T15:10:29.364921",
+      "duration": 73.575644,
+      "reward": 0,
+      "total_reward": 29,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-18T15:11:42.942017",
+      "duration": 77.66613,
+      "reward": 0,
+      "total_reward": 29,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-18T15:13:00.610424",
+      "duration": 63.028398,
+      "reward": 6,
+      "total_reward": 35,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          6,
+          7,
+          8,
+          9,
+          18,
+          20
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-18T15:14:03.643167",
+      "duration": 64.199912,
+      "reward": 6,
+      "total_reward": 41,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          4,
+          5,
+          9,
+          12,
+          14,
+          15,
+          16,
+          18,
+          20
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-18T15:15:07.846917",
+      "duration": 71.520763,
+      "reward": 0,
+      "total_reward": 41,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-18T15:16:19.373212",
+      "duration": 46.184472,
+      "reward": 2,
+      "total_reward": 43,
+      "instructions_discovered": {
+        "AddressLookupTab1e1111111111111111111111111": [
+          0,
+          2
+        ],
+        "11111111111111111111111111111111": [
+          8,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-18T15:17:05.561867",
+      "duration": 197.511276,
+      "reward": 3,
+      "total_reward": 46,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          3,
+          7,
+          8,
+          9,
+          10,
+          11,
+          16,
+          18,
+          20
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-18T15:20:23.077739",
+      "duration": 60.437782,
+      "reward": 0,
+      "total_reward": 46,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-18T15:21:23.520463",
+      "duration": 58.987165,
+      "reward": 1,
+      "total_reward": 47,
+      "instructions_discovered": {
+        "AddressLookupTab1e1111111111111111111111111": [
+          0,
+          2,
+          3
+        ],
+        "11111111111111111111111111111111": [
+          8,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-18T15:22:22.511574",
+      "duration": 114.153014,
+      "reward": 0,
+      "total_reward": 47,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-18T15:24:16.669779",
+      "duration": 66.204971,
+      "reward": 0,
+      "total_reward": 47,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-18T15:25:22.876479",
+      "duration": 54.272863,
+      "reward": 0,
+      "total_reward": 47,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-18T15:26:17.150922",
+      "duration": 44.717587,
+      "reward": 6,
+      "total_reward": 53,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          32,
+          35,
+          39,
+          20,
+          25,
+          26,
+          28
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-18T15:27:01.873083",
+      "duration": 69.810635,
+      "reward": 0,
+      "total_reward": 53,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-18T15:28:11.688604",
+      "duration": 55.78319,
+      "reward": 3,
+      "total_reward": 56,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          32,
+          35,
+          36,
+          39,
+          40,
+          41,
+          20,
+          25,
+          28
+        ]
+      }
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-18T15:29:07.476767",
+      "duration": 61.196714,
+      "reward": 0,
+      "total_reward": 56,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-18T15:30:08.675097",
+      "duration": 79.768717,
+      "reward": 0,
+      "total_reward": 56,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-18T15:31:28.449950",
+      "duration": 58.207561,
+      "reward": 2,
+      "total_reward": 58,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "Stake11111111111111111111111111111111111111": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-18T15:32:26.664569",
+      "duration": 39.530001,
+      "reward": 0,
+      "total_reward": 58,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-18T15:33:06.196755",
+      "duration": 68.815805,
+      "reward": 0,
+      "total_reward": 58,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-18T15:34:15.018487",
+      "duration": 44.491275,
+      "reward": 0,
+      "total_reward": 58,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-18T15:34:59.511809",
+      "duration": 106.545772,
+      "reward": 0,
+      "total_reward": 58,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-18T15:36:46.063829",
+      "duration": 56.352322,
+      "reward": 1,
+      "total_reward": 59,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "Stake11111111111111111111111111111111111111": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-18T15:37:42.421455",
+      "duration": 52.378501,
+      "reward": 1,
+      "total_reward": 60,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "Stake11111111111111111111111111111111111111": [
+          0,
+          4
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-18T15:38:34.806798",
+      "duration": 49.794495,
+      "reward": 0,
+      "total_reward": 60,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-18T15:39:24.607267",
+      "duration": 25.051281,
+      "reward": 1,
+      "total_reward": 61,
+      "instructions_discovered": {
+        "AddressLookupTab1e1111111111111111111111111": [
+          0,
+          1,
+          2
+        ],
+        "11111111111111111111111111111111": [
+          8,
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-18T15:39:49.664153",
+      "duration": 54.537862,
+      "reward": 1,
+      "total_reward": 62,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          102
+        ]
+      }
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    8,
+    8,
+    8,
+    8,
+    8,
+    12,
+    18,
+    23,
+    23,
+    23,
+    29,
+    29,
+    29,
+    29,
+    29,
+    29,
+    35,
+    41,
+    41,
+    43,
+    46,
+    46,
+    47,
+    47,
+    47,
+    47,
+    53,
+    53,
+    56,
+    56,
+    56,
+    58,
+    58,
+    58,
+    58,
+    58,
+    59,
+    60,
+    60,
+    61,
+    62
+  ],
+  "programs_discovered": {
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 3,
+    "ComputeBudget111111111111111111111111111111": 3,
+    "11111111111111111111111111111111": 3,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 16,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 20,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 26,
+    "AddressLookupTab1e1111111111111111111111111": 29,
+    "Stake11111111111111111111111111111111111111": 41
+  },
+  "instructions_by_program": {
+    "ComputeBudget111111111111111111111111111111": [
+      1,
+      2,
+      3
+    ],
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+      115,
+      102
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      1,
+      2,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      20,
+      21,
+      22
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      1
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      20,
+      25,
+      26,
+      28,
+      32,
+      35,
+      36,
+      39,
+      40,
+      41
+    ],
+    "AddressLookupTab1e1111111111111111111111111": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Stake11111111111111111111111111111111111111": [
+      0,
+      1,
+      3,
+      4
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 4
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 5
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 4,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"SystemProgram.allocateWithSeed is not a function. (In 'SystemProgram.allocateWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    space: 16,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.allocateWithSeed' is undefined)\", \"details\": \"TypeError: SystemProgram.allocateWithSeed is not a function. (In 'SystemProgram.allocateWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    space: 16,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.allocateWithSeed' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:78:23)\", \"type\": \"TypeError\", \"stderr\": \"73 |         })\\n74 |     );\\n75 | \\n76 |     // Allocate with seed (unique discriminator 9)\\n77 |     tx.add(\\n78 |         SystemProgram.allocateWithSeed({\\n                           ^\\nTypeError: SystemProgram.allocateWithSeed is not a function. (In 'SystemProgram.allocateWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    space: 16,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.allocateWithSeed' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:78:23\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 5,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"SystemProgram.assignWithSeed is not a function. (In 'SystemProgram.assignWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.assignWithSeed' is undefined)\", \"details\": \"TypeError: SystemProgram.assignWithSeed is not a function. (In 'SystemProgram.assignWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.assignWithSeed' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:75:23)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:12:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"70 |         })\\n71 |     );\\n72 | \\n73 |     // Assign with seed (no-op to SystemProgram but distinct discriminator)\\n74 |     tx.add(\\n75 |         SystemProgram.assignWithSeed({\\n                           ^\\nTypeError: SystemProgram.assignWithSeed is not a function. (In 'SystemProgram.assignWithSeed({\\n    accountPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId\\n  })', 'SystemProgram.assignWithSeed' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:75:23\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:12:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 6,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId,\\n    toPubkey: agentPubkey,\\n    lamports: 1\\n  })', 'SystemProgram.transferWithSeed' is undefined)\", \"details\": \"TypeError: SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId,\\n    toPubkey: agentPubkey,\\n    lamports: 1\\n  })', 'SystemProgram.transferWithSeed' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:58:23)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:11:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"53 |         })\\n54 |     );\\n55 | \\n56 |     // 4) System: transferWithSeed (unique discriminator)\\n57 |     tx.add(\\n58 |         SystemProgram.transferWithSeed({\\n                           ^\\nTypeError: SystemProgram.transferWithSeed is not a function. (In 'SystemProgram.transferWithSeed({\\n    fromPubkey: seededPubkey,\\n    basePubkey: agentPubkey,\\n    seed,\\n    programId: SystemProgram.programId,\\n    toPubkey: agentPubkey,\\n    lamports: 1\\n  })', 'SystemProgram.transferWithSeed' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:58:23\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:11:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 7,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1246 > 1232\", \"details\": \"Error: Transaction too large: 1246 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:149:15)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1246 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:149:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Ed25519Program.createKeyPair is not a function. (In 'Ed25519Program.createKeyPair()', 'Ed25519Program.createKeyPair' is undefined)\", \"details\": \"TypeError: Ed25519Program.createKeyPair is not a function. (In 'Ed25519Program.createKeyPair()', 'Ed25519Program.createKeyPair' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:30:38)\", \"type\": \"TypeError\", \"stderr\": \"25 |         })\\n26 |     );\\n27 | \\n28 |     // 3) Ed25519 signature verification (unique program/instruction)\\n29 |     // Use a random keypair via web3 helper (generates a valid 64-byte secret key)\\n30 |     const edKeypair = Ed25519Program.createKeyPair(); // helper returns { publicKey, secretKey }\\n                                          ^\\nTypeError: Ed25519Program.createKeyPair is not a function. (In 'Ed25519Program.createKeyPair()', 'Ed25519Program.createKeyPair' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:30:38\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 21,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"publicKey.toBuffer is not a function. (In 'publicKey.toBuffer()', 'publicKey.toBuffer' is undefined)\", \"details\": \"TypeError: publicKey.toBuffer is not a function. (In 'publicKey.toBuffer()', 'publicKey.toBuffer' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout-utils/lib/esm/web3.mjs:13:31)\\n    at encode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:1092:36)\\n    at createInitializeInterestBearingMintInstruction (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/extensions/interestBearingMint/instructions.js:37:50)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:133:9)\", \"type\": \"TypeError\", \"stderr\": \" 8 |     publicKeyLayout.decode = (buffer, offset) => {\\n 9 |         const src = decode(buffer, offset);\\n10 |         return new PublicKey(src);\\n11 |     };\\n12 |     publicKeyLayout.encode = (publicKey, buffer, offset) => {\\n13 |         const src = publicKey.toBuffer();\\n                                   ^\\nTypeError: publicKey.toBuffer is not a function. (In 'publicKey.toBuffer()', 'publicKey.toBuffer' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout-utils/lib/esm/web3.mjs:13:31\\n      at encode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/buffer-layout/lib/Layout.js:1092:36)\\n      at createInitializeInterestBearingMintInstruction (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/extensions/interestBearingMint/instructions.js:37:50)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:133:9\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 24,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1262 > 1232\", \"details\": \"Error: Transaction too large: 1262 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:229:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:21:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1262 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:229:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:21:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 25,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"ComputeBudgetProgram.setLoadedAccountsDataSizeLimit is not a function. (In 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit({\\n    bytes: 64000\\n  })', 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit' is undefined)\", \"details\": \"TypeError: ComputeBudgetProgram.setLoadedAccountsDataSizeLimit is not a function. (In 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit({\\n    bytes: 64000\\n  })', 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:25:30)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:16:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"20 |     const agentPubkey = new PublicKey('4Yn4qJgcBLGLRi5tKDg7igkqZEpM1MvxqogEQZo1w2m6');\\n21 | \\n22 |     // 1) Compute Budget: set loaded accounts data size limit (new CB discriminator)\\n23 |     // Keep it modest to avoid runtime rejections\\n24 |     tx.add(\\n25 |         ComputeBudgetProgram.setLoadedAccountsDataSizeLimit({\\n                                  ^\\nTypeError: ComputeBudgetProgram.setLoadedAccountsDataSizeLimit is not a function. (In 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit({\\n    bytes: 64000\\n  })', 'ComputeBudgetProgram.setLoadedAccountsDataSizeLimit' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:25:30\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:16:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 34,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'createInitializeMultisig2Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\", \"details\": \"SyntaxError: Export named 'createInitializeMultisig2Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'createInitializeMultisig2Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 35,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"StakeProgram.setLockup is not a function. (In 'StakeProgram.setLockup({\\n    stakePubkey: stakeKp.publicKey,\\n    authorizedPubkey: agentPubkey,\\n    lockup: new Lockup(0, 0, agentPubkey)\\n  })', 'StakeProgram.setLockup' is undefined)\", \"details\": \"TypeError: StakeProgram.setLockup is not a function. (In 'StakeProgram.setLockup({\\n    stakePubkey: stakeKp.publicKey,\\n    authorizedPubkey: agentPubkey,\\n    lockup: new Lockup(0, 0, agentPubkey)\\n  })', 'StakeProgram.setLockup' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:56:22)\", \"type\": \"TypeError\", \"stderr\": \"51 |         })\\n52 |     );\\n53 | \\n54 |     // 3) Set lockup (unique Stake program instruction)\\n55 |     tx.add(\\n56 |         StakeProgram.setLockup({\\n                          ^\\nTypeError: StakeProgram.setLockup is not a function. (In 'StakeProgram.setLockup({\\n    stakePubkey: stakeKp.publicKey,\\n    authorizedPubkey: agentPubkey,\\n    lockup: new Lockup(0, 0, agentPubkey)\\n  })', 'StakeProgram.setLockup' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:56:22\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 39,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:60)\\n    at map (native:1:11)\\n    at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n    at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:16)\\n    at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:202:8)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:56\\n      at map (1:11)\\n      at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n      at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:12)\\n      at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:202:8\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 42,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"No vote accounts available to delegate to\", \"details\": \"Error: No vote accounts available to delegate to\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:30:19)\", \"type\": \"Error\", \"stderr\": \"25 |     const stakeLamports = stakeRent + 1_000_000;\\n26 | \\n27 |     // Fetch a live vote account to delegate to\\n28 |     const voteAccounts = await connection.getVoteAccounts();\\n29 |     if (voteAccounts.current.length === 0 && voteAccounts.delinquent.length === 0) {\\n30 |         throw new Error('No vote accounts available to delegate to');\\n                   ^\\nerror: No vote accounts available to delegate to\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:30:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 44,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:60)\\n    at map (native:1:11)\\n    at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n    at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:16)\\n    at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:101:8)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:56\\n      at map (1:11)\\n      at new Message (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:754:41)\\n      at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1609:12)\\n      at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_2_143958.ts:101:8\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}
