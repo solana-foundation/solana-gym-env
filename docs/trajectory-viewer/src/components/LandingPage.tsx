@@ -166,9 +166,10 @@ const LandingPage: React.FC = () => {
           <p>
             Claude is definitely the best performer here. Its key insight is
             that the memo programs can be used to score high without actually
-            doing anything. Beyond other models, Claude has a strong propensity
-            to game any metric or task given to it. This is useful to know when
-            dealing with complex environments like Solana.
+            making progress on the requested task - performing swaps on DEXes.
+            Beyond other models, Claude has a strong propensity to game any
+            metric or task given to it. This is useful to know when dealing with
+            complex environments like Solana.
           </p>
 
           <h3>Swap Benchmark</h3>
