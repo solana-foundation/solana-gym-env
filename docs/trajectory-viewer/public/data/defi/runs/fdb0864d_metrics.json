@@ -1,0 +1,473 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "run_index": 0,
+  "run_id": "code_loop_25-08-15_151257_fdb0864d",
+  "start_time": "2025-08-15T15:12:57.962765",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 7,
+      "timestamp": "2025-08-15T15:16:34.029752",
+      "duration": 5.592014,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-15T15:16:39.622519",
+      "duration": 4.150089,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-15T15:18:28.160365",
+      "duration": 2.532551,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-15T15:20:11.970387",
+      "duration": 34.213936,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-15T15:20:46.186923",
+      "duration": 5.952956,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-15T15:21:26.767013",
+      "duration": 33.281504,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-15T15:22:37.134980",
+      "duration": 33.118926,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-15T15:23:50.190078",
+      "duration": 33.433967,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-15T15:24:58.849101",
+      "duration": 33.23487,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-15T15:25:32.085052",
+      "duration": 11.421765,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-15T15:26:20.409246",
+      "duration": 32.740948,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-15T15:27:30.091114",
+      "duration": 32.55633,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-15T15:28:38.602458",
+      "duration": 33.540443,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-15T15:29:49.014204",
+      "duration": 32.983772,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-15T15:30:58.002720",
+      "duration": 34.908395,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-15T15:31:32.915617",
+      "duration": 4.867786,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-15T15:32:12.956532",
+      "duration": 33.502124,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-15T15:33:22.838212",
+      "duration": 32.571219,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-15T15:34:30.600645",
+      "duration": 32.977426,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-15T15:35:40.014519",
+      "duration": 33.062099,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-15T15:36:49.228889",
+      "duration": 33.54423,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-15T15:37:58.939321",
+      "duration": 33.376411,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "programs_discovered": {},
+  "instructions_by_program": {},
+  "code_blocks_extracted": [
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 1,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 2,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 3,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 4,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 5,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 6,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 7,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:15:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:9:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:15:29\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:9:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-base58 character\", \"details\": \"Error: Non-base58 character\\n    at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:15)\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:15:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:9:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"110 |     return vch\\n111 |   }\\n112 |   function decode (string) {\\n113 |     var buffer = decodeUnsafe(string)\\n114 |     if (buffer) { return buffer }\\n115 |     throw new Error('Non-base' + BASE + ' character')\\n                ^\\nerror: Non-base58 character\\n      at decode (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/node_modules/bs58/node_modules/base-x/src/index.js:115:11)\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:170:47)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:15:29\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:9:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 9,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 10,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 11,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 13,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 14,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 15,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 17,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Expected \\\"from\\\" but found \\\"=>\\\"\", \"type\": \"BuildMessage\", \"stderr\": \"2 | import { NATIVE_MINT } => '@solana/spl-token';\\n                           ^\\nerror: Expected \\\"from\\\" but found \\\"=>\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:2:24\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 18,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 20,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 22,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 24,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 26,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"success\": false, \"reason\": \"Skill runner error\", \"stdout\": \"Attempting Raydium swap: 0.01 SOL to USDC with 1% slippage.\\nFetching Raydium priority fee...\\nPriority fee fetched successfully.\\nFetching Raydium swap quote...\\n{\\\"serialized_tx\\\":null,\\\"error\\\":\\\"Failed to fetch Raydium swap quote: timeout of 5000ms exceeded\\\",\\\"details\\\":\\\"Error: Failed to fetch Raydium swap quote: timeout of 5000ms exceeded\\\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:63:19)\\\\n    at processTicksAndRejections (native:7:39)\\\",\\\"type\\\":\\\"Error\\\"}\\n\", \"stderr\": \"Error fetching Raydium swap quote: timeout of 5000ms exceeded\\n58 |         console.error(\\\"Error fetching Raydium swap quote:\\\", error.message || error);\\n59 |         if (axios.isAxiosError(error) && error.response) {\\n60 |             console.error(\\\"Axios response data:\\\", error.response.data);\\n61 |             console.error(\\\"Axios response status:\\\", error.response.status);\\n62 |         }\\n63 |         throw new Error(`Failed to fetch Raydium swap quote: ${error.message}`);\\n                   ^\\nerror: Failed to fetch Raydium swap quote: timeout of 5000ms exceeded\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:63:15\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 27,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 29,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 31,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 33,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 35,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 37,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"6 errors building \\\"/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts\\\"\", \"details\": \"Expected identifier but found \\\"function\\\"\\nExpected \\\"(\\\" but found \\\"executeSkill\\\"\\nExpected identifier but found \\\"(\\\"\\nExpected \\\")\\\" but found \\\"blockhash\\\"\\nExpected \\\";\\\" but found \\\")\\\"\\nUnexpected :\", \"type\": \"AggregateError\", \"errors\": [{\"message\": \"Expected identifier but found \\\"function\\\"\", \"line\": 4, \"column\": 22}, {\"message\": \"Expected \\\"(\\\" but found \\\"executeSkill\\\"\", \"line\": 4, \"column\": 31}, {\"message\": \"Expected identifier but found \\\"(\\\"\", \"line\": 4, \"column\": 43}, {\"message\": \"Expected \\\")\\\" but found \\\"blockhash\\\"\", \"line\": 4, \"column\": 44}, {\"message\": \"Expected \\\";\\\" but found \\\")\\\"\", \"line\": 4, \"column\": 61}, {\"message\": \"Unexpected :\", \"line\": 4, \"column\": 62}], \"stderr\": \"5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                          ^\\nerror: Expected identifier but found \\\"function\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:23\\n\\n5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                                   ^\\nerror: Expected \\\"(\\\" but found \\\"executeSkill\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:32\\n\\n5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                                               ^\\nerror: Expected identifier but found \\\"(\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:44\\n\\n5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                                                ^\\nerror: Expected \\\")\\\" but found \\\"blockhash\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:45\\n\\n5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                                                                 ^\\nerror: Expected \\\";\\\" but found \\\")\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:62\\n\\n5 | export async function function executeSkill(blockhash: string): Promise<string> {\\n                                                                  ^\\nerror: Unexpected :\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_0_151256.ts:5:63\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 38,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 40,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 42,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 44,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 46,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 48,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "message_index": 50,
+      "error": "Expecting value: line 1 column 1 (char 0)"
+    }
+  ]
+}

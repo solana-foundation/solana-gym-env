@@ -1,0 +1,966 @@
+{
+  "model": "openai/gpt-oss-120b",
+  "run_index": 1,
+  "run_id": "code_loop_25-08-18_143959_86529dae",
+  "start_time": "2025-08-18T14:40:00.176608",
+  "environment_config": "voyager/environments/basic_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-18T14:40:00.245731",
+      "duration": 12.378555,
+      "reward": 6,
+      "total_reward": 6,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          1,
+          2
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          69
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-18T14:40:12.626295",
+      "duration": 18.986774,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-18T14:40:31.614194",
+      "duration": 19.595127,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-18T14:40:51.211005",
+      "duration": 27.512468,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-18T14:41:18.725270",
+      "duration": 15.604589,
+      "reward": 9,
+      "total_reward": 15,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          3,
+          7
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          18,
+          3,
+          20,
+          7
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          77
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-18T14:41:34.331939",
+      "duration": 29.450242,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-18T14:42:03.783646",
+      "duration": 11.25108,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-18T14:42:15.036914",
+      "duration": 19.655769,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-18T14:42:34.693789",
+      "duration": 20.246267,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-18T14:42:54.943241",
+      "duration": 18.890631,
+      "reward": 0,
+      "total_reward": 15,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-18T14:43:13.834834",
+      "duration": 12.117127,
+      "reward": 2,
+      "total_reward": 17,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          3,
+          7,
+          12,
+          18,
+          20
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          240
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-18T14:43:25.955316",
+      "duration": 15.126311,
+      "reward": 0,
+      "total_reward": 17,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-18T14:43:41.083376",
+      "duration": 16.35639,
+      "reward": 0,
+      "total_reward": 17,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-18T14:43:57.443564",
+      "duration": 15.556088,
+      "reward": 2,
+      "total_reward": 19,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          3,
+          4,
+          7,
+          12,
+          18,
+          20
+        ],
+        "Stake11111111111111111111111111111111111111": [
+          0
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          240
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-18T14:44:13.002792",
+      "duration": 12.214926,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-18T14:44:25.223022",
+      "duration": 51.512006,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-18T14:45:16.736449",
+      "duration": 14.700784,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-18T14:45:31.441352",
+      "duration": 12.953107,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-18T14:45:44.397883",
+      "duration": 11.667527,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-18T14:45:56.067013",
+      "duration": 20.814019,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-18T14:46:16.884676",
+      "duration": 14.340169,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-18T14:46:31.229239",
+      "duration": 14.879596,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-18T14:46:46.112216",
+      "duration": 29.623703,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-18T14:47:15.738510",
+      "duration": 14.432619,
+      "reward": 1,
+      "total_reward": 20,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          3,
+          4,
+          7,
+          8,
+          12,
+          18,
+          20
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          240
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-18T14:47:30.175789",
+      "duration": 29.730075,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-18T14:47:59.907555",
+      "duration": 31.582256,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-18T14:48:31.491596",
+      "duration": 15.695114,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-18T14:48:47.192169",
+      "duration": 30.883419,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-18T14:49:18.079692",
+      "duration": 14.408976,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-18T14:49:32.493885",
+      "duration": 40.107225,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-18T14:50:12.606215",
+      "duration": 16.886637,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-18T14:50:29.498107",
+      "duration": 45.985802,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-18T14:51:15.489643",
+      "duration": 17.622754,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-18T14:51:33.117028",
+      "duration": 15.277043,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-18T14:51:48.400282",
+      "duration": 39.494159,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-18T14:52:27.900842",
+      "duration": 37.451567,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-18T14:53:05.355175",
+      "duration": 12.588733,
+      "reward": 1,
+      "total_reward": 21,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          3
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          3,
+          4,
+          7,
+          8,
+          12,
+          18,
+          20
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          3
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          240
+        ]
+      }
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-18T14:53:17.949414",
+      "duration": 16.319837,
+      "reward": 0,
+      "total_reward": 21,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-18T14:53:34.276059",
+      "duration": 37.55438,
+      "reward": 0,
+      "total_reward": 21,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-18T14:54:11.833674",
+      "duration": 21.937584,
+      "reward": 0,
+      "total_reward": 21,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-18T14:54:33.775112",
+      "duration": 33.02513,
+      "reward": 2,
+      "total_reward": 23,
+      "instructions_discovered": {
+        "11111111111111111111111111111111": [
+          0,
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          1,
+          4,
+          7,
+          12
+        ],
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          240
+        ]
+      }
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-18T14:55:06.806056",
+      "duration": 31.246028,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-18T14:55:38.058150",
+      "duration": 29.031311,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-18T14:56:07.095714",
+      "duration": 41.822114,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-18T14:56:48.924702",
+      "duration": 20.587053,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-18T14:57:09.519499",
+      "duration": 28.398338,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-18T14:57:37.924310",
+      "duration": 38.47272,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-18T14:58:16.406607",
+      "duration": 22.187379,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-18T14:58:38.602349",
+      "duration": 26.825719,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-18T14:59:05.435140",
+      "duration": 19.587124,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    6,
+    6,
+    6,
+    6,
+    15,
+    15,
+    15,
+    15,
+    15,
+    15,
+    17,
+    17,
+    17,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    19,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    21,
+    21,
+    21,
+    21,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23,
+    23
+  ],
+  "programs_discovered": {
+    "ComputeBudget111111111111111111111111111111": 1,
+    "11111111111111111111111111111111": 1,
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 1,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 5,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 5,
+    "Stake11111111111111111111111111111111111111": 14
+  },
+  "instructions_by_program": {
+    "11111111111111111111111111111111": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "ComputeBudget111111111111111111111111111111": [
+      2,
+      3
+    ],
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+      240,
+      77,
+      69
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      0,
+      1,
+      3,
+      4,
+      7,
+      12
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      3,
+      4,
+      7,
+      8,
+      12,
+      18,
+      20
+    ],
+    "Stake11111111111111111111111111111111111111": [
+      0
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 9
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 3,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: ASSOCIATED_TOKEN_PROGRAM\", \"details\": \"ReferenceError: Can't find variable: ASSOCIATED_TOKEN_PROGRAM\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:91:5)\", \"type\": \"ReferenceError\", \"stderr\": \"86 |             agentPubkey.toBuffer(),\\n87 |             TOKEN_PROGRAM_ID.toBuffer(),\\n88 |             mintV1.publicKey.toBuffer(),\\n89 |         ],\\n90 |         ASSOCIATED_TOKEN_PROGRAM\\n91 |     );\\n         ^\\nReferenceError: Can't find variable: ASSOCIATED_TOKEN_PROGRAM\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:91:5\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 6,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1566 > 1232\", \"details\": \"Error: Transaction too large: 1566 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:301:27)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1566 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:301:27\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 8,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1239 > 1232\", \"details\": \"Error: Transaction too large: 1239 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:236:27)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1239 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:236:27\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 10,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Syntax Error\", \"type\": \"BuildMessage\", \"stderr\": \"37 |     const connection = new Connection('http://localhost:    const agentPubkey = new PublicKey('4uUw1B79MMe5AC69RhiB4r1yhWMoXvDTjuPPsH5W2BBw');\\n                                                                                                    ^\\nerror: Syntax Error\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:37:96\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 12,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:40:20)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:38:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:40:16\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:38:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 16,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1499 > 1232\", \"details\": \"Error: Transaction too large: 1499 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:264:27)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1499 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:264:27\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 23,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid public key input\", \"details\": \"Error: Invalid public key input\\n    at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:21)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:161:28)\", \"type\": \"Error\", \"stderr\": \"167 |     } else {\\n168 |       if (typeof value === 'string') {\\n169 |         // assume base 58 encoding by default\\n170 |         const decoded = bs58__default.default.decode(value);\\n171 |         if (decoded.length != PUBLIC_KEY_LENGTH) {\\n172 |           throw new Error(`Invalid public key input`);\\n                      ^\\nerror: Invalid public key input\\n      at new PublicKey (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:172:17)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:161:24\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 25,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1498 > 1232\", \"details\": \"Error: Transaction too large: 1498 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:257:27)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1498 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:257:27\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 26,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"2 errors building \\\"/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts\\\"\", \"details\": \"Expected identifier but found \\\",\\\"\\nExpected \\\"as\\\" but found \\\",\\\"\", \"type\": \"AggregateError\", \"errors\": [{\"message\": \"Expected identifier but found \\\",\\\"\", \"line\": 15, \"column\": 0}, {\"message\": \"Expected \\\"as\\\" but found \\\",\\\"\", \"line\": 16, \"column\": 28}], \"stderr\": \"16 | ,\\n     ^\\nerror: Expected identifier but found \\\",\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:16:1\\n\\n17 |     createApproveInstruction,\\n                                 ^\\nerror: Expected \\\"as\\\" but found \\\",\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:17:29\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 36,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"undefined is not an object (evaluating 'accountMeta.pubkey.toString')\", \"details\": \"TypeError: undefined is not an object (evaluating 'accountMeta.pubkey.toString')\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1503:40)\\n    at forEach (native:1:11)\\n    at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1502:18)\\n    at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n    at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:208:8)\", \"type\": \"TypeError\", \"stderr\": \"1498 |     });\\n1499 | \\n1500 |     // Cull duplicate account metas\\n1501 |     const uniqueMetas = [];\\n1502 |     accountMetas.forEach(accountMeta => {\\n1503 |       const pubkeyString = accountMeta.pubkey.toString();\\n                                              ^\\nTypeError: undefined is not an object (evaluating 'accountMeta.pubkey.toString')\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1503:40\\n      at forEach (1:11)\\n      at compileMessage (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1502:18)\\n      at _compile (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1625:26)\\n      at partialSign (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1754:26)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:208:8\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 39,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Expected \\\")\\\" but found \\\";\\\"\", \"type\": \"BuildMessage\", \"stderr\": \"156 |             TOKEN_PROGRAM );\\n                                 ^\\nerror: Expected \\\")\\\" but found \\\";\\\"\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_oss_120b_1_143958.ts:156:28\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}

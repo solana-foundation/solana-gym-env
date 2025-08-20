@@ -1,0 +1,1220 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "run_index": 1,
+  "run_id": "code_loop_25-08-18_143959_be22b153",
+  "start_time": "2025-08-18T14:40:00.137741",
+  "environment_config": "voyager/environments/basic_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-18T14:40:00.183733",
+      "duration": 3.04418,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-18T14:40:03.228727",
+      "duration": 3.866625,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-18T14:40:07.096256",
+      "duration": 4.542398,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-18T14:40:11.639201",
+      "duration": 4.589395,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-18T14:40:16.229850",
+      "duration": 4.935386,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-18T14:40:21.166240",
+      "duration": 6.741035,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-18T14:40:27.908623",
+      "duration": 8.407661,
+      "reward": 6,
+      "total_reward": 6,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          1,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          77,
+          71
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-18T14:40:36.317070",
+      "duration": 10.385159,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-18T14:40:46.703872",
+      "duration": 5.574877,
+      "reward": 0,
+      "total_reward": 6,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-18T14:40:52.279575",
+      "duration": 10.626102,
+      "reward": 7,
+      "total_reward": 13,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          72
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          7,
+          18,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-18T14:41:02.906939",
+      "duration": 7.918539,
+      "reward": 0,
+      "total_reward": 13,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-18T14:41:10.826281",
+      "duration": 10.153536,
+      "reward": 0,
+      "total_reward": 13,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-18T14:41:20.980702",
+      "duration": 11.103734,
+      "reward": 0,
+      "total_reward": 13,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-18T14:41:32.085687",
+      "duration": 12.08017,
+      "reward": 7,
+      "total_reward": 20,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          72,
+          73
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          7,
+          18,
+          20,
+          21,
+          22,
+          26
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-18T14:41:44.168415",
+      "duration": 8.222689,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-18T14:41:52.393053",
+      "duration": 8.898859,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-18T14:42:01.292988",
+      "duration": 8.762414,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-18T14:42:10.057074",
+      "duration": 8.653871,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-18T14:42:18.712194",
+      "duration": 12.647241,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-18T14:42:31.361044",
+      "duration": 14.272232,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-18T14:42:45.636995",
+      "duration": 10.092259,
+      "reward": 0,
+      "total_reward": 20,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-18T14:42:55.730464",
+      "duration": 11.800835,
+      "reward": 3,
+      "total_reward": 23,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          65,
+          66
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          7,
+          8,
+          18,
+          20,
+          21,
+          22,
+          26
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-18T14:43:07.534648",
+      "duration": 6.895733,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-18T14:43:14.432131",
+      "duration": 13.131036,
+      "reward": 1,
+      "total_reward": 24,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          82,
+          66
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          7,
+          8,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-18T14:43:27.566715",
+      "duration": 11.983327,
+      "reward": 0,
+      "total_reward": 24,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-18T14:43:39.554433",
+      "duration": 11.710882,
+      "reward": 2,
+      "total_reward": 26,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          80,
+          73
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          35,
+          7,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-18T14:43:51.268988",
+      "duration": 12.321333,
+      "reward": 1,
+      "total_reward": 27,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          73,
+          77
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          39,
+          7,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-18T14:44:03.594793",
+      "duration": 10.482333,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-18T14:44:14.078821",
+      "duration": 15.648087,
+      "reward": 2,
+      "total_reward": 29,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          65,
+          84
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          7,
+          9,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-18T14:44:29.731378",
+      "duration": 13.681655,
+      "reward": 3,
+      "total_reward": 32,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          65,
+          68
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          4,
+          5,
+          7,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-18T14:44:43.417749",
+      "duration": 8.771111,
+      "reward": 0,
+      "total_reward": 32,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-18T14:44:52.191019",
+      "duration": 11.278153,
+      "reward": 3,
+      "total_reward": 35,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          65,
+          70
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          7,
+          10,
+          11,
+          18,
+          20,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-18T14:45:03.473743",
+      "duration": 11.303966,
+      "reward": 0,
+      "total_reward": 35,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-18T14:45:14.780107",
+      "duration": 11.381296,
+      "reward": 0,
+      "total_reward": 35,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-18T14:45:26.164151",
+      "duration": 13.004655,
+      "reward": 0,
+      "total_reward": 35,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-18T14:45:39.174725",
+      "duration": 14.380332,
+      "reward": 1,
+      "total_reward": 36,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          70
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          20,
+          6
+        ]
+      }
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-18T14:45:53.560067",
+      "duration": 10.611309,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-18T14:46:04.177091",
+      "duration": 14.943014,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-18T14:46:19.126260",
+      "duration": 15.11638,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-18T14:46:34.248310",
+      "duration": 17.941523,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-18T14:46:52.194967",
+      "duration": 16.255085,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-18T14:47:08.457010",
+      "duration": 12.646022,
+      "reward": 0,
+      "total_reward": 36,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-18T14:47:21.108793",
+      "duration": 11.269192,
+      "reward": 1,
+      "total_reward": 37,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          69
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-18T14:47:32.380412",
+      "duration": 16.720255,
+      "reward": 2,
+      "total_reward": 39,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          84
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          4,
+          5,
+          7,
+          18,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-18T14:47:49.106645",
+      "duration": 24.753388,
+      "reward": 0,
+      "total_reward": 39,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-18T14:48:13.862550",
+      "duration": 19.667617,
+      "reward": 0,
+      "total_reward": 39,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-18T14:48:33.537639",
+      "duration": 16.321686,
+      "reward": 2,
+      "total_reward": 41,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          76
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          3,
+          7,
+          18,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-18T14:48:49.869300",
+      "duration": 15.849768,
+      "reward": 3,
+      "total_reward": 44,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+          71
+        ],
+        "11111111111111111111111111111111": [
+          0
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          0,
+          6,
+          7,
+          8,
+          9,
+          18,
+          21,
+          22
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          0
+        ]
+      }
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-18T14:49:05.724524",
+      "duration": 13.041011,
+      "reward": 0,
+      "total_reward": 44,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-18T14:49:18.773368",
+      "duration": 12.595532,
+      "reward": 0,
+      "total_reward": 44,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    6,
+    6,
+    6,
+    13,
+    13,
+    13,
+    13,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    23,
+    23,
+    24,
+    24,
+    26,
+    27,
+    27,
+    29,
+    32,
+    32,
+    35,
+    35,
+    35,
+    35,
+    36,
+    36,
+    36,
+    36,
+    36,
+    36,
+    36,
+    37,
+    39,
+    39,
+    39,
+    41,
+    44,
+    44,
+    44
+  ],
+  "programs_discovered": {
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": 7,
+    "ComputeBudget111111111111111111111111111111": 7,
+    "11111111111111111111111111111111": 7,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 10,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 10,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 14
+  },
+  "instructions_by_program": {
+    "ComputeBudget111111111111111111111111111111": [
+      2
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      1,
+      2
+    ],
+    "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr": [
+      65,
+      66,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      76,
+      77,
+      80,
+      82,
+      84
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      18,
+      21,
+      22
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      0
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      35,
+      4,
+      5,
+      6,
+      7,
+      8,
+      39,
+      9,
+      10,
+      11,
+      18,
+      20,
+      21,
+      22,
+      26
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 6
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 7
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 7
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 1,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:12:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:4:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:12:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:4:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 2,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:12:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:4:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:12:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:4:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 3,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 4,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 5,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 6,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:14:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:14:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:5:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 9,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"connection.getMinBalanceForRentExemption is not a function. (In 'connection.getMinBalanceForRentExemption(MINT_SIZE)', 'connection.getMinBalanceForRentExemption' is undefined)\", \"details\": \"TypeError: connection.getMinBalanceForRentExemption is not a function. (In 'connection.getMinBalanceForRentExemption(MINT_SIZE)', 'connection.getMinBalanceForRentExemption' is undefined)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:44:50)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"39 |         data: Buffer.from(\\\"Fixing rent-exemption for mint!\\\"),\\n40 |     });\\n41 | \\n42 |     // Instruction 5: System Program - Create a new Mint account with correct rent-exemption\\n43 |     const newMint = Keypair.generate();\\n44 |     const rentRequiredForMint = await connection.getMinBalanceForRentExemption(MINT_SIZE);\\n                                                      ^\\nTypeError: connection.getMinBalanceForRentExemption is not a function. (In 'connection.getMinBalanceForRentExemption(MINT_SIZE)', 'connection.getMinBalanceForRentExemption' is undefined)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:44:50\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:13:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 11,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: TOKEN_22_PROGRAM_ID\", \"details\": \"ReferenceError: Can't find variable: TOKEN_22_PROGRAM_ID\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:72:5)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:19:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"ReferenceError\", \"stderr\": \"67 |     const agentTokenAccount2022 = getAssociatedTokenAddressSync(\\n68 |         newMint2022.publicKey,\\n69 |         agentPubkey,\\n70 |         false,\\n71 |         TOKEN_22_PROGRAM_ID // Use Token-2022 Program ID for ATA creation with Token-2022 mint\\n72 |     );\\n         ^\\nReferenceError: Can't find variable: TOKEN_22_PROGRAM_ID\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:72:5\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:19:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 15,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"\", \"details\": \"TokenOwnerOffCurveError\\n    at new TokenError (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:4:9)\\n    at new TokenOwnerOffCurveError (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:59:9)\\n    at getAssociatedTokenAddressSync (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/state/mint.js:126:15)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:106:39)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:20:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TokenOwnerOffCurveError\", \"stderr\": \"1 | /** Base class for errors */\\n2 | export class TokenError extends Error {\\n3 |     constructor(message) {\\n4 |         super(message);\\n            ^\\nerror: TokenOwnerOffCurveError\\n      at new TokenError (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:4:9)\\n      at new TokenOwnerOffCurveError (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/errors.js:59:9)\\n      at getAssociatedTokenAddressSync (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/state/mint.js:126:15)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:106:39\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:20:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 16,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"success\": false, \"reason\": \"Skill runner error\", \"stderr\": \"Assertion failed: (status == napi_ok), function fromBigInt, file bigint-buffer.c, line 132.\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 17,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'transferFeeBasisPointsToFee' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\", \"details\": \"SyntaxError: Export named 'transferFeeBasisPointsToFee' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'transferFeeBasisPointsToFee' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 18,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"success\": false, \"reason\": \"Skill runner error\", \"stderr\": \"Assertion failed: (status == napi_ok), function fromBigInt, file bigint-buffer.c, line 132.\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 21,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"success\": false, \"reason\": \"Skill runner error\", \"stderr\": \"Assertion failed: (status == napi_ok), function fromBigInt, file bigint-buffer.c, line 132.\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 23,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'createInitializeConfidentialTransferMintInstruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\", \"details\": \"SyntaxError: Export named 'createInitializeConfidentialTransferMintInstruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'createInitializeConfidentialTransferMintInstruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/spl-token/lib/esm/index.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 28,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Export named 'createCreateMetadataAccountV3Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@metaplex-foundation/mpl-token-metadata/dist/src/mpl-token-metadata.js'.\", \"details\": \"SyntaxError: Export named 'createCreateMetadataAccountV3Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@metaplex-foundation/mpl-token-metadata/dist/src/mpl-token-metadata.js'.\\n    at <parse> (:0)\\n    at link (native:1:11)\\n    at linkAndEvaluateModule (native:1:11)\\n    at <anonymous> (native:2:1)\", \"type\": \"SyntaxError\", \"stderr\": \"1 | (function (entry, fetcher)\\n    ^\\nSyntaxError: Export named 'createCreateMetadataAccountV3Instruction' not found in module '/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@metaplex-foundation/mpl-token-metadata/dist/src/mpl-token-metadata.js'.\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 31,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Invalid argument type in ToBigInt operation\", \"details\": \"TypeError: Invalid argument type in ToBigInt operation\\n    at BigInt (native)\\n    at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:29:33)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:21:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"TypeError\", \"stderr\": \"9465 |     });\\n9466 |   }\\n9467 |   static setComputeUnitPrice(params) {\\n9468 |     const type = COMPUTE_BUDGET_INSTRUCTION_LAYOUTS.SetComputeUnitPrice;\\n9469 |     const data = encodeData(type, {\\n9470 |       microLamports: BigInt(params.microLamports)\\n                            ^\\nTypeError: Invalid argument type in ToBigInt operation\\n      at setComputeUnitPrice (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:9470:22)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:29:33\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:21:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 33,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1322 > 1232\", \"details\": \"Error: Transaction too large: 1322 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:182:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:23:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1322 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:182:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:23:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 34,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1288 > 1232\", \"details\": \"Error: Transaction too large: 1288 > 1232\\n    at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:164:15)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:21:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1288 > 1232\\n      at assert (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:164:15\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:21:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 45,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Can't find variable: ExtensionType\", \"details\": \"ReferenceError: Can't find variable: ExtensionType\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:95:27)\\n    at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:34:36)\\n    at <anonymous> (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25)\", \"type\": \"ReferenceError\", \"stderr\": \"90 |     tx.add(createSetAuthorityInstruction_Token2022(t22MintBasic.publicKey, t22MintBasicAuth, AuthorityType.MintTokens, Keypair.generate().publicKey, [], TOKEN_2022_PROGRAM_ID));\\n91 | \\n92 |     // Token-2022 with TransferFeeConfig (re-initialize for this TX)\\n93 |     const t22MintTF = Keypair.generate();\\n94 |     const t22MintTFAuth = agentPubkey;\\n95 |     const extensionsTF = [ExtensionType.TransferFeeConfig];\\n                               ^\\nReferenceError: Can't find variable: ExtensionType\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:95:27\\n      at executeSkill (/Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_google_gemini_2_5_flash_1_143958.ts:34:36)\\n      at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/runSkill.ts:25:25\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}
