@@ -29,12 +29,12 @@ const LandingPage: React.FC = () => {
         <section>
           <h2>Introducing the Solana Bench Environments</h2>
           <p className="intro">
-            LLMs are getting better at writing code on demand, but how well can
-            they use this code to operate on Solana's runtime? Instead of asking
-            language models to run profitable Defi strategies (which requires
-            complex read infrastructure), we introduce two qualitative
-            benchmarks environments that directly test a model's protocol
-            fluency and compositional reasoning on Solana:
+            LLMs are getting better at writing code, but how well can they use
+            this code to operate on Solana's runtime? Instead of asking language
+            models to run profitable Defi strategies (which requires complex
+            read infrastructure and subjective performance metrics), we
+            introduce two qualitative benchmarks environments that directly test
+            a model's protocol fluency and compositional reasoning on Solana:
             <ol>
               <li>
                 <b>Basic</b> - maximize the number of <b>new instructions</b>{" "}
@@ -43,7 +43,7 @@ const LandingPage: React.FC = () => {
               </li>
               <li>
                 <b>Swap</b> - same success criterion, but within a Defi-leaning
-                surface (Jupiter, Orca, Raydium, Phoenix, Meteora) via
+                surface (Jupiter, Orca, Raydium, Phoenix, Meteora) using
                 additional example prompts and preinstalled SDKs
               </li>
             </ol>
@@ -60,11 +60,12 @@ const LandingPage: React.FC = () => {
             Modeling trading strategies require a high-fidelity market harness
             (stateful price feeds, slippage & MEV modeling, portfolio indexing,
             latency models, etc). This is a full product, with constantly moving
-            goalposts due to how fast Solana market structure evolves. By
-            contrast, Solana Bench environments are (1) <b>simple</b>, (2)
-            <b>reproducible</b>, and (3) <b>diagnostic</b>: you can see exactly
-            which programs and instruction variants a model can compose and
-            where it fails.
+            goalposts due to how fast Solana market structure evolves, not to
+            mention subjective metrics with a high degree of variance (return,
+            alpha, hit ratio, sharpe, etc). By contrast, Solana Bench
+            environments are (1) <b>simple</b>, (2) <b>reproducible</b>, and (3){" "}
+            <b>diagnostic</b>. You can see exactly which programs and
+            instruction variants a model can compose and where it fails.
           </p>
         </section>
 
@@ -163,7 +164,7 @@ const LandingPage: React.FC = () => {
             />
           </div>
           <p>
-            Claude is definitely the best performer here. It's key insight is
+            Claude is definitely the best performer here. Its key insight is
             that the memo programs can be used to score high without actually
             doing anything. Beyond other models, Claude has a strong propensity
             to game any metric or task given to it. This is useful to know when
@@ -226,7 +227,7 @@ const LandingPage: React.FC = () => {
           </div>
           <p>
             Claude outperforms GPT-5 slightly here, only due to one run where it
-            acheived 102 rewards. This is good cause for us to investigate
+            achieved 102 rewards. This is good cause for us to investigate
             further - as noted by{" "}
             <a href="https://x.com/oceanicursula">@oceanicursula</a>{" "}
             <a
@@ -242,11 +243,11 @@ const LandingPage: React.FC = () => {
             to maximize their score.
             <br />
             <br />
-            Upon futher investigation, we found that Claude had gotten up to
-            tricks, and it had reward-hacked the environment by sending memo
+            Upon further investigation, we found that Claude had found a
+            loophole, and it had reward-hacked the environment by sending memo
             instructions with slightly different instruction data. After
-            filtering out the Memo instructions, we got a more clear picture of
-            the models' performance.
+            filtering out the Memo instructions, we got a clearer picture of
+            each models' performance.
           </p>
           <h4>Filtered Swap Benchmark Performance</h4>
           <div className="image-gallery">
@@ -272,7 +273,7 @@ const LandingPage: React.FC = () => {
             We also encourage the Defi community to spend a little more time
             writing great documentation & canonical swap examples using their
             SDKs. Language models are trained on public data and examples. The
-            next wave of vibe coders are most likely to use whatever dex their
+            next wave of vibe coders are most likely to use whatever DEX their
             LM knows how to use.
           </p>
         </section>
@@ -285,7 +286,7 @@ const LandingPage: React.FC = () => {
               <li>
                 <b>Protocol Environments</b>: setup environment where LMs are
                 only rewarded for interacting with a specific protocol. This
-                could be good to understand which Defi protocols are LMs best at
+                could be good to understand which Defi protocols LMs are best at
                 using & why?
               </li>
               <li>
