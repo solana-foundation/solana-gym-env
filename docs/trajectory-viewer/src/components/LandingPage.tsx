@@ -141,16 +141,20 @@ const LandingPage: React.FC = () => {
 
           <div className="image-gallery">
             <img
-              src="/solana-gym-env/assets/program_discovery.png"
-              alt="Program Discovery Over Time"
+              src="/solana-gym-env/assets/basic_reward_progression.png"
+              alt="Reward Progression (Basic)"
             />
             <img
-              src="/solana-gym-env/assets/reward_progression.png"
-              alt="Reward Progression"
+              src="/solana-gym-env/assets/swap_reward_progression.png"
+              alt="Reward Progression (Defi)"
             />
             <img
-              src="/solana-gym-env/assets/individual_trajectories.png"
-              alt="Individual Model Trajectories"
+              src="/solana-gym-env/assets/basic_individual_trajectories.png"
+              alt="Individual Model Trajectories (Basic)"
+            />
+            <img
+              src="/solana-gym-env/assets/swap_individual_trajectories.png"
+              alt="Individual Model Trajectories (Defi)"
             />
           </div>
         </section>
