@@ -1,0 +1,1090 @@
+{
+  "model": "openai/gpt-5",
+  "run_index": 0,
+  "run_id": "code_loop_25-08-15_151257_e4655fc5",
+  "start_time": "2025-08-15T15:12:58.051503",
+  "environment_config": "voyager/environments/swap_env.json",
+  "messages": [
+    {
+      "index": 1,
+      "timestamp": "2025-08-15T15:12:58.079070",
+      "duration": 37.760681,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 2,
+      "timestamp": "2025-08-15T15:13:35.840666",
+      "duration": 89.74243,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 3,
+      "timestamp": "2025-08-15T15:15:05.584073",
+      "duration": 125.973515,
+      "reward": 0,
+      "total_reward": 0,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 4,
+      "timestamp": "2025-08-15T15:17:11.559698",
+      "duration": 94.360961,
+      "reward": 13,
+      "total_reward": 13,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": [
+          248
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "timestamp": "2025-08-15T15:18:45.923325",
+      "duration": 163.522154,
+      "reward": 0,
+      "total_reward": 13,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 6,
+      "timestamp": "2025-08-15T15:21:29.448122",
+      "duration": 61.547802,
+      "reward": 0,
+      "total_reward": 13,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 7,
+      "timestamp": "2025-08-15T15:22:30.998438",
+      "duration": 92.419881,
+      "reward": 3,
+      "total_reward": 16,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          248
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "timestamp": "2025-08-15T15:24:03.420422",
+      "duration": 124.976541,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 9,
+      "timestamp": "2025-08-15T15:26:08.400610",
+      "duration": 73.065872,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 10,
+      "timestamp": "2025-08-15T15:27:21.467421",
+      "duration": 78.112491,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 11,
+      "timestamp": "2025-08-15T15:28:39.585004",
+      "duration": 100.27607,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 12,
+      "timestamp": "2025-08-15T15:30:19.866450",
+      "duration": 77.893392,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 13,
+      "timestamp": "2025-08-15T15:31:37.764357",
+      "duration": 69.901864,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 14,
+      "timestamp": "2025-08-15T15:32:47.667700",
+      "duration": 80.829648,
+      "reward": 0,
+      "total_reward": 16,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 15,
+      "timestamp": "2025-08-15T15:34:08.498652",
+      "duration": 52.300611,
+      "reward": 3,
+      "total_reward": 19,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          18,
+          21,
+          22
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "timestamp": "2025-08-15T15:35:00.803658",
+      "duration": 134.321062,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 17,
+      "timestamp": "2025-08-15T15:37:15.128378",
+      "duration": 69.768914,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 18,
+      "timestamp": "2025-08-15T15:38:24.898970",
+      "duration": 78.59353,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 19,
+      "timestamp": "2025-08-15T15:39:43.496663",
+      "duration": 59.235666,
+      "reward": 0,
+      "total_reward": 19,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 20,
+      "timestamp": "2025-08-15T15:40:42.736119",
+      "duration": 97.760168,
+      "reward": 3,
+      "total_reward": 22,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "11111111111111111111111111111111": [
+          2
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          17,
+          12,
+          9
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+          248,
+          228
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "timestamp": "2025-08-15T15:42:20.500160",
+      "duration": 85.862811,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 22,
+      "timestamp": "2025-08-15T15:43:46.368351",
+      "duration": 121.011008,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 23,
+      "timestamp": "2025-08-15T15:45:47.385335",
+      "duration": 90.975217,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 24,
+      "timestamp": "2025-08-15T15:47:18.364071",
+      "duration": 95.482456,
+      "reward": 0,
+      "total_reward": 22,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 25,
+      "timestamp": "2025-08-15T15:48:53.850941",
+      "duration": 81.587105,
+      "reward": 1,
+      "total_reward": 23,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": [
+          9
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          248
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "timestamp": "2025-08-15T15:50:15.443134",
+      "duration": 95.720737,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 27,
+      "timestamp": "2025-08-15T15:51:51.169711",
+      "duration": 87.484256,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 28,
+      "timestamp": "2025-08-15T15:53:18.659324",
+      "duration": 88.756598,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 29,
+      "timestamp": "2025-08-15T15:54:47.420342",
+      "duration": 80.945647,
+      "reward": 0,
+      "total_reward": 23,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 30,
+      "timestamp": "2025-08-15T15:56:08.370281",
+      "duration": 119.57907,
+      "reward": 2,
+      "total_reward": 25,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          9,
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+          18,
+          12,
+          21,
+          22
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+          43
+        ]
+      }
+    },
+    {
+      "index": 31,
+      "timestamp": "2025-08-15T15:58:07.951870",
+      "duration": 150.290348,
+      "reward": 0,
+      "total_reward": 25,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 32,
+      "timestamp": "2025-08-15T16:00:38.246887",
+      "duration": 68.853444,
+      "reward": 0,
+      "total_reward": 25,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 33,
+      "timestamp": "2025-08-15T16:01:47.105456",
+      "duration": 95.785889,
+      "reward": 0,
+      "total_reward": 25,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 34,
+      "timestamp": "2025-08-15T16:03:22.895013",
+      "duration": 87.616136,
+      "reward": 1,
+      "total_reward": 26,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          3,
+          9,
+          12,
+          17,
+          18,
+          21,
+          22
+        ],
+        "11111111111111111111111111111111": [
+          0,
+          2
+        ],
+        "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+          8
+        ],
+        "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": [
+          9
+        ],
+        "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": [
+          143
+        ]
+      }
+    },
+    {
+      "index": 35,
+      "timestamp": "2025-08-15T16:04:50.517549",
+      "duration": 85.221388,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 36,
+      "timestamp": "2025-08-15T16:06:15.744661",
+      "duration": 60.054668,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 37,
+      "timestamp": "2025-08-15T16:07:15.803905",
+      "duration": 50.319972,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 38,
+      "timestamp": "2025-08-15T16:08:06.126604",
+      "duration": 64.915611,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 39,
+      "timestamp": "2025-08-15T16:09:11.050383",
+      "duration": 55.437805,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 40,
+      "timestamp": "2025-08-15T16:10:06.492748",
+      "duration": 79.838838,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 41,
+      "timestamp": "2025-08-15T16:11:26.335921",
+      "duration": 92.382879,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 42,
+      "timestamp": "2025-08-15T16:12:58.725192",
+      "duration": 69.365832,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 43,
+      "timestamp": "2025-08-15T16:14:08.096866",
+      "duration": 68.650503,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 44,
+      "timestamp": "2025-08-15T16:15:16.754557",
+      "duration": 88.828365,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 45,
+      "timestamp": "2025-08-15T16:16:45.591563",
+      "duration": 59.054923,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 46,
+      "timestamp": "2025-08-15T16:17:44.652895",
+      "duration": 93.415442,
+      "reward": 0,
+      "total_reward": 26,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 47,
+      "timestamp": "2025-08-15T16:19:18.075418",
+      "duration": 83.60894,
+      "reward": 1,
+      "total_reward": 27,
+      "instructions_discovered": {
+        "ComputeBudget111111111111111111111111111111": [
+          2,
+          3
+        ],
+        "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+          1
+        ],
+        "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+          228,
+          229
+        ],
+        "NUMERUNsFCP3kuNmWZuXtm1AaQCPj9uw6Guv2Ekoi5P": [
+          104
+        ],
+        "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+          12
+        ]
+      }
+    },
+    {
+      "index": 48,
+      "timestamp": "2025-08-15T16:20:41.689185",
+      "duration": 35.118023,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 49,
+      "timestamp": "2025-08-15T16:21:16.815478",
+      "duration": 55.099466,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    },
+    {
+      "index": 50,
+      "timestamp": "2025-08-15T16:22:11.922649",
+      "duration": 63.872659,
+      "reward": 0,
+      "total_reward": 27,
+      "instructions_discovered": {}
+    }
+  ],
+  "cumulative_rewards": [
+    0,
+    0,
+    0,
+    13,
+    13,
+    13,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    16,
+    19,
+    19,
+    19,
+    19,
+    19,
+    22,
+    22,
+    22,
+    22,
+    22,
+    23,
+    23,
+    23,
+    23,
+    23,
+    25,
+    25,
+    25,
+    25,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    26,
+    27,
+    27,
+    27,
+    27
+  ],
+  "programs_discovered": {
+    "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": 4,
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": 4,
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": 4,
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": 4,
+    "11111111111111111111111111111111": 4,
+    "ComputeBudget111111111111111111111111111111": 4,
+    "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": 7,
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": 7,
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": 15,
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": 20,
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": 25,
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": 34,
+    "NUMERUNsFCP3kuNmWZuXtm1AaQCPj9uw6Guv2Ekoi5P": 47
+  },
+  "instructions_by_program": {
+    "ComputeBudget111111111111111111111111111111": [
+      2,
+      3
+    ],
+    "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL": [
+      1
+    ],
+    "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA": [
+      3,
+      9,
+      12,
+      17,
+      18,
+      21,
+      22
+    ],
+    "11111111111111111111111111111111": [
+      0,
+      2
+    ],
+    "JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4": [
+      228,
+      229
+    ],
+    "HyaB3W9q6XdA5xwpU4XnSZV94htfmbmqJXZcEbRaJutt": [
+      248
+    ],
+    "routeUGWgWzqBWFcrCfv8tritsqukccJPu3q5GPP3xS": [
+      8
+    ],
+    "CAMMCzo5YL8w4VFF8KVHrK22GGUsp5VTaW7grrKgrWqK": [
+      248,
+      43
+    ],
+    "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb": [
+      18,
+      12,
+      21,
+      22
+    ],
+    "LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo": [
+      248,
+      228
+    ],
+    "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8": [
+      9
+    ],
+    "CPMMoo8L3F4NbTegBCKVNunggL7H1ZpdTHKxQB5qKP1C": [
+      143
+    ],
+    "NUMERUNsFCP3kuNmWZuXtm1AaQCPj9uw6Guv2Ekoi5P": [
+      104
+    ]
+  },
+  "code_blocks_extracted": [
+    {
+      "message_index": 1,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 2,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 3,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 4,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 13
+    },
+    {
+      "message_index": 5,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 6,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 7,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 8,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 9,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 10,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 11,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 12,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 13,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 14,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 15,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 16,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 17,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 18,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 19,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 20,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 3
+    },
+    {
+      "message_index": 21,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 22,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 23,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 24,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 25,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 26,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 27,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 28,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 29,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 30,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 2
+    },
+    {
+      "message_index": 31,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 32,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 33,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 34,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 35,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 36,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 37,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 38,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 39,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 40,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 41,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 42,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 43,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 44,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 45,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 46,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 47,
+      "num_blocks": 1,
+      "success": true,
+      "reward": 1
+    },
+    {
+      "message_index": 48,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 49,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    },
+    {
+      "message_index": 50,
+      "num_blocks": 1,
+      "success": false,
+      "reward": 0
+    }
+  ],
+  "errors": [
+    {
+      "message_index": 1,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Jupiter quote failed: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"otherAmountThreshold\\\":\\\"183125\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"DH4xmaWDnTzKXehVaPSNy9tMKJxnYL5Mo5U3oTHFtNYJ\\\",\\\"label\\\":\\\"SolFi\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"feeAmount\\\":\\\"0\\\",\\\"feeMint\\\":\\\"So11111111111111111111111111111111111111112\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360279974,\\\"timeTaken\\\":0.001452661,\\\"swapUsdValue\\\":\\\"0.1849099330528040084331503348\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"184854\\\",\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"184032\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\", \"details\": \"Error: Jupiter quote failed: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"otherAmountThreshold\\\":\\\"183125\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"DH4xmaWDnTzKXehVaPSNy9tMKJxnYL5Mo5U3oTHFtNYJ\\\",\\\"label\\\":\\\"SolFi\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"feeAmount\\\":\\\"0\\\",\\\"feeMint\\\":\\\"So11111111111111111111111111111111111111112\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360279974,\\\"timeTaken\\\":0.001452661,\\\"swapUsdValue\\\":\\\"0.1849099330528040084331503348\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"184854\\\",\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"184032\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:25:15)\", \"type\": \"Error\", \"stderr\": \"20 | \\n21 |   const quoteRes = await fetch(quoteUrl);\\n22 |   const quote = await quoteRes.json();\\n23 | \\n24 |   if (!quote || quote.error || !quote.routes || quote.routes.length === 0) {\\n25 |     throw new Error(`Jupiter quote failed: ${JSON.stringify(quote)}`);\\n               ^\\nerror: Jupiter quote failed: {\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"otherAmountThreshold\\\":\\\"183125\\\",\\\"swapMode\\\":\\\"ExactIn\\\",\\\"slippageBps\\\":100,\\\"platformFee\\\":null,\\\"priceImpactPct\\\":\\\"0\\\",\\\"routePlan\\\":[{\\\"swapInfo\\\":{\\\"ammKey\\\":\\\"DH4xmaWDnTzKXehVaPSNy9tMKJxnYL5Mo5U3oTHFtNYJ\\\",\\\"label\\\":\\\"SolFi\\\",\\\"inputMint\\\":\\\"So11111111111111111111111111111111111111112\\\",\\\"outputMint\\\":\\\"EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v\\\",\\\"inAmount\\\":\\\"1000000\\\",\\\"outAmount\\\":\\\"184974\\\",\\\"feeAmount\\\":\\\"0\\\",\\\"feeMint\\\":\\\"So11111111111111111111111111111111111111112\\\"},\\\"percent\\\":100,\\\"bps\\\":10000}],\\\"contextSlot\\\":360279974,\\\"timeTaken\\\":0.001452661,\\\"swapUsdValue\\\":\\\"0.1849099330528040084331503348\\\",\\\"simplerRouteUsed\\\":false,\\\"mostReliableAmmsQuoteReport\\\":{\\\"info\\\":{\\\"Czfq3xZZDmsdGdUyrNLtRhGc47cXcZtLG4crryfu44zE\\\":\\\"184854\\\",\\\"BZtgQEyS6eXUXicYPHecYQ7PybqodXQMvkjUbP4R8mUU\\\":\\\"184032\\\"}},\\\"useIncurredSlippageForQuoting\\\":null,\\\"otherRoutePlans\\\":null,\\\"aggregatorVersion\\\":null}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:25:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 6,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Failed to build any swap transactions\", \"details\": \"Error: Failed to build any swap transactions\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:202:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"197 |     // Raydium optional; proceed with Jupiter only if needed\\n198 |   }\\n199 | \\n200 |   // If both failed, throw\\n201 |   if (!jupTxB64 && !rayTxB64) {\\n202 |     throw new Error('Failed to build any swap transactions');\\n                ^\\nerror: Failed to build any swap transactions\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:202:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 9,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Failed to parse JSON\", \"details\": \"SyntaxError: Failed to parse JSON\\n    at <parse> (:0)\\n    at json (native)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:38:32)\", \"type\": \"SyntaxError\", \"stderr\": \"33 |   if (preferDexes && preferDexes.length) {\\n34 |     for (const dex of preferDexes) qp.append('preferDexes[]', dex);\\n35 |   }\\n36 | \\n37 |   const quoteRes = await fetch(`https://quote-api.jup.ag/v6/quote?${qp.toString()}`);\\n38 |   const quote = await quoteRes.json();\\n                                    ^\\nSyntaxError: Failed to parse JSON\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:38:32\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 11,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium base-out: no transaction returned: {\\\"id\\\":\\\"b7b22f0f-af03-4bf8-a23e-bfd3487e1cd1\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\", \"details\": \"Error: Raydium base-out: no transaction returned: {\\\"id\\\":\\\"b7b22f0f-af03-4bf8-a23e-bfd3487e1cd1\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:60:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"55 |     inputAccount: undefined,\\n56 |     outputAccount: undefined,\\n57 |   });\\n58 | \\n59 |   if (!swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n60 |     throw new Error(`Raydium base-out: no transaction returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium base-out: no transaction returned: {\\\"id\\\":\\\"b7b22f0f-af03-4bf8-a23e-bfd3487e1cd1\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:60:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 13,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Transaction too large: 1716 > 1232\", \"details\": \"Error: Transaction too large: 1716 > 1232\\n    at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:15)\\n    at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:152:19)\", \"type\": \"Error\", \"stderr\": \"602 |   }\\n603 | }\\n604 | \\n605 | function assert (condition, message) {\\n606 |   if (!condition) {\\n607 |     throw new Error(message || 'Assertion failed');\\n                ^\\nerror: Transaction too large: 1716 > 1232\\n      at assert (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:607:11)\\n      at _serialize (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/node_modules/@solana/web3.js/lib/index.cjs.js:1882:5)\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:152:19\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 17,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-JSON response (400): Failed to deserialize query string: invalid type: sequence, expected a string\", \"details\": \"Error: Non-JSON response (400): Failed to deserialize query string: invalid type: sequence, expected a string\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:10:15)\", \"type\": \"Error\", \"stderr\": \" 5 |   const res = await fetch(url, init);\\n 6 |   const text = await res.text();\\n 7 |   try {\\n 8 |     return JSON.parse(text) as T;\\n 9 |   } catch {\\n10 |     throw new Error(`Non-JSON response (${res.status}): ${text.slice(0, 200)}`);\\n               ^\\nerror: Non-JSON response (400): Failed to deserialize query string: invalid type: sequence, expected a string\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:10:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 19,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium USDC->USDT tx not returned: {\\\"id\\\":\\\"011efadf-19ec-4e21-a48d-adea785158c3\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\", \"details\": \"Error: Raydium USDC->USDT tx not returned: {\\\"id\\\":\\\"011efadf-19ec-4e21-a48d-adea785158c3\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:64:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"59 |     inputAccount: usdcAta.toBase58(),\\n60 |     outputAccount: usdtAta.toBase58(),\\n61 |   });\\n62 | \\n63 |   if (!swapTxResp?.success || !swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n64 |     throw new Error(`Raydium USDC->USDT tx not returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium USDC->USDT tx not returned: {\\\"id\\\":\\\"011efadf-19ec-4e21-a48d-adea785158c3\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:64:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 29,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium USDC->SOL tx not returned: {\\\"id\\\":\\\"b16f76a5-fc04-4141-9421-0e1ddf38ff4e\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\", \"details\": \"Error: Raydium USDC->SOL tx not returned: {\\\"id\\\":\\\"b16f76a5-fc04-4141-9421-0e1ddf38ff4e\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:60:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"55 |     inputAccount: undefined,\\n56 |     outputAccount: undefined,\\n57 |   });\\n58 | \\n59 |   if (!swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n60 |     throw new Error(`Raydium USDC->SOL tx not returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium USDC->SOL tx not returned: {\\\"id\\\":\\\"b16f76a5-fc04-4141-9421-0e1ddf38ff4e\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:60:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 36,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium base-out tx not returned: {\\\"id\\\":\\\"81ffa71e-b2cb-436e-b752-a4a94f55c796\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\", \"details\": \"Error: Raydium base-out tx not returned: {\\\"id\\\":\\\"81ffa71e-b2cb-436e-b752-a4a94f55c796\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:63:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"58 |     inputAccount: usdcAta.toBase58(),  // USDC ATA (input)\\n59 |     outputAccount: wsolAta.toBase58(), // WSOL ATA (for unwrap to SOL)\\n60 |   });\\n61 | \\n62 |   if (!swapTxResp?.success || !swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n63 |     throw new Error(`Raydium base-out tx not returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium base-out tx not returned: {\\\"id\\\":\\\"81ffa71e-b2cb-436e-b752-a4a94f55c796\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:63:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 37,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Non-JSON (400): Failed to deserialize query string: invalid type: sequence, expected a string\", \"details\": \"Error: Non-JSON (400): Failed to deserialize query string: invalid type: sequence, expected a string\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:9:15)\", \"type\": \"Error\", \"stderr\": \"4 |   const res = await fetch(url, init);\\n5 |   const txt = await res.text();\\n6 |   try {\\n7 |     return JSON.parse(txt) as T;\\n8 |   } catch {\\n9 |     throw new Error(`Non-JSON (${res.status}): ${txt.slice(0, 200)}`);\\n              ^\\nerror: Non-JSON (400): Failed to deserialize query string: invalid type: sequence, expected a string\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:9:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 48,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium tx not returned: {\\\"id\\\":\\\"e9caf245-1e65-4727-8dac-65affec82038\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\", \"details\": \"Error: Raydium tx not returned: {\\\"id\\\":\\\"e9caf245-1e65-4727-8dac-65affec82038\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:57:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"52 |     inputAccount: undefined,\\n53 |     outputAccount: undefined,\\n54 |   });\\n55 | \\n56 |   if (!swapTxResp?.success || !swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n57 |     throw new Error(`Raydium tx not returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium tx not returned: {\\\"id\\\":\\\"e9caf245-1e65-4727-8dac-65affec82038\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_INPUT_ACCOUT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:57:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    },
+    {
+      "message_index": 49,
+      "error": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"Raydium tx not returned: {\\\"id\\\":\\\"393b7b07-fa19-4dc8-8e72-35fdc6ac3ef5\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\", \"details\": \"Error: Raydium tx not returned: {\\\"id\\\":\\\"393b7b07-fa19-4dc8-8e72-35fdc6ac3ef5\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n    at <anonymous> (/Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:63:15)\\n    at processTicksAndRejections (native:7:39)\", \"type\": \"Error\", \"stderr\": \"58 |     inputAccount: usdcAta.toBase58(),\\n59 |     outputAccount: usdtAta.toBase58(),\\n60 |   });\\n61 | \\n62 |   if (!swapTxResp?.success || !swapTxResp?.data?.length || !swapTxResp.data[0]?.transaction) {\\n63 |     throw new Error(`Raydium tx not returned: ${JSON.stringify(swapTxResp)}`);\\n               ^\\nerror: Raydium tx not returned: {\\\"id\\\":\\\"393b7b07-fa19-4dc8-8e72-35fdc6ac3ef5\\\",\\\"success\\\":false,\\\"version\\\":\\\"V1\\\",\\\"msg\\\":\\\"REQ_OWNER_ACCOUNT_ERROR\\\"}\\n      at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_openai_gpt_5_0_151256.ts:63:11\\n\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    }
+  ]
+}
