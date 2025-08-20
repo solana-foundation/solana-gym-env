@@ -43,7 +43,7 @@ const App: React.FC = () => {
 
   const loadAllBenchmarks = async () => {
     try {
-      const benchmarks = ["basic", "defi"];
+      const benchmarks = ["basic", "swap"];
       const allRunsData: RunMetrics[] = [];
 
       for (const benchmark of benchmarks) {
@@ -94,7 +94,7 @@ const App: React.FC = () => {
               >
                 <option value="all">All Benchmarks</option>
                 <option value="basic">Basic Benchmark</option>
-                <option value="defi">DeFi Benchmark</option>
+                <option value="swap">Swap Benchmark</option>
               </select>
             </div>
             <Link to="/">Home</Link>

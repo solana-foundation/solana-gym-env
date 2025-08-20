@@ -227,7 +227,15 @@ const LandingPage: React.FC = () => {
           <p>
             Claude outperforms GPT-5 slightly here, only due to one run where it
             acheived 102 rewards. This is good cause for us to investigate
-            further - as a poster on X noted here. Thank you for the feedback!
+            further - as noted by{" "}
+            <a href="https://x.com/oceanicursula">@oceanicursula</a>{" "}
+            <a
+              href="https://x.com/oceanicursula/status/1956542070539386930"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here.
+            </a>{" "}
             In this scenario, LMs are prompted to construct swap transactions
             across different DEXes. SDKs to Jupiter, Orca, Meteora, Raydium, and
             Phoenix are provided. But the LMs end up only using the Jupiter SDK
