@@ -6,7 +6,7 @@ const LandingPage: React.FC = () => {
   return (
     <div className="landing-page">
       <div className="hero-section">
-        <h1>Solana Composability Benchmark</h1>
+        <h1>Solana Bench</h1>
         <p className="subtitle">
           How Well Can LLMs Build Complex Transactions?
         </p>
@@ -17,114 +17,118 @@ const LandingPage: React.FC = () => {
 
       <div className="content-section">
         <section>
+          <h2>Introduction</h2>
           <p className="intro">
-            Why can't we simply ask an LLM to write a crypto trading bot—one
-            that listens to token prices, spots price differences between DEXes,
-            and makes money by exploiting them? That would be amazing. The bot
-            could monitor the chain, buy low on one platform, sell high on
-            another, and do it all in seconds. We're not quite there yet—but
-            this experiment explores how close we can get today by measuring how
-            well LLMs can string together diverse Solana programs in a single
-            transaction.
+            LLMs are getting better at writing code on demand, but how well can
+            they use this code to operate on Solana's runtime? Instead of asking
+            language models to run profitable Defi strategies (which requires
+            complex read infrastructure), we introduce two qualitative
+            benchmarks environments that directly test a model's protocol
+            fluency and compositional reasoning on Solana:
+            <ol>
+              <li>
+                <b>Basic</b> - maximize the number of <b>new instructions</b>{" "}
+                successfully executed using only foundational SDKs (e.g.
+                @solana/web3.js, Anchor, etc)
+              </li>
+              <li>
+                <b>Swap</b> - same success criterion, but within a Defi-leaning
+                surface (Jupiter, Orca, Raydium, Phoenix, Meteora) via
+                additional example prompts and preinstalled SDKs
+              </li>
+            </ol>
+            These environments are not about measuring profit and loss. They are
+            about <b>operational Solana competence</b>: composing valid
+            transactions, choosing accounts appropriately, using SDKs correctly,
+            recovering from errors, and exploring breadth across programs.
           </p>
         </section>
 
         <section>
-          <h2>The Problem with Today's Blockchain Agents</h2>
+          <h2>Why a qualitative benchmark (and not a trading benchmark)?</h2>
           <p>
-            Building superintelligent blockchain agents that respond to market
-            changes is still one of the biggest challenges in the crypto
-            community. Most current blockchain agents use RAG-augmented LLMs
-            connected to fixed toolsets—sometimes via MCP servers—to execute
-            predefined actions. They handle simple tasks fine, but break down
-            when the environment changes in subtle ways.
-          </p>
-          <p>
-            On blockchains, the same token can be priced differently across
-            decentralized exchanges, lending protocols, and other on-chain
-            programs. In theory, a bot could exploit those differences. In
-            practice, doing so often requires chaining multiple programs
-            together in the correct order—sometimes within a single
-            transaction—before the opportunity disappears. Most current LLM
-            agents can't plan and execute these complex, multi-step interactions
-            reliably, so they miss out.
+            Modeling trading strategies require a high-fidelity market harness
+            (stateful price feeds, slippage & MEV modeling, portfolio indexing,
+            latency models, etc). This is a full product, with constantly moving
+            goalposts due to how fast Solana market structure evolves. By
+            contrast, Solana Bench environments are (1) <b>objective</b>, (2)
+            <b>reproducible</b>, and (3) <b>diagnostic</b>: you can see exactly
+            which programs and instruction variants a model can compose and
+            where it fails.
           </p>
         </section>
 
         <section>
-          <h2>Why Solana Makes This Harder And More Interesting</h2>
+          <h2>Evaluation Protocol</h2>
           <p>
-            Solana's architecture is uniquely suited for complex transactions.
-            Unlike many EVM-based chains, where one transaction typically calls
-            one contract, Solana allows a single transaction to invoke many
-            different programs. This makes it possible to compose highly
-            efficient multi-protocol operations—but it also demands more
-            reasoning and composability from the agent.
-          </p>
-          <p>A truly capable Solana agent should be able to:</p>
-          <ol>
-            <li>
-              <strong>Compose</strong> complex transactions spanning multiple
-              programs.
-            </li>
-            <li>
-              <strong>Debug</strong> malformed transactions using onchain
-              metadata.
-            </li>
-            <li>
-              <strong>Chain</strong> multiple transactions into coherent
-              long-term strategies.
-            </li>
-          </ol>
-          <p>
-            These capabilities are exactly what's needed to profit from
-            cross-program price differences at scale. They're the missing piece
-            in today's LLM agents.
+            <ol>
+              <li>
+                <b>Budget</b>: 50 messages per model per run
+              </li>
+              <li>
+                <b>Per-turn constraint</b>: Model emits <b>Typescript</b> that
+                must produce <b>exactly one unsigned transaction</b> that will
+                be signed by the environment
+              </li>
+              <li>
+                <b>Execution</b>: Run against a sandboxed Solana validator (
+                <a
+                  href="https://surfpool.run"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Surfpool
+                </a>
+                ) that mimics mainnet
+              </li>
+              <li>
+                <b>Reward</b>: # of unique instructions from successfully
+                executed transactions
+              </li>
+            </ol>
           </p>
         </section>
 
         <section>
-          <h2>The Holy Grail: A True Financial Sandbox</h2>
+          <h2>Call to Action</h2>
           <p>
-            In an ideal world, we could run a perfect financial test: a
-            sandboxed replica of mainnet where an LLM could detect arbitrage
-            opportunities and execute real transactions in response. This would
-            be the holy grail of LLM blockchain agents; a proving ground for the
-            next generation of AI agent engineering.
-          </p>
-          <p>
-            Thanks to{" "}
+            Expand on this research! We're funding up to $5k for open-sourced
+            research on high-quality Solana benchmarks. Here are some ideas:
+            <ol>
+              <li>
+                <b>Protocol Environments</b>: setup environment where LMs are
+                only rewarded for interacting with a specific protocol. This
+                could be good to understand which Defi protocols are LMs best at
+                using & why?
+              </li>
+              <li>
+                <b>DevEx Environments</b>: setup environment where LMs only have
+                access to IDLs, or IDL-generated methods instead of SDKs. This
+                could be used to improve IDL tooling.
+              </li>
+              <li>
+                <b>System Prompts Improvements</b>: LMs are very sensitive to
+                system prompts. We are open to clear improvements to the system
+                prompts, so long as the changes are well explained and result in
+                meaningful changes in benchmark performance.
+              </li>
+              <li>
+                <b>Evaluating custom models</b>: we welcome evaluations of
+                custom Solana models, but humbly request that the evaluation
+                methodology be included, with some way for us to reproduce the
+                results.
+              </li>
+            </ol>
+            Apply for funding{" "}
             <a
-              href="https://surfpool.run"
+              href="https://share.hsforms.com/1GE1hYdApQGaDiCgaiWMXHA5lohw"
               target="_blank"
               rel="noopener noreferrer"
+              style={{ textDecoration: "underline" }}
             >
-              Surfpool
+              here
             </a>
-            , we can already spin up sandboxed versions of mainnet and let
-            agents submit transactions safely. What we can't yet do is track an
-            agent's entire portfolio in that sandbox with the same accuracy and
-            completeness as Jupiter Portfolio. Running a local test validator
-            with full portfolio tracking is beyond the scope of this project.
-          </p>
-        </section>
-
-        <section>
-          <h2>Our Simplified Approach</h2>
-          <p>
-            Since we can't yet run the perfect arbitrage simulation, we went
-            simpler: measure an LLM's ability to chain together as many unique
-            Solana program instructions as possible in successful transactions.
-            On Solana, instructions are the atomic building blocks of program
-            interaction, and successfully chaining diverse instructions together
-            signals a deeper understanding of Solana protocols.
-          </p>
-          <p>
-            This acts as a proxy for deep Solana fluency—testing whether a model
-            can compose, sequence, and execute complex multi-program
-            interactions, even without a direct profit motive. If a model can't
-            build diverse and valid transactions in a controlled setting, it's
-            unlikely to succeed in the chaotic world of on-chain arbitrage.
+            .
           </p>
         </section>
 

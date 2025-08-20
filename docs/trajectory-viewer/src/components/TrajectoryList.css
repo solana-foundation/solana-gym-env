@@ -1,8 +1,6 @@
 .trajectory-list {
-  background: white;
-  border-radius: 12px;
+  background: transparent;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .list-header {
@@ -47,7 +45,8 @@
 
 .run-card {
   background: white;
-  border: 2px solid #e2e8f0;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   padding: 20px;
   text-decoration: none;
