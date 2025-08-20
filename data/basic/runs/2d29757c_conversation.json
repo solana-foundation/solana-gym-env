@@ -37,7 +37,7 @@
   },
   {
     "role": "user",
-    "content": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Unexpected )\", \"type\": \"BuildMessage\", \"stderr\": \"84 |     );\\n         ^\\nerror: Unexpected )\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_143958.ts:84:5\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    "content": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Unexpected )\", \"type\": \"BuildMessage\", \"stderr\": \"84 |     );\\n         ^\\nerror: Unexpected )\\n    at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_143958.ts:84:5\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
   },
   {
     "role": "assistant",
@@ -173,7 +173,7 @@
   },
   {
     "role": "user",
-    "content": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Unexpected )\", \"type\": \"BuildMessage\", \"stderr\": \"228 |     );\\n          ^\\nerror: Unexpected )\\n    at /Users/noahgundotra/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_143958.ts:228:5\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
+    "content": "{\"error\": \"Skill execution failed\", \"details\": {\"serialized_tx\": null, \"error\": \"An unknown error occurred.\", \"details\": \"BuildMessage: Unexpected )\", \"type\": \"BuildMessage\", \"stderr\": \"228 |     );\\n          ^\\nerror: Unexpected )\\n    at /Users/home/gemini/solana-gym/voyager/voyager/skill_runner/batch_anthropic_claude_sonnet_4_1_143958.ts:228:5\\n\"}, \"suggestion\": \"Check for syntax errors, missing imports, or typos in the skill code\"}"
   },
   {
     "role": "assistant",
