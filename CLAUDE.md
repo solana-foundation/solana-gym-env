@@ -219,3 +219,4 @@ The Code Loop Explorer tracks detailed metrics in JSON files saved to `/metrics/
 7. The Memo program can inflate scores - consider filtering it for fair comparisons
 - remember that we built trajectory visualizers with react for use in github pages
 - remember that we built a script to create ordered bench tables
+- remember we changed the docs to react
