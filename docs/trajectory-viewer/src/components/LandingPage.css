@@ -10,7 +10,6 @@
   padding: 60px 40px;
   text-align: center;
   -top: 10px;
-  /* border-bottom: 1px solid #e2e8f0; */
 }
 
 .hero-section h1 {
@@ -174,4 +173,47 @@
   .content-section p {
     font-size: 16px;
   }
+}
+
+.trajectory-table {
+  font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+.trajectory-table th {
+  background: gray;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+.trajectory-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.trajectory-table tr:hover {
+  background-color: #f7fafc;
+}
+.model-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 30px 0 10px 0;
+  color: #2d3748;
+}
+.rank-badge {
+  background: #edf2f7;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.reward-high {
+  color: #38a169;
+  font-weight: bold;
+}
+.reward-med {
+  color: #3182ce;
+}
+.reward-low {
+  color: #718096;
 }

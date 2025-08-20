@@ -52,14 +52,14 @@ class TypeScriptSkillManager:
                 check=True,
                 encoding='utf-8'
             )
-            # runSkill.ts now outputs a JSON object with serialized_tx
-            return json.loads(result.stdout.strip("\n"))
+            # parse the last line of the output
+            return json.loads(result.stdout.strip("\n").split("\n")[-1])
         except subprocess.CalledProcessError as e:
             # When there's an error, runSkill.ts prints JSON to stdout and error details to stderr
             try:
                 # Try to parse the JSON output from stdout (this has the structured error info)
                 if e.stdout:
-                    error_data = json.loads(e.stdout.strip("\n"))
+                    error_data = json.loads(e.stdout.strip("\n").split("\n")[-1])
                     # Also capture stderr for full error details
                     if e.stderr:
                         error_data['stderr'] = e.stderr

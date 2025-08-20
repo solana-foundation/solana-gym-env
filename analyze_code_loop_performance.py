@@ -568,6 +568,7 @@ def analyze_reward_progression(output_dir, metrics_path="metrics", exclude_progr
     # Create plot
     plt.figure(figsize=(14, 8))
     
+    handles = []
     for model in ordered_models:
         progressions = model_progressions[model]
         # Pad progressions to same length
@@ -584,7 +585,8 @@ def analyze_reward_progression(output_dir, metrics_path="metrics", exclude_progr
         
         # Plot mean with error band
         x = np.arange(len(mean_progression))
-        plt.plot(x, mean_progression, label=f'{model} (n={len(progressions)})', linewidth=2)
+        handles.append(plt.plot(x, mean_progression, label=f'{model} (n={len(progressions)})', linewidth=2)[0])
+        print(handles[-1])
         plt.fill_between(x, 
                         mean_progression - std_progression,
                         mean_progression + std_progression,
@@ -593,7 +595,9 @@ def analyze_reward_progression(output_dir, metrics_path="metrics", exclude_progr
     plt.xlabel('Message Number')
     plt.ylabel('Cumulative Reward')
     plt.title('Reward Progression Over Time (Mean ± Std Dev)')
-    plt.legend()
+    # import pdb
+    # pdb.set_trace()
+    plt.legend(handles=handles)
     plt.grid(True, alpha=0.3)
     
     # Save figure

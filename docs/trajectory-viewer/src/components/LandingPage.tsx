@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./LandingPage.css";
 
 const LandingPage: React.FC = () => {
+  const [expandedImage, setExpandedImage] = useState<string | null>(null);
+
+  const handleImageClick = (src: string) => {
+    setExpandedImage(src);
+  };
+
+  const handleCloseModal = () => {
+    setExpandedImage(null);
+  };
+
   return (
     <div className="landing-page">
       <div className="hero-section">
@@ -17,7 +27,7 @@ const LandingPage: React.FC = () => {
 
       <div className="content-section">
         <section>
-          <h2>Introduction</h2>
+          <h2>Introducing the Solana Bench Environments</h2>
           <p className="intro">
             LLMs are getting better at writing code on demand, but how well can
             they use this code to operate on Solana's runtime? Instead of asking
@@ -51,7 +61,7 @@ const LandingPage: React.FC = () => {
             (stateful price feeds, slippage & MEV modeling, portfolio indexing,
             latency models, etc). This is a full product, with constantly moving
             goalposts due to how fast Solana market structure evolves. By
-            contrast, Solana Bench environments are (1) <b>objective</b>, (2)
+            contrast, Solana Bench environments are (1) <b>simple</b>, (2)
             <b>reproducible</b>, and (3) <b>diagnostic</b>: you can see exactly
             which programs and instruction variants a model can compose and
             where it fails.
@@ -82,13 +92,182 @@ const LandingPage: React.FC = () => {
                 ) that mimics mainnet
               </li>
               <li>
-                <b>Reward</b>: # of unique instructions from successfully
-                executed transactions
+                <b>Score</b>: # of unique instructions from successfully
+                executed transactions over a single run
               </li>
             </ol>
           </p>
         </section>
 
+        <section>
+          <h2>Results</h2>
+          <p>
+            We evaluated 4 models on each benchmark over 5 runs. We note that
+            the cost for this suite of evaluations hovers around $150-200 USD at
+            the time of this writing. The primary cost driver is Claude Sonnet
+            4, which is roughly 10x more expensive than Gemini 2.5 Flash &
+            gpt-oss-120b.
+          </p>
+          <h3>Basic Benchmark</h3>
+          <table className="trajectory-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Median Score</th>
+                <th>Max Score</th>
+                <th>Min Score</th>
+                <th>Median # of Programs Used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="model-name">claude-sonnet-4</td>
+                <td className="metric-value reward-high">115</td>
+                <td className="metric-value">181</td>
+                <td className="metric-value">30</td>
+                <td className="metric-value">5</td>
+              </tr>
+              <tr>
+                <td className="model-name">gpt-5</td>
+                <td className="metric-value reward-med">60</td>
+                <td className="metric-value">66</td>
+                <td className="metric-value">57</td>
+                <td className="metric-value">8</td>
+              </tr>
+              <tr>
+                <td className="model-name">gemini-2.5-flash</td>
+                <td className="metric-value reward-low">40</td>
+                <td className="metric-value">44</td>
+                <td className="metric-value">23</td>
+                <td className="metric-value">6</td>
+              </tr>
+              <tr>
+                <td className="model-name">gpt-oss-120b</td>
+                <td className="metric-value reward-low">23</td>
+                <td className="metric-value">25</td>
+                <td className="metric-value">16</td>
+                <td className="metric-value">6</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="image-gallery">
+            <img
+              src="/solana-gym-env/assets/basic_individual_trajectories.png"
+              alt="Individual Model Trajectories (Basic)"
+              onClick={() =>
+                handleImageClick(
+                  "/solana-gym-env/assets/basic_individual_trajectories.png"
+                )
+              }
+              style={{ cursor: "pointer" }}
+            />
+          </div>
+          <p>
+            Claude is definitely the best performer here. It's key insight is
+            that the memo programs can be used to score high without actually
+            doing anything. Beyond other models, Claude has a strong propensity
+            to game any metric or task given to it. This is useful to know when
+            dealing with complex environments like Solana.
+          </p>
+
+          <h3>Swap Benchmark</h3>
+          <table className="trajectory-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Median Score</th>
+                <th>Max Score</th>
+                <th>Min Score</th>
+                <th>Median # of Programs Used</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="model-name">claude-sonnet-4</td>
+                <td className="metric-value reward-high">33</td>
+                <td className="metric-value">102</td>
+                <td className="metric-value">19</td>
+                <td className="metric-value">6</td>
+              </tr>
+              <tr>
+                <td className="model-name">gpt-5</td>
+                <td className="metric-value reward-med">30</td>
+                <td className="metric-value">34</td>
+                <td className="metric-value">27</td>
+                <td className="metric-value">16</td>
+              </tr>
+              <tr>
+                <td className="model-name">gemini-2.5-flash</td>
+                <td className="metric-value reward-low">14</td>
+                <td className="metric-value">18</td>
+                <td className="metric-value">0</td>
+                <td className="metric-value">3</td>
+              </tr>
+              <tr>
+                <td className="model-name">gpt-oss-120b</td>
+                <td className="metric-value reward-low">10</td>
+                <td className="metric-value">22</td>
+                <td className="metric-value">8</td>
+                <td className="metric-value">4</td>
+              </tr>
+            </tbody>
+          </table>
+          <div className="image-gallery">
+            <img
+              src="/solana-gym-env/assets/swap_individual_trajectories_raw.png"
+              alt="Individual Model Trajectories Raw(Defi)"
+              onClick={() =>
+                handleImageClick(
+                  "/solana-gym-env/assets/swap_individual_trajectories_raw.png"
+                )
+              }
+              style={{ cursor: "pointer" }}
+            />
+          </div>
+          <p>
+            Claude outperforms GPT-5 slightly here, only due to one run where it
+            acheived 102 rewards. This is good cause for us to investigate
+            further - as a poster on X noted here. Thank you for the feedback!
+            In this scenario, LMs are prompted to construct swap transactions
+            across different DEXes. SDKs to Jupiter, Orca, Meteora, Raydium, and
+            Phoenix are provided. But the LMs end up only using the Jupiter SDK
+            to maximize their score.
+            <br />
+            <br />
+            Upon futher investigation, we found that Claude had gotten up to
+            tricks, and it had reward-hacked the environment by sending memo
+            instructions with slightly different instruction data. After
+            filtering out the Memo instructions, we got a more clear picture of
+            the models' performance.
+          </p>
+          <h4>Filtered Swap Benchmark Performance</h4>
+          <div className="image-gallery">
+            <img
+              src="/solana-gym-env/assets/swap_individual_trajectories.png"
+              alt="Individual Model Trajectories (Defi)"
+              onClick={() =>
+                handleImageClick(
+                  "/solana-gym-env/assets/swap_individual_trajectories.png"
+                )
+              }
+              style={{ cursor: "pointer" }}
+            />
+          </div>
+          <p>
+            GPT-5 outperforms Claude when filtering out Memo & Memo v1 program
+            instructions! This points to the difficulty in constructing
+            effective and non-gameable environments. We encourage the community
+            to build more well rounded environments that are not trivial to
+            exploit.
+            <br />
+            <br />
+            We also encourage the Defi community to spend a little more time
+            writing great documentation & canonical swap examples using their
+            SDKs. Language models are trained on public data and examples. The
+            next wave of vibe coders are most likely to use whatever dex their
+            LM knows how to use.
+          </p>
+        </section>
         <section>
           <h2>Call to Action</h2>
           <p>
@@ -132,52 +311,6 @@ const LandingPage: React.FC = () => {
           </p>
         </section>
 
-        <section>
-          <h2>Introducing the Solana Composability Benchmark</h2>
-          <p>
-            In this benchmark, each model had 50 messages to work with. In each
-            message, the model could write TypeScript code to generate exactly
-            one transaction. If the transaction succeeded, each unique
-            instruction within it counted toward the model's total score. The
-            goal: maximize the diversity of instructions within the message
-            limit.
-          </p>
-
-          <div className="image-gallery">
-            <img
-              src="/solana-gym-env/assets/basic_reward_progression.png"
-              alt="Reward Progression (Basic)"
-            />
-            <img
-              src="/solana-gym-env/assets/swap_reward_progression.png"
-              alt="Reward Progression (Defi)"
-            />
-            <img
-              src="/solana-gym-env/assets/basic_individual_trajectories.png"
-              alt="Individual Model Trajectories (Basic)"
-            />
-            <img
-              src="/solana-gym-env/assets/swap_individual_trajectories.png"
-              alt="Individual Model Trajectories (Defi)"
-            />
-          </div>
-        </section>
-
-        <section>
-          <h2>Results</h2>
-          <p>
-            The results were clear: Anthropic's Claude Sonnet 4 outperformed all
-            other models in discovering new programs, exploiting the reward
-            environment, and composing complex Solana transactions. However, its
-            high cost makes it impractical for large-scale deployment.
-          </p>
-          <p>
-            For a more budget-friendly option, Google's Gemini 2.5 Flash proved
-            the best at the lower price tier—coming close to its Pro sibling in
-            raw capability while being significantly cheaper.
-          </p>
-        </section>
-
         <section className="explore-section">
           <h2>Explore the Data</h2>
           <p>
@@ -190,6 +323,59 @@ const LandingPage: React.FC = () => {
           </Link>
         </section>
       </div>
+
+      {/* Image Modal */}
+      {expandedImage && (
+        <div
+          className="image-modal-overlay"
+          onClick={handleCloseModal}
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 9999,
+            cursor: "pointer",
+          }}
+        >
+          <img
+            src={expandedImage}
+            alt="Expanded view"
+            style={{
+              maxWidth: "90vw",
+              maxHeight: "90vh",
+              objectFit: "contain",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            onClick={handleCloseModal}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "white",
+              border: "none",
+              borderRadius: "50%",
+              width: "40px",
+              height: "40px",
+              fontSize: "24px",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontWeight: "bold",
+            }}
+          >
+            ×
+          </button>
+        </div>
+      )}
     </div>
   );
 };
