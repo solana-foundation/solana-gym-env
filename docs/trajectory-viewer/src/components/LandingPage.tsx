@@ -279,7 +279,29 @@ const LandingPage: React.FC = () => {
           </p>
         </section>
         <section>
-          <h2>Call to Action</h2>
+          <h2>Takeaways</h2>
+          <h3>For app builders</h3>
+          <p>
+            We encourage app developers to put SDK examples on their
+            documentation sites, or other crawler-accessible places. This will
+            not result in an immediate change in LLM usability, but it will
+            result improved LLM understanding of your protocol in the next wave
+            of model releases. LLM-readiness can be a part of every team's
+            developer adoption strategy.
+          </p>
+          <h3>For Developers</h3>
+          <p>
+            For teams that really want to go the extra mile, we recommend them
+            to host APIs that abstract away the compositional logic for using
+            their protocol. This includes instructions for wrapping & unwrapping
+            sol, creating ATAs, setting compute budget limits, and doing other
+            protocol-specific initialization steps. We notice that LLMs seem to
+            really understand Jupiter's API, and are able to use it to perform
+            swaps, and are basically unable to use any other DEX SDK natively.
+          </p>
+        </section>
+        <section>
+          <h2>Grant Opportunities</h2>
           <p>
             Expand on this research! We're funding up to $5k for open-sourced
             research on high-quality Solana benchmarks. Here are some ideas:
@@ -303,7 +325,7 @@ const LandingPage: React.FC = () => {
               </li>
               <li>
                 <b>Evaluating custom models</b>: we welcome evaluations of
-                custom Solana models, but humbly request that the evaluation
+                custom Solana models, but request that the evaluation
                 methodology be included, with some way for us to reproduce the
                 results.
               </li>
