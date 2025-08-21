@@ -90,10 +90,8 @@ const LandingPage: React.FC = () => {
           <h2>Why Measurement Has Been Hard</h2>
           <p>
             The Solana Foundation wants to fund exceptional open-source
-            development at the frontier of AI and Solana. The Foundation
-            believes it has the duty to use funds responsibly and to be learn
-            from past experiences. Over the last 9 months of 2025, we have
-            sought & funded various efforts to evaluate LLMs on their
+            development at the frontier of AI and Solana. Over the last 9 months
+            , we have sought & funded various efforts to evaluate LLMs on their
             operational Solana knowlege. The following are some of the things we
             have tried, and what we learned.
           </p>
@@ -160,10 +158,10 @@ const LandingPage: React.FC = () => {
                 Solana Agent Kit.
               </b>{" "}
               Tool-calling benchmarks measure complex and confounding behaviors:
-              tool selection amonst hundreds of tools, sequential tool-calling
+              tool selection amongst hundreds of tools, sequential tool-calling
               to achieve complicated tasks, and recovery from failure due to
               implementation errors. Tool-calling benchmarks are useful for
-              improving an LLMs usage of single toolkit, but not for a wider
+              improving an LLM's usage of a single toolkit, but not for a wider
               ecosystem of applications built on diverse tooling. For example,
               many Solana AI teams use ElizaOS, and are unable to use the Solana
               Agent Kit evals. We would have loved to share results with ElizaOS
@@ -362,9 +360,9 @@ const LandingPage: React.FC = () => {
             >
               here.
             </a>{" "}
-            In this scenario, LMs are prompted to construct swap transactions
+            In this scenario, LLMs are prompted to construct swap transactions
             across different DEXes. SDKs to Jupiter, Orca, Meteora, Raydium, and
-            Phoenix are provided. But the LMs end up only using the Jupiter SDK
+            Phoenix are provided. But the LLMs end up only using the Jupiter SDK
             to maximize their score.
             <br />
             <br />
@@ -399,7 +397,7 @@ const LandingPage: React.FC = () => {
             writing great documentation & canonical swap examples using their
             SDKs. Language models are trained on public data and examples. The
             next wave of vibe coders are most likely to use whatever DEX their
-            LM knows how to use.
+            LLM knows how to use.
           </p>
         </section>
         <section>
@@ -431,18 +429,18 @@ const LandingPage: React.FC = () => {
             research on high-quality Solana benchmarks. Here are some ideas:
             <ol>
               <li>
-                <b>Protocol Environments</b>: setup environment where LMs are
+                <b>Protocol Environments</b>: setup environment where LLMs are
                 only rewarded for interacting with a specific protocol. This
-                could be good to understand which Defi protocols LMs are best at
-                using & why?
+                could be good to understand which Defi protocols LLMs are best
+                at using & why?
               </li>
               <li>
-                <b>DevEx Environments</b>: setup environment where LMs only have
-                access to IDLs, or IDL-generated methods instead of SDKs. This
-                could be used to improve IDL tooling.
+                <b>DevEx Environments</b>: setup environment where LLMs only
+                have access to IDLs, or IDL-generated methods instead of SDKs.
+                This could be used to improve IDL tooling.
               </li>
               <li>
-                <b>System Prompts Improvements</b>: LMs are very sensitive to
+                <b>System Prompts Improvements</b>: LLMs are very sensitive to
                 system prompts. We are open to clear improvements to the system
                 prompts, so long as the changes are well explained and result in
                 meaningful changes in benchmark performance.
