@@ -27,14 +27,21 @@ const LandingPage: React.FC = () => {
 
       <div className="content-section">
         <section>
-          <h2>Introducing the Solana Bench Environments</h2>
+          <h2>Introducing 2 Solana Bench Environments</h2>
           <p className="intro">
-            LLMs are getting better at writing code, but how well can they use
-            this code to operate on Solana's runtime? Instead of asking language
-            models to run profitable Defi strategies (which requires complex
-            read infrastructure and subjective performance metrics), we
-            introduce two qualitative benchmarks environments that directly test
-            a model's protocol fluency and compositional reasoning on Solana:
+            At the Solana Foundation, we want to fund open-source AI tooling
+            that measurably improves how developers and applications use Solana.
+            The challenge is <b>measurement</b>. Until now, we haven't had a
+            simple, reproducible way to evaluate whether new tools actually make
+            it easier for language models to build and run transactions on
+            Solana. We've experimented with Q&A benchmarks (too costly to
+            maintain), tool-calling benchmarks in agent kits (too brittle and
+            fragmented across stacks), and funding one-off toolkits (hard to
+            track impact). Each attempt has taught us something, but none have
+            given us a sustainable standard. That's why we're introducing{" "}
+            <b>Solana Bench</b> — two lightweight, open-ended environments
+            designed to test LLMs' operational competence on Solana in a way
+            that is <b>simple, reproducible, and objective</b>.
             <ol>
               <li>
                 <b>Basic</b> - maximize the number of <b>new instructions</b>{" "}
@@ -50,54 +57,171 @@ const LandingPage: React.FC = () => {
             These environments are not about measuring profit and loss. They are
             about <b>operational Solana competence</b>: composing valid
             transactions, choosing accounts appropriately, using SDKs correctly,
-            recovering from errors, and exploring breadth across programs.
+            recovering from errors, and exploring breadth across programs. They
+            are inspired by qualitative benchmarks like{" "}
+            <a
+              href="https://www.anthropic.com/news/visible-extended-thinking"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ClaudePlaysPokemon
+            </a>
+            ,{" "}
+            <a
+              href="https://huggingface.co/blog/textquests"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              TextQuest
+            </a>
+            {", "}
+            and Nvidia's{" "}
+            <a
+              href="https://voyager.minedojo.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Voyager.
+            </a>
           </p>
         </section>
 
         <section>
-          <h2>Why a qualitative benchmark (and not a trading benchmark)?</h2>
+          <h2>Why Measurement Has Been Hard</h2>
           <p>
-            Modeling trading strategies require a high-fidelity market harness
-            (stateful price feeds, slippage & MEV modeling, portfolio indexing,
-            latency models, etc). This is a full product, with constantly moving
-            goalposts due to how fast Solana market structure evolves, not to
-            mention subjective metrics with a high degree of variance (return,
-            alpha, hit ratio, sharpe, etc). By contrast, Solana Bench
-            environments are (1) <b>simple</b>, (2) <b>reproducible</b>, and (3){" "}
-            <b>diagnostic</b>. You can see exactly which programs and
-            instruction variants a model can compose and where it fails.
+            The Solana Foundation wants to fund exceptional open-source
+            development at the frontier of AI and Solana. The Foundation
+            believes it has the duty to use funds responsibly and to be learn
+            from past experiences. Over the last 9 months of 2025, we have
+            sought & funded various efforts to evaluate LLMs on their
+            operational Solana knowlege. The following are some of the things we
+            have tried, and what we learned.
+          </p>
+
+          <h3 style={{ marginBottom: "10px" }}>
+            What we tried — and why it wasn't sustainable
+          </h3>
+          <ul style={{ marginLeft: "15px", marginBottom: "20px" }}>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <b>Q&amp;A benchmarks:</b> High-quality question-answer datasets
+              take significant ongoing curation to stay accurate as programs,
+              SDKs, and best practices evolve. Those hours come from the same
+              teams building protocol infrastructure — a tradeoff we can't
+              justify long-term. We're grateful to{" "}
+              <a
+                href="https://x.com/LumoLabsDotAI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @LumoLabsDotAI
+              </a>{" "}
+              for assembling sample datasets that helped us visualize strengths
+              and gaps, and to articulate the pros/cons more clearly.
+            </li>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <b>Tool-calling benchmarks in agent kits:</b> We funded the
+              addition of{" "}
+              <a
+                href="https://github.com/sendaifun/solana-agent-kit/pull/331"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                hundreds
+              </a>{" "}
+              of{" "}
+              <a
+                href="https://github.com/sendaifun/solana-agent-kit/pull/347"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                tool-calling benchmarks
+              </a>{" "}
+              in SendAI's{" "}
+              <a
+                href="https://github.com/sendaifun/solana-agent-kit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solana Agent Kit
+              </a>
+              . The goal was to create a suite of evaluations that could be used
+              to test LLM applications for regressions in their Solana
+              capability before they went into production.{" "}
+              <b>
+                We failed at building a tool-calling benchmark useful for
+                applications, but succeeded in{" "}
+                <a
+                  href="https://github.com/sendaifun/solana-agent-kit/pull/345"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  improving
+                </a>{" "}
+                Solana Agent Kit.
+              </b>{" "}
+              Tool-calling benchmarks measure complex and confounding behaviors:
+              tool selection amonst hundreds of tools, sequential tool-calling
+              to achieve complicated tasks, and recovery from failure due to
+              implementation errors. Tool-calling benchmarks are useful for
+              improving an LLMs usage of single toolkit, but not for a wider
+              ecosystem of applications built on diverse tooling. For example,
+              many Solana AI teams use ElizaOS, and are unable to use the Solana
+              Agent Kit evals. We would have loved to share results with ElizaOS
+              agents, since we found that many ElizaOS agents are so strongly
+              guided by their character files that they will fail basic single
+              tool call evaluations. But alas, the tool-calling benchmarks were
+              specific to Solana Agent Kit.{" "}
+            </li>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <b>Fund more toolkits:</b> Funding more toolkits often means
+              funding individual teams — not necessarily ecosystem-level
+              improvements. What we were missing was a <i>simple, open-ended</i>{" "}
+              benchmark that any team could run, which would let us measure
+              whether our investments are actually moving AI usability forward
+              on Solana.
+            </li>
+          </ul>
+
+          <h3 style={{ marginBottom: "10px" }}>Why these two environments</h3>
+          <p>
+            The <b>Basic</b> and <b>Swap</b> environments aim to give us
+            lightweight, reproducible tests of{" "}
+            <b>operational Solana competence</b>. They avoid subjective P&amp;L,
+            minimize ongoing maintenance, and reflect the real skill we want
+            agents to demonstrate — composing valid transactions, wiring
+            accounts correctly, using SDKs responsibly, recovering from errors,
+            and exploring breadth across programs. We see this as a practical
+            baseline for the community to iterate on together.
           </p>
         </section>
 
         <section>
           <h2>Evaluation Protocol</h2>
-          <p>
-            <ol>
-              <li>
-                <b>Budget</b>: 50 messages per model per run
-              </li>
-              <li>
-                <b>Per-turn constraint</b>: Model emits <b>Typescript</b> that
-                must produce <b>exactly one unsigned transaction</b> that will
-                be signed by the environment
-              </li>
-              <li>
-                <b>Execution</b>: Run against a sandboxed Solana validator (
-                <a
-                  href="https://surfpool.run"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Surfpool
-                </a>
-                ) that mimics mainnet
-              </li>
-              <li>
-                <b>Score</b>: # of unique instructions from successfully
-                executed transactions over a single run
-              </li>
-            </ol>
-          </p>
+          <ol>
+            <li>
+              <b>Budget</b>: 50 messages per model per run
+            </li>
+            <li>
+              <b>Per-turn constraint</b>: Model emits <b>Typescript</b> that
+              must produce <b>exactly one unsigned transaction</b> that will be
+              signed by the environment
+            </li>
+            <li>
+              <b>Execution</b>: Run against a sandboxed Solana validator (
+              <a
+                href="https://surfpool.run"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Surfpool
+              </a>
+              ) that mimics mainnet
+            </li>
+            <li>
+              <b>Score</b>: # of unique instructions from successfully executed
+              transactions over a single run
+            </li>
+          </ol>
         </section>
 
         <section>
@@ -117,7 +241,7 @@ const LandingPage: React.FC = () => {
                 <th>Median Score</th>
                 <th>Max Score</th>
                 <th>Min Score</th>
-                <th>Median # of Programs Used</th>
+                <th>Median Programs Used</th>
               </tr>
             </thead>
             <tbody>
@@ -180,7 +304,7 @@ const LandingPage: React.FC = () => {
                 <th>Median Score</th>
                 <th>Max Score</th>
                 <th>Min Score</th>
-                <th>Median # of Programs Used</th>
+                <th>Median Programs Used</th>
               </tr>
             </thead>
             <tbody>
@@ -248,7 +372,7 @@ const LandingPage: React.FC = () => {
             loophole, and it had reward-hacked the environment by sending memo
             instructions with slightly different instruction data. After
             filtering out the Memo instructions, we got a clearer picture of
-            each models' performance.
+            each model's performance.
           </p>
           <h4>Filtered Swap Benchmark Performance</h4>
           <div className="image-gallery">
@@ -340,6 +464,14 @@ const LandingPage: React.FC = () => {
               here
             </a>
             .
+          </p>
+          <h2>Help us help you build the future of AI on Solana</h2>
+          <p>
+            If you notice things we missed, or have ideas for how to improve the
+            benchmarks, please let us know! We are open to funding more open
+            source AI development, but need your help to measure impact. Feel
+            free to reach out to us at{" "}
+            <a href="mailto:ai@solana.org">ai@solana.org</a>
           </p>
         </section>
 
