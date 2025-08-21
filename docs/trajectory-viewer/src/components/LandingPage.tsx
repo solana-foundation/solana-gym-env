@@ -217,9 +217,18 @@ const LandingPage: React.FC = () => {
             </li>
             <li>
               <b>Score</b>: # of unique instructions from successfully executed
-              transactions over a single run
+              transactions over a single run. Instructions are identified solely
+              by the first byte of instruction data.
             </li>
           </ol>
+          <p>
+            Scores are unbounded. If an LLM was resourceful enough, it could
+            recall all the no-operation programs on Solana, and iterate through
+            256 different first bytes of instruction data (and one empty
+            instruction), and achieve 257 points per program. Further research
+            can consider filtering the reward function to only award points for
+            specific programs & instructions.
+          </p>
         </section>
 
         <section>
