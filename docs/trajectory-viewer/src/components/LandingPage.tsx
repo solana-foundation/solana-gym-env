@@ -1,6 +1,208 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Prism from "prismjs";
+import "prismjs/components/prism-typescript";
+import "prismjs/themes/prism-tomorrow.css";
 import "./LandingPage.css";
+
+const ExampleTurnCard: React.FC = () => {
+  const [showCode, setShowCode] = React.useState(false);
+
+  const programs = [
+    {
+      id: "ComputeBudget111111111111111111111111111111",
+      label: "Compute Budget",
+      ixs: [2, 3],
+      expl: "setComputeUnitLimit, setComputeUnitPrice",
+    },
+    {
+      id: "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr",
+      label: "Memo",
+      ixs: [101],
+      expl: "Memo V1 (data payload)",
+    },
+    {
+      id: "11111111111111111111111111111111",
+      label: "System Program",
+      ixs: [0, 1, 2],
+      expl: "transfer, createAccount, assign",
+    },
+  ];
+  const reward = 6;
+
+  useEffect(() => {
+    Prism.highlightAll();
+  }, [showCode]);
+
+  const tsCode = `import { Transaction, SystemProgram, PublicKey, Keypair, ComputeBudgetProgram } from '@solana/web3.js';
+
+export async function executeSkill(blockhash: string): Promise<string> {
+    const tx = new Transaction();
+    const agentPubkey = new PublicKey('CiPkkCaoiWPy52azYmUbKKAew8fdvDkrxn7t2mtQX8Ts');
+    
+    // Create account for operations
+    const newAccount = Keypair.generate();
+    
+    const memoProgram = new PublicKey('MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr');
+
+    // Add ComputeBudget instructions
+    tx.add(ComputeBudgetProgram.setComputeUnitLimit({ units: 1_000_000 }));
+    tx.add(ComputeBudgetProgram.setComputeUnitPrice({ microLamports: 1 }));
+
+    // Add SystemProgram instructions
+    tx.add(SystemProgram.transfer({
+        fromPubkey: agentPubkey,
+        toPubkey: newAccount.publicKey,
+        lamports: 1_000,
+    }));
+
+    tx.add(SystemProgram.createAccount({
+        fromPubkey: agentPubkey,
+        newAccountPubkey: newAccount.publicKey,
+        lamports: 1_000_000,
+        space: 0,
+        programId: memoProgram,
+    }));
+
+    tx.add(SystemProgram.assign({
+        accountPubkey: newAccount.publicKey,
+        programId: memoProgram,
+    }));
+
+    // Add Memo program instruction (manual discriminator form)
+    tx.add(new TransactionInstruction({
+        programId: memoProgram,
+        keys: [],
+        data: Buffer.from("hello world", "utf-8"),
+    }));
+
+    tx.recentBlockhash = blockhash;
+    tx.feePayer = agentPubkey;
+
+    return tx.serialize().toString("base64");
+}`;
+
+  return (
+    <section>
+      <h3 style={{ marginTop: "1.25rem" }}>
+        Example Output from Basic Environment
+      </h3>
+      <div
+        className="example-card"
+        style={{
+          border: "1px solid #e5e7eb",
+          borderRadius: 12,
+          padding: 16,
+          background: "#f8fafc",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            gap: 12,
+            flexWrap: "wrap",
+          }}
+        >
+          <div>
+            <div style={{ fontWeight: 700, fontSize: 16 }}>
+              Execution Result
+            </div>
+            <div style={{ marginTop: 4 }}>
+              <span role="img" aria-label="success">
+                ✅
+              </span>{" "}
+              Transaction executed successfully &nbsp;·&nbsp; <b>+{reward}</b>{" "}
+              reward points
+            </div>
+          </div>
+        </div>
+
+        <div style={{ marginTop: 12 }}>
+          <p>
+            Agent is prompted to compose a valid tansaction that maximizes it's
+            score. It has access to <code>@solana/web3.js</code> and must write
+            typescript code that can be executed to produce a base64 serialized
+            transaction. That transaction will be executed against{" "}
+            <a
+              href="https://surfpool.run"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Surfpool
+            </a>{" "}
+            which is a safe sandbox proxy to mainnet. The LLM is rewarded for
+            each unique (program_id, instruction_discriminator) pair in a
+            successful transaction.
+            <br />
+            <br />
+            In this step, selected one turn of 50 messages, the LLM created a
+            succesful transaction that executed the following instructions. For
+            this, it was awarded 6 points. You can explore the code it wrote
+            below.
+          </p>
+        </div>
+
+        <div style={{ marginTop: 12 }}>
+          <table
+            className="trajectory-table"
+            style={{ width: "100%", borderCollapse: "collapse" }}
+          >
+            <thead>
+              <tr>
+                <th style={{ textAlign: "left" }}>Program</th>
+                <th style={{ textAlign: "left" }}>Program ID</th>
+                <th style={{ textAlign: "left" }}>Instruction IDs</th>
+                <th style={{ textAlign: "left" }}>Explanation</th>
+              </tr>
+            </thead>
+            <tbody>
+              {programs.map((p) => (
+                <tr key={p.id}>
+                  <td className="model-name">{p.label}</td>
+                  <td className="metric-value">
+                    <code>{p.id.slice(0, 8)}…</code>
+                  </td>
+                  <td className="metric-value">{p.ixs.join(", ")}</td>
+                  <td className="metric-value">{p.expl}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div style={{ marginTop: 8, color: "#64748b", fontSize: 14 }}>
+            <b>Scoring rule (Basic/Swap):</b> +1 for each first-seen{" "}
+            <code>(program_id, instruction_discriminator)</code> pair in a
+            successful tx. This turn hit 6 new pairs → <b>6 points</b>.
+          </div>
+        </div>
+
+        <div
+          style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}
+        >
+          <button className="cta-button" onClick={() => setShowCode((v) => !v)}>
+            {showCode ? "Hide Code" : "Show Code"}
+          </button>
+        </div>
+
+        {showCode && (
+          <pre
+            style={{
+              background: "#0b1020",
+              color: "white",
+              padding: 12,
+              borderRadius: 8,
+              overflowX: "auto",
+              marginTop: 12,
+            }}
+          >
+            <code className="language-typescript">{tsCode}</code>
+          </pre>
+        )}
+      </div>
+    </section>
+  );
+};
 
 const LandingPage: React.FC = () => {
   const [expandedImage, setExpandedImage] = useState<string | null>(null);
@@ -27,21 +229,21 @@ const LandingPage: React.FC = () => {
 
       <div className="content-section">
         <section>
-          <h2>Introducing 2 Solana Bench Environments</h2>
+          <h2>Introducing Solana Bench</h2>
           <p className="intro">
             At the Solana Foundation, we want to fund open-source AI tooling
             that measurably improves how developers and applications use Solana.
-            The challenge is <b>measurement</b>. Until now, we haven't had a
-            simple, reproducible way to evaluate whether new tools actually make
-            it easier for language models to build and run transactions on
-            Solana. We've experimented with Q&A benchmarks (too costly to
-            maintain), tool-calling benchmarks in agent kits (too brittle and
-            fragmented across stacks), and funding one-off toolkits (hard to
-            track impact). Each attempt has taught us something, but none have
-            given us a sustainable standard. That's why we're introducing{" "}
-            <b>Solana Bench</b> — two lightweight, open-ended environments
-            designed to test LLMs' operational competence on Solana in a way
-            that is <b>simple, reproducible, and objective</b>.
+            The challenge is measuring the usefulness of these tools. Until now,
+            we haven't had a simple, reproducible way to evaluate whether new
+            tools actually make it easier for language models to build and run
+            transactions on Solana. We've experimented with Q&A benchmarks (too
+            costly to maintain), tool-calling benchmarks in agent kits (too
+            brittle and fragmented across stacks), and funding one-off toolkits
+            (hard to track impact). Each attempt has taught us something, but
+            none have given us a sustainable standard. That's why we're
+            introducing <b>Solana Bench</b> — two lightweight, open-ended
+            environments designed to test LLMs' operational competence on Solana
+            in a way that is <b>simple, reproducible, and objective</b>.
             <ol>
               <li>
                 <b>Basic</b> - maximize the number of <b>new instructions</b>{" "}
@@ -55,10 +257,11 @@ const LandingPage: React.FC = () => {
               </li>
             </ol>
             These environments are not about measuring profit and loss. They are
-            about <b>operational Solana competence</b>: composing valid
-            transactions, choosing accounts appropriately, using SDKs correctly,
-            recovering from errors, and exploring breadth across programs. They
-            are inspired by qualitative benchmarks like{" "}
+            about <b>operational Solana competence</b>. These environments
+            reward composing valid transactions, choosing accounts
+            appropriately, using SDKs correctly, recovering from errors, and
+            exploring breadth across programs. These environments are inspired
+            by other open-ended benchmarks like{" "}
             <a
               href="https://www.anthropic.com/news/visible-extended-thinking"
               target="_blank"
@@ -101,11 +304,11 @@ const LandingPage: React.FC = () => {
           </h3>
           <ul style={{ marginLeft: "15px", marginBottom: "20px" }}>
             <li style={{ marginBottom: "0.5rem" }}>
-              <b>Q&amp;A benchmarks:</b> High-quality question-answer datasets
+              <u>Q&amp;A benchmarks:</u> High-quality question-answer datasets
               take significant ongoing curation to stay accurate as programs,
               SDKs, and best practices evolve. Those hours come from the same
-              teams building protocol infrastructure — a tradeoff we can't
-              justify long-term. We're grateful to{" "}
+              teams building protocol infrastructure, which is a tradeoff we
+              can't justify long-term. We're grateful to{" "}
               <a
                 href="https://x.com/LumoLabsDotAI"
                 target="_blank"
@@ -117,7 +320,7 @@ const LandingPage: React.FC = () => {
               and gaps, and to articulate the pros/cons more clearly.
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <b>Tool-calling benchmarks in agent kits:</b> We funded the
+              <u>Tool-calling benchmarks in agent kits:</u> We funded the
               addition of{" "}
               <a
                 href="https://github.com/sendaifun/solana-agent-kit/pull/331"
@@ -171,8 +374,8 @@ const LandingPage: React.FC = () => {
               specific to Solana Agent Kit.{" "}
             </li>
             <li style={{ marginBottom: "0.5rem" }}>
-              <b>Fund more toolkits:</b> Funding more toolkits often means
-              funding individual teams — not necessarily ecosystem-level
+              <u>Funding more toolkits:</u> Funding more toolkits often means
+              funding individual teams, but not necessarily ecosystem-level
               improvements. What we were missing was a <i>simple, open-ended</i>{" "}
               benchmark that any team could run, which would let us measure
               whether our investments are actually moving AI usability forward
@@ -185,11 +388,11 @@ const LandingPage: React.FC = () => {
             The <b>Basic</b> and <b>Swap</b> environments aim to give us
             lightweight, reproducible tests of{" "}
             <b>operational Solana competence</b>. They avoid subjective P&amp;L,
-            minimize ongoing maintenance, and reflect the real skill we want
-            agents to demonstrate — composing valid transactions, wiring
-            accounts correctly, using SDKs responsibly, recovering from errors,
-            and exploring breadth across programs. We see this as a practical
-            baseline for the community to iterate on together.
+            minimize ongoing maintenance, and reflect the real skills we want
+            agents to demonstrate. Skill like composing valid transactions,
+            wiring accounts correctly, using SDKs appropriately, recovering from
+            errors, and exploring breadth across programs. We see this as a
+            practical baseline for the community to iterate on together.
           </p>
         </section>
 
@@ -197,15 +400,15 @@ const LandingPage: React.FC = () => {
           <h2>Evaluation Protocol</h2>
           <ol>
             <li>
-              <b>Budget</b>: 50 messages per model per run
+              <u>Budget</u>: 50 messages per model per run
             </li>
             <li>
-              <b>Per-turn constraint</b>: Model emits <b>Typescript</b> that
+              <u>Per-turn constraint</u>: Model emits <b>Typescript</b> that
               must produce <b>exactly one unsigned transaction</b> that will be
               signed by the environment
             </li>
             <li>
-              <b>Execution</b>: Run against a sandboxed Solana validator (
+              <u>Execution</u>: Run against a sandboxed Solana validator (
               <a
                 href="https://surfpool.run"
                 target="_blank"
@@ -216,11 +419,12 @@ const LandingPage: React.FC = () => {
               ) that mimics mainnet
             </li>
             <li>
-              <b>Score</b>: # of unique instructions from successfully executed
+              <u>Score</u>: # of unique instructions from successfully executed
               transactions over a single run. Instructions are identified solely
               by the first byte of instruction data.
             </li>
           </ol>
+          <ExampleTurnCard />
           <p>
             Scores are unbounded. If an LLM was resourceful enough, it could
             recall all the no-operation programs on Solana, and iterate through
@@ -297,7 +501,7 @@ const LandingPage: React.FC = () => {
           <p>
             Claude is definitely the best performer here. Its key insight is
             that the memo programs can be used to score high without actually
-            making progress on the requested task - performing swaps on DEXes.
+            making progress on the requested task of performing swaps on DEXes.
             Beyond other models, Claude has a strong propensity to game any
             metric or task given to it. This is useful to know when dealing with
             complex environments like Solana.
@@ -369,10 +573,10 @@ const LandingPage: React.FC = () => {
             >
               here.
             </a>{" "}
-            In this scenario, LLMs are prompted to construct swap transactions
-            across different DEXes. SDKs to Jupiter, Orca, Meteora, Raydium, and
-            Phoenix are provided. But the LLMs end up only using the Jupiter SDK
-            to maximize their score.
+            In this environment, LLMs are prompted to construct swap
+            transactions across different DEXes. SDKs to Jupiter, Orca, Meteora,
+            Raydium, and Phoenix are provided. But the LLMs end up only using
+            the Jupiter SDK to maximize their score.
             <br />
             <br />
             Upon further investigation, we found that Claude had found a
@@ -438,24 +642,25 @@ const LandingPage: React.FC = () => {
             research on high-quality Solana benchmarks. Here are some ideas:
             <ol>
               <li>
-                <b>Protocol Environments</b>: setup environment where LLMs are
-                only rewarded for interacting with a specific protocol. This
+                <u>Protocol Environments</u>: create an environment where LLMs
+                are only rewarded for interacting with a specific protocol. This
                 could be good to understand which Defi protocols LLMs are best
-                at using & why?
+                at using and why?
               </li>
               <li>
-                <b>DevEx Environments</b>: setup environment where LLMs only
+                <u>DevEx Environments</u>: create an environment where LLMs only
                 have access to IDLs, or IDL-generated methods instead of SDKs.
                 This could be used to improve IDL tooling.
               </li>
               <li>
-                <b>System Prompts Improvements</b>: LLMs are very sensitive to
+                <u>System Prompts Improvements</u>: LLMs are very sensitive to
                 system prompts. We are open to clear improvements to the system
-                prompts, so long as the changes are well explained and result in
-                meaningful changes in benchmark performance.
+                prompts in each environment, so long as the changes are well
+                explained and result in meaningful changes in benchmark
+                performance.
               </li>
               <li>
-                <b>Evaluating custom models</b>: we welcome evaluations of
+                <u>Evaluating custom models</u>: we welcome evaluations of
                 custom Solana models, but request that the evaluation
                 methodology be included, with some way for us to reproduce the
                 results.
@@ -489,7 +694,11 @@ const LandingPage: React.FC = () => {
             what code they generated, and how they discovered new programs over
             time.
           </p>
-          <Link to="/trajectories" className="cta-button">
+          <Link
+            to="/trajectories"
+            className="cta-button"
+            style={{ color: "white" }}
+          >
             Explore Trajectories →
           </Link>
         </section>
