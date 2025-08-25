@@ -1,8 +1,6 @@
 import base64
-import pdb
 import base58
 import gymnasium as gym
-import numpy as np
 import asyncio
 from contextlib import asynccontextmanager
 import logging
@@ -14,7 +12,6 @@ from dotenv import load_dotenv
 from os.path import dirname, join
 
 from solana.rpc.async_api import AsyncClient, GetTransactionResp
-from solders.transaction import Transaction
 from solders.keypair import Keypair
 from solders.transaction import VersionedTransaction
 from solders.system_program import transfer, TransferParams, create_nonce_account
@@ -22,9 +19,6 @@ from solders.message import MessageV0, to_bytes_versioned
 from solders.pubkey import Pubkey
 from solders.null_signer import NullSigner
 from solders.signature import Signature
-
-from voyager.known_programs import KNOWN_PROGRAM_IDS
-from voyager.skill_manager.ts_skill_manager import TypeScriptSkillManager
 
 load_dotenv(join(dirname(__file__), '.env'))
 

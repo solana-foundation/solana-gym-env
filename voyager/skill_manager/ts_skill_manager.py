@@ -26,7 +26,6 @@ class TypeScriptSkillManager:
         )
         U.f_mkdir(f"{ckpt_dir}/skill/code")
         U.f_mkdir(f"{ckpt_dir}/skill/description")
-        # todo(ngundotra): add programs for env execution
         if resume:
             logging.info(
                f"\033[33mLoading Skill Manager from {ckpt_dir}/skill\033[0m" 
