@@ -13,7 +13,7 @@ These environments reward composing valid transactions, choosing accounts approp
 
 ## Grant Opportunities
 
-**We're funding up to $5k per idea for open-sourced research on high-quality Solana benchmarks!**
+**We're funding proposals for open-sourced research on high-quality Solana benchmarks!**
 
 Ideas we're excited about:
 
