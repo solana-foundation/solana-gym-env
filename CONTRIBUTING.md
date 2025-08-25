@@ -1,27 +1,8 @@
 # Contributing to Solana Bench
 
-## Priority Tasks
-
-- Improve simple_explorer.py as much as possible
-- Improve trajectory visualization & sanity checks
-
-## Constraints
-
-- Keep for loop simple
-- Minimize additional LLM / agent usage in simple_explorer for now
-- Focus on improving the tool calls & decompilation of Solana transactions
-
-## Current Benchmarks
-
-Current benchmark for simple_explorer is `9` rewards over 150 iterations. Reward is # of unique instructions from successfully executed transactions. Iteration = # of LLM messages.
-
-We want to get this >25 rewards in 150 iterations, ideally as high as 100. Expectation is that a fine-tuned agent should get >10 reward in the first step, from a well constructed prompt.
-
-## How to Contribute
-
 ### Getting Started
 
-1. **Fork the repo**: [github.com/ngundotra/solana-gym-env](https://github.com/ngundotra/solana-gym-env)
+1. **Fork the repo**: [github.com/solana-foundation/solana-gym-env](https://github.com/solana-foundation/solana-gym-env)
 2. **Pick a protocol**: Choose one you know well
 3. **Create your environment**: Use our template as a starting point
 4. **Test with multiple models**: Ensure it works across different LLMs
@@ -29,46 +10,15 @@ We want to get this >25 rewards in 150 iterations, ideally as high as 100. Expec
 
 ### What Makes a Great Contribution
 
-✅ **Clear, Protocol-Specific Prompts**: Models should understand what they're exploring
+**Clear, Protocol-Specific Prompts**: Models should understand what they're exploring
 
-✅ **Comprehensive SDK Examples**: Real code that works on mainnet
+**Comprehensive SDK Examples**: Real code that works on mainnet
 
-✅ **Meaningful Reward Shaping**: Incentivize learning the protocol deeply
+**Meaningful Reward Shaping**: Incentivize learning the protocol deeply
 
-✅ **Documentation**: Explain why your approach teaches models effectively
+**Documentation**: Explain why your approach teaches models effectively
 
-✅ **Evaluation Metrics**: Show how different models perform
-
-## Building Protocol-Specific Environments
-
-### Step 1: Fork the Template
-
-```bash
-cp code_loop_explorer.py protocols/your_protocol_explorer.py
-```
-
-### Step 2: Add Your Protocol's Concepts
-
-- System prompts with your terminology
-- SDK examples from your docs
-- Common patterns and gotchas
-
-### Step 3: Design Reward Functions
-
-- What indicates basic understanding?
-- What shows advanced mastery?
-- What would impress your protocol team?
-
-### Step 4: Test with Multiple Models
-
-- Ensure it's not too easy or too hard
-- Verify rewards align with actual understanding
-
-### Step 5: Submit Your PR
-
-- Include sample runs
-- Document what your rewards measure
-- Explain why these metrics matter
+**Evaluation Metrics**: Show how different models perform
 
 ## Example: Kamino-Specific Environment
 
@@ -107,76 +57,27 @@ class KaminoLendingExplorer(CodeLoopExplorer):
         return base_reward
 ```
 
-## Protocol Environments We Need
+## Contribute Different Language Environments!
 
-### DeFi Protocols (each needs its own environment!)
-
-- **Kamino**: Test obligation management, multi-asset lending, leverage loops
-- **Drift**: Evaluate perpetuals trading, DLOB understanding, liquidations
-- **Phoenix**: Assess limit order placement, market making strategies
-- **Orca/Raydium**: Measure pool interaction, concentrated liquidity understanding
-- **Jupiter**: Test aggregation logic, route optimization
-
-### Infrastructure Protocols
-
-- **Metaplex**: NFT minting, metadata, collections
-- **Squads**: Multisig creation and management
-- **Pyth**: Oracle price feed integration
-
-## SDK Environments We Need
-
-### TypeScript/JavaScript
-
-- **@solana/kit**: Modern, composable Solana development
-- **@coral-xyz/anchor**: IDL-based program interactions
-- **@metaplex-foundation/js**: NFT-specific operations
-
-### Other Languages
-
-- **Rust**: Native Solana program interactions
+- **Rust**: solana-program
 - **Python**: solana-py, anchorpy ecosystems
 - **Go**: gagliardetto/solana-go patterns
 
-## What We Need From the Community
+### Each Environment Needs the Following
 
-**Right now, we're basically just testing if models know @solana/web3.js.** That's not enough. We need YOUR help to build comprehensive evaluation suites for the entire Solana ecosystem.
-
-### The Vision: Protocol-Specific Mini-Environments
-
-Every major protocol should have its own evaluation environment. Why? Because knowing how to transfer SOL is vastly different from understanding Kamino's lending markets or Drift's perpetuals.
-
-**What Protocols Should Submit**:
 1. **Custom System Prompts** with your protocol's concepts
 2. **SDK Integration Examples** showing real usage patterns
 3. **Reward Functions** that measure protocol mastery
 4. **Success Criteria** specific to your protocol
 
-### Why Protocol-Specific Rewards Matter
-
-Generic instruction discovery only tells part of the story. Protocol-specific rewards measure if models actually understand your protocol:
-
-**Kamino Rewards**:
-- Deposit → Borrow → Repay cycle = **Understanding lending**
-- Leverage loops = **Understanding capital efficiency**
-- Liquidation execution = **Understanding risk**
-
-**Drift Rewards**:
-- Open → Modify → Close position = **Understanding perps**
-- Place limit orders on DLOB = **Understanding orderbook**
-- Execute JIT liquidity = **Understanding MEV**
-
-**Phoenix Rewards**:
-- Place bid/ask spreads = **Understanding market making**
-- Cancel and replace orders = **Understanding order management**
-- Consume liquidity efficiently = **Understanding execution**
-
 ## Open Research Challenges
 
 ### The Multiplication Problem
 
-If we need 10 protocols × 3 SDKs × 3 languages = 90 unique environments, we're probably doing something wrong. 
+If we need 10 protocols × 3 SDKs × 3 languages = 90 unique environments, we're probably doing something wrong.
 
 **What might work better:**
+
 - **"Raw" Environments**: Force models to build everything from scratch with ONLY @solana/web3.js
 - **Auto-discovery from IDLs**: Automatically generate rewards from program IDLs
 - **Transaction Mining**: Learn protocol patterns from historical transactions
@@ -187,6 +88,7 @@ If we need 10 protocols × 3 SDKs × 3 languages = 90 unique environments, we're
 The holy grail would be an environment where models can discover and interact with ANY protocol without protocol-specific prompts.
 
 **Dream contribution**: A system that can:
+
 1. Take any program ID
 2. Fetch its IDL (if available) or reverse-engineer from transactions
 3. Generate exploration strategies
@@ -213,21 +115,6 @@ This would be a separate "raw" environment - just Codama + @solana/kit. No manua
 
 Even better: After collecting successful runs, export them to OpenPipe or similar for fine-tuning. Build first, train later.
 
-## Testing Your Contribution
-
-1. Run against at least 3 different models
-2. Verify rewards correlate with actual understanding
-3. Include metrics showing performance distribution
-4. Document any model-specific quirks you discover
-
-## Code Style Guidelines
-
-- Follow existing patterns in `code_loop_explorer.py`
-- Keep system prompts clear and concise
-- Document reward calculations thoroughly
-- Include type hints where appropriate
-- Add docstrings to all public methods
-
 ## Debugging Your Experiments
 
 ### 🔍 LangGraph Studio - See Everything
@@ -251,16 +138,3 @@ LANGGRAPH_API_KEY=your_api_key_here
 - Where models get stuck or confused
 
 This visibility was crucial for discovering that models were making variable name errors in tool calls but not in code blocks.
-
-### 📊 Metrics and Traces
-
-Every run generates detailed traces in `metrics/` and `traces/`:
-
-- Transaction success/failure patterns
-- Reward progression over time
-- Which programs and instructions were discovered
-- Error frequencies and types
-
-## Questions?
-
-Open an issue on GitHub with the `question` label and we'll help you get started!
