@@ -100,7 +100,7 @@ const App: React.FC = () => {
             <Link to="/">Home</Link>
             <Link to="/trajectories">Trajectories</Link>
             <a
-              href="https://github.com/ngundotra/solana-gym-env"
+              href="https://github.com/solana-foundation/solana-gym-env"
               target="_blank"
               rel="noopener noreferrer"
             >

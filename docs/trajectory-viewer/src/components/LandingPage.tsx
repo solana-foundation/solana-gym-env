@@ -137,10 +137,9 @@ export async function executeSkill(blockhash: string): Promise<string> {
             successful transaction.
             <br />
             <br />
-            In this step, selected one turn of 50 messages, the LLM created a
-            succesful transaction that executed the following instructions. For
-            this, it was awarded 6 points. You can explore the code it wrote
-            below.
+            In this example an LLM created a succesful transaction that executed
+            the following instructions. For this, it was awarded 6 points. You
+            can explore the code it wrote below.
           </p>
         </div>
 
