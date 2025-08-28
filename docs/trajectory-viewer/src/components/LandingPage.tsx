@@ -637,8 +637,8 @@ const LandingPage: React.FC = () => {
         <section>
           <h2>Grant Opportunities</h2>
           <p>
-            Expand on this research! We're funding up to $5k for open-sourced
-            research on high-quality Solana benchmarks. Here are some ideas:
+            Expand on this research! We're funding open-sourced research on
+            high-quality Solana benchmarks. Here are some ideas:
             <ol>
               <li>
                 <u>Protocol Environments</u>: create an environment where LLMs
