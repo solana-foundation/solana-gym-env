@@ -58,17 +58,26 @@ Ideas we're excited about:
 
 ## Quick Start
 
+Inexpensive, reproducible checks first. These do **not** call paid APIs and do **not** send funded mainnet transactions.
+
 ```bash
-# Run a single exploration session
-export MODEL_NAME="google/gemini-2.5-flash"  # or "openai/gpt-4o-mini", "openai/gpt-oss-120b", etc.
+# Offline unit tests (no OpenRouter/OpenAI, no surfpool, no Grok CLI invocation)
+uv sync
+uv run python -m pytest tests/
+
+# Optional: fixture-provider explorer against a *local* Surfpool sandbox only
+# LLM_PROVIDER=fixture MAX_MESSAGES=1 ENVIRONMENT_CONFIG=voyager/environments/basic_env.json \
+#   uv run python code_loop_explorer.py
+```
+
+Paid model runs are opt-in. The historical OpenRouter batch is **not** required to develop or test this repo.
+
+```bash
+# Opt-in single exploration session (requires your own key; can cost money)
+export LLM_PROVIDER=openrouter
+export MODEL_NAME="google/gemini-2.5-flash"
 export MAX_MESSAGES=50
 uv run python code_loop_explorer.py
-
-# Run model comparison batch (recommended)
-uv run python run_model_comparison_batch.py
-
-# Analyze results with advanced visualizations
-uv run python analyze_code_loop_performance.py
 ```
 
 ## Scoring
@@ -80,44 +89,61 @@ uv run python analyze_code_loop_performance.py
 
 ### Prerequisites
 
-- Python 3.8+ with [uv](https://github.com/astral-sh/uv)
-- [Bun](https://bun.sh) v1.1.42+
-- [Surfpool](https://github.com/novy4/surfpool) (Solana test environment)
-- OpenRouter API key for LLM access
+- Python 3.12+ with [uv](https://github.com/astral-sh/uv) (`requires-python` in `pyproject.toml`)
+- [Bun](https://bun.sh) v1.1.42+ for TypeScript skill execution
+- [Surfpool](https://github.com/novy4/surfpool) only if you run the live sandbox explorer (not needed for `pytest`)
+- API keys only if you opt into a paid provider. Offline tests use `LLM_PROVIDER=fixture`.
 
 ### Setup
 
 ```bash
 # Clone the repository
 git clone https://github.com/solana-foundation/solana-gym-env
-cd voyager
+cd solana-gym-env
 
 # Install Python dependencies
 uv sync
 
-# Install TypeScript dependencies
+# Install TypeScript dependencies (skill runner)
 cd voyager/skill_runner && bun install
 cd ../..
 
-# Set up environment variables
+# Optional live-run secrets. Copy the example; never commit real keys.
 cp .env.example .env
-# Edit .env and add your OPENROUTER_API_KEY
 ```
 
 ## Running Experiments
 
+`ENVIRONMENT_CONFIG` is a path to a JSON file. If unset, the explorer now defaults to `voyager/environments/basic_env.json` (previously this crashed with `UnboundLocalError`).
+
 ```bash
-# Single run with specific model
+# Single run with a specific OpenRouter model (opt-in, can cost money)
+export LLM_PROVIDER=openrouter
 export MODEL_NAME="google/gemini-2.5-flash"
 export MAX_MESSAGES=50
-export ENVIRONMENT_CONFIG="basic"
+export ENVIRONMENT_CONFIG=voyager/environments/basic_env.json
 uv run python code_loop_explorer.py
 
-# Batch comparison of multiple models
-# To switch environments between "basic" and "swap"
-# you must edit this file
+# Optional Grok CLI (headless). Requires a local `grok` binary. Not used by pytest.
+export LLM_PROVIDER=grok-cli
+export GROK_CLI_BIN=grok
+export MODEL_NAME=grok-4
+export MAX_MESSAGES=2
+export ENVIRONMENT_CONFIG=voyager/environments/basic_env.json
+# uv run python code_loop_explorer.py
+
+# Batch comparison of multiple models (expensive; ~$150-200 historically)
+# Override the default 4-model x 5-run matrix:
+#   LLM_PROVIDER=fixture BATCH_MODELS=fixture RUNS_PER_MODEL=1 MAX_MESSAGES=1 BATCH_CONFIRM=y
+# To switch environments between "basic" and "swap" set ENVIRONMENT_NAME=swap
 uv run python run_model_comparison_batch.py
 ```
+
+Transactions are signed and submitted only to the local Surfpool sandbox (`http://127.0.0.1:8899`). Do not point this harness at a funded mainnet wallet.
+
+### Optional cheap hosted models
+
+This repository does not call OpenAI or OpenRouter during tests. If you later opt into a hosted model, prefer the cheapest current text models on [OpenAI's official pricing page](https://developers.openai.com/api/docs/pricing) (names and prices change; check that page before spending). Recent low-cost examples there include `gpt-5-nano`, `gpt-4.1-nano`, `gpt-5.6-luna`, and `gpt-4o-mini`. We did **not** re-run the published Solana Bench table with those models.
 
 ## Model Comparison & Analysis
 

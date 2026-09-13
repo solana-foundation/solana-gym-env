@@ -8,15 +8,23 @@ import uuid
 from datetime import datetime
 from typing import List
 
-from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, AIMessage
 from solders.transaction import Transaction
 from dotenv import load_dotenv
 
+from voyager.code_extract import (
+    create_skill_code,
+    extract_code_blocks,
+    load_system_prompt_template,
+    render_system_prompt,
+)
+from voyager.llm_providers import FIXTURE_PROVIDERS, create_llm, resolve_provider_name
 from voyager.skill_manager.ts_skill_manager import TypeScriptSkillManager
 from voyager.surfpool_env import SurfpoolEnv, _surfpool_validator
 
 load_dotenv()
+
+DEFAULT_ENVIRONMENT_CONFIG = "voyager/environments/basic_env.json"
 
 class CodeLoopExplorer:
     """
@@ -33,7 +41,10 @@ class CodeLoopExplorer:
         resume: bool = False,
         verbose: bool = True,
         code_file: str = None,
-        environment_config: str = None
+        environment_config: str = None,
+        llm=None,
+        llm_provider: str = None,
+        metrics_dir: str = None,
     ):
         self.model_name = model_name
         self.run_index = run_index
@@ -43,6 +54,8 @@ class CodeLoopExplorer:
         self.verbose = verbose
         self.code_file = code_file or "voyager/skill_runner/code_loop_code.ts"
         self.environment_config_path = environment_config
+        self.llm_provider = resolve_provider_name(model_name, llm_provider)
+        self.metrics_dir = metrics_dir or os.getenv("METRICS_DIR", "metrics")
         
         # Load environment configuration if provided
         self.env_config = None
@@ -52,15 +65,9 @@ class CodeLoopExplorer:
         # Generate unique run ID
         self.run_id = f"code_loop_{datetime.now().strftime('%y-%m-%d_%H%M%S')}_{uuid.uuid4().hex[:8]}"
         
-        # Initialize LangChain ChatOpenAI for OpenRouter
-        self.llm = ChatOpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            model=model_name,
-            api_key=os.getenv("OPENROUTER_API_KEY"),
-            temperature=0.7,
-        )
+        self.llm = llm if llm is not None else create_llm(model_name, self.llm_provider)
         
-        # Initialize skill manager
+        # Initialize skill manager (execution only; LLM is unused for code-loop)
         self.skill_manager = TypeScriptSkillManager(
             model_name=model_name,
             temperature=0.0,
@@ -68,20 +75,20 @@ class CodeLoopExplorer:
             request_timeout=120,
             ckpt_dir=checkpoint_dir,
             resume=resume,
+            skip_llm=True,
         )
-        
-        # Regex pattern for extracting TypeScript/JavaScript code blocks
-        self.code_pattern = re.compile(r"```(?:javascript|js|typescript|ts)(.*?)```", re.DOTALL)
         
         # Metrics tracking
         self.metrics = {
             "model": model_name,
+            "llm_provider": self.llm_provider,
             "run_index": run_index,
             "run_id": self.run_id,
             "start_time": datetime.now().isoformat(),
             "environment_config": environment_config,
             "messages": [],
             "cumulative_rewards": [],
+            "raw_unfiltered_rewards": [],
             "programs_discovered": {},
             "instructions_by_program": {},  # Track unique instructions per program
             "code_blocks_extracted": [],
@@ -106,8 +113,7 @@ class CodeLoopExplorer:
         Extract TypeScript/JavaScript code blocks from the message content.
         Returns a list of code strings found in the message.
         """
-        code_blocks = self.code_pattern.findall(message_content)
-        return [block.strip() for block in code_blocks if block.strip()]
+        return extract_code_blocks(message_content)
     
     def _log_formatted_response(self, content: str):
         """Log the response with highlighted TypeScript code blocks."""
@@ -146,37 +152,33 @@ class CodeLoopExplorer:
         Use the first code block that contains the executeSkill function.
         If none found, return the first code block as-is.
         """
-        if not code_blocks:
-            return ""
-        
-        # Look for a code block with the executeSkill function
-        for block in code_blocks:
-            if 'export async function executeSkill' in block:
-                return block.strip()
-        
-        # If no executeSkill found, return the first block
-        # This allows the error handling to provide feedback
-        return code_blocks[0].strip()
+        return create_skill_code(code_blocks)
     
     async def get_system_prompt(self, env: SurfpoolEnv) -> str:
         """Build the system prompt for the agent."""
         observation = await env._get_observation()
         obs_dict = observation[0][1] if observation else {}
         agent_pubkey = str(env.agent_keypair.pubkey())
-        
-        # Use custom prompt if environment config is loaded
-        if self.env_config and 'system_prompt_template' in self.env_config:
-            with open(self.env_config['system_prompt_template'], 'r') as f:
-                system_prompt = f.read().format(
-                    agent_pubkey=agent_pubkey,
-                    sol_balance=obs_dict.get('sol_balance', 0),
-                    block_height=obs_dict.get('block_height', 0),
-                    total_reward=env.total_reward,
-                    max_messages=self.max_messages
-                )
-                return system_prompt
-    
-        return system_prompt
+        template = load_system_prompt_template(self.env_config)
+        return render_system_prompt(
+            template,
+            agent_pubkey=agent_pubkey,
+            sol_balance=obs_dict.get('sol_balance', 0),
+            block_height=obs_dict.get('block_height', 0),
+            total_reward=getattr(env, 'total_reward', 0),
+            max_messages=self.max_messages,
+        )
+
+    def _skill_timeout_ms(self) -> int:
+        return int((self.env_config or {}).get("timeout", 30000))
+
+    def _partial_sign_skill_tx(self, env: SurfpoolEnv, tx_bytes: bytes):
+        """Sign skill bytes with the sandbox agent key. Prefer versioned txs."""
+        try:
+            return env._partial_sign_transaction(tx_bytes, [env.agent_keypair])
+        except Exception:
+            legacy = Transaction.from_bytes(tx_bytes)
+            return env._partial_sign_transaction(bytes(legacy), [env.agent_keypair])
     
     async def run_exploration_loop(self, env: SurfpoolEnv):
         """Main exploration loop that extracts and executes code from agent responses."""
@@ -218,6 +220,8 @@ Remember to use ```typescript code blocks for your transaction code.
                 
                 # Extract code blocks
                 code_blocks = self.extract_code_blocks(response.content)
+                reward = 0
+                instructions_discovered = {}
                 
                 if code_blocks:
                     logging.info(f"\n🔍 Found {len(code_blocks)} TypeScript code block(s)")
@@ -241,7 +245,7 @@ Remember to use ```typescript code blocks for your transaction code.
                         str(env.agent_keypair.pubkey()),
                         blockhash,
                         self.code_file,
-                        self.env_config.get("timeout", 30000)
+                        self._skill_timeout_ms(),
                     )
                     logging.info(f"📦 Execution result: success={result.get('success', False)}, has_tx={bool(result.get('serialized_tx'))}")
 
@@ -265,8 +269,7 @@ Remember to use ```typescript code blocks for your transaction code.
                         try:
                             # Decode and sign the transaction
                             tx_bytes = base64.b64decode(tx_data)
-                            tx = Transaction.from_bytes(tx_bytes)
-                            signed_tx = env._partial_sign_transaction(bytes(tx), [env.agent_keypair])
+                            signed_tx = self._partial_sign_skill_tx(env, tx_bytes)
                             
                             # Execute the transaction
                             obs, step_reward, _, _, info = await env.step(signed_tx)
@@ -340,15 +343,25 @@ Remember to use ```typescript code blocks for your transaction code.
                 
                 # Update cumulative metrics
                 self.metrics['cumulative_rewards'].append(env.total_reward)
+                self.metrics['raw_unfiltered_rewards'] = self.metrics.get(
+                    'raw_unfiltered_rewards', []
+                )
+                self.metrics['raw_unfiltered_rewards'].append(
+                    getattr(env, 'raw_unfiltered_reward', env.total_reward)
+                )
                 
                 # Build message metrics
                 message_metrics = {
                     'index': self.message_count,
                     'timestamp': message_start_time.isoformat(),
                     'duration': (datetime.now() - message_start_time).total_seconds(),
-                    'reward': reward if 'reward' in locals() else 0,
+                    'reward': reward,
                     'total_reward': env.total_reward,
-                    'instructions_discovered': instructions_discovered
+                    'raw_unfiltered_reward': getattr(
+                        env, 'raw_unfiltered_reward', env.total_reward
+                    ),
+                    'instructions_discovered': instructions_discovered,
+                    'code_extracted': bool(code_blocks),
                 }
                 
                 self.metrics['messages'].append(message_metrics)
@@ -373,7 +386,7 @@ Remember to use ```typescript code blocks for your transaction code.
     
     def save_checkpoint(self):
         """Save current metrics and conversation history."""
-        os.makedirs(f"metrics", exist_ok=True)
+        os.makedirs(self.metrics_dir, exist_ok=True)
         
         # Convert sets to lists for JSON serialization
         metrics_copy = self.metrics.copy()
@@ -384,7 +397,7 @@ Remember to use ```typescript code blocks for your transaction code.
             }
         
         # Save metrics
-        metrics_path = f"metrics/{self.run_id}_metrics.json"
+        metrics_path = os.path.join(self.metrics_dir, f"{self.run_id}_metrics.json")
         with open(metrics_path, 'w') as f:
             json.dump(metrics_copy, f, indent=2)
             f.flush()  # Force flush to disk
@@ -401,7 +414,7 @@ Remember to use ```typescript code blocks for your transaction code.
                 conversation_dict.append({"role": "assistant", "content": msg.content})
         
         # Save conversation history
-        conv_path = f"metrics/{self.run_id}_conversation.json"
+        conv_path = os.path.join(self.metrics_dir, f"{self.run_id}_conversation.json")
         with open(conv_path, 'w') as f:
             json.dump(conversation_dict, f, indent=2)
         
@@ -420,18 +433,25 @@ async def main():
     
     # Configuration
     model_name = os.getenv("MODEL_NAME", "google/gemini-2.5-flash")
+    llm_provider = os.getenv("LLM_PROVIDER")
+    resolved_provider = resolve_provider_name(model_name, llm_provider)
+    if resolved_provider in FIXTURE_PROVIDERS:
+        model_name = os.getenv("MODEL_NAME", "fixture")
     max_messages = int(os.getenv("MAX_MESSAGES", "50"))
     run_index = int(os.getenv("RUN_INDEX", "0"))  # Get run index from environment
     code_file = os.getenv("CODE_FILE", None)  # Get code file from environment
-    environment_config = os.getenv("ENVIRONMENT_CONFIG", None)  # Get environment config
+    environment_config = os.getenv("ENVIRONMENT_CONFIG") or DEFAULT_ENVIRONMENT_CONFIG
     use_external_surfpool = os.getenv("USE_EXTERNAL_SURFPOOL", "false").lower() == "true"
     
     logging.info(f"Starting Code Loop Explorer with model: {model_name}")
+    logging.info(f"LLM provider: {resolved_provider}")
     logging.info(f"Max messages: {max_messages}")
     logging.info(f"Run index: {run_index}")
     logging.info(f"Code file: {code_file or 'voyager/skill_runner/code_loop_code.ts (default)'}")
-    logging.info(f"Environment config: {environment_config or 'None (using default)'}")
+    logging.info(f"Environment config: {environment_config}")
     logging.info(f"Use external surfpool: {use_external_surfpool}")
+    if resolved_provider not in FIXTURE_PROVIDERS:
+        logging.info("Paid API providers are opt-in. Offline tests should use LLM_PROVIDER=fixture.")
     
     # Initialize explorer
     logging.info("Initializing explorer...")
@@ -441,7 +461,8 @@ async def main():
         max_messages=max_messages,
         verbose=True,
         code_file=code_file,
-        environment_config=environment_config
+        environment_config=environment_config,
+        llm_provider=resolved_provider,
     )
     
     # Get allowed programs from environment config if available

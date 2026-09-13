@@ -128,19 +128,26 @@ def load_environment(env_name: str):
 async def run_comparison():
     """Run model comparison with parallel execution"""
     
-    # Configuration
+    # Configuration. Default batch is expensive paid-API work; override via env.
     models = [
         "openai/gpt-oss-120b",
         "google/gemini-2.5-flash",
         "anthropic/claude-sonnet-4",
         "openai/gpt-5"
     ]
+    models_env = os.getenv("BATCH_MODELS")
+    if models_env:
+        models = [m.strip() for m in models_env.split(",") if m.strip()]
     
-    runs_per_model = 5
-    max_messages = 50
-    parallel_batch_size = len(models) * runs_per_model  # Run ALL experiments at once!
+    provider = os.getenv("LLM_PROVIDER", "").strip().lower()
+    if provider in {"fixture", "offline", "dummy"} and not models_env:
+        models = ["fixture"]
+    
+    runs_per_model = int(os.getenv("RUNS_PER_MODEL", "1" if provider in {"fixture", "offline", "dummy"} else "5"))
+    max_messages = int(os.getenv("MAX_MESSAGES", "1" if provider in {"fixture", "offline", "dummy"} else "50"))
+    parallel_batch_size = int(os.getenv("PARALLEL_BATCH_SIZE", str(len(models) * runs_per_model)))
     cleanup_files = False  # Keep the generated code files for inspection
-    env_name = "basic"
+    env_name = os.getenv("ENVIRONMENT_NAME", "basic")
     load_environment(env_name)
     
     # Check surfpool
@@ -170,11 +177,14 @@ async def run_comparison():
     print("\n✅ Using EXTERNAL surfpool instance on localhost:8899")
     print("="*60)
     
-    # Confirm
-    response = input("\nProceed with parallel execution? (y/n): ")
-    if response.lower() != 'y':
-        print("Cancelled")
-        return
+    confirm = os.getenv("BATCH_CONFIRM", "").strip().lower()
+    if confirm not in {"y", "yes", "1", "true"}:
+        response = input("\nProceed with parallel execution? (y/n): ")
+        if response.lower() != 'y':
+            print("Cancelled")
+            return
+    elif provider not in {"fixture", "offline", "dummy"}:
+        print("BATCH_CONFIRM is set; this path can incur paid API cost. Offline work should use LLM_PROVIDER=fixture.")
     
     # Prepare all experiments
     experiments = []

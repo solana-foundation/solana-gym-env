@@ -14,6 +14,8 @@ from datetime import datetime
 import numpy as np
 from pathlib import Path
 
+from voyager.metrics_summary import summarize_code_loop_run
+
 def create_output_dir():
     """Create a timestamped output directory for analysis results"""
     timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
@@ -300,20 +302,12 @@ def analyze_metrics(metrics_list, output_dir):
         # Calculate total rewards
         total_reward = m['cumulative_rewards'][-1] if m.get('cumulative_rewards') else 0
         
-        # Count successful code blocks
-        successful_blocks = sum(1 for msg in m.get('messages', []) 
-                               if msg.get('code_extracted') and msg.get('reward', 0) > 0)
-        
-        # Calculate success rate
-        total_blocks = sum(1 for msg in m.get('messages', []) 
-                          if msg.get('code_extracted'))
-        
-        success_rate = successful_blocks / total_blocks if total_blocks > 0 else 0
-        
-        # Count unique programs and instructions from top-level fields
-        programs = len(m.get('programs_discovered', {}))
-        # Calculate total unique instructions from instructions_by_program
-        instructions = sum(len(instr_list) for instr_list in m.get('instructions_by_program', {}).values())
+        run_summary = summarize_code_loop_run(m)
+        successful_blocks = run_summary['successful_blocks']
+        total_blocks = run_summary['total_blocks']
+        success_rate = run_summary['success_rate']
+        programs = run_summary['programs_discovered']
+        instructions = run_summary['unique_instructions']
         
         summary_data.append({
             'model': m['model'],

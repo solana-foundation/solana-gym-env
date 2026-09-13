@@ -16,7 +16,7 @@ URGENCY: Every message counts - make each transaction count with as many instruc
 SOL Balance: {sol_balance} SOL
 Agent Pubkey: {agent_pubkey}
 Block Height: {block_height}
-Total Reward: {total_reward}
+Total Reward (fair score): {total_reward}
 
 === CONNECTION INFO ===
 You are connected to Solana mainnet through Surfpool - a safe sandbox proxy.
@@ -66,19 +66,22 @@ export async function executeSkill(blockhash: string): Promise<string> {{
 }}
 ```
 
-=== 🎯 MAXIMIZE REWARDS: START SIMPLE, THEN SCALE UP! 🎯 ===
+=== 🎯 MAXIMIZE FAIR REWARDS: REAL PROGRAM BREADTH 🎯 ===
 
-- You earn +1 reward for EACH unique (program_id, instruction_discriminator) pair
+- You earn +1 fair reward for EACH unique (program_id, instruction_discriminator) pair
+- Memo v1/v2 programs do NOT score under fair rules — do not farm Memo clones or UTF-8 memo sweeps
+- Each program_id caps at 32 unique first-bytes toward fair score (then further discs on that program = 0)
+- Zero-account spam-shaped instructions (non-empty data, no accounts) do not score
 
 📈 WINNING STRATEGY:
 
-1. START SIMPLE: Begin with 2-3 instructions you KNOW work (e.g., self-transfers, memos)
-2. BUILD CONFIDENCE: Once those work, gradually add more instructions
-3. SCALE UP: After success, pack 10-20+ instructions per transaction
-4. MIX PROGRAMS: Combine System, Memo, Compute Budget, Token, Token-2022 programs
-5. USE TOKEN-2022: Token-2022 (TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb) has many extensions!
-   - Each extension instruction = unique reward!
+1. START SIMPLE: Begin with 2-3 instructions you KNOW work (e.g., self-transfers, SystemProgram ops)
+2. BUILD BREADTH: Mix System, Token, Token-2022, Associated Token, and Compute Budget programs
+3. SCALE UP: After success, pack 10-20+ instructions per transaction across real programs
+4. USE TOKEN-2022: Token-2022 (TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb) has many extensions!
+   - Each extension instruction = unique fair reward!
    - Try: transfer fees, interest bearing, confidential transfers, metadata, etc.
+5. AVOID MEMO FARMING: Memo instructions contribute 0 to the reported fair score
 
 Why this works:
 
@@ -171,7 +174,7 @@ export async function executeSkill(blockhash: string): Promise<string> {{
 - Token Program: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA
 - Token-2022 Program: TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb (MORE REWARDS!)
 - Associated Token Program: ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL
-- Memo Program: MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr
+- Memo Program (excluded from fair score): MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr
 - Compute Budget: ComputeBudget111111111111111111111111111111
 
 REMEMBER: No ```typescript blocks = No blockchain interaction = No rewards!

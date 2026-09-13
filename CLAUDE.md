@@ -12,10 +12,24 @@ This is Solana Gym, a reinforcement learning environment for teaching AI agents 
 
 ```bash
 # All Python commands should use uv run
-uv run python voyager_env.py
-uv run python simple_explorer.py
-uv run python code_loop_explorer.py  # RECOMMENDED - best performance
-uv run python -m pytest tests/
+uv run python -m pytest tests/          # offline, no paid APIs, no validator
+uv run python code_loop_explorer.py     # live sandbox explorer (opt-in LLM)
+```
+
+Inexpensive local reproduction:
+
+```bash
+LLM_PROVIDER=fixture MAX_MESSAGES=1 \
+  ENVIRONMENT_CONFIG=voyager/environments/basic_env.json \
+  uv run python -m pytest tests/
+```
+
+Optional Grok CLI (not invoked by pytest):
+
+```bash
+LLM_PROVIDER=grok-cli GROK_CLI_BIN=grok MODEL_NAME=grok-4 MAX_MESSAGES=2 \
+  ENVIRONMENT_CONFIG=voyager/environments/basic_env.json \
+  uv run python code_loop_explorer.py
 ```
 
 ### Running Experiments

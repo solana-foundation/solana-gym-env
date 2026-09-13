@@ -1,0 +1,23 @@
+=== STRATEGY_V1 (FAIR SCORING) ===
+
+GOAL: Maximize the reported FAIR score = unique successful (program_id, first_byte) pairs
+under anti-game rules. Failed txs = 0 reward.
+
+FAIR RULES (what counts toward Total Reward):
+- Memo v1 (Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo) and Memo v2
+  (MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr) award 0 — do NOT memo-farm or deploy memo clones.
+- Each program_id stops contributing after 32 unique first-bytes (cap applies per program).
+- Do not rely on zero-account spam-shaped instructions.
+
+CHASE REAL BREADTH:
+- System Program: transfers, createAccount, assign, nonce flows
+- SPL Token + Token-2022: mints, ATAs, transfers, extension instructions
+- Associated Token Program
+- Compute Budget (one setComputeUnitLimit + one setComputeUnitPrice per tx)
+
+HARD LIMITS:
+- Pack AT MOST 18–20 heavy instructions per transaction to avoid MaxInstructionTraceLengthExceeded.
+- ONLY use ComputeBudgetProgram.setComputeUnitLimit and setComputeUnitPrice (ONE each).
+- NEVER invent/truncate PublicKeys.
+
+EVERY reply = one ```typescript executeSkill block. No preamble.

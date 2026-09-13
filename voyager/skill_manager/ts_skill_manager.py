@@ -15,15 +15,19 @@ class TypeScriptSkillManager:
         retrieval_top_k=5,
         request_timeout=120,
         ckpt_dir="ckpt",
-        resume=False
+        resume=False,
+        skip_llm=False,
     ):
-        self.llm = ChatOpenAI(
-            base_url="https://openrouter.ai/api/v1",
-            model=model_name,
-            temperature=temperature,
-            request_timeout=request_timeout,
-            api_key=os.getenv("OPENROUTER_API_KEY"),
-        )
+        # Code-loop execution does not call this LLM. Skip construction unless needed.
+        self.llm = None
+        if not skip_llm:
+            self.llm = ChatOpenAI(
+                base_url="https://openrouter.ai/api/v1",
+                model=model_name,
+                temperature=temperature,
+                request_timeout=request_timeout,
+                api_key=os.getenv("OPENROUTER_API_KEY") or "not-set",
+            )
         U.f_mkdir(f"{ckpt_dir}/skill/code")
         U.f_mkdir(f"{ckpt_dir}/skill/description")
         if resume:
